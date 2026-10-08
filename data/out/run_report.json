@@ -1,0 +1,19 @@
+{
+ "parcels_in_polygon": 637,
+ "single_family_homes": 569,
+ "pct_with_address": 100.0,
+ "pct_with_deed_date": 82.8,
+ "pct_with_year_built": 100.0,
+ "pct_with_assessed_value": 100.0,
+ "pct_owner_occupancy_resolved": 100.0,
+ "pct_building_desc_parsed": 96.7,
+ "absentee_owners": 26,
+ "new_movers_36mo": 17,
+ "doors_with_imagery": 0,
+ "doors_with_usable_imagery": 0,
+ "cost": {
+  "total_usd": 0,
+  "by_stage": {},
+  "doors_with_spend": 0
+ }
+}

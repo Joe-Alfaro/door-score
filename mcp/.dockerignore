@@ -1,0 +1,8 @@
+# Used when the build context is the repo root (docker build -f mcp/Dockerfile .)
+**/node_modules
+**/dist
+**/.env
+mcp/data
+web
+pipeline
+.git
