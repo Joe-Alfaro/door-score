@@ -2,7 +2,7 @@
 
 ## Who is the ideal door?
 
-The company earns when one household buys **many services over many years**. The historical best
+The business earns when one household buys **many services over many years**. The historical best
 customers are recent movers, busy dual-income households, and people who hire out rather than DIY.
 Translated into things public data can actually see, the ideal door is:
 
