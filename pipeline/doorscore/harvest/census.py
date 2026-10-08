@@ -68,12 +68,16 @@ def enrich(doors: list[dict]) -> list[dict]:
         print('[census] CENSUS_API_KEY not set; skipping tract enrichment')
         for d in doors: d['census'] = None
         return doors
+    failed = set()
     for d in doors:
         g = tract_for(d)
+        if not g or g in failed:
+            d['census'] = None; continue
         try:
-            d['census'] = acs_profile(g) if g else None
+            d['census'] = acs_profile(g)
         except Exception as e:
-            print(f'[census] {g}: {e}'); d['census'] = None
+            print(f'[census] {g}: {e}'); failed.add(g); d['census'] = None
     tracts = {d['census']['tract_geoid'] for d in doors if d.get('census')}
-    print(f'[census] {sum(1 for d in doors if d.get("census"))} doors enriched across {len(tracts)} tracts')
+    n_ok = sum(1 for d in doors if d.get('census'))
+    print(f'[census] {n_ok} doors enriched across {len(tracts)} tracts' if n_ok else '[census] no tract profiles (check CENSUS_API_KEY activation)')
     return doors

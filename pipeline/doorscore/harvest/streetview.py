@@ -14,22 +14,36 @@ IMG_DIR = CACHE / 'streetview'
 META_DIR = CACHE / 'streetview_meta'
 IMG_DIR.mkdir(exist_ok=True); META_DIR.mkdir(exist_ok=True)
 SIZE = '640x640'
-RADIUS_M = 60
+# Lot centroids on big parcels can sit >60 m from the road; widen the search in steps.
+RADII_M = (60, 120, 200)
+APPROX_M = 90   # camera farther than this from the parcel point is flagged 'approximate'
 
 def _key():
     if not GOOGLE_MAPS_API_KEY:
         raise RuntimeError('GOOGLE_MAPS_API_KEY not set')
     return GOOGLE_MAPS_API_KEY
 
+def _haversine_m(lat1, lng1, lat2, lng2):
+    from math import radians, sin, cos, asin, sqrt
+    dlat, dlng = radians(lat2 - lat1), radians(lng2 - lng1)
+    a = sin(dlat / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlng / 2) ** 2
+    return 6371000 * 2 * asin(sqrt(a))
+
 def pano_metadata(door: dict) -> dict:
-    """Nearest outdoor panorama to the parcel. Cached; free."""
+    """Nearest outdoor panorama to the parcel, widening the radius as needed. Cached; free."""
     p = META_DIR / f'{door["door_id"]}.json'
     if p.exists():
         return json.loads(p.read_text())
-    r = requests.get(META_URL, params={'location': f'{door["lat"]},{door["lng"]}', 'radius': RADIUS_M,
-                                       'source': 'outdoor', 'key': _key()}, timeout=30)
-    r.raise_for_status()
-    meta = r.json()
+    meta = {'status': 'ZERO_RESULTS'}
+    for radius in RADII_M:
+        r = requests.get(META_URL, params={'location': f'{door["lat"]},{door["lng"]}', 'radius': radius,
+                                           'source': 'outdoor', 'key': _key()}, timeout=30)
+        r.raise_for_status()
+        meta = r.json()
+        if meta.get('status') == 'OK':
+            meta['radius_used'] = radius
+            meta['distance_m'] = round(_haversine_m(door['lat'], door['lng'], meta['location']['lat'], meta['location']['lng']))
+            break
     p.write_text(json.dumps(meta))
     return meta
 
@@ -40,7 +54,8 @@ def fetch_image(door: dict) -> dict | None:
         return None
     path = IMG_DIR / f'{door["door_id"]}.jpg'
     info = {'path': str(path), 'date': meta.get('date'), 'pano_id': meta.get('pano_id'),
-            'pano_lat': meta['location']['lat'], 'pano_lng': meta['location']['lng']}
+            'pano_lat': meta['location']['lat'], 'pano_lng': meta['location']['lng'],
+            'distance_m': meta.get('distance_m'), 'approximate': (meta.get('distance_m') or 0) > APPROX_M}
     if path.exists():
         return info
     # Use the resolved pano and let the API compute the heading toward the parcel point.

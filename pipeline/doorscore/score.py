@@ -121,6 +121,7 @@ def tags_for(d: dict, sigs: list[Signal]) -> list[str]:
     if (d['home_age'] or 0) >= 60: t.append('older home')
     names = {s.name: s for s in sigs}
     if names.get('provider_truck') and names['provider_truck'].points > 0: t.append('provider on site')
+    if names.get('moving_indicators') and names['moving_indicators'].points > 0: t.append('moving activity')
     if names.get('visible_service_need') and names['visible_service_need'].points >= 6: t.append('visible wear')
     return t
 
@@ -137,8 +138,10 @@ def _vis(d: dict) -> dict | None:
     return v
 
 def _src(d: dict) -> str:
-    date = (d.get('vision') or {}).get('image', {}).get('date') or 'undated'
-    return f'Street View {date}'
+    img = (d.get('vision') or {}).get('image', {})
+    date = img.get('date') or 'undated'
+    approx = ' (camera ~%dm from lot center)' % img['distance_m'] if img.get('approximate') else ''
+    return f'Street View {date}{approx}'
 
 def signal_provider_truck(d: dict) -> Signal:
     mx = 8
@@ -183,7 +186,19 @@ def signal_condition(d: dict) -> Signal:
         return Signal('visible_service_need', 'needs services', 3, mx, f'Some wear: {worn[0].replace("_condition", "")} rated {s[worn[0]]}', _src(d))
     return Signal('visible_service_need', 'needs services', 0, mx, 'Exterior, lawn and roof look well kept', _src(d))
 
-VISION_SIGNALS = [signal_provider_truck, signal_pro_landscaping, signal_condition]
+def signal_moving(d: dict) -> Signal:
+    """A PODS container or moving truck in dated imagery is direct, door-specific new-mover evidence
+    that can predate the deed record by months."""
+    mx = 10
+    v = _vis(d)
+    if not v:
+        return Signal('moving_indicators', 'recently moved', 0, mx, 'No usable street imagery', 'Street View')
+    det = v['signals'].get('moving_indicators') or {'present': False, 'confidence': 0}
+    if det['present'] and det['confidence'] >= CONF:
+        return Signal('moving_indicators', 'recently moved', mx, mx, f'Moving activity ({det.get("detail") or "container/truck"}): {det["evidence"]}', _src(d))
+    return Signal('moving_indicators', 'recently moved', 0, mx, 'No moving activity visible', _src(d))
+
+VISION_SIGNALS = [signal_provider_truck, signal_moving, signal_pro_landscaping, signal_condition]
 
 
 # ---- Neighborhood prior (Census ACS, tract level, aggregate only) ---------------------

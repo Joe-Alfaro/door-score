@@ -12,7 +12,7 @@ import anthropic
 from ..config import CACHE
 from ..costs import record, llm_cost
 
-PROMPT_VERSION = 'v1'
+PROMPT_VERSION = 'v2'
 DEFAULT_MODEL = 'claude-haiku-4-5'   # cheapest tier first; the eval harness decides if we upgrade
 OUT_DIR = CACHE / 'vision'
 OUT_DIR.mkdir(exist_ok=True)
@@ -29,9 +29,10 @@ class StreetViewSignals(BaseModel):
     image_usable: bool = Field(description='False if the image does not clearly show a residential property frontage')
     usability_note: str
     provider_truck: Detection = Field(description='Home-service provider vehicle (landscaping, pool, HVAC, plumbing, roofing, cleaning, pest, painting) parked at or in front of THIS property')
-    yard_sign: Detection = Field(description='Lawn sign for a contractor, landscaper, security company, realtor, or similar')
+    yard_sign: Detection = Field(description='Lawn sign for a contractor, landscaper, security company, or political/other; put the company or wording in detail')
+    moving_indicators: Detection = Field(description='Evidence a household is moving in or out: PODS or other storage container, moving truck, For Sale / Sold / Under Contract sign, piles of moving boxes')
     renovation_activity: Detection = Field(description='Dumpster, scaffolding, construction materials, open permit box')
-    professional_landscaping: Detection = Field(description='Crisp bed edging, fresh mulch, uniformly trimmed hedges, striped lawn')
+    professional_landscaping: Detection = Field(description='Grounds that clearly required a paid crew: at least two of crisp bed edging, fresh uniform mulch, sculpted/shaped hedges, striped mowing pattern, irrigation heads, stone hardscape beds. An ordinary tidy suburban lawn does NOT count')
     solar_panels: Detection
     lawn_condition: Condition
     exterior_condition: Condition = Field(description='Paint, siding, trim, gutters')
@@ -45,7 +46,9 @@ low confidence and an empty evidence string. Never guess at things that could be
 Do not identify people, read license plates, or infer anything about the residents' identity.
 Confidence calibration: 0.9+ only when unmistakable; 0.6-0.8 when likely; below 0.5 when unsure.
 A provider truck counts only if it is a commercial work vehicle (lettering, ladder rack, trailer, equipment)
-positioned at this property, not merely driving past."""
+positioned at this property, not merely driving past. Moving containers and moving trucks are
+moving_indicators, not provider trucks. Be conservative with professional_landscaping: most
+well-kept lawns in a suburb are homeowner-maintained; mark present only with clear crew-level evidence."""
 
 def _cache_path(image_path: str, model: str) -> Path:
     h = hashlib.sha1(open(image_path, 'rb').read()).hexdigest()[:10]

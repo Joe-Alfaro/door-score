@@ -32,6 +32,7 @@ without usable imagery is never penalized relative to one that has it.
 | Owner-occupied | 10 | A renter can't buy a roof; absentee doors score 0 here and get an explicit tag |
 | Maintenance demand (home age) | 10 | 40+ year homes have systems at end of life |
 | Provider truck on site | 8 | Direct evidence the household already pays for home services |
+| Moving indicators (PODS, moving truck, sold sign) | 10 | Door-specific new-mover evidence that can lead the deed record by months |
 | Lawn demand (lot size) | 8 | Recurring, entry-level service |
 | Household-size proxy | 8 | Larger homes correlate with families and dual earners |
 | Professional landscaping / yard sign | 6 | Behavioral "hires out" signal |
