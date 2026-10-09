@@ -78,15 +78,19 @@ def main():
         messages.append({'role': 'user', 'content': results})
     record('discovery_llm', usd, None, model=args.model)
     summary = ' '.join(b.text for b in resp.content if b.type == 'text')
-    # Dedupe by url
+    # Accumulate across runs, deduping by URL, so repeated discovery only adds.
+    path = OUT / 'sources.json'
+    prev = json.loads(path.read_text()) if path.exists() else {}
     seen, uniq = set(), []
-    for s in sources:
+    for s in sources + prev.get('sources', []):
         if s['url'] not in seen:
             seen.add(s['url']); uniq.append(s)
-    out = {'territory': args.territory, 'model': args.model, 'usd': round(usd, 4), 'summary': summary,
-           'wired_in_pipeline': ['NJ Parcels Composite (parcel_tax)', 'Google Street View Static API (imagery)', 'Census ACS 5-year via tract (census_demographics)'],
+    out = {'territory': args.territory, 'model': args.model, 'usd': round(usd + prev.get('usd', 0), 4),
+           'runs': prev.get('runs', 0) + 1, 'summary': summary,
+           'wired_in_pipeline': ['NJ Parcels Composite (parcel_tax, ArcGIS feature service)', 'NJ DCA Construction Permit Data (permits, Socrata API)',
+                                 'Census ACS 5-year via tract (census_demographics)', 'Google Street View Static API (imagery)'],
            'sources': uniq}
-    (OUT / 'sources.json').write_text(json.dumps(out, indent=1))
+    path.write_text(json.dumps(out, indent=1))
     print(f'\n{len(uniq)} sources -> {OUT/"sources.json"}  (${usd:.3f})\n{summary}')
 
 if __name__ == '__main__':
