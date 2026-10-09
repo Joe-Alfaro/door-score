@@ -23,6 +23,7 @@ discover:                     ## source-discovery agent → data/out/sources.jso
 eval:                         ## eval harness on human-verified labels (needs data/eval/labels.jsonl)
 	$(PY) -m doorscore.eval.run_eval
 	$(PY) -m doorscore.eval.run_eval --model claude-sonnet-5-5
+	$(PY) -m doorscore.eval.report
 
 sync:                         ## copy pipeline output into web/ and mcp/ deploy dirs
 	cd web && npm run sync-data --silent
