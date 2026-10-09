@@ -56,10 +56,11 @@ export function EvidenceCard({ door, total, onClose }: EvidenceCardProps) {
           <div className="muted">{props.municipality}</div>
         </div>
         <div className="score-block">
-          <span className="score-dot" style={{ background: scoreColor(props.door_score) }} aria-hidden="true" />
+          <span className="score-dot" style={{ background: scoreColor(props.door_score_pct ?? props.door_score) }} aria-hidden="true" />
           <span className="score-number">{props.door_score}</span>
           <span className="score-rank muted">
             #{props.rank} of {formatNumber(total)}
+            {typeof props.door_score_pct === 'number' ? ` · ${props.door_score_pct}th percentile` : ''}
           </span>
         </div>
       </div>

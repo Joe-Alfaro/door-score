@@ -90,6 +90,7 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
           properties: {
             door_id: door.properties.door_id,
             door_score: door.properties.door_score,
+            door_score_pct: door.properties.door_score_pct ?? door.properties.door_score,
             vis: visibility.get(door.properties.door_id) ?? 'active',
           },
         })),
@@ -174,6 +175,7 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
             <div className="popup-address">{hover.door.properties.address}</div>
             <div className="muted">
               Score {hover.door.properties.door_score} · #{hover.door.properties.rank}
+              {typeof hover.door.properties.door_score_pct === 'number' ? ` · ${hover.door.properties.door_score_pct}th pct` : ''}
             </div>
           </Popup>
         ) : null}

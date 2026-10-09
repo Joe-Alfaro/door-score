@@ -86,6 +86,7 @@ export interface DoorProperties {
   address: string
   municipality: string
   door_score: number
+  door_score_pct?: number | null
   rank: number
   tags: string[]
   signals: Signal[]

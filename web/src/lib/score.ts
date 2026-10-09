@@ -12,10 +12,13 @@ export const SCORE_STOPS: ReadonlyArray<readonly [number, string]> = [
   [100, '#0d366b'],
 ]
 
+// Colour by territory percentile: 93% of raw scores sit between 20 and 50, so a raw ramp reads
+// uniformly lukewarm. Percentile answers the rep's question (which doors first on this street);
+// the raw score with its evidence stays in the card. Falls back to raw score if pct is absent.
 export const SCORE_COLOR_EXPRESSION: ExpressionSpecification = [
   'interpolate',
   ['linear'],
-  ['get', 'door_score'],
+  ['coalesce', ['get', 'door_score_pct'], ['get', 'door_score']],
   ...SCORE_STOPS.flatMap(([score, color]) => [score, color]),
 ]
 
