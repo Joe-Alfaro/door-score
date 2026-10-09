@@ -186,14 +186,17 @@ def signal_yard_sign(d: dict) -> Signal:
         return Signal('yard_sign', 'hires out', 0, mx, 'No usable street imagery', 'Street View')
     sign = v['signals']['yard_sign']
     if sign['present'] and sign['confidence'] >= CONF:
-        text = f'{sign.get("detail") or ""} {sign["evidence"]}'.lower()
-        if any(k in text for k in SERVICE_SIGN_WORDS):
+        detail = (sign.get('detail') or '').lower()
+        # Match on the model's typed `detail` only; free-text evidence mentions lawns and windows incidentally.
+        if not any(k in detail for k in NON_SERVICE_SIGN_WORDS) and any(k in detail for k in SERVICE_SIGN_WORDS):
             return Signal('yard_sign', 'hires out', mx, mx, f'Service yard sign ({sign.get("detail") or "unspecified"}): {sign["evidence"]}', _src(d))
         return Signal('yard_sign', 'hires out', 0, mx, f'Yard sign present but not a service sign ({sign.get("detail") or "unspecified"})', _src(d))
     return Signal('yard_sign', 'hires out', 0, mx, 'No yard sign visible', _src(d))
 
 # A yard sign only evidences hiring out when it advertises a trade. Graduation, political and
 # celebration signs are common and carry no ICP information.
+NON_SERVICE_SIGN_WORDS = ('not a', 'not legible', 'illegible', 'too small', 'unclear', 'personal', 'congrat', 'graduat',
+                          'real estate', 'realtor', 'for sale', 'political', 'address', 'awareness', 'school', 'possible', 'likely', 'could be')
 SERVICE_SIGN_WORDS = ('landscap', 'lawn', 'tree', 'pest', 'roof', 'hvac', 'heating', 'cooling', 'plumb', 'paint',
                       'contractor', 'construction', 'remodel', 'builder', 'electric', 'security', 'alarm', 'pool',
                       'siding', 'window', 'gutter', 'mason', 'paving', 'fence', 'cleaning', 'exterminat', 'solar',
