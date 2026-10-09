@@ -6,7 +6,7 @@ a field rep can act on, plus a map UI and an MCP server so an AI assistant can p
 ```
 data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.{json,geojson}
                                   │                         │            │
-                 NJ parcels · Census ACS · Street View      ▼            ▼
+          NJ parcels · permits · Census ACS · Street View   ▼            ▼
                  Claude vision · eval harness            web/ (React map)   mcp/ (MCP server)
 ```
 
@@ -15,7 +15,7 @@ data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.
 | Path | What |
 |---|---|
 | `pipeline/doorscore/` | Python pipeline: harvest → normalize → vision → score. Entry: `python -m doorscore.run` |
-| `pipeline/doorscore/harvest/` | One module per source: `parcels.py` (NJ statewide parcel + MOD-IV tax, by polygon), `census.py` (ACS tract profile), `streetview.py` (imagery with free metadata pre-check) |
+| `pipeline/doorscore/harvest/` | One module per source: `parcels.py` (NJ statewide parcel + MOD-IV tax, by polygon), `census.py` (ACS tract profile), `permits.py` (NJ DCA construction permits by block/lot, found by the discovery agent), `streetview.py` (imagery with free metadata pre-check) |
 | `pipeline/doorscore/vision/` | Claude vision detector with structured output, confidence gates, per-image cache |
 | `pipeline/doorscore/eval/` | Eval harness: stratified sampler, model-assisted draft labels, human labeler page, P/R/hallucination/cost runner |
 | `pipeline/doorscore/discover.py` | Source-discovery agent (Claude + web search) → `data/out/sources.json` |

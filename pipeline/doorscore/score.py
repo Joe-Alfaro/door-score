@@ -90,6 +90,7 @@ def score_doors(doors: list[dict]) -> list[dict]:
     cuts = quantiles(values, n=4) if len(values) >= 4 else [0, 0, 0]
     any_vision = any(d.get('vision') for d in doors)
     any_census = any(d.get('census') for d in doors)
+    any_permits = any(d.get('permits') for d in doors)
     out = []
     for d in doors:
         sigs = [signal_new_mover(d), signal_capacity(d, cuts), signal_owner_occupied(d),
@@ -98,6 +99,8 @@ def score_doors(doors: list[dict]) -> list[dict]:
             sigs += [fn(d) for fn in VISION_SIGNALS]
         if any_census:
             sigs.append(signal_dual_income_area(d))
+        if any_permits:
+            sigs.append(signal_permits(d))
         # Doors without usable imagery are scored on the data signals only, so a missing
         # photo never penalizes a door relative to its neighbors.
         got = sum(s.points for s in sigs)
@@ -122,6 +125,7 @@ def tags_for(d: dict, sigs: list[Signal]) -> list[str]:
     names = {s.name: s for s in sigs}
     if names.get('provider_truck') and names['provider_truck'].points > 0: t.append('provider on site')
     if names.get('moving_indicators') and names['moving_indicators'].points > 0: t.append('moving activity')
+    if (d.get('permits') or {}).get('major_project_5yr'): t.append('recent major project')
     if names.get('visible_service_need') and names['visible_service_need'].points >= 6: t.append('visible wear')
     return t
 
@@ -199,6 +203,25 @@ def signal_moving(d: dict) -> Signal:
     return Signal('moving_indicators', 'recently moved', 0, mx, 'No moving activity visible', _src(d))
 
 VISION_SIGNALS = [signal_provider_truck, signal_moving, signal_pro_landscaping, signal_condition]
+
+
+# ---- Permit history (NJ DCA construction permits, joined on block/lot) ------------------
+def signal_permits(d: dict) -> Signal:
+    """Permitted work is contractor work. Recent or repeated permits show a household that
+    hires out and is actively investing in the home."""
+    mx = 8
+    p = d.get('permits')
+    if not p or not p['permits_10yr']:
+        return Signal('permit_history', 'hires out', 0, mx, 'No construction permits in the last 10 years', 'NJ DCA permits')
+    pts = 0
+    if p['months_since_latest'] is not None and p['months_since_latest'] <= 36: pts += 4
+    if p['permits_5yr'] >= 2: pts += 2
+    if p['major_project_5yr']: pts += 2
+    pts = min(pts, mx)
+    ev = f'{p["permits_5yr"]} permit(s) in 5 yrs, latest {p["latest_type"].lower() if p["latest_type"] else "work"} {p["latest_date"]}'
+    if p['cost_5yr']: ev += f', ${p["cost_5yr"]:,} declared'
+    if p['trades_5yr']: ev += f' ({", ".join(p["trades_5yr"])})'
+    return Signal('permit_history', 'hires out', pts, mx, ev, 'NJ DCA permits')
 
 
 # ---- Neighborhood prior (Census ACS, tract level, aggregate only) ---------------------

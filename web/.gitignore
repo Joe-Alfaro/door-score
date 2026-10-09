@@ -3,4 +3,3 @@ dist
 *.tsbuildinfo
 
 public/maplibre/
-public/data/

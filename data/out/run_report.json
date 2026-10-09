@@ -9,15 +9,17 @@
  "pct_building_desc_parsed": 96.7,
  "absentee_owners": 26,
  "new_movers_36mo": 17,
- "doors_with_imagery": 25,
- "doors_with_usable_imagery": 24,
+ "doors_with_permit_history": 273,
+ "doors_with_imagery": 569,
+ "doors_with_usable_imagery": 532,
  "cost": {
-  "total_usd": 0.2484,
+  "total_usd": 6.13,
   "by_stage": {
-   "streetview_image": 0.175,
-   "vision_llm": 0.0732
+   "streetview_image": 3.983,
+   "vision_llm": 1.8685,
+   "discovery_llm": 0.278
   },
-  "doors_with_spend": 25,
-  "usd_per_door": 0.0099
+  "doors_with_spend": 569,
+  "usd_per_door": 0.0108
  }
 }

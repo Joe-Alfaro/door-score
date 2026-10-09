@@ -1,0 +1,273 @@
+{
+ "territory": "Ramsey Borough and Allendale Borough, Bergen County, New Jersey",
+ "model": "claude-sonnet-5-5",
+ "usd": 0.278,
+ "summary": "I registered 11 sources, which is below the 12\u201315 I hoped for. My search quota ran out partway through, so a few follow-ups remain unchecked.\n\n**Core sources (open, programmatic access)**\n1. **NJOGIS Parcels and MOD-IV, Bergen County download.** This is the base file. Filter to Ramsey and Allendale and to property class 2 to build the ~570-home list. It carries year built, land and improvement values, acreage, and sale fields.\n2. **NJ Parcels and MOD-IV Composite, hosted ArcGIS feature service.** This is the same data through an API, so you can refresh it with a municipality filter.\n3. **NJ DCA Construction Permit Data (data.nj.gov).** This is the statewide permit feed on the Socrata API. It is the best open source for recent roofing, HVAC, solar and renovation activity.\n4. **ACS 5-Year via the Census API,** plus **5. NJOGIS Census Block Groups 2020.** Together they give neighborhood priors for dual-income households, owner-occupancy, move-in year and income. They are aggregates only.\n6. **FEMA NFHL for NJ.** Flood zone by parcel centroid, for waterproofing and drainage leads.\n7. **NJDEP Land Use/Land Cover 2020.** Coarse context such as wooded or wetland adjacency.\n8. **NJ Clean Energy / Rutgers renewable energy reports.** I expect municipal- or ZIP-level adoption context only. I didn't confirm whether any address-level data exists.\n\n**Sources that need a records request, not scraping**\n9. **Ramsey Borough permits.** The site has a GovPilot forms portal but no data feed. Use an OPRA request for a permit log.\n10. **Allendale Borough permits.** Same situation, using an OPRA request. Zoning permits for fences, driveways and dumpsters are useful project signals.\n11. **Ramsey Ch. 34 and Allendale Ch. 270 zoning ordinances (eCode360).** These are reference text only. Read them by hand and ask each borough for its zoning map. I registered this one without an `icp_use` value, which the tool accepted.\n\n**Caveats**\n- **Owner names (Daniel's Law).** The county tax boards association (NJACTB) says it stopped serving the tax list and sales data (MOD-IV and SR1A) after Daniel's Law took effect. Before ingesting the NJOGIS files, check which owner-name and mailing-address fields are populated. Drop any owner-name column. Don't use mailing address to identify individuals. At most, use a mailing-versus-property address match as an owner-occupied flag.\n- **Unverified details.** The MOD-IV field lists come from dataset descriptions plus my general knowledge, not a live schema check. I also didn't confirm whether the DCA permit data has parcel-level identifiers or how current Bergen's parcel vintage is.\n- **Sales data.** Because of the NJACTB change, sale price and date may be thin or absent. If so, \"recently moved\" will depend on the sale fields in the NJOGIS files, the Census move-in-year priors, and permit timing.\n- **Not registered.** I left out Zillow, Redfin and Realtor.com, and the third-party vendor Equator Studios (Bergen parcel and LiDAR downloads, not checked for terms or redundancy). I also left out the NJACTB record search because it is no longer available.\n- **Still to check:** NJOGIS aerial imagery and building footprints (roof age and condition proxies), Bergen County GIS or open data, municipal zoning map files, and any code-enforcement data. I couldn't search these before the quota ran out.",
+ "wired_in_pipeline": [
+  "NJ Parcels Composite (parcel_tax)",
+  "Google Street View Static API (imagery)",
+  "Census ACS 5-year via tract (census_demographics)"
+ ],
+ "sources": [
+  {
+   "name": "Parcels and MOD-IV of Bergen County, NJ (shapefile/FGDB download)",
+   "publisher": "NJ Office of GIS (NJOGIS / NJGIN) with NJ Division of Taxation MOD-IV",
+   "url": "https://njogis-newjersey.opendata.arcgis.com/datasets/920feb01c4544e5397b05e15f844d640",
+   "data_type": "parcel_tax",
+   "access": "bulk_download",
+   "fields": [
+    "PAMS_PIN",
+    "GIS_PIN",
+    "block",
+    "lot",
+    "property location/street address",
+    "property class (2 = residential)",
+    "year constructed",
+    "land value",
+    "improvement value",
+    "net taxable value",
+    "building description",
+    "calculated acreage",
+    "last sale date/price/deed fields (verify present after Daniel's Law changes)",
+    "owner mailing address (verify)"
+   ],
+   "join_key": "block/lot (PAMS_PIN <-> GIS_PIN); parcel polygons give lat/lng",
+   "tos_ok": true,
+   "tos_note": "Public NJOGIS open data download. Spine dataset: filter to Ramsey and Allendale and property class 2 to get the ~570 SFH universe. Field list is from the dataset descriptions plus my general knowledge of MOD-IV, not a schema check, so confirm the live schema. NJACTB has stopped serving MOD-IV and SR1A since Daniel's Law. Check whether owner-name fields are now blank or redacted, and do not use any that are populated.",
+   "pii_risk": "contains_owner_identity",
+   "icp_use": "owner-occupied (mailing vs. situs address match), recently moved (sale date), home age/value/size for needs-services and hires-out proxies",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "Parcels and MOD-IV Composite of NJ (hosted ArcGIS feature service, Web Mercator)",
+   "publisher": "NJ Office of GIS (NJOGIS)",
+   "url": "https://njogis-newjersey.opendata.arcgis.com/datasets/newjersey::parcels-and-mod-iv-composite-of-nj-web-mercator-3857/about",
+   "data_type": "parcel_tax",
+   "access": "arcgis_feature_service",
+   "fields": [
+    "parcel geometry",
+    "PAMS_PIN",
+    "municipality/county codes",
+    "block/lot",
+    "joined MOD-IV attributes (class, year built, assessed values, building description, acreage, sale fields)"
+   ],
+   "join_key": "block/lot / PAMS_PIN; geometry gives lat/lng",
+   "tos_ok": true,
+   "tos_note": "Public ArcGIS REST service on NJ's open data hub. Use it for incremental pulls with a where-clause on municipality, instead of downloading the full county file. The statewide composite is updated county by county, so check the update log for Bergen's vintage. Same owner-field caveat as the county download.",
+   "pii_risk": "contains_owner_identity",
+   "icp_use": "same as county download; API-friendly route for refreshing parcel and tax attributes (owner-occupied, recently moved)",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "NJ Construction Permit Data",
+   "publisher": "NJ Department of Community Affairs via NJOIT Open Data Center (data.nj.gov)",
+   "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra",
+   "data_type": "permits",
+   "access": "rest_api",
+   "fields": [
+    "municipality",
+    "permit issue date",
+    "permit type/work type",
+    "estimated cost",
+    "use group/building type",
+    "block/lot or address (verify which are exposed)",
+    "demolition/new construction/alteration indicators"
+   ],
+   "join_key": "municipality + block/lot or address (verify; may be municipality-level only)",
+   "tos_ok": true,
+   "tos_note": "State open data portal (Socrata, SODA API). Municipalities must report permits to DCA monthly under N.J.A.C. 5:23-4.5(d). Coverage and field detail are limited, and records may be purged after about 18 months. I did not confirm parcel-level identifiers, so test a Ramsey/Allendale filter before relying on it.",
+   "pii_risk": "none",
+   "icp_use": "needs services (recent roof/HVAC/addition/solar permits show past or future spend; no permit on an old home suggests deferred maintenance); recently moved (renovation after purchase)",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "American Community Survey 5-Year (block group / tract) via Census API",
+   "publisher": "U.S. Census Bureau",
+   "url": "https://www.census.gov/data/developers/data-sets/acs-5year.html",
+   "data_type": "census_demographics",
+   "access": "rest_api",
+   "fields": [
+    "median household income",
+    "owner-occupied share",
+    "median home value",
+    "households with two or more workers",
+    "commute/labor-force participation",
+    "median year structure built",
+    "year householder moved in (tenure)",
+    "age distribution",
+    "housing cost burden"
+   ],
+   "join_key": "block group / tract (via lat/lng or GEOID spatial join)",
+   "tos_ok": true,
+   "tos_note": "Free public API (api.census.gov), with an API key recommended. It is aggregate data only, so use it as a neighborhood prior and never as a per-household attribute. Block-group margins of error are large; Ramsey and Allendale have only a few dozen block groups between them.",
+   "pii_risk": "aggregate_only",
+   "icp_use": "dual-income (multi-worker household share), hires out (income/age/education priors), recently moved (move-in year distribution), owner-occupied",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "Census Block Groups 2020 (Hosted, NJ State Plane)",
+   "publisher": "NJ Office of GIS (from U.S. Census TIGER/Line)",
+   "url": "https://njogis-newjersey.opendata.arcgis.com/datasets/newjersey::census-block-groups-2020-hosted-3424/about",
+   "data_type": "census_demographics",
+   "access": "arcgis_feature_service",
+   "fields": [
+    "block group polygon",
+    "GEOID",
+    "state/county/tract/block group codes",
+    "land/water area"
+   ],
+   "join_key": "lat/lng point-in-polygon, then GEOID to ACS",
+   "tos_ok": true,
+   "tos_note": "Public-domain Census geography republished on NJ's open data hub. Used only to attach parcels to ACS block groups.",
+   "pii_risk": "none",
+   "icp_use": "geographic bridge from parcel centroid to ACS demographics (dual-income, owner-occupied, recently moved priors)",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "National Flood Hazard Layer (NFHL) of New Jersey",
+   "publisher": "FEMA / NJDEP (ArcGIS hosted)",
+   "url": "https://www.arcgis.com/home/item.html?id=300f228c6d7e4d8fb204e5a35bfd3ef2",
+   "data_type": "flood_environment",
+   "access": "arcgis_feature_service",
+   "fields": [
+    "flood hazard zone (e.g. AE, X)",
+    "special flood hazard area flag",
+    "base flood elevation",
+    "FIRM panel / effective date"
+   ],
+   "join_key": "lat/lng (parcel centroid point-in-polygon)",
+   "tos_ok": true,
+   "tos_note": "Federal flood map data, publicly available through FEMA and the state ArcGIS hub. Both boroughs have stream corridors (the Ramapo River and Saddle River areas), so a minority of parcels should fall in flood zones.",
+   "pii_risk": "none",
+   "icp_use": "needs services (basement waterproofing, sump pumps, drainage, gutters, mold remediation)",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "Land Use/Land Cover of New Jersey 2020",
+   "publisher": "NJDEP (via NJOGIS open data)",
+   "url": "https://njogis-newjersey.opendata.arcgis.com/datasets/njdep::land-use-land-cover-of-new-jersey-2020-1/about",
+   "data_type": "zoning_landuse",
+   "access": "arcgis_feature_service",
+   "fields": [
+    "land use/land cover class and code",
+    "polygon geometry",
+    "wetlands/forest/impervious categories"
+   ],
+   "join_key": "lat/lng (parcel centroid or buffer overlay)",
+   "tos_ok": true,
+   "tos_note": "Public NJDEP dataset derived from 2020 color-infrared imagery. It is coarse (polygon-level), so use it for context such as wooded or wetland adjacency and not as a substitute for parcel records.",
+   "pii_risk": "none",
+   "icp_use": "needs services (tree/wooded-lot exposure for tree care and gutter cleaning; wetlands/drainage risk; lot-context features)",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "NJ Clean Energy Program / Rutgers NJ Energy Data - Renewable Energy (solar) program reports",
+   "publisher": "NJ Board of Public Utilities / Rutgers Center for Energy, Economic & Environmental Policy",
+   "url": "https://njenergydata.rutgers.edu/renewable-energy-data/",
+   "data_type": "utilities_solar",
+   "access": "bulk_download",
+   "fields": [
+    "solar installation counts/capacity by municipality or ZIP",
+    "incentive program status reports (REIP, CORE, SREC registration)",
+    "installation dates (at report level)"
+   ],
+   "join_key": "municipality / ZIP (likely not parcel-level)",
+   "tos_ok": true,
+   "tos_note": "Public program reports. I did not verify that they include address-level records, and they probably don't. Treat them as municipal-level adoption context unless a parcel-level file turns up. For rooftop solar on a specific home, rely on the DCA permit data instead.",
+   "pii_risk": "aggregate_only",
+   "icp_use": "needs services (neighborhood solar adoption as a proxy for energy-upgrade interest)",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "Ramsey Borough Construction Department - permit records (OPRA request) and online forms",
+   "publisher": "Borough of Ramsey, NJ",
+   "url": "https://www.ramseynj.com/205/Construction-Permits",
+   "data_type": "permits",
+   "access": "web_portal_only",
+   "fields": [
+    "permit type",
+    "permit issue date",
+    "address/block-lot",
+    "work description",
+    "estimated cost",
+    "contractor (business, not homeowner)"
+   ],
+   "join_key": "address or block/lot",
+   "tos_ok": false,
+   "tos_note": "Permits are issued through the Construction Department, and forms run through a GovPilot eForms portal. I found no open permit data feed. The compliant route is a formal OPRA request for a permit log covering residential permits in a date range, not scraping the portal. Ask for the log without applicant or owner names, and ask for property address, permit type, and issue date.",
+   "pii_risk": "unknown",
+   "icp_use": "needs services and recently moved (hyper-local permit history that the state feed may lack); hires out (prior contractor-performed work)",
+   "probe": {
+    "reachable": false,
+    "status": 404
+   }
+  },
+  {
+   "name": "Allendale Borough Construction & Zoning permits - permit records (OPRA request)",
+   "publisher": "Borough of Allendale, NJ",
+   "url": "https://www.allendalenj.gov/building-development/construction-and-zoning/construction-and-zoning-permits-forms/",
+   "data_type": "permits",
+   "access": "web_portal_only",
+   "fields": [
+    "construction permit",
+    "zoning permit (fence, driveway, dumpster, etc.)",
+    "issue date",
+    "address/block-lot",
+    "work description",
+    "estimated cost"
+   ],
+   "join_key": "address or block/lot",
+   "tos_ok": false,
+   "tos_note": "The site publishes permit forms, not permit data. Get records through an OPRA request to the Construction Department. Request address, permit type, and date only, with no owner or applicant names. Zoning permits (fence, driveway, dumpster) are a good activity signal that the state DCA feed will not capture.",
+   "pii_risk": "unknown",
+   "icp_use": "needs services (fence, driveway, dumpster, and renovation permits show active projects); recently moved",
+   "probe": {
+    "reachable": true,
+    "status": 200
+   }
+  },
+  {
+   "name": "Municipal zoning ordinances - Ramsey Ch. 34 and Allendale Ch. 270 (eCode360)",
+   "publisher": "Borough of Ramsey / Borough of Allendale via General Code eCode360",
+   "url": "https://ecode360.com/34123295",
+   "data_type": "zoning_landuse",
+   "access": "web_portal_only",
+   "fields": [
+    "zoning district regulations (lot size, setbacks, coverage)",
+    "permit requirements for fences, driveways, additions"
+   ],
+   "join_key": "none (district from municipal zoning map; no parcel-level data feed found)",
+   "tos_ok": false,
+   "tos_note": "Reference text only. I found no machine-readable zoning layer, so do not bulk-scrape eCode360. Read it manually to understand which residential zones apply, and ask each borough for its zoning map shapefile or PDF. The zone could then be assigned to parcels by overlay. No owner data is involved.",
+   "pii_risk": "none",
+   "probe": {
+    "reachable": false,
+    "status": 403
+   }
+  }
+ ]
+}

@@ -44,13 +44,19 @@ def main():
     doors = [d for d in doors if poly.contains(Point(d['lng'], d['lat']))]
     print(f'[normalize] {len(doors)} single-family doors')
     from .harvest.census import enrich as census_enrich
+    from .harvest.permits import enrich as permits_enrich
     doors = census_enrich(doors)
+    try:
+        doors = permits_enrich(doors)
+    except Exception as e:
+        print(f'[permits] skipped: {e}')
     if args.vision:
         from .vision.stage import run_vision
         from .vision.detect import DEFAULT_MODEL
         doors = run_vision(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit)
     scored = score_doors(doors)
     report = coverage_report(parcels, scored)
+    report['doors_with_permit_history'] = sum(1 for d in scored if (d.get('permits') or {}).get('permits_10yr'))
     report['doors_with_imagery'] = sum(1 for d in scored if d.get('vision'))
     report['doors_with_usable_imagery'] = sum(1 for d in scored if (d.get('vision') or {}).get('signals', {}).get('image_usable'))
     report['cost'] = cost_summary()
