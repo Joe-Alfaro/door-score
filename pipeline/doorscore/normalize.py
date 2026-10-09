@@ -35,9 +35,11 @@ def normalize_address(raw: str | None) -> str:
     return ' '.join(out)
 
 def normalize_city(raw: str | None) -> str:
+    """'RAMSEY, N. J.' / 'RAMSEY,NJ' / 'ALLENDALE N J' -> 'RAMSEY' / 'ALLENDALE'. Some records omit the comma."""
     if not raw:
         return ''
     city = re.split(r'[,]', raw.upper())[0].strip()
+    city = re.sub(r'\s+N\.?\s*J\.?$', '', city).strip()
     return re.sub(r'\s+', ' ', city)
 
 def same_town(a: str, b: str) -> bool:
