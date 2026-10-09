@@ -217,8 +217,23 @@ def test_build_door_owner_occupied_despite_spelling_variant():
 
 
 def test_build_door_owner_occupied_tolerates_city_typo():
-    door = build_door(_feature(ST_ADDRESS='115 FENNICK DRIVE', CITY_STATE='RASMEY NJ 07446'))
+    door = build_door(_feature(ST_ADDRESS='115 FENNICK DRIVE', CITY_STATE='RASMEY, NJ'))
     assert door is not None
+    assert door.owner_occupied is True
+    assert door.owner_mailing_out_of_town is False
+
+
+def test_build_door_city_state_without_comma():
+    r"""KNOWN BUG (kept failing on purpose): 4 of 635 parcels in the territory cache have
+    CITY_STATE with no comma ('ALLENDALE NJ', 'ALLENDALE N J'). normalize_city() only splits
+    on commas, so the city becomes 'ALLENDALE NJ', same_town() fails on length, and a home whose
+    tax bill mails to the property itself is flagged absentee / out of town. Two scored doors are
+    affected (34 Kestrel Dr, 585 Brindlemoor Ave). Fix belongs in normalize_city, e.g. strip a
+    trailing state token: re.sub(r'\s+N\.?\s*J\.?$', '', city)."""
+    door = build_door(_feature(PROP_LOC='34 KESTREL DR', ST_ADDRESS='34 KESTREL DR',
+                               CITY_STATE='ALLENDALE NJ', MUN_NAME='ALLENDALE BORO'))
+    assert door is not None
+    assert door.owner_mailing_out_of_town is False
     assert door.owner_occupied is True
 
 

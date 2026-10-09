@@ -32,6 +32,7 @@ def main():
     ap.add_argument('--force', action='store_true', help='ignore caches')
     ap.add_argument('--vision', action='store_true', help='fetch Street View imagery and run the vision model')
     ap.add_argument('--vision-model', default=None, help='override vision model id')
+    ap.add_argument('--no-satellite', action='store_true', help='skip the overhead imagery stage (runs with --vision by default)')
     ap.add_argument('--limit', type=int, default=None, help='only run imagery/vision for the first N doors (by harvest order)')
     args = ap.parse_args()
     t0 = time.time()
@@ -54,11 +55,15 @@ def main():
         from .vision.stage import run_vision
         from .vision.detect import DEFAULT_MODEL
         doors = run_vision(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit)
+        if not args.no_satellite:
+            from .vision.satellite_stage import run_satellite
+            doors = run_satellite(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit)
     scored = score_doors(doors)
     report = coverage_report(parcels, scored)
     report['doors_with_permit_history'] = sum(1 for d in scored if (d.get('permits') or {}).get('permits_10yr'))
     report['doors_with_imagery'] = sum(1 for d in scored if d.get('vision'))
     report['doors_with_usable_imagery'] = sum(1 for d in scored if (d.get('vision') or {}).get('signals', {}).get('image_usable'))
+    report['doors_with_usable_satellite'] = sum(1 for d in scored if (d.get('satellite') or {}).get('signals', {}).get('image_usable'))
     report['cost'] = cost_summary()
     (OUT / 'doors.json').write_text(json.dumps(scored, indent=1))
     geo = {'type': 'FeatureCollection', 'features': [

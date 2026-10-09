@@ -17,6 +17,7 @@ Four traits, each with a public-data detector:
 | Means to hire out | Assessed value quartile *within the territory*, so it is relative to neighbors, not to the state | NJ MOD-IV |
 | Hires out (behavior) | Provider truck on site, contractor yard sign | Street View + Claude vision |
 | Hires out (record) | Construction permits in the last 3–5 years, trades involved, declared cost | NJ DCA permit data, joined on block/lot |
+| Hires out (property) | In-ground pool (recurring pool service), solar (invests in the home), play equipment (family household) | Satellite tile + Claude vision |
 | Busy dual-income household | Tract share of two-parent families where both parents work; 2-story + 2-car-garage as a household-size proxy | Census ACS (aggregate); MOD-IV building code |
 | Needs services soon | Home age bands, lot size (lawn demand), visible wear or active renovation | MOD-IV; Street View |
 | Homeowner relationship | Owner-occupied vs absentee, derived from whether the tax bill mails to the property | MOD-IV (mailing address discarded after use) |
@@ -43,6 +44,10 @@ shows the raw score with its signal list.
 | Yard sign | 3 | Behavioral "hires out" signal; small because eval precision was 0.50 |
 | Visible service need / renovation | 6 | Near-term demand |
 | Dual-income area (tract) | 6 | Aggregate prior; modest weight because it is not door-specific |
+| Swimming pool (overhead) | 6 | Pool service is recurring, almost always hired out |
+| Play equipment (overhead) | 4 | Trampoline / playset: family household proxy, no identity inferred |
+| Solar panels (overhead) | 3 | Investment in the home; mixed signal, kept small |
+| Roof condition (overhead) | 4 | Only a clearly poor roof scores; the overhead roof grade has no eval yet |
 | Block activity (neighborhood effect) | 6 | Movers, permits, renovations and provider trucks within 150 m; crews and word-of-mouth already exist on active streets |
 
 Vision signals only count when the model's confidence ≥ 0.5 (set by a threshold sweep in the eval); the eval harness reports precision,

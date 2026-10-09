@@ -35,7 +35,8 @@ def summary(production_model: str = PRODUCTION_MODEL) -> dict:
         by[r['stage']] = round(by.get(r['stage'], 0) + r['usd'], 4)
         if r.get('model'):
             by_model[r['model']] = round(by_model.get(r['model'], 0) + r['usd'], 4)
-    prod = [r for r in rows if r['stage'] == 'streetview_image' or (r['stage'] == 'vision_llm' and r.get('model') == production_model)]
+    prod = [r for r in rows if r['stage'] in ('streetview_image', 'satellite_image')
+            or (r['stage'] in ('vision_llm', 'satellite_vision_llm') and r.get('model') == production_model)]
     prod_doors = {r['door_id'] for r in prod if r.get('door_id')}
     prod_usd = round(sum(r['usd'] for r in prod), 4)
     total = round(sum(r['usd'] for r in rows), 4)

@@ -22,8 +22,9 @@ data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.
 | Path | What |
 |---|---|
 | `pipeline/doorscore/` | Python pipeline: harvest → normalize → vision → score. Entry: `python -m doorscore.run` |
-| `pipeline/doorscore/harvest/` | One module per source: `parcels.py` (NJ statewide parcel + MOD-IV tax, by polygon), `census.py` (ACS tract profile), `permits.py` (NJ DCA construction permits by block/lot, found by the discovery agent), `streetview.py` (imagery with free metadata pre-check) |
-| `pipeline/doorscore/vision/` | Claude vision detector with structured output, confidence gates, per-image cache |
+| `pipeline/doorscore/harvest/` | One module per source: `parcels.py` (NJ statewide parcel + MOD-IV tax, by polygon), `census.py` (ACS tract profile), `permits.py` (NJ DCA construction permits by block/lot, found by the discovery agent), `streetview.py` (imagery with free metadata pre-check), `satellite.py` (overhead tile per lot) |
+| `pipeline/doorscore/vision/` | Claude vision detectors (street-level and overhead) with structured output, confidence gates, per-image cache |
+| `pipeline/doorscore/neighborhood.py` | Neighborhood effects: movers, permits, renovations, trucks within 150 m → block-activity signal |
 | `pipeline/doorscore/eval/` | Eval harness: stratified sampler, model-assisted draft labels, human labeler page, P/R/hallucination/cost runner |
 | `pipeline/doorscore/discover.py` | Source-discovery agent (Claude + web search) → `data/out/sources.json` |
 | `pipeline/doorscore/score.py` | The Door Score. Every signal names the ICP trait it supports |
@@ -62,7 +63,7 @@ cd pipeline && source .venv/bin/activate
 
 python -m doorscore.run                       # parcels + census + score (seconds, free)
 python -m doorscore.run --vision --limit 25   # add Street View + vision for 25 doors (proof of cost)
-python -m doorscore.run --vision              # full territory
+python -m doorscore.run --vision              # full territory (street-level + overhead imagery; --no-satellite to skip)
 python -m doorscore.discover                  # source discovery agent → data/out/sources.json
 
 # Eval harness

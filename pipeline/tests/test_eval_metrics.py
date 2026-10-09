@@ -2,7 +2,7 @@
 import pytest
 
 from doorscore.eval.run_eval import prf
-from doorscore.score import _pct_rank
+from doorscore.score import Signal, _pct_rank, tags_for
 
 
 # ---- prf ----------------------------------------------------------------------------------
@@ -72,3 +72,41 @@ def test_pct_rank_degenerate_cutpoints():
 
 def test_pct_rank_empty_cutpoints():
     assert _pct_rank(500, []) == 0
+
+
+# ---- tags_for -----------------------------------------------------------------------------
+def _door(**overrides):
+    base = {'months_since_deed': None, 'arms_length_sale': None, 'owner_occupied': True, 'home_age': 20}
+    base.update(overrides)
+    return base
+
+
+def _sig(name, points, mx=10):
+    return Signal(name, 'trait', points, mx, 'evidence', 'source')
+
+
+def test_tags_for_new_mover_requires_recent_arms_length_deed():
+    assert 'new mover' in tags_for(_door(months_since_deed=24, arms_length_sale=True), [])
+    assert 'new mover' not in tags_for(_door(months_since_deed=24, arms_length_sale=False), [])
+    assert 'new mover' not in tags_for(_door(months_since_deed=40, arms_length_sale=True), [])
+    assert 'new mover' not in tags_for(_door(months_since_deed=None, arms_length_sale=True), [])
+
+
+def test_tags_for_absentee_only_when_explicitly_false():
+    assert 'absentee owner' in tags_for(_door(owner_occupied=False), [])
+    assert 'absentee owner' not in tags_for(_door(owner_occupied=None), [])
+
+
+def test_tags_for_tenure_and_age():
+    assert 'long tenure' in tags_for(_door(months_since_deed=240), [])
+    assert 'long tenure' not in tags_for(_door(months_since_deed=239), [])
+    assert 'older home' in tags_for(_door(home_age=60), [])
+    assert 'older home' not in tags_for(_door(home_age=59), [])
+
+
+def test_tags_for_signal_driven_tags():
+    sigs = [_sig('provider_truck', 8), _sig('moving_indicators', 10), _sig('visible_service_need', 6)]
+    tags = tags_for(_door(permits={'major_project_5yr': True}), sigs)
+    assert {'provider on site', 'moving activity', 'recent major project', 'visible wear'} <= set(tags)
+    quiet = [_sig('provider_truck', 0), _sig('moving_indicators', 0), _sig('visible_service_need', 3)]
+    assert tags_for(_door(permits={'major_project_5yr': False}), quiet) == []

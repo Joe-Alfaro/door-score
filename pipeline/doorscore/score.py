@@ -91,7 +91,9 @@ def score_doors(doors: list[dict]) -> list[dict]:
     compute_neighborhood(doors)
     values = [d['net_value'] for d in doors if d['net_value']]
     cuts = quantiles(values, n=4) if len(values) >= 4 else [0, 0, 0]
+    from .score_satellite import SATELLITE_SIGNALS, SOURCE as SATELLITE_SOURCE, NO_IMAGE as SATELLITE_NO_IMAGE
     any_vision = any(d.get('vision') for d in doors)
+    any_satellite = any(d.get('satellite') for d in doors)
     any_census = any(d.get('census') for d in doors)
     any_permits = any(d.get('permits') for d in doors)
     out = []
@@ -100,6 +102,8 @@ def score_doors(doors: list[dict]) -> list[dict]:
                 signal_maintenance(d), signal_lawn(d), signal_household(d)]
         if any_vision:
             sigs += [fn(d) for fn in VISION_SIGNALS]
+        if any_satellite:
+            sigs += [fn(d) for fn in SATELLITE_SIGNALS]
         if any_census:
             sigs.append(signal_dual_income_area(d))
         if any_permits:
@@ -108,7 +112,9 @@ def score_doors(doors: list[dict]) -> list[dict]:
         # Doors without usable imagery are scored on the data signals only, so a missing
         # photo never penalizes a door relative to its neighbors.
         got = sum(s.points for s in sigs)
-        mx = sum(s.max_points for s in sigs if not (s.source == 'Street View' and s.evidence == 'No usable street imagery'))
+        mx = sum(s.max_points for s in sigs if not (
+            (s.source == 'Street View' and s.evidence == 'No usable street imagery') or
+            (s.source == SATELLITE_SOURCE and s.evidence == SATELLITE_NO_IMAGE)))
         score = round(100 * got / mx) if mx else 0
         d = dict(d)
         d['door_score'] = score
@@ -136,6 +142,8 @@ def tags_for(d: dict, sigs: list[Signal]) -> list[str]:
     if names.get('moving_indicators') and names['moving_indicators'].points > 0: t.append('moving activity')
     if (d.get('permits') or {}).get('major_project_5yr'): t.append('recent major project')
     if ((d.get('neighborhood') or {}).get('activity_pct') or 0) >= 80: t.append('active block')
+    if names.get('swimming_pool') and names['swimming_pool'].points > 0: t.append('pool')
+    if names.get('solar_panels') and names['solar_panels'].points > 0: t.append('solar')
     if names.get('visible_service_need') and names['visible_service_need'].points >= 6: t.append('visible wear')
     return t
 
