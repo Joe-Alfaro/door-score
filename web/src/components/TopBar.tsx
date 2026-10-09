@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { KeyboardEvent } from 'react'
-import { TAG_FILTERS, TOP_N_OPTIONS } from '../types'
-import type { DoorFeature, TagFilter, TopN } from '../types'
+import { TOP_N_OPTIONS } from '../types'
+import type { DoorFeature, TagCount, TagFilter, TopN } from '../types'
 
 interface TopBarProps {
   doors: DoorFeature[]
+  /** Tags present in the loaded data, most common first. */
+  tags: TagCount[]
   topN: TopN
   onTopNChange: (value: TopN) => void
   activeTags: ReadonlySet<TagFilter>
@@ -19,7 +21,7 @@ function parseTopN(value: string): TopN {
   return match ?? 'all'
 }
 
-export function TopBar({ doors, topN, onTopNChange, activeTags, onToggleTag, onPickDoor }: TopBarProps) {
+export function TopBar({ doors, tags, topN, onTopNChange, activeTags, onToggleTag, onPickDoor }: TopBarProps) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -106,7 +108,7 @@ export function TopBar({ doors, topN, onTopNChange, activeTags, onToggleTag, onP
       </label>
 
       <div className="tag-toggles" role="group" aria-label="Tag filters">
-        {TAG_FILTERS.map((tag) => {
+        {tags.map(({ tag, count }) => {
           const active = activeTags.has(tag)
           return (
             <button
@@ -114,9 +116,11 @@ export function TopBar({ doors, topN, onTopNChange, activeTags, onToggleTag, onP
               type="button"
               className={active ? 'toggle toggle-active' : 'toggle'}
               aria-pressed={active}
+              title={`${count} doors`}
               onClick={() => onToggleTag(tag)}
             >
               {tag}
+              <span className="toggle-count">{count}</span>
             </button>
           )
         })}

@@ -33,6 +33,8 @@ export function StatsStrip({ stats, visibleCount }: StatsStripProps) {
       <StatTile label="Median score" value={formatNumber(stats.medianScore, 1)} />
       <StatTile label="New movers" value={formatNumber(stats.newMovers)} />
       <StatTile label="Absentee owners" value={formatNumber(stats.absenteeOwners)} />
+      <StatTile label="With imagery" value={formatNumber(stats.withImagery)} hint="usable Street View" />
+      <StatTile label="Provider on site" value={formatNumber(stats.providerOnSite)} />
     </section>
   )
 }

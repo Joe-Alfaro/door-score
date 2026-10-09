@@ -1,6 +1,7 @@
 import { formatBoolean, formatCurrency, formatDate, formatNumber, humanize, scoreColor } from '../lib'
-import type { DoorFeature } from '../types'
+import type { DoorFeature, Permits } from '../types'
 import { SignalRow } from './SignalRow'
+import { StreetViewPhoto } from './StreetViewPhoto'
 
 interface EvidenceCardProps {
   door: DoorFeature
@@ -11,15 +12,31 @@ interface EvidenceCardProps {
 interface FactProps {
   label: string
   value: string
+  /** Span both columns of the facts grid for long values. */
+  wide?: boolean
 }
 
-function Fact({ label, value }: FactProps) {
+function Fact({ label, value, wide = false }: FactProps) {
   return (
-    <div className="fact">
+    <div className={wide ? 'fact fact-wide' : 'fact'}>
       <dt className="fact-label muted">{label}</dt>
       <dd className="fact-value">{value}</dd>
     </div>
   )
+}
+
+function formatLatestPermit(permits: Permits | null | undefined): string {
+  if (!permits || (!permits.latest_type && !permits.latest_date)) return '—'
+  const head = [permits.latest_type, permits.latest_date ? formatDate(permits.latest_date) : null]
+    .filter((part): part is string => Boolean(part))
+    .join(' ')
+  const cost = permits.latest_cost && permits.latest_cost > 0 ? ` · ${formatCurrency(permits.latest_cost)}` : ''
+  return `${head}${cost}`
+}
+
+function formatTrades(permits: Permits | null | undefined): string {
+  const trades = permits?.trades_5yr ?? []
+  return trades.length > 0 ? trades.join(', ') : '—'
 }
 
 export function EvidenceCard({ door, total, onClose }: EvidenceCardProps) {
@@ -46,6 +63,10 @@ export function EvidenceCard({ door, total, onClose }: EvidenceCardProps) {
           </span>
         </div>
       </div>
+
+      {props.vision?.image ? (
+        <StreetViewPhoto key={props.door_id} doorId={props.door_id} address={props.address} vision={props.vision} />
+      ) : null}
 
       {props.tags.length > 0 ? (
         <div className="chips">
@@ -80,6 +101,9 @@ export function EvidenceCard({ door, total, onClose }: EvidenceCardProps) {
         <Fact label="Owner occupied" value={formatBoolean(props.owner_occupied)} />
         <Fact label="Stories" value={formatNumber(props.stories)} />
         <Fact label="Garage bays" value={formatNumber(props.garage_bays)} />
+        <Fact label="Permits (5 yr)" value={formatNumber(props.permits?.permits_5yr)} />
+        <Fact label="Latest permit" value={formatLatestPermit(props.permits)} />
+        <Fact label="Trades" value={formatTrades(props.permits)} wide />
       </dl>
     </aside>
   )

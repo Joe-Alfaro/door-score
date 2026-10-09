@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef, useState } from 'react'
 import type { MapRef } from 'react-map-gl/maplibre'
 import { EvidenceCard, MapView, StatsStrip, TopBar } from './components'
 import { useDoorData } from './hooks'
-import { computeStats } from './lib'
+import { computeStats, tagCounts } from './lib'
 import type { DoorFeature, DoorVisibility, TagFilter, TopN } from './types'
 
 export function App() {
@@ -14,13 +14,14 @@ export function App() {
 
   const doors = useMemo(() => data?.doors.features ?? [], [data])
   const stats = useMemo(() => computeStats(doors), [doors])
+  const tagOptions = useMemo(() => tagCounts(doors), [doors])
 
   // Tag filters hide non-matching doors (a door passes if it carries ANY active
   // tag); Top-N keeps everything visible but dims doors ranked below N.
   const visibility = useMemo(() => {
     const limit = topN === 'all' ? Number.POSITIVE_INFINITY : topN
     const entries = doors
-      .filter((door) => activeTags.size === 0 || door.properties.tags.some((tag) => activeTags.has(tag as TagFilter)))
+      .filter((door) => activeTags.size === 0 || door.properties.tags.some((tag) => activeTags.has(tag)))
       .map((door) => {
         const state: DoorVisibility = door.properties.rank <= limit ? 'active' : 'dim'
         return [door.properties.door_id, state] as const
@@ -73,6 +74,7 @@ export function App() {
     <div className="app">
       <TopBar
         doors={doors}
+        tags={tagOptions}
         topN={topN}
         onTopNChange={setTopN}
         activeTags={activeTags}
