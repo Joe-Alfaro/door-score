@@ -63,7 +63,8 @@ def signal_roof_overhead(d: dict) -> Signal:
     if cond == 'poor':
         return Signal('roof_overhead', 'needs services', mx, mx, 'Roof rated poor from above', SOURCE)
     if cond == 'fair':
-        return Signal('roof_overhead', 'needs services', 0  # 'fair' intentionally scores 0 until the overhead roof grade has an eval, mx, 'Roof rated fair from above', SOURCE)
+        # 'fair' intentionally scores 0 until the overhead roof grade has an eval (14/24 pilot tiles were 'fair')
+        return Signal('roof_overhead', 'needs services', 0, mx, 'Roof rated fair from above', SOURCE)
     if cond == 'not_visible':
         return Signal('roof_overhead', 'needs services', 0, mx, 'Roof not visible from above (canopy/shadow)', SOURCE)
     return Signal('roof_overhead', 'needs services', 0, mx, f'Roof rated {cond} from above', SOURCE)
