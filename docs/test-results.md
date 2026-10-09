@@ -11,10 +11,11 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 | Single-family homes (territory) | 569 (542 Ramsey, 27 Allendale) |
 | Homes with address / year built / assessed value | 100% / 100% / 100% |
 | Homes with deed date | 82.8% |
-| Owner-occupancy resolved | 100% (26 absentee) |
+| Owner-occupancy resolved | 100% (24 absentee) |
 | Building code parsed | 96.7% |
 | Homes joined to permit records (block/lot) | 274 (48%) |
 | Homes with Street View imagery | 569 (100%); 526 usable (92.4%) |
+| Homes with overhead (satellite) tile | 569 (100%); 543 usable (95.4%) |
 
 ## Vision eval
 
@@ -61,7 +62,7 @@ Confidence-gate sweep for the production model (precision / recall):
 | ≥0.8 | — / 0.00 | 1.00 / 1.00 | 0.33 / 0.17 | 1.00 / 0.60 | — / 0.00 |
 | ≥0.9 | — / 0.00 | 1.00 / 1.00 | — / 0.00 | 1.00 / 0.40 | — / 0.00 |
 
-Production vision model: `claude-sonnet-5-5`, measured **$0.0155 per door** (imagery + vision over 569 doors). Eval and discovery spend: $4.70. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $5.86, claude-opus-5-5 $1.73.
+Production vision model: `claude-sonnet-5-5`, measured **$0.0251 per door** (imagery + vision over 569 doors). Eval and discovery spend: $4.46. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $9.99, claude-opus-5-5 $1.73.
 <!-- VISION-EVAL:END -->
 
 _To be filled from `data/eval/results_claude-haiku-4-5.json` and `results_claude-sonnet-5-5.json`
@@ -72,11 +73,20 @@ after human verification of the 80-image sample._
 | Item | USD |
 |---|---|
 | Street View images (569) | 3.98 |
-| Vision, production model `claude-sonnet-5-5` (569) | 4.89 |
-| **Measured production cost per door** | **0.0155** |
+| Satellite tiles (569) | 1.14 |
+| Vision, production model `claude-sonnet-5-5`: street-level + overhead (569 each) | 9.89 |
+| **Measured production cost per door** | **0.0251** |
 | Eval: Haiku full-territory pass (superseded) + draft/compare labels on 98 images | 4.57 |
 | Source discovery (2 runs) | 0.86 |
-| **Total spend** | **13.50** of the $50 budget |
+| **Total spend** | **18.71** of the $50 budget |
+
+## Overhead imagery (no human eval yet)
+
+The satellite stage was added late and has model-only labels: on the full territory the production
+model reports 58 pools, 7 solar arrays and 6 play sets across 543 usable tiles. A 25-tile pilot was
+spot-checked by eye (pool and vehicle claims correct; roof grade soft, so only "poor" scores).
+These signals should get the same labeled-sample treatment as the street-level ones before their
+weights are trusted.
 
 ## Shipped
 
