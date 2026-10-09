@@ -18,6 +18,27 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 
 ## Vision eval
 
+<!-- VISION-EVAL:START -->
+98 human-verified Street View images (stratified: model-positive, random, and every production-model positive for rare signals). Predictions gated at confidence ≥ 0.6. Hallucination rate = share of images a human marked negative that the model asserted positive.
+
+| Signal | Pos. labels | claude-haiku-4-5 P / R / F1 / halluc. | claude-sonnet-5-5 P / R / F1 / halluc. |
+|---|---|---|---|
+| **provider_truck** (top signal) | 1 | 0.50 / 1.00 / 0.67 / 1% | — / 0.00 / — / 0% |
+| moving_indicators | 1 | 1.00 / 1.00 / 1.00 / 0% | 1.00 / 1.00 / 1.00 / 0% |
+| yard_sign | 6 | 0.17 / 0.67 / 0.28 / 21% | 0.50 / 0.33 / 0.40 / 2% |
+| renovation_activity | 5 | 1.00 / 0.40 / 0.57 / 0% | 1.00 / 0.60 / 0.75 / 0% |
+| professional_landscaping | 3 | 0.09 / 1.00 / 0.17 / 32% | — / 0.00 / — / 0% |
+| solar_panels | 0 | — / — / — / 0% | — / — / — / 0% |
+
+| Condition rating | claude-haiku-4-5 exact / within one step | claude-sonnet-5-5 exact / within one step |
+|---|---|---|
+| lawn_condition | 46% / 93% (n=92) | 69% / 98% (n=94) |
+| exterior_condition | 67% / 98% (n=88) | 77% / 98% (n=86) |
+| roof_condition | 73% / 100% (n=73) | 85% / 100% (n=71) |
+
+Production vision model: `claude-haiku-4-5`, measured **$0.0103 per door** (imagery + vision over 569 doors). Eval and discovery spend: $3.44. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $1.71, claude-opus-5-5 $1.73.
+<!-- VISION-EVAL:END -->
+
 _To be filled from `data/eval/results_claude-haiku-4-5.json` and `results_claude-sonnet-5-5.json`
 after human verification of the 80-image sample._
 

@@ -22,7 +22,9 @@ textarea{width:100%;height:50px}
     <button onclick="nav(-1)">◀ <span class="k">←</span></button>
     <button onclick="nav(1)">▶ <span class="k">→</span></button>
     <button onclick="download()">⬇ Download labels.jsonl</button>
+    <button onclick="showDump()">Show JSONL on page</button>
   </div>
+  <pre id="dump" style="display:none;white-space:pre;font-size:10px;max-height:300px;overflow:auto;border:1px solid #ccc;padding:6px"></pre>
   <p class="draft">Rows pre-filled by a draft model are shown with an orange marker until you verify them. Keys: 1-6 toggle the binary signals, U toggles usable. Progress autosaves in this browser.</p>
 </div>
 <script>
@@ -79,6 +81,7 @@ function download(){
   const blob=new Blob([rows.map(r=>JSON.stringify(r)).join('\n')+'\n'],{type:'application/jsonl'})
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='labels.jsonl';a.click()
 }
+function showDump(){const d=document.getElementById('dump');d.textContent=rows.map(r=>JSON.stringify(r)).join('\n');d.style.display='block'}
 document.addEventListener('keydown',e=>{
   if(e.target.tagName==='TEXTAREA')return
   const r=rows[i]
