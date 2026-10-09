@@ -15,7 +15,7 @@ Four traits, each with a public-data detector:
 |---|---|---|
 | Recently moved | Deed date within 12 / 36 / 60 months, and a real (arm's-length) sale price rather than a $1 transfer | NJ MOD-IV via statewide parcel service |
 | Means to hire out | Assessed value quartile *within the territory*, so it is relative to neighbors, not to the state | NJ MOD-IV |
-| Hires out (behavior) | Provider truck on site, professionally maintained landscaping, contractor yard sign | Street View + Claude vision |
+| Hires out (behavior) | Provider truck on site, contractor yard sign | Street View + Claude vision |
 | Hires out (record) | Construction permits in the last 3–5 years, trades involved, declared cost | NJ DCA permit data, joined on block/lot |
 | Busy dual-income household | Tract share of two-parent families where both parents work; 2-story + 2-car-garage as a household-size proxy | Census ACS (aggregate); MOD-IV building code |
 | Needs services soon | Home age bands, lot size (lawn demand), visible wear or active renovation | MOD-IV; Street View |
@@ -37,12 +37,15 @@ without usable imagery is never penalized relative to one that has it.
 | Permit history | 8 | Permitted work is contractor work; recent or repeated permits show an active, hires-out household |
 | Lawn demand (lot size) | 8 | Recurring, entry-level service |
 | Household-size proxy | 8 | Larger homes correlate with families and dual earners |
-| Professional landscaping / yard sign | 6 | Behavioral "hires out" signal |
+| Yard sign | 3 | Behavioral "hires out" signal; small because eval precision was 0.50 |
 | Visible service need / renovation | 6 | Near-term demand |
 | Dual-income area (tract) | 6 | Aggregate prior; modest weight because it is not door-specific |
 
-Vision signals only count when the model's confidence ≥ 0.6; the eval harness reports precision,
-recall and hallucination rate at that threshold.
+Vision signals only count when the model's confidence ≥ 0.5 (set by a threshold sweep in the eval); the eval harness reports precision,
+recall and hallucination rate at that threshold. One candidate signal, *professionally maintained
+landscaping*, was removed after the eval: the cheap model asserted it on 32% of images a human said
+had none, and the stronger model found none of the 3 true positives. A signal that cannot be measured
+reliably does not belong in a score a rep acts on.
 
 ## What we deliberately do not use
 

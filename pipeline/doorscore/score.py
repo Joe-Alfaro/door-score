@@ -133,7 +133,7 @@ def tags_for(d: dict, sigs: list[Signal]) -> list[str]:
 # ---- Vision-derived signals (Street View) ---------------------------------------------
 # Each maps a visual observation to an ICP trait. Confidence gates keep hallucinations out
 # of the score: a detection below the threshold contributes nothing.
-CONF = 0.6
+CONF = 0.5   # set from the eval threshold sweep on 98 verified images (see docs/test-results.md)
 
 def _vis(d: dict) -> dict | None:
     v = d.get('vision')
@@ -158,20 +158,18 @@ def signal_provider_truck(d: dict) -> Signal:
         return Signal('provider_truck', 'hires out', mx, mx, f'Provider truck on site ({what}): {det["evidence"]}', _src(d))
     return Signal('provider_truck', 'hires out', 0, mx, 'No provider vehicle visible', _src(d))
 
-def signal_pro_landscaping(d: dict) -> Signal:
-    mx = 6
+def signal_yard_sign(d: dict) -> Signal:
+    """A contractor / landscaper / security-company lawn sign is a receipt for hiring out.
+    Small weight: eval precision was 0.50 on the production model (n=6 positives).
+    professional_landscaping was removed from the score after failing its eval (see docs/test-results.md)."""
+    mx = 3
     v = _vis(d)
     if not v:
-        return Signal('professional_landscaping', 'hires out', 0, mx, 'No usable street imagery', 'Street View')
-    det = v['signals']['professional_landscaping']
+        return Signal('yard_sign', 'hires out', 0, mx, 'No usable street imagery', 'Street View')
     sign = v['signals']['yard_sign']
-    pts, ev = 0, 'No signs of professionally maintained landscaping'
-    if det['present'] and det['confidence'] >= CONF:
-        pts, ev = mx, f'Professionally maintained grounds: {det["evidence"]}'
     if sign['present'] and sign['confidence'] >= CONF:
-        pts = max(pts, 4)
-        ev += f'; yard sign present ({sign.get("detail") or "unspecified"})'
-    return Signal('professional_landscaping', 'hires out', pts, mx, ev, _src(d))
+        return Signal('yard_sign', 'hires out', mx, mx, f'Yard sign ({sign.get("detail") or "unspecified"}): {sign["evidence"]}', _src(d))
+    return Signal('yard_sign', 'hires out', 0, mx, 'No yard sign visible', _src(d))
 
 def signal_condition(d: dict) -> Signal:
     """Visible wear = near-term service demand (roof, exterior, lawn). Pristine = already maintained."""
@@ -202,7 +200,7 @@ def signal_moving(d: dict) -> Signal:
         return Signal('moving_indicators', 'recently moved', mx, mx, f'Moving activity ({det.get("detail") or "container/truck"}): {det["evidence"]}', _src(d))
     return Signal('moving_indicators', 'recently moved', 0, mx, 'No moving activity visible', _src(d))
 
-VISION_SIGNALS = [signal_provider_truck, signal_moving, signal_pro_landscaping, signal_condition]
+VISION_SIGNALS = [signal_provider_truck, signal_moving, signal_yard_sign, signal_condition]
 
 
 # ---- Permit history (NJ DCA construction permits, joined on block/lot) ------------------

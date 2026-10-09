@@ -22,7 +22,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--model', default=DEFAULT_MODEL)
     ap.add_argument('--labels', default=str(EVAL / 'labels.jsonl'))
-    ap.add_argument('--conf', type=float, default=0.6, help='confidence threshold applied to predictions')
+    ap.add_argument('--conf', type=float, default=0.5, help='confidence threshold applied to predictions (production gate)')
     ap.add_argument('--include-unverified', action='store_true')
     args = ap.parse_args()
     rows = [json.loads(l) for l in Path(args.labels).read_text().splitlines() if l.strip()]
@@ -54,6 +54,19 @@ def main():
             n += 1; exact += p == r[k]
             within1 += abs(CONDITIONS.index(p) - CONDITIONS.index(r[k])) <= 1
         results['signals'][k] = {'n': n, 'exact_agreement': exact / n if n else None, 'within_one_step': within1 / n if n else None}
+    # Threshold sweep: how precision/recall trade off as the confidence gate moves.
+    sweep = {}
+    for conf in (0.5, 0.6, 0.7, 0.8, 0.9):
+        sweep[str(conf)] = {}
+        for k in BINARY_SIGNALS:
+            tp = fp = fn = tn = 0
+            for r in rows:
+                if r[k] is None: continue
+                p = preds[r['door_id']][k]; pred = p['present'] and p['confidence'] >= conf
+                tp += pred and r[k]; fp += pred and not r[k]; fn += (not pred) and r[k]; tn += (not pred) and not r[k]
+            m = prf(tp, fp, fn); m['hallucination_rate'] = fp / (fp + tn) if fp + tn else None
+            sweep[str(conf)][k] = m
+    results['threshold_sweep'] = sweep
     # Usability hallucination: model says usable but human says not.
     u_fp = sum(1 for r in rows if r['image_usable'] is False and preds[r['door_id']]['image_usable'])
     u_n = sum(1 for r in rows if r['image_usable'] is False)
@@ -72,6 +85,7 @@ def main():
     for k in CONDITION_SIGNALS:
         m = results['signals'][k]
         print(f'{k:28} exact={fmt(m["exact_agreement"])} within1={fmt(m["within_one_step"])} n={m["n"]}')
+    print('threshold sweep (P/R):', ' | '.join(f'{c}: ' + ', '.join(f'{k[:6]} {fmt(m["precision"])}/{fmt(m["recall"])}' for k, m in sw.items() if m['tp'] + m['fn']) for c, sw in sweep.items()))
     c = results['cost']
     pr = c['production']
     print(f'cost: production ({pr["model"]}) ${pr["usd"]} over {pr["doors"]} doors = ${pr["usd_per_door"]}/door; '

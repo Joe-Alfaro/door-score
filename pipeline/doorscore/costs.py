@@ -22,7 +22,7 @@ def llm_cost(model: str, input_tokens: int, output_tokens: int) -> float:
     pin, pout = MODEL_PRICES.get(model, (5.0, 25.0))
     return input_tokens / 1e6 * pin + output_tokens / 1e6 * pout
 
-PRODUCTION_MODEL = 'claude-haiku-4-5'
+PRODUCTION_MODEL = 'claude-sonnet-5-5'
 
 def summary(production_model: str = PRODUCTION_MODEL) -> dict:
     """Production cost per door = imagery + production-model vision, over doors that have imagery.

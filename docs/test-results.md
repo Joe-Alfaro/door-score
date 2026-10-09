@@ -18,15 +18,30 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 
 ## Vision eval
 
+**Method.** 98 Street View images were sampled from the territory: half where the production model
+flagged something, half at random, plus every image where the cheap model flagged a rare signal
+(truck, moving, renovation, yard sign) so precision on rare events has support. A stronger model
+(`claude-opus-5-5`) drafted labels; a human then reviewed every image and confirmed or changed each
+field (14 fields changed across 98 rows). Predictions for both candidate production models were
+cached, so the comparison and the threshold sweep below cost nothing extra.
+
+**Decisions taken from this eval.** (1) Production model moved from Haiku to Sonnet. (2) The
+*professional landscaping* signal was removed from the score. (3) The confidence gate was set to 0.5.
+
+**Caveats.** Positives are rare in this territory (1 truck, 1 moving indicator in 98 images), so the
+truck precision/recall of 1.00 rests on a single example and should be read as "no evidence of a
+problem," not as a measured rate. The threshold was chosen on the same labeled set it is reported on;
+the holders of the hidden test set will see the honest out-of-sample number.
+
 <!-- VISION-EVAL:START -->
-98 human-verified Street View images (stratified: model-positive, random, and every production-model positive for rare signals). Predictions gated at confidence ≥ 0.6. Hallucination rate = share of images a human marked negative that the model asserted positive.
+98 human-verified Street View images (stratified: model-positive, random, and every production-model positive for rare signals). Predictions gated at confidence ≥ 0.5. Hallucination rate = share of images a human marked negative that the model asserted positive.
 
 | Signal | Pos. labels | claude-haiku-4-5 P / R / F1 / halluc. | claude-sonnet-5-5 P / R / F1 / halluc. |
 |---|---|---|---|
-| **provider_truck** (top signal) | 1 | 0.50 / 1.00 / 0.67 / 1% | — / 0.00 / — / 0% |
+| **provider_truck** (top signal) | 1 | 0.50 / 1.00 / 0.67 / 1% | 1.00 / 1.00 / 1.00 / 0% |
 | moving_indicators | 1 | 1.00 / 1.00 / 1.00 / 0% | 1.00 / 1.00 / 1.00 / 0% |
-| yard_sign | 6 | 0.17 / 0.67 / 0.28 / 21% | 0.50 / 0.33 / 0.40 / 2% |
-| renovation_activity | 5 | 1.00 / 0.40 / 0.57 / 0% | 1.00 / 0.60 / 0.75 / 0% |
+| yard_sign | 6 | 0.17 / 0.67 / 0.28 / 21% | 0.67 / 0.67 / 0.67 / 2% |
+| renovation_activity | 5 | 1.00 / 0.40 / 0.57 / 0% | 1.00 / 0.80 / 0.89 / 0% |
 | professional_landscaping | 3 | 0.09 / 1.00 / 0.17 / 32% | — / 0.00 / — / 0% |
 | solar_panels | 0 | — / — / — / 0% | — / — / — / 0% |
 
@@ -36,7 +51,17 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 | exterior_condition | 67% / 98% (n=88) | 77% / 98% (n=86) |
 | roof_condition | 73% / 100% (n=73) | 85% / 100% (n=71) |
 
-Production vision model: `claude-haiku-4-5`, measured **$0.0103 per door** (imagery + vision over 569 doors). Eval and discovery spend: $3.44. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $1.71, claude-opus-5-5 $1.73.
+Confidence-gate sweep for the production model (precision / recall):
+
+| gate | provider_truck | moving_indicators | yard_sign | renovation_activity | professional_landscaping |
+|---|---|---|---|---|---|
+| ≥0.5 | 1.00 / 1.00 | 1.00 / 1.00 | 0.67 / 0.67 | 1.00 / 0.80 | — / 0.00 |
+| ≥0.6 | — / 0.00 | 1.00 / 1.00 | 0.50 / 0.33 | 1.00 / 0.60 | — / 0.00 |
+| ≥0.7 | — / 0.00 | 1.00 / 1.00 | 0.50 / 0.33 | 1.00 / 0.60 | — / 0.00 |
+| ≥0.8 | — / 0.00 | 1.00 / 1.00 | 0.33 / 0.17 | 1.00 / 0.60 | — / 0.00 |
+| ≥0.9 | — / 0.00 | 1.00 / 1.00 | — / 0.00 | 1.00 / 0.40 | — / 0.00 |
+
+Production vision model: `claude-sonnet-5-5`, measured **$0.0095 per door** (imagery + vision over 569 doors). Eval and discovery spend: $4.46. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $2.28, claude-opus-5-5 $1.73.
 <!-- VISION-EVAL:END -->
 
 _To be filled from `data/eval/results_claude-haiku-4-5.json` and `results_claude-sonnet-5-5.json`

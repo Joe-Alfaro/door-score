@@ -13,7 +13,7 @@ from ..config import CACHE
 from ..costs import record, llm_cost
 
 PROMPT_VERSION = 'v2'
-DEFAULT_MODEL = 'claude-haiku-4-5'   # cheapest tier first; the eval harness decides if we upgrade
+DEFAULT_MODEL = 'claude-sonnet-5-5'  # chosen by the eval harness: Haiku hallucinated landscaping on 32% and yard signs on 21% of negatives; Sonnet ~0-2%
 OUT_DIR = CACHE / 'vision'
 OUT_DIR.mkdir(exist_ok=True)
 
