@@ -1,3 +1,5 @@
+> **Console-first version.** Every step below that used to run a script or a curl now happens in the console at https://web-production-39b2a.up.railway.app/console. Paste the run token (top right, "Set run token"; value is `CONSOLE_TOKEN` in `.env`) before recording. The original terminal commands are kept further down as fallbacks.
+
 # Door Score — 4-minute demo script
 
 Spoken lines are short on purpose. Read them; do not improvise numbers. Everything quoted below
@@ -30,7 +32,9 @@ Show: `data/territory.geojson` or the territory outline on the map.
 > No address list was needed: New Jersey's statewide parcel service returns every parcel that intersects the polygon, with its tax record attached.
 > 637 parcels came back. 569 are single-family homes. Every one gets a Door Score, zero to one hundred, with evidence a rep can act on.
 
-## 0:30 — The pipeline in one command
+## 0:30 (console → Pipeline page: click **Run** on *Harvest + score*; it finishes in about a second from cache and the log streams live. Point at the *Imagery + vision* card showing **$0.00** estimate because every image is cached, and the spend bar in the header.)
+
+## 0:30 (original) — The pipeline in one command
 
 Show: terminal.
 
@@ -80,7 +84,9 @@ Toggle the tag filters in the top bar:
 
 Turn both toggles back off.
 
-## 2:15 — The MCP server
+## 2:15 (console → Route planner: set hours to 2, start at 3 Larkwood Dr, click Plan; read the first three stops and talking points from the table, then click *Open in Google Maps*.)
+
+## 2:15 (original) — The MCP server
 
 Show: second terminal. This is the exact `plan_route` call from `mcp/README.md`, pointed at production.
 
@@ -106,7 +112,9 @@ Read the first three stops:
 
 If you have ten spare seconds: `explain_score` on any address returns every signal with its points, evidence and source, plus a deep link into the map.
 
-## 3:00 — The eval
+## 3:00 (console → Eval page: the two-model table, the threshold-sweep chart, and the labeled gallery. Sources page shows the 20 discovered sources with their ToS and PII columns.)
+
+## 3:00 (original) — The eval
 
 Show: `docs/test-results.md`, Vision eval tables.
 

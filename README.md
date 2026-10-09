@@ -16,6 +16,8 @@ data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.
 |---|---|
 | Map UI | https://web-production-39b2a.up.railway.app |
 | MCP server (Streamable HTTP) | https://mcp-production-1645.up.railway.app/mcp — health at `/health` |
+| Console (run stages, eval, sources, doors, route planner) | https://web-production-39b2a.up.railway.app/console |
+| Console API | https://api-production-37c4.up.railway.app — `/api/health`, interactive docs at `/docs` |
 
 ## Repo layout
 
