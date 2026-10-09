@@ -186,8 +186,18 @@ def signal_yard_sign(d: dict) -> Signal:
         return Signal('yard_sign', 'hires out', 0, mx, 'No usable street imagery', 'Street View')
     sign = v['signals']['yard_sign']
     if sign['present'] and sign['confidence'] >= CONF:
-        return Signal('yard_sign', 'hires out', mx, mx, f'Yard sign ({sign.get("detail") or "unspecified"}): {sign["evidence"]}', _src(d))
+        text = f'{sign.get("detail") or ""} {sign["evidence"]}'.lower()
+        if any(k in text for k in SERVICE_SIGN_WORDS):
+            return Signal('yard_sign', 'hires out', mx, mx, f'Service yard sign ({sign.get("detail") or "unspecified"}): {sign["evidence"]}', _src(d))
+        return Signal('yard_sign', 'hires out', 0, mx, f'Yard sign present but not a service sign ({sign.get("detail") or "unspecified"})', _src(d))
     return Signal('yard_sign', 'hires out', 0, mx, 'No yard sign visible', _src(d))
+
+# A yard sign only evidences hiring out when it advertises a trade. Graduation, political and
+# celebration signs are common and carry no ICP information.
+SERVICE_SIGN_WORDS = ('landscap', 'lawn', 'tree', 'pest', 'roof', 'hvac', 'heating', 'cooling', 'plumb', 'paint',
+                      'contractor', 'construction', 'remodel', 'builder', 'electric', 'security', 'alarm', 'pool',
+                      'siding', 'window', 'gutter', 'mason', 'paving', 'fence', 'cleaning', 'exterminat', 'solar',
+                      'llc', 'inc', 'services', 'company', 'co.')
 
 def signal_condition(d: dict) -> Signal:
     """Visible wear = near-term service demand (roof, exterior, lawn). Pristine = already maintained."""
