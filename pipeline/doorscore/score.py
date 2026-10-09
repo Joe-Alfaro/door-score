@@ -86,6 +86,9 @@ def signal_household(d: dict) -> Signal:
                   ', '.join(desc) or 'Building description unavailable', 'NJ MOD-IV')
 
 def score_doors(doors: list[dict]) -> list[dict]:
+    from .neighborhood import compute as compute_neighborhood
+    from .score_neighborhood import signal_block_activity
+    compute_neighborhood(doors)
     values = [d['net_value'] for d in doors if d['net_value']]
     cuts = quantiles(values, n=4) if len(values) >= 4 else [0, 0, 0]
     any_vision = any(d.get('vision') for d in doors)
@@ -101,6 +104,7 @@ def score_doors(doors: list[dict]) -> list[dict]:
             sigs.append(signal_dual_income_area(d))
         if any_permits:
             sigs.append(signal_permits(d))
+        sigs.append(signal_block_activity(d))
         # Doors without usable imagery are scored on the data signals only, so a missing
         # photo never penalizes a door relative to its neighbors.
         got = sum(s.points for s in sigs)
@@ -112,8 +116,13 @@ def score_doors(doors: list[dict]) -> list[dict]:
         d['tags'] = tags_for(d, sigs)
         out.append(d)
     out.sort(key=lambda x: -x['door_score'])
+    n = len(out)
     for i, d in enumerate(out, 1):
         d['rank'] = i
+        # Territory percentile: raw score is an honest fraction of achievable evidence and stays
+        # comparable across runs, but 93% of doors land between 20 and 50, so the map colours
+        # and sorts by percentile while the evidence card shows the raw score.
+        d['door_score_pct'] = round(100 * sum(1 for o in out if o['door_score'] < d['door_score']) / max(n - 1, 1))
     return out
 
 def tags_for(d: dict, sigs: list[Signal]) -> list[str]:
@@ -126,6 +135,7 @@ def tags_for(d: dict, sigs: list[Signal]) -> list[str]:
     if names.get('provider_truck') and names['provider_truck'].points > 0: t.append('provider on site')
     if names.get('moving_indicators') and names['moving_indicators'].points > 0: t.append('moving activity')
     if (d.get('permits') or {}).get('major_project_5yr'): t.append('recent major project')
+    if ((d.get('neighborhood') or {}).get('activity_pct') or 0) >= 80: t.append('active block')
     if names.get('visible_service_need') and names['visible_service_need'].points >= 6: t.append('visible wear')
     return t
 

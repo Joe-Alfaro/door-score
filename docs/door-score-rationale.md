@@ -24,7 +24,10 @@ Four traits, each with a public-data detector:
 ## The score
 
 Points per signal, summed and rescaled to 0–100 over the signals *available for that door*, so a home
-without usable imagery is never penalized relative to one that has it.
+without usable imagery is never penalized relative to one that has it. The raw score is an honest
+fraction of achievable evidence and stays comparable across runs and territories; because 93% of doors
+land between 20 and 50, the map colours and sorts by **territory percentile** while the evidence card
+shows the raw score with its signal list.
 
 | Signal | Max | Why this weight |
 |---|---|---|
@@ -40,6 +43,7 @@ without usable imagery is never penalized relative to one that has it.
 | Yard sign | 3 | Behavioral "hires out" signal; small because eval precision was 0.50 |
 | Visible service need / renovation | 6 | Near-term demand |
 | Dual-income area (tract) | 6 | Aggregate prior; modest weight because it is not door-specific |
+| Block activity (neighborhood effect) | 6 | Movers, permits, renovations and provider trucks within 150 m; crews and word-of-mouth already exist on active streets |
 
 Vision signals only count when the model's confidence ≥ 0.5 (set by a threshold sweep in the eval); the eval harness reports precision,
 recall and hallucination rate at that threshold. One candidate signal, *professionally maintained
