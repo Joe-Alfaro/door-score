@@ -69,8 +69,10 @@ python -m doorscore.discover                  # source discovery agent → data/
 python -m doorscore.eval.sample --n 80        # stratified sample → data/eval/sample.jsonl + images
 python -m doorscore.eval.draft_labels         # stronger model drafts labels (verified_by_human=false)
 #   open data/eval/labeler.html (any static server) and verify every row; download labels.jsonl into data/eval/
-python -m doorscore.eval.run_eval             # precision / recall / hallucination / cost per door
-python -m doorscore.eval.run_eval --model claude-sonnet-5-5   # compare a model tier
+python -m doorscore.eval.run_eval             # production model: precision / recall / hallucination / threshold sweep / cost
+python -m doorscore.eval.run_eval --model claude-haiku-4-5    # compare another tier on the same labels
+python -m doorscore.eval.report               # write results into docs/test-results.md
+# or simply:  make eval
 ```
 
 Every stage is idempotent and cached under `data/cache/` (gitignored), keyed by polygon hash,
@@ -104,8 +106,9 @@ Example question an assistant can now answer: *"I've got 2 hours in Ramsey. Whic
 
 - Free Street View **metadata** call before every paid image; no pano → no spend.
 - One 640×640 image per door, cached forever on disk.
-- Vision runs on the cheapest tier first (`claude-haiku-4-5`); the eval harness is how we decide whether a stronger model earns its cost.
-- Structured output + confidence threshold (0.6) means low-confidence detections never reach the score.
+- Vision started on the cheapest tier (`claude-haiku-4-5`). The eval harness showed it hallucinating two signals on 21–32% of negatives, so production moved to `claude-sonnet-5-5` at roughly 2× vision cost. Still about a cent per door all-in.
+- Structured output + a confidence gate (0.5, set by the eval's threshold sweep) means low-confidence detections never reach the score.
+- Model comparisons reuse cached predictions, so re-running the eval against a new model tier costs only that tier's calls on the ~100 labeled images.
 - Ledger-based `usd_per_door` in every run report.
 
 ## Data ethics
