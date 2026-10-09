@@ -32,11 +32,13 @@ const LEVELS=['poor','fair','good','excellent','not_visible']
 let rows=[],i=0
 const KEY='doorscore-labels'
 async function load(){
+  // Always read the sample file; keep only rows you have already verified from local storage,
+  // so re-drafting or re-sampling never clobbers human work and never gets hidden by stale drafts.
+  const txt=await (await fetch('sample.jsonl?'+Date.now())).text()
+  const fresh=txt.trim().split('\n').map(l=>JSON.parse(l))
   const saved=localStorage.getItem(KEY)
-  if(saved){rows=JSON.parse(saved)}else{
-    const txt=await (await fetch('sample.jsonl')).text()
-    rows=txt.trim().split('\n').map(l=>JSON.parse(l))
-  }
+  const keep=new Map(saved?JSON.parse(saved).filter(r=>r.verified_by_human).map(r=>[r.door_id,r]):[])
+  rows=fresh.map(r=>keep.get(r.door_id)||r)
   i=Math.max(0,rows.findIndex(r=>!r.verified_by_human)); if(i<0)i=0
   render()
 }
