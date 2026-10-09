@@ -73,7 +73,9 @@ def main():
         m = results['signals'][k]
         print(f'{k:28} exact={fmt(m["exact_agreement"])} within1={fmt(m["within_one_step"])} n={m["n"]}')
     c = results['cost']
-    print(f'cost: total ${c["total_usd"]}  per door ${c.get("usd_per_door")}  by stage {c["by_stage"]}')
+    pr = c['production']
+    print(f'cost: production ({pr["model"]}) ${pr["usd"]} over {pr["doors"]} doors = ${pr["usd_per_door"]}/door; '
+          f'eval+discovery ${c["eval_and_discovery_usd"]}; total ${c["total_usd"]}')
     print(f'wrote {out}')
 
 if __name__ == '__main__':

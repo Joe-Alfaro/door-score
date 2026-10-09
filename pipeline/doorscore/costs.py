@@ -22,14 +22,24 @@ def llm_cost(model: str, input_tokens: int, output_tokens: int) -> float:
     pin, pout = MODEL_PRICES.get(model, (5.0, 25.0))
     return input_tokens / 1e6 * pin + output_tokens / 1e6 * pout
 
-def summary() -> dict:
+PRODUCTION_MODEL = 'claude-haiku-4-5'
+
+def summary(production_model: str = PRODUCTION_MODEL) -> dict:
+    """Production cost per door = imagery + production-model vision, over doors that have imagery.
+    Eval and discovery spend are reported separately so they don't inflate the per-door figure."""
     if not LEDGER.exists():
-        return {'total_usd': 0, 'by_stage': {}, 'doors_with_spend': 0}
+        return {'total_usd': 0, 'by_stage': {}, 'production_usd_per_door': None}
     rows = [json.loads(l) for l in LEDGER.read_text().splitlines() if l.strip()]
-    by = {}
+    by, by_model = {}, {}
     for r in rows:
         by[r['stage']] = round(by.get(r['stage'], 0) + r['usd'], 4)
-    doors = {r['door_id'] for r in rows if r.get('door_id')}
+        if r.get('model'):
+            by_model[r['model']] = round(by_model.get(r['model'], 0) + r['usd'], 4)
+    prod = [r for r in rows if r['stage'] == 'streetview_image' or (r['stage'] == 'vision_llm' and r.get('model') == production_model)]
+    prod_doors = {r['door_id'] for r in prod if r.get('door_id')}
+    prod_usd = round(sum(r['usd'] for r in prod), 4)
     total = round(sum(r['usd'] for r in rows), 4)
-    return {'total_usd': total, 'by_stage': by, 'doors_with_spend': len(doors),
-            'usd_per_door': round(total / len(doors), 4) if doors else None}
+    return {'total_usd': total, 'by_stage': by, 'by_model': by_model,
+            'production': {'model': production_model, 'usd': prod_usd, 'doors': len(prod_doors),
+                           'usd_per_door': round(prod_usd / len(prod_doors), 4) if prod_doors else None},
+            'eval_and_discovery_usd': round(total - prod_usd, 4)}

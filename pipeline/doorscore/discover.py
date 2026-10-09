@@ -30,7 +30,7 @@ REGISTER = {
             'pii_risk': {'type': 'string', 'enum': ['none', 'aggregate_only', 'contains_owner_identity', 'unknown']},
             'icp_use': {'type': 'string', 'description': 'Which ICP trait this helps detect: recently moved / dual-income / hires out / needs services / owner-occupied'},
         }}}
-WEB_SEARCH = {'type': 'web_search_20260209', 'name': 'web_search', 'max_uses': 25}
+WEB_SEARCH = {'type': 'web_search_20260209', 'name': 'web_search', 'max_uses': 40}
 
 SYSTEM = """You are a data-sourcing researcher for a home-services company. You must find PUBLIC data
 sources that describe single-family homes in a given territory, for use in a door-level lead score.
