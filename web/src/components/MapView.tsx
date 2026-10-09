@@ -3,7 +3,6 @@ import type { RefObject } from 'react'
 import { Layer, Map, NavigationControl, Popup, Source } from 'react-map-gl/maplibre'
 import type { MapLayerMouseEvent, MapRef } from 'react-map-gl/maplibre'
 import type { LayerProps } from 'react-map-gl/maplibre'
-import type { StyleSpecification } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { SCORE_COLOR_EXPRESSION, territoryBounds } from '../lib'
 import type { DoorCollection, DoorFeature, DoorVisibility, TerritoryCollection } from '../types'
@@ -20,22 +19,9 @@ interface MapViewProps {
 
 const DOOR_LAYER_ID = 'doors-circle'
 
-// Free CARTO Positron raster basemap; no API key required.
-const BASEMAP: StyleSpecification = {
-  version: 8,
-  sources: {
-    carto: {
-      type: 'raster',
-      tiles: ['a', 'b', 'c', 'd'].map(
-        (subdomain) => `https://${subdomain}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png`,
-      ),
-      tileSize: 256,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    },
-  },
-  layers: [{ id: 'carto', type: 'raster', source: 'carto' }],
-}
+// Keyless vector basemap. CARTO's raster tiles started returning "API KEY REQUIRED" for
+// non-localhost origins; OpenFreeMap serves an equivalent Positron style with no key.
+const BASEMAP = 'https://tiles.openfreemap.org/styles/positron'
 
 const territoryFill: LayerProps = {
   id: 'territory-fill',
