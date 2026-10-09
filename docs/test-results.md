@@ -14,6 +14,7 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 | Owner-occupancy resolved | 100% (24 absentee) |
 | Building code parsed | 96.7% |
 | Homes joined to permit records (block/lot) | 274 (48%) |
+| Homes with Census tract profile (ACS 5-yr, aggregate) | 568 (99.8%) across 3 tracts |
 | Homes with Street View imagery | 569 (100%); 526 usable (92.4%) |
 | Homes with overhead (satellite) tile | 569 (100%); 543 usable (95.4%) |
 
