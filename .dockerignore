@@ -10,6 +10,7 @@
 !data/out
 !data/eval
 !data/cache/acs_tracts.json
+!data/cache/cost_ledger.jsonl
 !data/cache/parcels_*.geojson
 !data/cache/vision
 !data/cache/vision_satellite

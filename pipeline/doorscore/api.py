@@ -107,13 +107,20 @@ def stages() -> list[dict]:
     sv_cached = _count('*.jpg', 'streetview'); sat_cached = _count('*.*', 'satellite')
     vis_cached = _count('*_v2_claude-sonnet-5-5.json', 'vision'); satvis_cached = _count('*_sat-v1_claude-sonnet-5-5.json', 'vision_satellite')
     keys = {'anthropic': bool(ANTHROPIC_API_KEY), 'google': bool(GOOGLE_MAPS_API_KEY), 'census': bool(CENSUS_API_KEY)}
-    est_vision = max(n - min(sv_cached, vis_cached), 0) * EST_STREET + max(n - min(sat_cached, satvis_cached), 0) * EST_SAT
+    # Vision caches are keyed by free metadata (door_id + pano_id / zoom), so a door counts as cached
+    # even when its image file is absent; estimate via the ledger-measured rates in costs.py.
+    try:
+        from .costs import estimate_vision_cost
+        est_vision = float(estimate_vision_cost(_doors()))
+    except Exception:
+        est_vision = max(n - vis_cached, 0) * EST_STREET + max(n - satvis_cached, 0) * EST_SAT
+    vision_ready = vis_cached > 0 or sv_cached > 0
     return [
         {'id': 'pipeline', 'title': 'Harvest + score', 'description': 'Parcels by polygon, permits by block/lot, Census tract profile, neighborhood effects, Door Score. Uses imagery/vision only if already cached.',
-         'cmd': [PY, '-m', 'doorscore.run'] + (['--vision'] if sv_cached else []), 'paid': False, 'estimate_usd': 0.0, 'needs': ['census'] if not keys['census'] else [],
+         'cmd': [PY, '-m', 'doorscore.run'] + (['--vision'] if vision_ready else []), 'paid': False, 'estimate_usd': 0.0, 'needs': ['census'] if not keys['census'] else [],
          'cache': {'parcels': _count('parcels_*.geojson', '.'), 'permits_munis': _count('*.json', 'permits'), 'census_tracts': _count('*.json', 'census_tract')},
          # The deployed image ships vision JSON but not the JPEGs it is keyed by, so a rescore there cannot reuse it.
-         'warning': None if sv_cached or not vis_cached else 'Street View images are not on this disk: rescoring here drops the vision signals from doors.json until the next deploy.'},
+         'warning': None if vision_ready else 'No vision caches on this disk: rescoring here runs on parcel/permit/census signals only.'},
         {'id': 'vision', 'title': 'Imagery + vision (full territory)', 'description': 'Street View + satellite tile per door, Claude vision on both, then rescore. Cached per image; only uncached doors are billed.',
          'cmd': [PY, '-m', 'doorscore.run', '--vision'], 'paid': True, 'estimate_usd': round(est_vision, 2), 'needs': [k for k, ok in (('anthropic', keys['anthropic']), ('google', keys['google'])) if not ok],
          'cache': {'street_view_images': sv_cached, 'street_vision': vis_cached, 'satellite_tiles': sat_cached, 'satellite_vision': satvis_cached}, 'accepts_limit': True},

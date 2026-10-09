@@ -16,7 +16,7 @@ COPY pipeline/tests pipeline/tests
 COPY data/territory.geojson data/territory.geojson
 COPY data/out data/out
 COPY data/eval data/eval
-COPY data/cache/acs_tracts.json data/cache/parcels_*.geojson data/cache/
+COPY data/cache/acs_tracts.json data/cache/parcels_*.geojson data/cache/cost_ledger.jsonl data/cache/
 COPY data/cache/vision data/cache/vision
 COPY data/cache/vision_satellite data/cache/vision_satellite
 COPY data/cache/streetview_meta data/cache/streetview_meta
