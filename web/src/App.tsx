@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { MapRef } from 'react-map-gl/maplibre'
 import { EvidenceCard, MapView, StatsStrip, TopBar } from './components'
 import { useDoorData } from './hooks'
@@ -57,6 +57,17 @@ export function App() {
     if (lng === undefined || lat === undefined) return
     mapRef.current?.flyTo({ center: [lng, lat], zoom: 17, duration: 900 })
   }, [])
+
+  // Deep link: /?door=<door_id> (emitted by the MCP server's explain_url) opens that door's card.
+  useEffect(() => {
+    if (doors.length === 0) return
+    const wanted = new URLSearchParams(window.location.search).get('door')
+    const door = wanted ? doors.find((d) => d.properties.door_id === wanted) : undefined
+    if (!door) return
+    setSelectedId(door.properties.door_id)
+    const timer = window.setTimeout(() => pickDoor(door), 1200)
+    return () => window.clearTimeout(timer)
+  }, [doors, pickDoor])
 
   if (error) {
     return (
