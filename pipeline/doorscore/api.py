@@ -391,6 +391,16 @@ def route(body: RouteRequest):
     if result.get('isError'): raise HTTPException(400, plan.get('error', 'plan_route failed') if isinstance(plan, dict) else 'plan_route failed')
     return {'arguments': args, 'plan': plan}
 
+@app.get('/', include_in_schema=False)
+def root():
+    from fastapi.responses import PlainTextResponse
+    return PlainTextResponse(
+        'Door Score console API\n\n'
+        f'Console UI: {WEB_URL}/console\n'
+        'Endpoints: /api/health, /api/status, /api/stages, /api/doors, /api/sources, /api/eval, /api/ledger, /api/runs, /api/mcp/tools\n'
+        'Interactive docs: /docs\n'
+        'Runs (POST /api/run/<stage>) require the X-Console-Token header.\n')
+
 @app.get('/api/health')
 def health():
     return {'ok': True, 'doors': len(_doors())}
