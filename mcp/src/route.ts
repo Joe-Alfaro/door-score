@@ -7,6 +7,7 @@ const MAPS_WAYPOINT_CAP = 10
 
 export interface RouteStop {
   order: number
+  door_id: string
   address: string
   door_score: number
   lat: number
@@ -105,6 +106,7 @@ function buildStops(start: LatLng, order: DoorWithCoords[]): RouteStop[] {
       ...stops,
       {
         order: index + 1,
+        door_id: door.door_id,
         address: door.address,
         door_score: door.door_score,
         lat: door.lat,

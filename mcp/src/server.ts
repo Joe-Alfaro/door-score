@@ -11,9 +11,10 @@ console.log(`door-score-mcp: loaded ${doors.length} doors`)
 const DESCRIPTION =
   `Door Score MCP server (${doors.length} single-family homes in Ramsey/Allendale, NJ). ` +
   'Connect an MCP client to POST /mcp (Streamable HTTP, stateless). Tools: get_door_score(address) returns a home\'s 0-100 score, rank, tags and top signals with fuzzy address matching; ' +
-  'explain_score(address) returns every signal with evidence plus a narrative and field-rep talking points; ' +
-  'plan_route(hours, start_point?, max_doors?, min_score?, include_absentee?) builds a time-budgeted walking route with a Google Maps link; ' +
-  'list_top_doors(n?, tag?) lists the best doors optionally filtered by tag; territory_stats() summarizes the score distribution, tags and municipalities. ' +
+  'explain_score(address) returns every signal with evidence, street-view image link, permit and census context, plus a narrative and field-rep talking points; ' +
+  'plan_route(hours, start_point?, max_doors?, min_score?, include_absentee?, focus?) builds a time-budgeted walking route with a Google Maps link and per-stop explain links; ' +
+  'list_top_doors(n?, tag?, municipality?) lists the best doors optionally filtered by tag and municipality; territory_stats() summarizes the score distribution, tags and municipalities; ' +
+  'get_signal_summary() reports per-signal coverage including usable-imagery share for vision signals. ' +
   'GET /health returns {ok, doors}.\n'
 
 function createServer(): McpServer {

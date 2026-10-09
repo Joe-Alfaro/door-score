@@ -30,8 +30,92 @@ const KNOWN_SIGNAL_POINTS: Record<string, (door: Door, signal: Signal) => string
     signal.points === 0 || door.owner_mailing_out_of_town === true
       ? 'Tax mailing address is elsewhere: likely a rental. Ask for the owner or property manager contact, or skip.'
       : undefined,
-  provider_truck: (_door, signal) =>
-    `A service provider was observed at this address (${signal.source}): ask how satisfied they are with their current provider.`,
+  provider_truck: (door, signal) => {
+    if (signal.points <= 0) return undefined
+    const detail = door.vision?.signals.provider_truck.detail
+    return `A service provider was on site in ${imageryDate(door, signal)} imagery${detail ? ` (${lowerFirst(firstClause(detail))})` : ''}: ask how satisfied they are with their current provider.`
+  },
+  moving_indicators: (door, signal) =>
+    signal.points > 0
+      ? `Moving containers/truck seen in ${imageryDate(door, signal)} imagery: likely mid-move; lead with move-in services: cleaning, locks, handyman.`
+      : undefined,
+  permit_history: (door, signal) => {
+    if (signal.points <= 0) return undefined
+    const permits = door.permits
+    const what = permits?.latest_type ? (PERMIT_TYPE_LABELS[permits.latest_type.toLowerCase()] ?? lowerFirst(permits.latest_type)) : 'work'
+    const when = permits?.latest_date ? ` in ${monthYear(permits.latest_date)}` : ''
+    return `Permitted ${what}${when}: they hire licensed trades; ask what's next on the list.`
+  },
+  yard_sign: (door, signal) => {
+    if (signal.points <= 0) return undefined
+    const detail = firstClause(door.vision?.signals.yard_sign.detail ?? signal.evidence)
+    return `They already use a provider (${lowerFirst(detail)}): position as a vetted alternative or complementary service.`
+  },
+  visible_service_need: (door, signal) => {
+    if (signal.points <= 0) return undefined
+    const vision = door.vision?.signals
+    if (vision?.renovation_activity.present) {
+      return 'Imagery shows active renovation: ask what else is on the project list and offer to quote the next phase.'
+    }
+    const worn = wornAreas(door)
+    const which = worn.length > 0 ? listWords(worn) : lowerFirst(signal.evidence)
+    return `Imagery shows ${which} wear: open with that specific repair.`
+  },
+  dual_income_area: (_door, signal) =>
+    // Nearly every tract scores some points; only call it out where the share is strongest.
+    signal.points >= signal.max_points * 0.75 && signal.max_points > 0
+      ? 'Busy households here; emphasise scheduling convenience and bundled services.'
+      : undefined,
+}
+
+const WORN_RATINGS = new Set(['fair', 'poor'])
+
+/** Permit record type -> phrase that reads naturally after "Permitted". */
+const PERMIT_TYPE_LABELS: Record<string, string> = {
+  new: 'new construction',
+  alteration: 'alteration',
+  addition: 'addition',
+  demolition: 'demolition',
+}
+
+/** Vision model details can run to a sentence; keep the leading noun phrase. */
+function firstClause(text: string): string {
+  const clause = text.split(/[,;(]/)[0]?.trim() ?? ''
+  return clause.length > 0 ? clause : text.trim()
+}
+
+/** Exterior areas the imagery model rated fair or poor, e.g. ["exterior", "roof"]. */
+function wornAreas(door: Door): string[] {
+  const vision = door.vision?.signals
+  if (!vision) return []
+  const areas: Array<[string, string]> = [
+    ['exterior', vision.exterior_condition],
+    ['roof', vision.roof_condition],
+    ['lawn', vision.lawn_condition],
+  ]
+  return areas.filter(([, rating]) => WORN_RATINGS.has(rating)).map(([area]) => area)
+}
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+/** "2025-07" or "2025-07-22" -> "July 2025"; anything else is returned unchanged. */
+function monthYear(iso: string): string {
+  const match = iso.match(/^(\d{4})-(\d{2})/)
+  const month = match ? MONTHS[Number(match[2]) - 1] : undefined
+  return match && month ? `${month} ${match[1]}` : iso
+}
+
+/** ["exterior", "roof", "lawn"] -> "exterior, roof and lawn" */
+function listWords(words: string[]): string {
+  if (words.length <= 1) return words.join('')
+  return `${words.slice(0, -1).join(', ')} and ${words[words.length - 1]}`
+}
+
+/** Capture month of the street imagery, falling back to the signal source label. */
+function imageryDate(door: Door, signal: Signal): string {
+  const fromSource = signal.source.replace(/^street view\s*/i, '').trim()
+  const raw = door.vision?.image.date ?? (fromSource.length > 0 ? fromSource : undefined)
+  return raw ? monthYear(raw) : 'recent'
 }
 
 function describeMonthsSinceDeed(door: Door): string {

@@ -1,4 +1,5 @@
-// Starts the built server on a scratch port, checks /health, lists tools, calls get_door_score, exits non-zero on failure.
+// Starts the built server on a scratch port, checks /health, lists tools, calls get_door_score, explain_score,
+// plan_route (focused) and get_signal_summary, exits non-zero on failure.
 import { spawn } from 'node:child_process'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -59,7 +60,7 @@ console.log('GET / ok')
 
 const list = await rpc('tools/list', {}, 1)
 const names = (list.result?.tools ?? []).map((tool) => tool.name).sort()
-const expected = ['explain_score', 'get_door_score', 'list_top_doors', 'plan_route', 'territory_stats']
+const expected = ['explain_score', 'get_door_score', 'get_signal_summary', 'list_top_doors', 'plan_route', 'territory_stats']
 if (JSON.stringify(names) !== JSON.stringify(expected)) fail(`tools/list returned ${JSON.stringify(names)}`)
 console.log(`tools/list ok: ${names.join(', ')}`)
 
@@ -67,6 +68,29 @@ const call = await rpc('tools/call', { name: 'get_door_score', arguments: { addr
 const payload = JSON.parse(call.result?.content?.[0]?.text ?? '{}')
 if (call.result?.isError || payload.found !== true || payload.address !== '107 E ASHGROVE ST') fail(`get_door_score returned ${JSON.stringify(call)}`)
 console.log(`tools/call ok: ${payload.address} score ${payload.door_score} rank ${payload.rank}/${payload.total_doors}`)
+
+const explain = await rpc('tools/call', { name: 'explain_score', arguments: { address: '3 Larkwood Drive' } }, 3)
+const explained = JSON.parse(explain.result?.content?.[0]?.text ?? '{}')
+if (explain.result?.isError || explained.found !== true || explained.address !== '3 LARKWOOD DR') fail(`explain_score returned ${JSON.stringify(explain)}`)
+if (typeof explained.street_view?.image_url !== 'string' || !explained.street_view.image_url.includes(`/img/streetview/${explained.door_id}.jpg`)) {
+  fail(`explain_score missing street_view.image_url: ${JSON.stringify(explained.street_view)}`)
+}
+if (!Array.isArray(explained.talking_points) || explained.talking_points.length === 0) fail('explain_score returned no talking points')
+console.log(`explain_score ok: ${explained.address} street_view ${explained.street_view.image_url} (${explained.street_view.date}), permits ${explained.permits ? explained.permits.permits_5yr : 'n/a'}, census ${explained.census ? explained.census.tract_geoid : 'n/a'}`)
+
+const route = await rpc('tools/call', { name: 'plan_route', arguments: { hours: 1, focus: ['new mover'] } }, 4)
+const routed = JSON.parse(route.result?.content?.[0]?.text ?? '{}')
+if (route.result?.isError || !Array.isArray(routed.stops) || routed.stops.length === 0) fail(`plan_route returned ${JSON.stringify(route)}`)
+const badStop = routed.stops.find((stop) => typeof stop.explain_url !== 'string' || !stop.explain_url.includes(`?door=${stop.door_id}`))
+if (badStop) fail(`plan_route stop missing explain_url: ${JSON.stringify(badStop)}`)
+console.log(`plan_route ok: ${routed.stops.length} stops from ${routed.parameters.eligible_doors} eligible "new mover" doors, ${routed.totals.total_minutes} min, first explain_url ${routed.stops[0].explain_url}`)
+
+const summary = await rpc('tools/call', { name: 'get_signal_summary', arguments: {} }, 5)
+const summarized = JSON.parse(summary.result?.content?.[0]?.text ?? '{}')
+if (summary.result?.isError || !Array.isArray(summarized.signals) || summarized.signals.length === 0) fail(`get_signal_summary returned ${JSON.stringify(summary)}`)
+const visionSignals = summarized.signals.filter((signal) => signal.vision_signal)
+if (visionSignals.some((signal) => typeof signal.usable_imagery_share !== 'number')) fail('get_signal_summary vision signals lack usable_imagery_share')
+console.log(`get_signal_summary ok: ${summarized.signals.length} signals, ${visionSignals.length} vision signals, usable imagery ${summarized.imagery.doors_with_usable_imagery}/${summarized.imagery.doors_with_imagery}`)
 
 child.kill()
 console.log('SMOKE PASS')

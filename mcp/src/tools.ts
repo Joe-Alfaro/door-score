@@ -2,10 +2,11 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import type { CallToolResult } from '@modelcontextprotocol/sdk/types.js'
 import { z } from 'zod'
 import { buildAddressIndex, type AddressLookup } from './address.js'
+import { explainUrl, streetViewImageUrl } from './config.js'
 import { parseLatLng } from './geo.js'
 import { planRoute } from './route.js'
 import { narrative, primaryTalkingPoint, talkingPoints } from './talking-points.js'
-import { hasCoords, type Door, type LatLng } from './types.js'
+import { hasCoords, type Door, type LatLng, type Signal } from './types.js'
 
 const ABSENTEE_TAG = 'absentee owner'
 
@@ -42,6 +43,44 @@ function quantile(sortedAsc: number[], q: number): number {
   return Math.round((lowerValue + (upperValue - lowerValue) * (position - lower)) * 10) / 10
 }
 
+function streetView(door: Door) {
+  const vision = door.vision
+  if (!vision) return null
+  return {
+    image_url: streetViewImageUrl(door.door_id),
+    date: vision.image.date,
+    approximate: vision.image.approximate,
+    distance_m: vision.image.distance_m,
+    image_usable: vision.signals.image_usable,
+    notes: vision.signals.notes ?? vision.signals.usability_note ?? null,
+  }
+}
+
+function permitsSummary(door: Door) {
+  const permits = door.permits
+  if (!permits) return null
+  return {
+    permits_5yr: permits.permits_5yr,
+    permits_10yr: permits.permits_10yr,
+    cost_5yr: permits.cost_5yr,
+    trades_5yr: permits.trades_5yr,
+    latest: { date: permits.latest_date, type: permits.latest_type, cost: permits.latest_cost, months_ago: permits.months_since_latest },
+    major_project_5yr: permits.major_project_5yr,
+  }
+}
+
+function mean(values: number[]): number {
+  return values.length > 0 ? Math.round((values.reduce((sum, v) => sum + v, 0) / values.length) * 100) / 100 : 0
+}
+
+function isVisionSignal(instances: Signal[]): boolean {
+  return instances.some((signal) => /^street view/i.test(signal.source))
+}
+
+function normalizeTags(tags: string[] | undefined): string[] {
+  return (tags ?? []).map((tag) => tag.trim().toLowerCase()).filter((tag) => tag.length > 0)
+}
+
 function countBy<T>(items: T[], key: (item: T) => string): Record<string, number> {
   return items.reduce<Record<string, number>>((acc, item) => {
     const k = key(item)
@@ -54,6 +93,7 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
   const index = buildAddressIndex(doors)
   const totalDoors = doors.length
   const knownTags = [...new Set(doors.flatMap((door) => door.tags))].sort()
+  const knownMunicipalities = [...new Set(doors.map((door) => door.municipality))].sort()
 
   server.registerTool(
     'get_door_score',
@@ -126,6 +166,9 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
           months_since_deed: door.months_since_deed,
           owner_occupied: door.owner_occupied,
         },
+        street_view: streetView(door),
+        permits: permitsSummary(door),
+        census: door.census ?? null,
         narrative: narrative(door, totalDoors),
         talking_points: talkingPoints(door),
       })
@@ -140,26 +183,35 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
         'Build a walking route for a field rep within a time budget. Each door visit costs 6 minutes; walking is 5 km/h over straight-line (haversine) distance. ' +
         'Doors are chosen greedily by score per minute, then the order is tightened with a 2-opt pass. ' +
         'start_point may be an address in the dataset, a "lat,lng" string, or omitted (defaults to the highest-scoring eligible door). ' +
-        'Doors tagged "absentee owner" are skipped unless include_absentee is true. Returns ordered stops with arrival minutes and a one-line talking point each, totals, and a Google Maps directions URL (first 10 stops).',
+        'Doors tagged "absentee owner" are skipped unless include_absentee is true. Pass focus (a list of tags) to restrict eligible doors to those carrying at least one of them. ' +
+        'Returns ordered stops with arrival minutes, a one-line talking point and an explain_url (map deep link) each, totals, and a Google Maps directions URL (first 10 stops).',
       inputSchema: {
         hours: z.number().positive().max(12).describe('Time budget in hours, e.g. 2 or 1.5'),
         start_point: z.string().optional().describe('Dataset address (e.g. "3 Larkwood Dr") or "lat,lng" (e.g. "41.0574,-74.1410"). Omit to start at the top-scoring door.'),
         max_doors: z.number().int().positive().max(200).optional().describe('Maximum stops (default 20)'),
         min_score: z.number().min(0).max(100).optional().describe('Only consider doors with door_score >= this (default 50)'),
         include_absentee: z.boolean().optional().describe('Include doors tagged "absentee owner" (default false)'),
+        focus: z.array(z.string().min(1)).optional().describe(`Only doors carrying at least one of these tags (case-insensitive), e.g. ["new mover", "moving activity"]. Known tags: ${knownTags.join(', ')}`),
       },
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
     },
-    ({ hours, start_point, max_doors, min_score, include_absentee }) => {
+    ({ hours, start_point, max_doors, min_score, include_absentee, focus }) => {
       const minScore = min_score ?? 50
       const maxDoors = max_doors ?? 20
+      const focusTags = normalizeTags(focus)
+      const unknownFocus = focusTags.filter((tag) => !knownTags.some((known) => known.toLowerCase() === tag))
+      if (unknownFocus.length > 0) {
+        return jsonResult({ error: `Unknown focus tag(s): ${unknownFocus.join(', ')}. Known tags: ${knownTags.join(', ')}` }, true)
+      }
       const candidates = doors
         .filter(hasCoords)
         .filter((door) => door.door_score >= minScore)
         .filter((door) => include_absentee === true || !door.tags.includes(ABSENTEE_TAG))
+        .filter((door) => focusTags.length === 0 || door.tags.some((tag) => focusTags.includes(tag.toLowerCase())))
 
       if (candidates.length === 0) {
-        return jsonResult({ error: `No doors with door_score >= ${minScore}${include_absentee ? '' : ' (excluding absentee owners)'} have coordinates.` }, true)
+        const focusNote = focusTags.length > 0 ? ` tagged ${focusTags.map((tag) => `"${tag}"`).join(' or ')}` : ''
+        return jsonResult({ error: `No doors with door_score >= ${minScore}${focusNote}${include_absentee ? '' : ' (excluding absentee owners)'} have coordinates.` }, true)
       }
 
       const resolveStart = (): { start: LatLng; label: string } | CallToolResult => {
@@ -184,8 +236,8 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
       return jsonResult({
         start_point: { ...plan.start, label: resolved.label },
         budget_minutes: hours * 60,
-        parameters: { min_score: minScore, max_doors: maxDoors, include_absentee: include_absentee === true, eligible_doors: candidates.length },
-        stops: plan.stops,
+        parameters: { min_score: minScore, max_doors: maxDoors, include_absentee: include_absentee === true, focus: focusTags, eligible_doors: candidates.length },
+        stops: plan.stops.map((stop) => ({ ...stop, explain_url: explainUrl(stop.door_id) })),
         totals: plan.totals,
         google_maps_url: plan.google_maps_url,
       })
@@ -196,23 +248,31 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
     'list_top_doors',
     {
       title: 'List top doors',
-      description: `The highest-scoring doors in the territory, optionally filtered to a tag. Known tags: ${knownTags.map((tag) => `"${tag}"`).join(', ')}. Returns address, municipality, score, rank, tags, coordinates and a one-line talking point per door.`,
+      description: `The highest-scoring doors in the territory, optionally filtered to a tag and/or municipality. Known tags: ${knownTags.map((tag) => `"${tag}"`).join(', ')}. Municipalities: ${knownMunicipalities.join(', ')}. Returns address, municipality, score, rank, tags, coordinates and a one-line talking point per door.`,
       inputSchema: {
         n: z.number().int().positive().max(200).optional().describe('How many doors to return (default 20)'),
         tag: z.string().optional().describe(`Only doors carrying this tag (case-insensitive), e.g. "new mover"`),
+        municipality: z.string().optional().describe(`Only doors in this municipality (case-insensitive), one of: ${knownMunicipalities.join(', ')}`),
       },
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
     },
-    ({ n, tag }) => {
+    ({ n, tag, municipality }) => {
       const limit = n ?? 20
       const wanted = tag?.trim().toLowerCase()
-      const filtered = wanted ? doors.filter((door) => door.tags.some((t) => t.toLowerCase() === wanted)) : doors
+      const wantedMunicipality = municipality?.trim().toLowerCase()
+      if (wantedMunicipality && !knownMunicipalities.some((known) => known.toLowerCase() === wantedMunicipality)) {
+        return jsonResult({ error: `Unknown municipality "${municipality}". Known municipalities: ${knownMunicipalities.join(', ')}` }, true)
+      }
+      const filtered = doors
+        .filter((door) => !wanted || door.tags.some((t) => t.toLowerCase() === wanted))
+        .filter((door) => !wantedMunicipality || door.municipality.toLowerCase() === wantedMunicipality)
       if (wanted && filtered.length === 0) {
-        return jsonResult({ error: `No doors carry tag "${tag}". Known tags: ${knownTags.join(', ')}` }, true)
+        return jsonResult({ error: `No doors carry tag "${tag}"${wantedMunicipality ? ` in ${municipality}` : ''}. Known tags: ${knownTags.join(', ')}` }, true)
       }
       return jsonResult({
         total_matching: filtered.length,
         tag: wanted ?? null,
+        municipality: wantedMunicipality ?? null,
         doors: filtered.slice(0, limit).map((door) => ({
           address: door.address,
           municipality: door.municipality,
@@ -223,6 +283,50 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
           lng: door.lng,
           talking_point: primaryTalkingPoint(door),
         })),
+      })
+    },
+  )
+
+  server.registerTool(
+    'get_signal_summary',
+    {
+      title: 'Signal summary',
+      description:
+        'Per-signal coverage across every door: how many doors earned points, mean and max points, data sources, and for imagery-derived signals the share of carrying doors whose street-level image was usable. Takes no arguments.',
+      annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+    },
+    () => {
+      const signalNames = [...new Set(doors.flatMap((door) => door.signals.map((signal) => signal.name)))]
+      const summary = signalNames.map((name) => {
+        const carrying = doors.filter((door) => door.signals.some((signal) => signal.name === name))
+        const instances = carrying.flatMap((door) => door.signals.filter((signal) => signal.name === name))
+        const scoring = instances.filter((signal) => signal.points > 0)
+        const vision = isVisionSignal(instances)
+        const usable = carrying.filter((door) => door.vision?.signals.image_usable === true).length
+        return {
+          name,
+          icp_trait: instances[0]?.icp_trait ?? null,
+          doors_with_signal: carrying.length,
+          doors_with_points: scoring.length,
+          share_with_points: carrying.length > 0 ? Math.round((scoring.length / carrying.length) * 1000) / 1000 : 0,
+          mean_points: mean(instances.map((signal) => signal.points)),
+          mean_points_when_scoring: mean(scoring.map((signal) => signal.points)),
+          max_points: instances.reduce((top, signal) => Math.max(top, signal.max_points), 0),
+          sources: [...new Set(instances.map((signal) => signal.source))],
+          vision_signal: vision,
+          usable_imagery_share: vision && carrying.length > 0 ? Math.round((usable / carrying.length) * 1000) / 1000 : null,
+        }
+      })
+      const withVision = doors.filter((door) => door.vision)
+      return jsonResult({
+        doors: totalDoors,
+        imagery: {
+          doors_with_imagery: withVision.length,
+          doors_with_usable_imagery: withVision.filter((door) => door.vision?.signals.image_usable === true).length,
+        },
+        doors_with_permits: doors.filter((door) => door.permits).length,
+        doors_with_census: doors.filter((door) => door.census).length,
+        signals: summary,
       })
     },
   )
