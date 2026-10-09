@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.012118,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small round blue water feature on the rear deck/patio beside the east side of the house; the large pools at top right and bottom right belong to neighboring lots.",
+   "detail": "Likely a hot tub or small round above-ground pool rather than a full-size pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "Small square roofed structure at the east edge of the lot near the hedge line, possibly a shed.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Large gray-roofed house with a wide paved driveway on the west side (empty), a rear deck with a small round blue tub, and a landscaped lawn with an evergreen hedge; larger pools sit on adjacent lots."
+ }
+}

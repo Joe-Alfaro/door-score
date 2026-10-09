@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007478,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Central roof shows brownish shingles with two small skylights; no dark rectangular grids.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The central house has a dark paved driveway on its east side, but no clear separate outbuilding on the central lot; the red-roofed item and house to the north appear to be on a neighboring lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "Hip-roofed house on a corner lot with a dry, patchy lawn, a large paved driveway to the east, and dense mature trees along the west side; two skylights are visible on the roof."
+ }
+}

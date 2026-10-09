@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010128,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The blue pool at the left edge belongs to a neighboring lot, not the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small light-gray roofed outbuilding or shed sits in the back lawn south of the central house.",
+   "detail": "Small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "not_visible",
+  "tree_cover": "high",
+  "notes": "The central house is mostly hidden by dense mature tree canopy and dark shadow, with an open lawn behind it and a small shed at the rear; the pool at the left edge is a neighbor's."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003436,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with good visibility of exterior, lawn, and driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Only a white personal vehicle visible in the driveway; no commercial work vehicles present.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No yard signs visible on the property.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving trucks, containers, or relocation activity visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No equipment, tarps, construction materials, or active work visible at the property.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "Well-maintained lawn and recent plantings near foundation suggest homeowner maintenance rather than professional crew-level landscaping service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "Roof is clearly visible and shows no solar panel installation.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "excellent",
+  "roof_condition": "excellent",
+  "vehicles_visible": 1,
+  "notes": "Recently updated ranch home in excellent condition with well-maintained lawn; white vehicle parked in driveway."
+ }
+}

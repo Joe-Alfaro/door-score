@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010228,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The blue kidney-shaped pool near the top of the tile appears to belong to the neighboring lot to the north, not the central house. The central house has a brown multi-pitch roof with some mottling, an empty asphalt driveway, and wooded land on its east side."
+ }
+}

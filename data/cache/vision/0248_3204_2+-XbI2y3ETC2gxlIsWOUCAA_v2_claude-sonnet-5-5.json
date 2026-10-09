@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008006,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible but partly obscured by tree foliage and a large trunk in the foreground; the house is small and distant in the frame.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Brick cape-style home with a wreath on the front door, mulched beds and trimmed shrubs; heavy tree cover limits visibility of the roof and upper facade."
+ }
+}

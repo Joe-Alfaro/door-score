@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007098,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small gray-roofed outbuilding or shed sits southeast of the main house at the lower center of the lot, with a smaller shed-like object near the rear fence.",
+   "detail": "Small shed or garden outbuilding"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a large gray hip-style roof with a rear patio or deck on the east side, and dense mature trees border the west side and part of the yard, so a field rep may have limited view of the property from above."
+ }
+}

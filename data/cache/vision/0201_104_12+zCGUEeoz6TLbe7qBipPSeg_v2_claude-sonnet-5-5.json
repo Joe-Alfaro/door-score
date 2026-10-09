@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.007996,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "The main property frontage is obscured by a large privacy blur covering the center of the image. Only a distant house on the right is faintly visible, and it is too small to assess reliably.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "not_visible",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The target property is hidden behind a blur and the road is in the foreground, so a field rep would need a different image or an in-person check."
+ }
+}

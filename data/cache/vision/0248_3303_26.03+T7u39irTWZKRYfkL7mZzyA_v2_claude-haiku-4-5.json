@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003091,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "Image shows a roadside guardrail and tree line with only a distant building partially visible; does not clearly show a residential property frontage suitable for assessment.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.0,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.0,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.0,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.0,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.0,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.0,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "not_visible",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Image is taken from roadside across guardrail; property structure too distant and obscured by trees to assess condition or features."
+ }
+}

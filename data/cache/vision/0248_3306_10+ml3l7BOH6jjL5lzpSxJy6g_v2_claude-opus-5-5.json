@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.017372,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential property visible, though the house is largely obscured by trees and shrubs; the lawn and landscaping dominate the frame.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "The lawn is large and mowed with visible stripes, and there are cleanly edged mulched beds around a tree and shrub, but no crew, equipment, or service signage is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "not_visible",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "The large, well-maintained wooded lot has edged mulch beds and a brick chimney, and the house sits far back from the road and is mostly hidden by mature shrubs, so exterior details are hard to assess."
+ }
+}

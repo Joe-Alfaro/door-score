@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006968,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A small dark object sits in the wooded area behind the house, but it is too indistinct to identify as a structure.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house is mostly flat or low-slope with a light gray roof that shows some staining and a few rooftop vents or skylights. A dense tree canopy covers most of the rear yard, and the driveway on the left side is not clearly visible."
+ }
+}

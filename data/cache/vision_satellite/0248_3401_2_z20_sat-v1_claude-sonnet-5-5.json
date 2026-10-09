@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010678,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.3,
+   "evidence": "A dark-roofed building sits just northeast of the central house, but it may belong to the adjacent lot.",
+   "detail": "Possible garage or outbuilding"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "not_visible",
+  "tree_cover": "high",
+  "notes": "The central house has a dark roof that is mostly in shadow, and dense mature canopy covers the yard to the east and south, so the roof and yard are hard to assess from above."
+ }
+}

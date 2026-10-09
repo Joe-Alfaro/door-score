@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007248,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "Roof is dark and heavily shaded; no regular reflective panel grid is distinguishable.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "The only other structures (a greenhouse-like frame and a roof at top) are on neighboring lots at the edge of the tile.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "not_visible",
+  "tree_cover": "high",
+  "notes": "Central house sits in deep shadow behind dense mature tree canopy at the end of a cul-de-sac driveway, so the roof and rear yard are largely obscured."
+ }
+}

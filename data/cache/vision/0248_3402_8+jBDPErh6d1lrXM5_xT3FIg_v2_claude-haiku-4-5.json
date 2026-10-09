@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003146,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of residential property with good visibility of frontage, lawn, exterior, and roof.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "Well-maintained foundation plantings and lawn typical of homeowner care; no crew-level evidence such as equipment, multiple workers, or professional crew vehicles.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Single gray vehicle visible in driveway; property is well-maintained with neat landscaping and clean appearance throughout."
+ }
+}

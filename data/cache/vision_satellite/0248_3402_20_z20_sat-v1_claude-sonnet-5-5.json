@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008048,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The only pool visible is at the top edge of the tile on a neighboring lot. None is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "The central roof is uniform dark gray shingle with no regular dark rectangular grids.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "No trampoline or swing set is visible on the central lot. The round object on the rear deck looks like a patio umbrella or table.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "The only structure on the central lot is the main house with a rear wood deck. The buildings at the top and bottom of the tile belong to neighboring lots.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house is a multi-section dark-shingled roof with a rear wood deck and umbrella table, surrounded by dense mature trees that shade much of the yard and hide the driveway."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.016792,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story ranch-style home with a long driveway and front lawn; autumn conditions.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Mulched tree ring and trimmed shrubs are neat but consistent with homeowner maintenance; no crew-level evidence.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-kept gray-sided ranch with an attached garage under the house and fall leaves scattered on the lawn and driveway, which may make it a fit for leaf cleanup or gutter services."
+ }
+}

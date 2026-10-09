@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003306,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "Image shows a street view of a landscaped property with trees and fencing, but the actual house structure is not clearly visible or is completely obscured by dense vegetation and trees. Unable to assess exterior condition, roof, or most property details.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "Mature manicured landscaping with formal arrangement of evergreens, iron fencing, and well-maintained hedges suggests professional landscape design and maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Property heavily screened by mature trees and formal landscaping; residential structure not visible from street view angle."
+ }
+}

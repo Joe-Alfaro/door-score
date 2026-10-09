@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008556,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a white colonial house frontage with front lawn; some tree and utility line obstruction at edges.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Mulched beds, trimmed shrubs and a mowed lawn are visible, but nothing indicates a crew or commercial equipment; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained two-story white colonial with dormers, green shutters and a red front door; a dark vehicle is partly visible near the attached garage on the right but not clearly in the driveway."
+ }
+}

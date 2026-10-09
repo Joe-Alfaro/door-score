@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003166,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with lawn and partial house structure visible",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Well-maintained lawn and mature trees, but appearance is consistent with standard homeowner maintenance rather than active professional crew work.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Mature landscaping with large established trees; brick construction visible on right side; driveway paved with dark material on right; property appears well-maintained with no active work or services present."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008618,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "The only pool-like feature is an above-ground pool in the neighboring lot to the north, near the top edge. The central lot has no visible water surface.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "There is a small structure with a dark frame on the right side of the central lot's backyard, near the hedge. It could be a swing set or play structure, but it is partly in shadow and unclear.",
+   "detail": "possible swing set or play structure"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A large attached or adjacent dark-roofed section sits to the right of the main house, likely a garage or addition. A small shed also sits in the back corner of the lot, but it may belong to the neighboring property.",
+   "detail": "garage/addition and possible small shed"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central lot is a single-family home with a paved driveway on its right side holding two vehicles. The backyard has a patio with furniture. A large dark-leaved tree and hedges border the property, and the lawn is partly patchy."
+ }
+}

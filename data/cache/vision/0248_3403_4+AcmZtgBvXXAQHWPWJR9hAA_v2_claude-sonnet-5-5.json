@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008776,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime frontage of a split-level house with a front lawn and driveway; trees partially screen the house but the facade, garage and lawn are visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only vehicle is a gray sedan in the driveway. No commercial work vehicles, trailers or equipment are visible.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The lawn is neatly mowed and the shrubs are trimmed, but there are no crew, equipment or truck indicators. This is consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof sections show no panels.",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-kept split-level home with a mature tree canopy and an asphalt driveway; part of the facade is hidden behind trees and shrubs."
+ }
+}

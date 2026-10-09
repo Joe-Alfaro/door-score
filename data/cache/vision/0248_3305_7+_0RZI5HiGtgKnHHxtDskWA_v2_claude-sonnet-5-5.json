@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008216,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "The view is dominated by a large tree trunk and foliage. A big blurred region in the center hides what is probably the property or house. No house frontage is clearly visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The frontage is obscured by a blurred area and a large tree, so a different image angle is needed. A wooden fence is visible in the distance on the right, and the lawn is patchy with dirt around the tree base."
+ }
+}

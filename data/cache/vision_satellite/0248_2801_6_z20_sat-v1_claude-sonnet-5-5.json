@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007908,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Rectangular turquoise water surface with a surrounding patio deck, located just northwest of the central gray-roofed house.",
+   "detail": "In-ground rectangular pool, roughly 20 ft long"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A gray-roofed section sits on the pool patio at the west side of the central house, and it could be a pool house or cabana. It could also be an attached wing, so this is uncertain.",
+   "detail": "Possible pool house or cabana beside the pool"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a backyard pool with a patio and lounge furniture. Two dark vehicles are parked in the driveway or side yard to the east, and tall trees border the lot on the northeast."
+ }
+}

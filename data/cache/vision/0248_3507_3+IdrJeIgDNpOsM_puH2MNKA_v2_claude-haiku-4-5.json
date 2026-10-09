@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003151,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear residential property frontage with good visibility of home exterior, lawn, and driveway",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "Lawn is well-maintained and healthy, but appears to be standard homeowner care with mature trees and basic foundation shrubs; no evidence of professional crew work or commercial landscaping services.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained single-family ranch home with mature shade trees; no active service indicators present."
+ }
+}

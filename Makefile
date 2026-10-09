@@ -39,8 +39,11 @@ api:                          ## console API on :8000 with reload (uvicorn)
 api-deploy:                   ## push the console API to Railway (context = repo root; see README "Console API")
 	railway up . --service api -d
 
-clean-cache:                  ## drop caches (next run re-pays for imagery/vision)
-	rm -rf data/cache/vision data/cache/streetview data/cache/streetview_meta data/cache/permits data/cache/census_tract data/cache/acs_tracts.json
+clean-images:                 ## drop image files only (re-fetchable for ~$5; vision JSON caches are kept and committed)
+	rm -rf data/cache/streetview data/cache/satellite
+
+clean-cache-DANGEROUS:        ## drop ALL caches including vision JSON: the next --vision run re-bills the territory (~$14)
+	rm -rf data/cache/vision data/cache/vision_satellite data/cache/streetview data/cache/satellite data/cache/streetview_meta data/cache/permits data/cache/census_tract data/cache/acs_tracts.json
 
 help:
 	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | sed 's/:.*##/ —/'

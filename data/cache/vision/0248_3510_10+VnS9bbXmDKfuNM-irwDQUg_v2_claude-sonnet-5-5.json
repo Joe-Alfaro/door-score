@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008546,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a raised-ranch style house frontage with driveway and front lawn; a blurred patch (privacy blur) covers a tree to the left of the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles, trailers, or equipment visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Visible roof sections show plain asphalt shingles with no panels.",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Raised-ranch with two-car garage, brick base, and an American flag; the front lawn has dry, patchy spots and the driveway asphalt looks aged but intact."
+ }
+}

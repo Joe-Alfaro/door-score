@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006418,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house has a gray-shingled roof and sits mostly surrounded by mature tree canopy, which hides much of the yard and any driveway access; the street frontage is not clearly visible."
+ }
+}

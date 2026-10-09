@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008966,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story house frontage from the street; large trees partly obscure the left side but the facade, roof and lawn are visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles or trailers visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is mowed and shrubs near the house are trimmed, but there is no crew, equipment or clearly commercial-grade bed work visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof slope shows plain asphalt shingles with no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "Small cream-sided cape-style home with a red front door and an American flag by the entry, set behind mature trees and a utility pole in the foreground; no vehicles in the driveway or at the curb."
+ }
+}

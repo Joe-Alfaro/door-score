@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008826,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story gray-sided suburban home from the street, with the full front lawn and driveway visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small yellow A-frame or sandwich-board style sign stands on the lawn near the driveway, but its wording is not legible.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The lawn is neatly kept and the foundation shrubs are tidy, but there are no crew, equipment or truck indicators.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "A white SUV is parked in the driveway and a small yellow A-frame sign sits on the lawn; a field rep may want to check what it says, as it could be a contractor or real estate sign."
+ }
+}

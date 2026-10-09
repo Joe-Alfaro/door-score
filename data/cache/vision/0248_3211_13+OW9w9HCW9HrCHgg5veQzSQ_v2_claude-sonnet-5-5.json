@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008646,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story ranch home with a front lawn; the neighboring house at left is partly visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Mulch beds with boulders, evergreens and flowering plantings look well designed, but there is no crew or equipment visible, so this is likely homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The dark SUV at far left sits in the neighboring driveway and a vehicle at far right is partly hidden behind trees, so no vehicles are clearly at the subject property; the home has a well-kept lawn and mature plantings."
+ }
+}

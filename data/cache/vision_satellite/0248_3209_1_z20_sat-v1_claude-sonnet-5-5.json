@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006698,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large multi-gabled house with dormers sits in heavy mature tree canopy that hides most of the rear and side yard; a single dark vehicle is parked at the left end of the driveway, and the backyard cannot be assessed."
+ }
+}

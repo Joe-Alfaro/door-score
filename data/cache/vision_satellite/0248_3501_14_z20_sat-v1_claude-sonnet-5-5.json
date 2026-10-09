@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011088,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.65,
+   "evidence": "Several dark rectangular grid-like arrays on the light gray roof faces of the house at upper center.",
+   "detail": "Roof-mounted arrays on multiple roof faces"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A separate blue-gray roofed building sits southwest of the main house, partly under tree canopy, and appears to be a shed, garage or outbuilding.",
+   "detail": "Possible outbuilding or garage with blue-gray roof"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The main house is at the top center of the tile, and the center of the tile is dense mature tree canopy that hides most of the yard; the roof appears fairly uniform with apparent solar arrays."
+ }
+}

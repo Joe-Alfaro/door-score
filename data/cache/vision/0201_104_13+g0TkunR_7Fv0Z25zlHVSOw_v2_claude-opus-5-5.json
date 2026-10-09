@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.017472,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage visible, though the house is partly blurred by a privacy blur and partly obscured by trees and shrubs.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.45,
+   "evidence": "Curving paver walkway, stone retaining wall, low-voltage path lights, mulched beds and shaped shrubs show significant hardscape investment, but no crew or crew-level evidence is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained wooded lot with an extensive paver walkway, stone wall, landscape lighting and a stone address pillar; the roof is hidden by heavy tree canopy and the house is partly blurred."
+ }
+}

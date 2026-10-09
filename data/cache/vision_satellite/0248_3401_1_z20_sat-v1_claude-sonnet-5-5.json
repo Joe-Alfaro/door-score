@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008138,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Dark patches on the lower roof sections of the central house could be skylights, shadow, or dark shingles, but there is no clear regular panel grid.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A round dark object with a lighter rim sits in the yard to the right of the central house, but it is likely a fire pit or round cover and is not clearly a trampoline; it also sits near the edge of the lot.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The house is a multi-part building. The section directly above the main roof may be an attached wing or a separate outbuilding, and the distinction is unclear.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The older, multi-gabled house sits on a corner lot with heavy mature tree canopy on the east and north sides, shadows across the roof, and a round dark feature in the east yard."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a gray multi-dormer roof, a driveway on the west side with two dark vehicles parked, and a rear yard mostly covered by large mature trees, with a patio or furniture area near the back right."
+ }
+}

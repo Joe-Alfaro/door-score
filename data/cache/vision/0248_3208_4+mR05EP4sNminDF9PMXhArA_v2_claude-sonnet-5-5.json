@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008876,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story residential frontage with driveway and landscaped front yard; a large tree trunk partially obstructs the center.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "Tidy mulched bed with evenly spaced trimmed shrubs, decorative boulders, and crisp edging along the front of the lawn suggest a designed installation, though no crew or equipment is visible.",
+   "detail": "Designed planting bed with boulders; maintenance source unclear"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-kept raised-expanded colonial with a white SUV in the driveway and a silver car parked at the left edge on the street; the property appears well maintained and occupied."
+ }
+}

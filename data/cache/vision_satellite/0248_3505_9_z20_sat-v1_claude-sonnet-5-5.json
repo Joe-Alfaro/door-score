@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006938,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "There is a small light-colored oval object in the back yard, but it looks like a cover or small item and not a trampoline.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a dark gray multi-gabled roof with a small back yard, and heavy tree canopy to the south and east hides much of the property. One car is parked in the driveway at the northeast."
+ }
+}

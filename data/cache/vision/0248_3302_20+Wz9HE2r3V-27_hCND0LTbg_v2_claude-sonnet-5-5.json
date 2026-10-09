@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008406,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential frontage; a large front tree partially blocks the house, but the facade, garage, lawn and driveway are visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Mulch rings around the tree and mailbox post and trimmed foundation shrubs, but nothing indicates a crew or commercial service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Split-level style home with a two-car garage, dark asphalt shingle roof and mature trees; one SUV is parked in the driveway and no activity is visible."
+ }
+}

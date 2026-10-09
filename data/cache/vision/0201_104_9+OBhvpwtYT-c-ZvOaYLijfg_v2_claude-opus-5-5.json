@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.016812,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story house with a large front lawn; a large tree trunk partially obscures the left side of the facade.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "Neatly trimmed hedges, mulched beds, and ornamental trees are visible, but there is no crew-level evidence such as equipment or a service vehicle.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "A well-maintained, tan stucco-style home with steep gables, an attached garage on the left, and a large lawn showing a few bare or mulched patches."
+ }
+}

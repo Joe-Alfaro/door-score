@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008496,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House is visible across a wide front lawn, but it is partly obscured by a large tree and shrubs in the foreground and mid-ground.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn shows mowing stripes and shrubs are trimmed, but there is no crew, equipment, or clear sign of professional service; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof section is dark gray shingle with no panels apparent.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Cape-style home with a brick chimney, set back behind a large front lawn and mature trees; much of the facade is hidden by foliage, so siding and trim condition is hard to assess."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006678,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a tan/brown shingle roof with some uneven discoloration. Large mature trees shade the west and east sides, and a paved driveway curves north toward the road. A dark vehicle may be parked near the top of the driveway, but it is hard to confirm."
+ }
+}

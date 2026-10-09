@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006798,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray roof with some uneven toning and a rear patio with furniture. A small blue vehicle is parked at the end of the short driveway on the right side, and a round above-ground pool sits on the neighboring lot at the top, not the central lot."
+ }
+}

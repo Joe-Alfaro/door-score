@@ -1,0 +1,44 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v1",
+ "usd": 0.002892,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with lawn, exterior, and roof visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "Lawn is neatly maintained but appears to be standard residential care, not professional landscaping services.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained property in autumn with lush lawn, attractive landscaping with ornamental tree, and no current work activity evident."
+ }
+}

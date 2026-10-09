@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007078,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A dark rectangular roof partly hidden by canopy sits just east of the central house, which may be a separate outbuilding or part of the main structure.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The lot is heavily wooded and most of the yard is hidden by canopy. The dark gray roof of the central house is only partly visible, and a small vehicle sits near the rear driveway or parking area."
+ }
+}

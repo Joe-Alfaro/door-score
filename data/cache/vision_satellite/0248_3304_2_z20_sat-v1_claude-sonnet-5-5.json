@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007448,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small dark-roofed structure sits to the right of the driveway at the top center, near the parked car. It could be a garage or shed, but it may belong to the neighboring lot.",
+   "detail": "Possible small garage or shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house is heavily shaded by dense mature tree canopy, with a reddish-brown roof partly obscured by trees and a flat-roofed section on the lower right. One car is parked on the driveway at the top, and the yard is mostly hidden by trees."
+ }
+}

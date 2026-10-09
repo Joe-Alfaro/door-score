@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009086,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House is visible across a large front lawn, though a large tree trunk and foliage partly obstruct the view. The roof and facade are still reasonably clear.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No vehicles or work trucks are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "There is a small white placard or flag on a stake in the lawn near the curb. It is too small and unclear to read, and could be a utility marker or a small lawn-care notice rather than a yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The lawn is mowed and the foundation shrubs are tidy, but there is no crew, equipment, or other clear sign of professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No panels are visible on the visible roof sections.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Two-story white colonial with an attached single-story wing on a large, shaded lot, with a small stake and placard in the front lawn that is worth checking in person."
+ }
+}

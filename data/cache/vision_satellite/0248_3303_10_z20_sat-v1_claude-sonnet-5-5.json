@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007188,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A small round blue water surface sits on the patio at the rear corner of the house, which looks like an above-ground pool or hot tub.",
+   "detail": "Small round above-ground pool or hot tub, blue water"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house backs onto dense mature woods and sits beside a cul-de-sac. A rear patio with a small round blue pool or hot tub is visible, and the left side of the lot is open lawn."
+ }
+}

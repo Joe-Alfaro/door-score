@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007638,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "The only pool-like turquoise water is at the lower right on a neighboring lot, not the central lot. A small blue patch at the rear of the central house's patio is too small to identify.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The rear patio or deck area is attached to the house. No separate shed or garage is clearly visible on the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray, uniform-looking roof, dry brown front lawn, and a rear patio or deck, with dense tree canopy to the east and south. A pool is visible on a neighboring lot at lower right, not on this one."
+ }
+}

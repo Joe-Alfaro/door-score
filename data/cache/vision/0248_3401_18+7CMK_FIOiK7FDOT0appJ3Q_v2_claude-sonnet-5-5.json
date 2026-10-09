@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.010366,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a Cape Cod style house frontage with lawn, driveway and landscaping; a large tree trunk and a parked pickup in the foreground partly obstruct the view.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Two small blue and yellow signs staked in the front lawn near the mulch bed, with names printed on them (e.g. 'CHLOE', 'JULIANNA'), which look like school or team congratulation or booster signs.",
+   "detail": "Appears to be personal or school-style lawn signs, not a real estate sign; text is only partly legible."
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The house next door has a wood porch/deck and what looks like a portable toilet or dumpster, which could mean construction, but this is on the neighboring property and the subject house shows no work.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Trimmed shrubs along the foundation, a mulched bed and a tidy lawn, but there is no crew, equipment or other clear sign of a professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "The silver pickup in the foreground is parked on the street, and the yard signs look like personal celebration signs rather than a for-sale listing; the neighboring house on the right may be under construction or recently built."
+ }
+}

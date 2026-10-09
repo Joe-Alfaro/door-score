@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009036,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level home frontage with driveway, front lawn, and covered porch.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.04,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Stone-edged curved beds with trimmed boulder-shaped shrubs, mulched borders, a landscape light, and a mulched ring bed around the tree suggest a designed landscape, but there is no crew or equipment visible.",
+   "detail": "Hardscape-edged planting beds; maintenance by a crew is not confirmed"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained split-level with a recently updated look (clean siding, stone veneer, new-looking porch rail and garage door), a flag on the porch, and a basketball hoop at the left edge of the frame."
+ }
+}

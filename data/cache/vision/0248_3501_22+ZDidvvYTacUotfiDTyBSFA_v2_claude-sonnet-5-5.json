@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008986,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level residential frontage from the street, with the house, lawn and driveway edge all visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A small white sign with a green ribbon logo and text stands on the lawn near the front shrub, and a smaller sign sits near the left driveway edge. They look like awareness or small informational signs, not real estate signs.",
+   "detail": "Green ribbon awareness-style sign with small text, not legible; not clearly a real estate or contractor sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "The lawn is freshly mowed and the house looks tidy. The yard has mature trees and a gravel path along the right side, and a dark SUV is parked in the driveway on the left."
+ }
+}

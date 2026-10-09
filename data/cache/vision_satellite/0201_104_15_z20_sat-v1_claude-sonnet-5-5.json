@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008358,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "An excavated, pool-shaped kidney basin with gray concrete or shotcrete lining sits in a construction zone southwest of the house, with a small blue tarp or water patch beside it. It appears to be under construction and unfilled.",
+   "detail": "In-ground pool under construction, not yet filled"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A round dark disc with a lighter rim sits southeast of the house near the tree line, consistent with a trampoline.",
+   "detail": "Possible trampoline"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Small light-colored objects south of the house look like patio items or construction materials rather than a clear outbuilding.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Active backyard construction with an excavated pool and material staging, plus debris, so the lot is in flux. Dense tree canopy surrounds the house and the driveway to the north holds a utility trailer or vehicle."
+ }
+}

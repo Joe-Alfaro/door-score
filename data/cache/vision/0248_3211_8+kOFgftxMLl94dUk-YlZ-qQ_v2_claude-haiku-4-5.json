@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003196,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with good lighting and full visibility of house, driveway, and grounds",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Lawn is well-maintained and uniform, but appears to be homeowner-maintained; no visible crew equipment, trucks, or crew-level maintenance signs",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "excellent",
+  "vehicles_visible": 0,
+  "notes": "Property is well-maintained with excellent curb appeal; blue tarp visible in left driveway area but no active work or service activity evident."
+ }
+}

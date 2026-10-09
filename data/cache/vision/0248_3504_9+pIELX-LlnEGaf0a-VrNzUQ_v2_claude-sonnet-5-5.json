@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008616,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story ranch-style home across a front lawn; a large tree partly screens the center of the frontage but the house is visible behind it.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Trimmed shrubs along the foundation and a mulched ring around the front tree, but no crew or equipment visible; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "Well-kept suburban ranch with a mowed lawn and mulched tree bed; a white SUV is parked in the driveway on the left and another vehicle is at the neighboring house on the right."
+ }
+}

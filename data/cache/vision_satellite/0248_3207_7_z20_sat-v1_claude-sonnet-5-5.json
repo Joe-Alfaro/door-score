@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.012258,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A blue rectangle sits at the rear of the house, but it adjoins the roof and has a flat tarp-like texture rather than water. It is more likely a tarp than a pool.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "No clear separate outbuilding on the central lot. The small structures to the south belong to neighboring lots.",
+   "detail": null
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "poor",
+  "tree_cover": "medium",
+  "notes": "The central house appears to be mid-reroof or under renovation, with part of the roof in new dark shingles, part in red underlayment or exposed decking, blue tarps, and debris and materials in the yard and driveway, so it is an active roofing or remodel project."
+ }
+}

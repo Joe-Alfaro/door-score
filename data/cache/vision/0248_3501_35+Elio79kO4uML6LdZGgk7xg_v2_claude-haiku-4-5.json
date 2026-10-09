@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003691,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with good visibility of exterior, lawn, and driveway area.",
+  "provider_truck": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Yellow compact excavator or mini loader visible in the driveway behind the house, consistent with active construction/renovation work equipment.",
+   "detail": "Mini excavator/compact loader"
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Fresh mulch/dirt visible around foundation of house, new stone/brick work visible at base of home, and construction equipment (excavator) present in driveway indicating active renovation or foundation work.",
+   "detail": "Foundation/exterior work in progress"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Lawn appears maintained but shows bare patches and fresh mulch/dirt from ongoing construction; appears to be homeowner-maintained or disrupted by active work rather than professional landscaping crew.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "fair",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Active renovation work underway with excavation equipment present; foundation appears to be under construction or repair."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007218,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small deck or structure with a lighter roof or platform sits attached to the west side of the central house, and a small white structure is at the southeast corner near the driveway. Neither is clearly a separate outbuilding.",
+   "detail": "possible deck or small attachment"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a gray, flat-looking roof with some staining and sits in dense tree cover; two dark vehicles are parked in the driveway on its east side, and mature trees hide much of the yard."
+ }
+}

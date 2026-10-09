@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008428,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "The blue pools at the top-left (small, near the house's rear) and the left edge appear to be on neighboring lots. The small one at top-left is close to the central house but is likely on the adjacent property.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "Regular blue-dark rectangular grids on several roof faces of the central house, including a large array on the lower roof section and panels on the upper-left roof sections.",
+   "detail": "Multiple roof-mounted arrays on the central house"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "The structure at the lower left looks like a separate house on a neighboring lot rather than a shed or garage on the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has multi-section roofs with several solar arrays and a driveway to the lower right with two dark vehicles. Mature trees surround the lot and shade much of the yard, and a small pool at the upper left may belong to the adjacent lot."
+ }
+}

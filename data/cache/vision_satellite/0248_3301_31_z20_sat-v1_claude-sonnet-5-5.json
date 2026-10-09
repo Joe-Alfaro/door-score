@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010368,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small gray-roofed structure sits at the edge of the lawn southwest of the main house. It may be a shed, or it may belong to the neighboring lot.",
+   "detail": "possible small shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a rear wooden deck and a large open lawn with a small raised garden bed. The pool at the lower left belongs to the neighboring lot, not this one."
+ }
+}

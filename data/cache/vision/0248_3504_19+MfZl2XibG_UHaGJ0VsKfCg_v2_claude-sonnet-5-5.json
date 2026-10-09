@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008696,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House is visible but heavily obscured by trees and a red-leaved maple in the foreground; only part of the facade and roof is seen.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles visible on the street or driveway.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Foundation shrubs and mulched bed around the tree are tidy, but there is no crew or equipment; likely homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Single-story brick and wood-sided ranch set behind mature trees with a bench on the lawn; the roof is mostly hidden, so a closer or different-angle view would be needed to assess it."
+ }
+}

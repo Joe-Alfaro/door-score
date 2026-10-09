@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006578,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "not_visible",
+  "tree_cover": "high",
+  "notes": "The central house is largely hidden by large mature trees and shadow, so its roof cannot be assessed; a dark paved driveway curves toward the street and the dark round object in the neighboring yard to the southwest is not on the central lot."
+ }
+}

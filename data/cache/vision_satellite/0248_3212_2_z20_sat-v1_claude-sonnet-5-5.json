@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006918,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small light-colored patch near the southwest corner of the house looks like a patio or attached addition, not a separate outbuilding.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a hip-style gray roof and a long asphalt driveway to the north with one white car; the yard has dry grass to the south and tall evergreens along the west side."
+ }
+}

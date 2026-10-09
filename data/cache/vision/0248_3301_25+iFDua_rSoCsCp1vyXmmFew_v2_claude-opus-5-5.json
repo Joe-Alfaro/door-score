@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.016952,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level home frontage with driveway and front lawn.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "Belgian block curbing, mulched beds with low-voltage path lights, and a stone-edged tree ring suggest a professional install, but there is no crew, truck, or equipment showing ongoing professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained, recently updated split-level with a covered front porch, stone veneer, a basketball hoop by the driveway, and a fenced side yard on the right."
+ }
+}

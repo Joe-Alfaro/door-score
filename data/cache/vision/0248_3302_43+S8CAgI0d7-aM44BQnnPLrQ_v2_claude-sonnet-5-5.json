@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008346,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Frontage view is dominated by lawn and trees; the house is mostly hidden by foliage, with only a garage door and part of the siding visible at the right and a wooden structure at the left.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Neat mulch ring around the tree, trimmed shrubs, and a clean edge along the black gravel driveway border, but nothing that clearly indicates a crew.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The house is largely obscured by mature trees; the lawn is green and well maintained, with a paved driveway leading to a garage on the right."
+ }
+}

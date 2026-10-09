@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007528,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A round dark disc with a lighter rim sits in the shaded area at the top of the lot, consistent with a trampoline.",
+   "detail": "Likely trampoline"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A separate gabled roof structure lies north of the main house along the driveway, apparently a detached garage or outbuilding.",
+   "detail": "Detached garage or outbuilding"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house has a tan/gray shingle roof with a rear patio and a long driveway to the north. The lot is heavily wooded behind the house, and there is an open front lawn to the south."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003166,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear, well-lit view of residential property frontage showing house, grounds, and driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Lawn is well-maintained but appears to be standard homeowner care; no visible crew equipment, landscaping trucks, or evidence of professional crew work.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained two-story mixed brick and vinyl home with mature landscaping; one vehicle visible in driveway on right side."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008626,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential frontage showing a two-story house with attached two-car garage, driveway, and front lawn. A large tree partially obscures the left side of the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof section over the garage shows no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Suburban colonial-style home with a freshly sealed-looking asphalt driveway, a roadside mailbox on a wooden post, and a mature shade tree in the front yard; the front lawn is green with a few thin patches near the tree."
+ }
+}

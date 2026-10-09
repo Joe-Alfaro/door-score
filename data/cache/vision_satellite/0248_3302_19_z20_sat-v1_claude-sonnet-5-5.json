@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007268,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Bright turquoise-blue kidney/oval-shaped water surface with a surrounding patio deck, just east of the central house.",
+   "detail": "In-ground, oval/kidney-shaped, uncovered"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Corner lot with an in-ground pool and multi-level deck behind the house, a red patio umbrella nearby, and a gravel/paved side driveway; two cars are parked on the street, not in the driveway."
+ }
+}

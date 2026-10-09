@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008626,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible across a sloped front lawn, though trees partially obscure the house and the image is somewhat low resolution.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Trimmed shrubs along the foundation but no crew, equipment, or clearly commercial-grade work visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "Single-story ranch with an American flag by the door and pumpkins by the side walkway, suggesting fall seasonal decorating; fallen leaves are accumulating on the lawn and the dark partial vehicle at the far right edge is not clearly in the driveway."
+ }
+}

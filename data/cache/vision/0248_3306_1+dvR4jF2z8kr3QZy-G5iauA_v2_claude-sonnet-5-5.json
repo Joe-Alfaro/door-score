@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008356,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime street-level view of a split-level house with an attached garage, partly screened by mature trees; the driveway and front lawn are visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 3,
+  "notes": "Heavily wooded lot with large mature trees, so leaf and branch debris and tree-related work are likely concerns; three passenger vehicles (dark SUV, maroon SUV, red car) are in or near the driveway, and a white vinyl fence runs along the right side."
+ }
+}

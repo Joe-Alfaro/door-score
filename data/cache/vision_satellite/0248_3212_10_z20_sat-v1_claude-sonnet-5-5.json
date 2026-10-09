@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.006948,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Small items behind the house at the rear are unclear and may be patio or shed elements, but no distinct detached building is visible.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central gray-roofed house has a paved driveway on its right side with what appear to be two vehicles near the street end, and it is bordered by mature hedges and trees on the lot's sides."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.017432,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-family raised ranch/split-level home with driveway and front yard; autumn foliage.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "Neatly edged mulched island bed with shrubs, stone-edged gravel driveway, and brick walkway suggest attentive upkeep, but no clear crew-level evidence.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained gray raised ranch with white vinyl fencing, gravel driveway, and large mature trees overhead that may drop heavy leaves on the roof and gutters; the dark car at right appears to belong to the neighboring property."
+ }
+}

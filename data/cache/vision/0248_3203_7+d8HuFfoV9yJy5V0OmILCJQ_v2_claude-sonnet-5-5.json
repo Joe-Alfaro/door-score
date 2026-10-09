@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008816,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side of a house with a garage gable, a driveway, a front lawn and landscaped beds. Heavy tree cover blocks part of the frontage, and the main facade and roof are mostly not visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Shaped shrubs and a tidy evergreen are visible, but there are no crew, equipment or truck indicators. This looks like mature, well-kept homeowner-maintained planting.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The property has mature, well-maintained shrubs and trees, a concrete walkway and a white garage door on a gray-sided structure, but the main house facade is not in frame."
+ }
+}

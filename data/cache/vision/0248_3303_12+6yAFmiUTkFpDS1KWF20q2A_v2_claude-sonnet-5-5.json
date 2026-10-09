@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009476,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story colonial-style house frontage across a lawn; a large tree partly obscures the left side and the roofline is partly shaded by foliage.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A very small white marker or flag is stuck in the lawn near the curb, but it is too small to read and looks like a utility or survey flag rather than a real estate sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.04,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Foundation shrubs are neatly rounded and the lawn is mowed, but nothing shows crew-level work, so this looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No panels are visible on the shaded roof sections.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-kept blue-gray colonial with dark green shutters, a columned front portico and mature trees; no vehicles or activity are visible, and a small white flag or stake sits near the curb."
+ }
+}

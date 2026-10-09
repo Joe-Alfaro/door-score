@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008088,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No blue or turquoise water surface or pool-shaped cover visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "A round dark object with a rim sits near the house's southeast corner, but it looks like a well or planter ring, not a trampoline. The round object at the left edge is on a neighboring lot.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "No clear detached garage or shed on the central lot; the nearby buildings at the top and bottom belong to neighboring lots.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Single-story house with a tan/brown roof and an asphalt driveway on the east side holding two vehicles (white pickup and dark car); lawn is mostly open with hedges and mature trees along the edges, plus a round stone ring feature near the southeast corner."
+ }
+}

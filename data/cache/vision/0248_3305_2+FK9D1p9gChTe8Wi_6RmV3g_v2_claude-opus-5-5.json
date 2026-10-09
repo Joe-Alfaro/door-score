@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.025412,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level house frontage, partly obscured by large trees in the front yard.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "Small signs stand at the mulch bed near the front walk, but they appear to be decorative or house-number signs, not a clearly legible commercial or real-estate sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A newly planted staked tree with a green watering bag and stone-ringed beds are visible, but there is no clear evidence of a crew or service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 3,
+  "notes": "The house is heavily shaded by mature trees, there is a recently planted tree with a watering bag on the right, and the yard has decorative lawn ornaments and a stone border along the curb."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008606,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential split-level house across a front lawn; a large tree partially obscures the upper portion of the house and roof.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Trimmed shrubs along the foundation and a mulched tree ring look tidy, but nothing shows crew-level work such as a crew, equipment, or a landscaping vehicle.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Well-kept split-level home with a paved driveway curving to the left and no vehicles out; the roof is mostly hidden by the tree canopy and the house sits well back from the street."
+ }
+}

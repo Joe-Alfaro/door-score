@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007238,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A round dark disc with a blue rim sits in the shaded backyard just east of the house, which may be a trampoline. A small light object nearby could be play equipment or a bench.",
+   "detail": "possible trampoline"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house has a brown-tan roof with some staining and a rear deck with an umbrella table, and the backyard is heavily shaded by mature trees; a silver car is parked in the driveway on the west side."
+ }
+}

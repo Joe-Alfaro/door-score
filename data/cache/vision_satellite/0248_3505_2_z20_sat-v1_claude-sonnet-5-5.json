@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007248,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "The only pool visible, a round above-ground pool with blue water, is at the lower left on a neighboring lot, not the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a multi-gabled gray roof partly shaded by mature trees, and the lot sits on a cul-de-sac bend. The visible above-ground pool belongs to the neighboring lot to the lower left, and the white vehicle is parked on the street.\u00bb"
+ }
+}

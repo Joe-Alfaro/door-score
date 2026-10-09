@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009066,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Street-level view of a cul-de-sac with a wood-sided house at right and another at left, partly obscured by a large evergreen tree. Frontage is visible but partly blocked by vegetation.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A white Ram ProMaster-style cargo van is parked at the right near the driveway of the right-hand house. It has no visible lettering, ladder rack, or equipment, so it cannot be confirmed as a commercial work vehicle.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 2,
+  "notes": "The white unmarked cargo van is parked at the right-hand house and a dark car sits in the left driveway. Heavy tree cover limits what can be seen of both homes, and it is unclear which house is the target property."
+ }
+}

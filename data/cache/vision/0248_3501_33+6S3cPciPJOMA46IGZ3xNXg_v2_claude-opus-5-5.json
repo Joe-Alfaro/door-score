@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.024272,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime frontage view of a two-story colonial home with driveway and front lawn.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Purple portable toilet placed beside the driveway, commonly used during construction or renovation work; no other equipment is visible.",
+   "detail": "Portable toilet (purple unit)"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.45,
+   "evidence": "",
+   "detail": "Lawn shows crisp, uniform mowing stripes and neatly edged beds, which suggest but do not confirm a landscaping service; no crew, trailer, or signage is visible."
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "A portable toilet at the driveway suggests ongoing or upcoming work at the property, and the meticulously striped lawn may indicate an existing lawn service."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008576,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a single-story ranch house frontage across a lawn, though partially screened by a large tree and shrubs in the foreground.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": "Fresh red mulch rings around trees and beds and trimmed round shrubs are visible, but this is consistent with homeowner upkeep; no crew or equipment is present."
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Two SUVs are parked in the driveway beside an attached garage, and the house has red shutters, mulched beds, and mature trees; no signs of sale, moving, or work activity are visible."
+ }
+}

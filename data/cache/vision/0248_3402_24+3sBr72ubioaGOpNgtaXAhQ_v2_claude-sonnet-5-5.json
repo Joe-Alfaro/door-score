@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008606,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story split-level house frontage across a large front lawn; overhead wires cross the top of the frame but do not obscure the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Foundation beds with red shrubs, ornamental grasses and a blue spruce look tidy, but there is no crew, equipment or other clear sign of professional maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Well-kept blue-sided split-level with a lush green lawn, tidy foundation plantings, a white vinyl fence on the right and two cars parked in the driveway on the left."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010058,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A small gray structure sits at the right edge in the wooded area, but it is likely on a neighboring lot or outside the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a tan/brown shingle roof, a rear brick patio with furniture and a small front lawn, and dense woodland covers the lower half of the lot and hides the rear yard."
+ }
+}

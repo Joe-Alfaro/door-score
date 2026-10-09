@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003236,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with landscaping and yard signage visible",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Yellow/cream colored sign visible in lower right portion of the yard",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "Well-maintained mulched beds with mature shrubs and trees arranged in organized landscape design, manicured appearance suggesting professional installation or maintenance",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Property shows mature landscaping with established trees and organized planting beds; house structure partially visible in background with apparent dark roof."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009166,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level house frontage from the street, with some tree shade and canopy partially obscuring the left side.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "A small flat stone or marker sits at the base of the large tree, but it looks like a decorative rock or plaque and not a real estate sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Mulched beds, a shaped shrub by the entry and a paver walkway are tidy, but nothing shows a crew or equipment, so this is probably homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-kept split-level with a gravel and paver driveway and mature trees; a white object, possibly a trailer or dumpster, is partly visible at the far right edge behind the shed, but it is unclear and may be on a neighboring lot."
+ }
+}

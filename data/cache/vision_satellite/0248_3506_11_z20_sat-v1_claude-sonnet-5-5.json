@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007048,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small gray rectangular structure sits at the right edge of the central lot, just past the hedge. It could be a shed, but it may belong to the neighboring lot.",
+   "detail": "possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a gray composition roof and a small deck or patio on its east side. A tall hedge runs along the east boundary, and mature trees cover the west and south of the lot, so the yard is partly hidden."
+ }
+}

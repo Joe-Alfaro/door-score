@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008626,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story ranch-style home frontage across a large lawn, with a large tree on the left partially blocking the periphery but not the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Tidy lawn, mulch ring around the tree, and small foundation plantings are visible, but there is no crew or equipment, so this is consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-kept ranch with cedar-shake style siding and an attached garage; a gray SUV is parked in the driveway and the mailbox shows the number 207 or similar."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007038,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small gray-roofed structure sits just northeast of the main house, near the rear. It could be an attached wing or a shed, so the call is uncertain.",
+   "detail": "Small shed or outbuilding"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Corner lot with a multi-wing gray-shingled house, a paved driveway on the west side with one car parked near the garage, and an open front lawn with ornamental shrubs and evergreens."
+ }
+}

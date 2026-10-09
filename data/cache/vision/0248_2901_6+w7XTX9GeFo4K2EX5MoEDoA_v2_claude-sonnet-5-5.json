@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008686,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage visible in autumn with heavy tree cover; a small ranch-style house is on the right and a partly obscured taller house on the left.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Foundation plantings and a mulched bed edge are visible near the house, but there is no crew or equipment, so it is likely homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The lawn is covered in fallen autumn leaves and a weeping tree droops in the foreground; the ranch house on the right has a dark roof, blue door and mature foundation plantings."
+ }
+}

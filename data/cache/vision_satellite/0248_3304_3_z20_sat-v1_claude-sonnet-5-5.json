@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.009808,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small gray-roofed structure just southeast of the main house, next to the parked car, partly under canopy; may be a garage or shed.",
+   "detail": "possible small garage or shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The tile center is dense mature canopy, so this assessment uses the nearest house (upper-left of center), whose multi-gable dark roof looks moderately weathered; much of the yard and any other features are hidden by trees."
+ }
+}

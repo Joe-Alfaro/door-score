@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010388,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small tan-roofed shed or gazebo-like structure with an adjoining gray section sits in the yard just west of the central house.",
+   "detail": "Small shed or gazebo"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The blue pool at the lower left belongs to a neighboring lot, not the central one; the central house has a cluttered deck or rear area on its west side and a large tree mass along its east side."
+ }
+}

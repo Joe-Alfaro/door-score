@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007438,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A dark-roofed elongated building sits at center-right, separate from the large house at upper right, with a small fenced or raised garden plot in the clearing to its upper left.",
+   "detail": "Possible outbuilding or second dwelling with dark roof; small garden enclosure nearby"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Heavily wooded lot with a clearing and garden plot; the roofs are shaded and partly obscured by canopy, and a white vehicle sits on the narrow driveway at the bottom."
+ }
+}

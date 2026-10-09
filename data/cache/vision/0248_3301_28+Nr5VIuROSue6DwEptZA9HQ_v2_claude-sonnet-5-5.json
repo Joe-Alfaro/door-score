@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008266,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Street-level view across a road shows two houses partly obscured by mature trees; the left house is mostly hidden and the right house is partially visible at the frame edge, so it is unclear which is the target property.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "Large mature trees and overhead utility lines dominate the frame; the right-hand house has a stone foundation and shingled roof, and the left house with a gambrel-style roof is largely obscured by foliage."
+ }
+}

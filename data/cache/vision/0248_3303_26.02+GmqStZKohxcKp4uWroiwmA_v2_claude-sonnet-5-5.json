@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008386,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear frontal view of a large brick colonial-style house with a two-car garage, taken from the street on an overcast day with bare trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": "Lawn and foundation plantings are tidy, but there is no crew or equipment visible, so this is likely homeowner-maintained."
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Large, well-kept brick home with a paver driveway, red front door and a manicured green lawn with young trees; no vehicles, signs or work activity are visible."
+ }
+}

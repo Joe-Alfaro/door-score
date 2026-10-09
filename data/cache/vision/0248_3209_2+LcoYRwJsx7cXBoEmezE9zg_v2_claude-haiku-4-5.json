@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003206,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of residential property frontage with good visibility of exterior, landscaping, and driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Well-maintained shrubbery beds with shaped boxwood plants, edging, and mulch visible around the foundation and driveway entrance; landscaping appears professionally designed and maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Property is well-maintained with mature tree canopy, excellent lawn condition, and professional-grade landscaping throughout the front yard."
+ }
+}

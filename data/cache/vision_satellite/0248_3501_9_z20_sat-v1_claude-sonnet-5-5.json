@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008368,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The only pool visible is at the far left edge, on the neighboring lot. Nothing on the central lot looks like a pool.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "The central roof is gray shingle with a couple of small skylights. There are no regular dark rectangular panel grids.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "No trampoline or swing set is visible on the central lot. The small cluster on the patio to the right of the house looks like outdoor furniture.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A gray-roofed rectangular structure sits southwest of the main house, near the end of the driveway. It could be a detached garage, though it may be attached via the driveway area.",
+   "detail": "Likely detached garage"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a gray multi-gable roof and is surrounded by dense mature trees, which hide much of the yard. A small wood deck or patio with furniture sits on its southeast side."
+ }
+}

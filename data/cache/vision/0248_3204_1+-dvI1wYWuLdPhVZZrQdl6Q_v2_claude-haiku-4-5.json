@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003446,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with garage, driveway, and surrounding landscape.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Only a silver sedan visible in driveway; no commercial work vehicle present.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No visible yard signs or service provider signage on the property.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving truck, container, or relocation equipment visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No construction materials, equipment, tarps, or active work visible on property.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Lawn appears well-maintained but consistent with typical homeowner care; no visible crew, equipment, or fresh landscaping work.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Roof clearly visible with no solar panels installed.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained suburban property with a garage structure and manicured grounds; silver sedan parked in driveway."
+ }
+}

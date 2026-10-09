@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007948,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Kidney-shaped turquoise water surface with surrounding stone patio and lounge chairs just west of the central house.",
+   "detail": "In-ground kidney-shaped pool with patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small gray-roofed rectangular building (possible shed or pool house) sits northwest of the pool at the edge of the lawn, though it may belong to the central lot or a neighbor.",
+   "detail": "Small shed or outbuilding"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has a rear in-ground pool with patio, a circular paved driveway, and a gray roof in uniform condition; mature trees border the west side of the lot, and two dark vehicles are parked in the driveway near the road."
+ }
+}

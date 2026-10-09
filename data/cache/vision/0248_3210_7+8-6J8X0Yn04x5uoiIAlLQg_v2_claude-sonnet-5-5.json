@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009196,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "The house is almost entirely hidden behind dense evergreen trees, shrubs and a black iron fence. Only a tiny part of a roofline is faintly visible at the left, so the frontage cannot be assessed.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A small white sign is attached to the fence near the center. It looks like a security or property notice and is too small to read, so it is not clearly a yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The evergreens and plantings are mature and fairly full, but nothing shows crew-level work such as crews, equipment or sharply manicured edging.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Only a strip of grass between the road and the fence is visible, partly patchy and dry, and the house is obscured by trees, so this image gives a field rep little to go on."
+ }
+}

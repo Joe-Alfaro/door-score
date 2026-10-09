@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.013508,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Kidney-shaped turquoise pool with stone coping and patio sits just right of center, beside the lower-right house, so it likely belongs to the central lot.",
+   "detail": "In-ground, kidney-shaped"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A separate light-gray flat-roofed building sits below center, apart from the larger gray-roofed house at lower right. It may belong to a different lot.",
+   "detail": "Possible outbuilding or second dwelling"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The tile center falls on dense tree canopy and a lawn clearing, so which house is the central one is unclear; the pool and the lower-right house with its driveway are the most likely subject, while the pool at the top-right corner is a neighbor's."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.012538,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Bright blue kidney/rectangular in-ground pool with a tan paved patio and lounge chairs on the lawn west of the central house.",
+   "detail": "In-ground pool with surrounding patio deck"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "Small roofed structure, likely a gazebo or shed, at the edge of the lawn northwest of the pool, partly under trees.",
+   "detail": "Small gazebo or shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a dark, low-slope multi-section roof with a rear deck, and the pool sits in the open lawn to the west. The solar-equipped house and parked cars in the upper right appear to belong to a neighboring lot."
+ }
+}

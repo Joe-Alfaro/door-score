@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008816,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level house frontage across a large front lawn; the house is partly screened by trees and shrubs.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles, trailers, or equipment are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "Mulched rings around the trees and landscaped beds with shrubs look tidy and could be maintained by a service, but no crew or equipment is visible, so this is not conclusive.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The lawn is lush and uniformly green, the mulched tree beds are neat, and the gray-sided split-level looks well maintained. No driveway or vehicles are visible from this angle."
+ }
+}

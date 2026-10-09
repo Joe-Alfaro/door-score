@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008796,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a blue two-story house frontage across a lawn and stone wall; large trees frame the left and right edges and partly obscure the sides of the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The lawn is mowed and a fieldstone wall runs along the front, but nothing shows crew-level work or a maintenance vehicle.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof planes show no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Blue-sided colonial-style house set back behind a fieldstone wall, with two parked vehicles (dark sedan and silver minivan) at the left near a side deck; a covered object sits at the far left edge of the frame."
+ }
+}

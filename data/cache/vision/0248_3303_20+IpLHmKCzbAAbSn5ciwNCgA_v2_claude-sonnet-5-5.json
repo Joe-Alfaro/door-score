@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008946,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential frontage with a two-story house across a lawn; trees partially obscure the house and a neighboring house is at right.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles, trailers, or lettered trucks visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Lawn is neatly mowed and there is a rock/mulch bed with shrubs, but no crew or equipment is visible; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-kept colonial-style home with a brick chimney, skylights and a white picket fence, mature trees shading the lot, and an attached garage on the left; a car is parked at the neighboring driveway on the right."
+ }
+}

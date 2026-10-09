@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009756,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear street-level view of a gray two-story house with stone accents and a paved driveway; a neighboring house with solar panels is visible on the right.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The two vehicles in the driveway look like a personal SUV and a pickup, with no visible lettering, ladder rack, or equipment.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "There is a small post or sign near the driveway entrance, but it is too small and indistinct to read or classify as a real estate sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "The lawn is neat and the foundation shrubs are tidy, but there is no crew, equipment, or other clear sign of professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "No panels are visible on the subject house's roof. Panels are visible on the neighboring house to the right, not on this property.",
+   "detail": "Panels appear on the adjacent house only."
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "The house looks recently updated and well maintained, with fresh siding, a paved driveway, and mature trees; the neighbor to the right has rooftop solar."
+ }
+}

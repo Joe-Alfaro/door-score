@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003526,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with good lighting and visibility of key features",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Only a residential SUV visible in driveway; no commercial work vehicles with lettering, ladder racks, or equipment",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No visible yard signs or service provider signage on the property",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "No moving trucks, containers, or moving activity visible",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No visible construction equipment, dumpsters, tarping, or active renovation work",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Lawn appears well-maintained but typical homeowner care; no crew equipment or professional service indicators visible",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Roof and all visible surfaces show no solar panel installation",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained two-story colonial with vinyl siding and brick chimney; residential SUV parked in driveway; property appears stable with no apparent service needs."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007078,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "Small teal/green object near the rear-left corner of the house, possibly a slide or play item, but it is small and partly shaded.",
+   "detail": "possible small play structure or slide"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house has a dark gray roof with a short driveway holding one dark vehicle; heavy tree canopy covers the west side of the lot, and the lawn on the north side is dry and brown."
+ }
+}

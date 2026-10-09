@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007118,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small shed-like structure sits in the yard just above and right of the central house, but it is close to the edge of the central lot and could belong to a neighboring lot.",
+   "detail": "small shed"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "not_visible",
+  "tree_cover": "medium",
+  "notes": "The central house is under major construction or reconstruction, with an exposed roof frame, lumber piles, and several work vehicles. The pool at upper left belongs to the neighboring lot."
+ }
+}

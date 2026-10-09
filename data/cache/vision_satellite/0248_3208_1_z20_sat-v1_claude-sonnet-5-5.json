@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.012138,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No blue or turquoise water surface or pool-shaped cover on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The central gray-roofed house has no dark panel grids. The panels are on the building to the right, which looks like a separate neighboring lot.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.3,
+   "evidence": "A small wooden structure and a round object sit near the bottom-left of the back lawn at about (185,550). They could be a play set and trampoline or a fire pit, and they may belong to another lot.",
+   "detail": "possible play set or round object, unclear"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "No clear outbuilding, shed or garage separate from the main house on the central lot. The building to the right appears to be on a neighboring lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The house has a fresh dark asphalt driveway, a small rear patio with furniture, and a large open back lawn. Mature trees shade the left and bottom edges of the lot."
+ }
+}

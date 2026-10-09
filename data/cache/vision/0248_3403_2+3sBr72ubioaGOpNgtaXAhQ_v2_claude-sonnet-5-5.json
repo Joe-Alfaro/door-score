@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008896,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story split-level house frontage from the street, with a large tree partially obscuring the left-center of the facade.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "A small item near the front bed by the left of the house is too small to read and appears to be a garden decoration or small sign, not a real estate or service sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Mulched tree ring with stone edging and planted front beds look tidy, but there is no crew, equipment, or other clear sign of professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Gray-sided split-level with a two-car garage, a white SUV in the concrete driveway, and a basketball hoop at the right edge, which suggests a household with kids or active use."
+ }
+}

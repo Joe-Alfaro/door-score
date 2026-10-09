@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010158,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The blue pool at the bottom-left belongs to a neighboring lot, not the central brown-roofed house, which has a mostly open, dry lawn with dense trees on adjacent sides; two dark vehicles appear parked on the driveway strip at the top of the lot."
+ }
+}

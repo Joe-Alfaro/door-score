@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009766,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a two-story house frontage across a lawn; a black SUV in the foreground partly blocks the street edge but not the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A silver pickup truck is parked in the driveway, but it has no visible lettering, ladder rack, or equipment indicating a commercial work vehicle.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is mowed and there is a rock retaining wall and garden bed, but nothing shows crew-level work; looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Dark rectangular panel-like arrays appear on the upper roof section above the front of the house, though the resolution is limited.",
+   "detail": "Roof-mounted array, likely on the front-facing roof plane"
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 3,
+  "notes": "People appear to be sitting on the covered front porch, and a mature evergreen and a stone retaining wall dominate the front yard; the black SUV in the foreground is parked on the street, with a pickup and another vehicle in or near the driveway."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003181,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear, well-lit view of residential property frontage with visible driveway, lawn, and exterior.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Manicured lawn edges, well-defined mulch beds with rounded shrubs flanking the driveway, consistent landscape maintenance visible along the property perimeter.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "excellent",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained two-story colonial-style home with excellent curb appeal; no immediate activity or commercial work visible at property."
+ }
+}

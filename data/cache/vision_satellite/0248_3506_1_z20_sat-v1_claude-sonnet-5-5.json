@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007498,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Some small orange/yellow objects at right of the lot near the trees could be outdoor items, but they are not clearly play equipment.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small shaded structure may exist in the shadowed area at the upper-center of the lot, but it is not clearly identifiable.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Corner-lot house with a gray, fairly uniform roof, a two-car driveway at the south end, a dry, brown lawn, and a small patio with an umbrella on the east side; heavy tree shadows cover parts of the yard."
+ }
+}

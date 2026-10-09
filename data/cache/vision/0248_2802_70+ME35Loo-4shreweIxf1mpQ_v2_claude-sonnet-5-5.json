@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008726,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a single-story house frontage in autumn, with some tree obstruction from a foreground tree; image is somewhat low resolution.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A blue and white rectangular sign edge is visible at the bottom center of the frame in the lawn, but its face and wording are not legible and it may be a real estate or other sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "Small ranch-style home with light siding and dark shutters set back behind a leaf-covered lawn; the unreadable sign at the bottom of the frame is worth checking on-site, and a fire hydrant stands at the front right."
+ }
+}

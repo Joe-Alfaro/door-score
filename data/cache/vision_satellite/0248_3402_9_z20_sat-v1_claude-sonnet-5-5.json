@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.014578,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "A blue rectangular pool is at the right edge of the tile, about 200 px east of the central house, and likely sits on a neighboring lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A round dark disc resembling a trampoline sits north of the fence line, which looks like the neighboring lot's yard.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a brown multi-gable roof and a rear deck, with heavy tree canopy to the south and east; the pool at the right edge and the round object by the fence to the north appear to belong to neighboring lots."
+ }
+}

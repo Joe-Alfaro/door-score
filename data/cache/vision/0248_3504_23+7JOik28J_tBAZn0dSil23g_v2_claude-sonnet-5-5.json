@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009026,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Wide shot from across the street shows a single-story ranch house with its front lawn and landscaping. The house is distant and partly screened by trees, but the frontage is visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No moving truck or container is visible. A car under a cover is parked at the curb, which is not a moving indicator.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The front has sculpted topiary shrubs and tidy beds, but these look like long-term homeowner upkeep. No crew, trailer, or equipment is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "A car under a fitted cover is parked at the curb by the house, and flags hang near the right side of the frontage. The mature trees and sculpted shrubs suggest a long-established, well-kept property."
+ }
+}

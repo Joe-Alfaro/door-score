@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008526,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime frontage of a single-story gray-sided house with an attached garage, driveway and front lawn.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A patch of bare dirt or mulch at the right edge of the yard, but no equipment, materials, dumpsters or workers are visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is tidy and the driveway edged with stone, but nothing shows crew-level work; looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Freshly sealed asphalt driveway, red front door and a flag pole on the left suggest an owner-occupied, well-kept home; a small shed and a cart sit in the background."
+ }
+}

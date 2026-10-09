@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007108,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "A small brown roofed structure is partly visible under the tree canopy in the lower left of the center area, possibly a shed or outbuilding.",
+   "detail": "possible small shed"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house sits at the top-center with a dark, shaded roof and the lot extends south into dense mature tree canopy that hides most of the yard; two vehicles are parked in the driveway to the north."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003356,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear residential property frontage with good visibility of exterior, lawn, driveway, and vehicles.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "No commercial work vehicles visible; only two personal vehicles in driveway.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No yard signage visible on the property.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving trucks or containers visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No construction materials, equipment, or active work visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Well-maintained lawn and simple foundation plantings consistent with typical homeowner care; no crew-level evidence.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "Roof is clearly visible; no solar panels present.",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Two personal vehicles in driveway; property is well-maintained with good curb appeal and clean appearance."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008556,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level house frontage across a lawn, partially screened by trees; the front door and most of the facade are visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "A post-mounted sign with a red/maroon panel stands at the edge of the front lawn near the right tree, in the style of a real estate sign.",
+   "detail": "Likely real estate sign; wording not legible"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "A for-sale style sign at the curb suggests the home may be listed, and a dark vehicle is partly visible far right behind shrubs, not clearly in the driveway."
+ }
+}

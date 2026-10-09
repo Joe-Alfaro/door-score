@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003206,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "Image is heavily obscured by fog/mist covering the central area where the house frontage would be visible. Only partial lawn and driveway edges are discernible; property details cannot be assessed.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "Lawn visible at edges appears maintained, but obscuration prevents full assessment.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "not_visible",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Heavy fog/mist obscures the house and most property details; image cannot reliably assess residential frontage condition."
+ }
+}

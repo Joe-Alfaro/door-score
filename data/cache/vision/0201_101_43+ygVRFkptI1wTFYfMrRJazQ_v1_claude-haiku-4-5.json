@@ -1,0 +1,44 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v1",
+ "usd": 0.003117,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "Image shows a street view of a property lot with mature trees, landscaping, and lawn, but the actual residential structure (house) is not visible - it is completely obscured behind dense trees and hedges. Cannot assess condition of the building or driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "Well-maintained hedges, shaped evergreen shrubs, manicured lawn, and professional-looking fence installation visible",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Property frontage heavily screened by mature trees and professional hedging; house structure cannot be assessed from this street view angle."
+ }
+}

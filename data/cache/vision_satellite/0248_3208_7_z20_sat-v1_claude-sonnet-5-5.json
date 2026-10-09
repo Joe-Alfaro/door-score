@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007618,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "The blue kidney-shaped pool at the left edge belongs to a neighboring lot, not the central lot. No pool is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small light-colored shed-like structure sits south of the main house on the lot, with a smaller lean-to or platform beside it.",
+   "detail": "Small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a light gray multi-section roof with a rear deck, a grassy yard, a small shed and a fire pit to the south; mature trees border the lot on several sides, and a neighboring pool is visible at the left edge."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.016932,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story house with an attached two-car garage, front lawn, and landscaped beds.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "Neatly mulched beds with ornamental grasses, shrubs, and a crisply edged lawn suggest a high level of care, but no crew, equipment, or service signage is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "This is a well-maintained property with a flagpole, a paver driveway, a satellite dish, and a fenced side yard; no vehicles or service activity are visible."
+ }
+}

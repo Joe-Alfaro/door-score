@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009076,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story split-level house frontage with lawn, entry steps, and driveway; large trees on the left partly shade the property.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles with lettering, ladder racks, or trailers are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small sign on a post stands near the driveway entrance to the right of the garage, but its wording is not legible and it could be an address or other sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The lawn is mowed and the foundation shrubs are modest, with no crew, equipment, or elaborate design visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The visible roof planes show no solar panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 2,
+  "notes": "Dark sedans are parked in the driveway or on the adjacent paved area at the right edge, possibly belonging to the neighboring property, and mature trees shade the left side of the lot."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010718,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A round dark disc with a lighter rim sits in the yard just south of the central house, under tree shade. It could be a trampoline, but it is partly obscured.",
+   "detail": "Possible trampoline"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The pool in the left part of the tile belongs to the neighboring lot, not the central one; the central lot has a gray roof, a driveway to the north with two parked cars, and dense trees to the south."
+ }
+}

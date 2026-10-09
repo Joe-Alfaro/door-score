@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008866,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Image shows a Tudor-style house at far left edge and a large open lawn in the foreground, with another house in the distance on the right. The main subject property is only partially in frame, so some signals are limited.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Fresh dark mulch bed with young evergreen shrubs and a stone drainage border on the right suggests some intentional planting, but no crew or equipment is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "The Tudor-style house is cut off at the left edge of the frame, so a re-shot from a different angle would give a better view of the home; the lawn is green and mowed with a freshly mulched bed of young shrubs on the right."
+ }
+}

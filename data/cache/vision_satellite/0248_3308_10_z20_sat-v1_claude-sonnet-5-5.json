@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007328,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No blue or turquoise water surface or pool-shaped cover is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The gray roof is uniform with no regular dark rectangular grids; only small vents or chimney are visible.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A small reddish-roofed section on the west side of the house appears attached to the main house, so it is not a separate structure.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has a gray-shingled roof with a small attached rear wing, a paved driveway holding one white vehicle, and a lawn bordered by dense woodland to the west."
+ }
+}

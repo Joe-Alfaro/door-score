@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007858,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A dark rounded object with a lighter rim sits in the yard north of the house, but it looks more like a covered hot tub, grill or small shed than a trampoline.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small dark rectangular structure sits in the backyard north of the main house, next to a raised garden bed. It could be a cover or a small shed.",
+   "detail": "Small shed or cover, about 8 ft across"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Ranch-style house with a gray roof that looks uniform, a hedge-lined backyard, a side patio on the west, and a driveway on the east holding one dark vehicle; large evergreens in the front yard partly shade the lot."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.018392,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side/gable end of a single-story house with its yard, likely a corner lot view; the front facade is not fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A partially visible red-and-white sign stands at the far left edge of the frame; it is cut off, and its placement relative to this property is unclear.",
+   "detail": "Partial text ending in 'CY' visible; purpose not determinable"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "Large curved mulched beds with neat edging and a landscape light are visible, but there is no crew-level evidence; this could be homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Single-story house with light siding, an AC condenser on the side, a wooden privacy fence, mature trees, and well-defined mulched beds; the partial red sign at left may be worth checking in person."
+ }
+}

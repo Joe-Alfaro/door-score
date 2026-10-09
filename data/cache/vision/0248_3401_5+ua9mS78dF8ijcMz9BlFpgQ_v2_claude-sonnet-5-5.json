@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008826,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story Cape-style house with an attached garage, seen from across the street. The lawn and sidewalk are in the foreground.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "The lawn is mowed, but there is no crew-level evidence such as crews, equipment, or manicured beds. A single overgrown shrub sits by the front corner.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "The house has white siding, green shutters, and a front stoop with worn wooden steps. The one visible vehicle, a dark SUV, is in the neighbor's driveway on the left, not at the subject property. An overgrown shrub sits at the front corner."
+ }
+}

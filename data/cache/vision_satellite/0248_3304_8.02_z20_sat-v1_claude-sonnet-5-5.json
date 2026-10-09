@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007348,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "A round bright blue water surface sits on a deck/patio attached to the rear (south) of the central house.",
+   "detail": "Round, appears to be an above-ground or on-deck pool, possibly with a blue cover"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house is surrounded by dense mature trees with a round deck-mounted pool at the rear and a long, narrow, tree-lined driveway to the northeast where a dark vehicle is parked; a large lawn lies to the northwest."
+ }
+}

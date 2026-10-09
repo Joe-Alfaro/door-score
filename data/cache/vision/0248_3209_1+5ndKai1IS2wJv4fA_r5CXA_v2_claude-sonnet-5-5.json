@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008246,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a house frontage with a two-car garage and asphalt driveway; trees and a fence partially obstruct the sides, and the roof is mostly out of view.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 1,
+  "notes": "The grassy side yard is uneven with a weathered timber edging, the driveway asphalt is cracked and worn, and an American flag hangs on the garage-front wall; a pickup truck is parked in the driveway."
+ }
+}

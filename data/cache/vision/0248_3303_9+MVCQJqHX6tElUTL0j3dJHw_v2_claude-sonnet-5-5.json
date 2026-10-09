@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008936,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story colonial-style house across a large lawn from a cul-de-sac; the whole front facade is visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "No vehicles or work trucks are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Trimmed rounded shrubs line the foundation and the lawn is neatly mowed, but nothing shows crew-level work such as trucks, trailers or workers.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-kept colonial on a cul-de-sac with a large, lush, uniformly green lawn and trimmed foundation shrubs; no driveway or vehicles are visible from this angle, so the lawn may be irrigated or well maintained."
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v1",
+ "usd": 0.002942,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with house, driveway, and landscaping visible",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "Manicured shrub beds with red mulch, well-maintained ornamental plantings around property perimeter, mature landscaped trees",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained residential property with mature tree canopy; white vehicle visible in driveway on right side of house."
+ }
+}

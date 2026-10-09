@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007988,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "Small structure-like objects in the back yard north of the central house, near the fenced area, may be a swing set or play structure, but they are small and unclear.",
+   "detail": "possible swing set or play structure"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small shed-like structure sits north of the central house on the lot, in the back yard near the fence. A darker rectangular volume at the upper left of the house may be an attached garage or addition.",
+   "detail": "small shed"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a dark, shaded roof with some visible moss or staining. A fenced back yard lies to the north, and a large evergreen tree stands on the east side of the lot. The small blue feature in the right-hand neighbor's yard is not on this lot."
+ }
+}

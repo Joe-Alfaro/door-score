@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007228,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Kidney-shaped turquoise water surface with a stone/concrete deck behind the house in the upper right of the lot.",
+   "detail": "In-ground kidney-shaped pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large multi-gabled home with a paved driveway, a rear patio and a kidney-shaped pool, on a heavily wooded lot. Dense canopy surrounds the house, and the dark east wing is partly in shadow."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008946,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story colonial-style house frontage with a large front lawn; no obstructions of the main facade.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is well kept and foundation beds are tidy, but there is no crew, equipment, or other clear sign of professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Dark rectangular panel array covers the front-facing roof slope of the main house.",
+   "detail": "Roof-mounted array on the front roof plane"
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained colonial with a red front door, green shutters, roof solar, an American flag by the attached garage wing, and a blue car parked at a neighboring property at the far right."
+ }
+}

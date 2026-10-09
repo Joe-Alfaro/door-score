@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.017492,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-family bungalow frontage with lawn, walkway, and front porch.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "",
+   "detail": "Property looks recently updated (new-looking pavers, white vinyl fence, fresh siding), but no active work is visible."
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "",
+   "detail": "Neat flower bed with edging and foundation shrubs, consistent with homeowner upkeep; no crew-level evidence."
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained, recently refreshed bungalow with an enclosed front porch, paver walkway and driveway, and a white vinyl privacy fence; no active work or vehicles at the property."
+ }
+}

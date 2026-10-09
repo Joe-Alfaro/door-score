@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003526,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with driveway, lawn, and house exterior",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Vehicles visible are personal cars (sedan and SUV), not commercial work vehicles with signage, equipment, or ladders",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No visible signage, marketing materials, or yard signs on the property",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "No moving trucks, containers, or relocation equipment visible",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No active work, equipment, materials, or construction activity visible on the property",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "Well-maintained lawn and hedges appear homeowner-maintained; no visible professional crew equipment, commercial mowers, or crew presence",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "Roof is fully visible; no solar panels present",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Well-maintained brick colonial with excellent landscaping; two personal vehicles in driveway; mature trees provide significant shade on property."
+ }
+}

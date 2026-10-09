@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008906,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side/rear yard and part of the house from across a lawn, not a straight-on front facade, but the house and yard are visible enough to assess.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No work vehicles or trailers visible.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No signs visible on the lawn.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No moving trucks, containers, or boxes visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No dumpsters, scaffolding, or construction materials visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A mulched, stone-edged bed around the tree and a rounded shrub look tidy, but there is no crew-level evidence.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No panels visible on the roof sections in view.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Image shows a large mature tree, a garden shed on the left, and a central AC unit beside the sage-green sided house; the lawn is lush and well maintained."
+ }
+}

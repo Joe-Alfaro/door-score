@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009116,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level residential frontage from the street, with the house, lawn, and driveway all visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The two vehicles in the driveway are a pickup truck and an SUV. Neither has commercial lettering, a ladder rack, or equipment.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "The lawn is tidy and there is a mulched bed with a small ornamental tree, plus foundation shrubs. This is consistent with homeowner upkeep, and no crew or equipment is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "The home is a well-kept split-level with tan siding, a green front door, a new-looking paver walkway, a paved driveway with a stone curb, and mature trees. A window AC unit is visible in the front window."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.021672,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage visible, though the house is substantially obscured by mature trees and shrubs.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Small white sign staked in the front lawn near the house showing '2025' in large print.",
+   "detail": "'2025' visible; likely a graduation-style sign, not clearly a real estate or contractor sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.5,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Heavily landscaped lot with mature trees, ornamental conifers, and grasses that largely hide the house, so exterior and roof assessments are limited to small visible portions."
+ }
+}

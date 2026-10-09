@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008596,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a red two-story colonial and its front lawn from the street; a large tree partially shades the upper left of the frame.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is mowed and there are small trimmed evergreens in a wooden planter box and a shrub by the house, but no crew, equipment, or clearly professional design is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "Detached red garage with open door sits left of the house, an American flag hangs from the porch, and a dark SUV is parked on the neighboring driveway at far left, so it may not belong to this property."
+ }
+}

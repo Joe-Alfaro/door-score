@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007598,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "Dark rectangular grid panels on the south-facing roof faces of the central gray-roofed house, including a larger array on the right roof section and another on the left gable.",
+   "detail": "Roof-mounted arrays on multiple roof faces"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "No clear separate outbuilding on the central lot; small items near the back of the house appear to be a deck or patio area attached to the house.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has multiple solar arrays and a long driveway to the north with two vehicles; mature trees, including a dead or bare tree, sit just south of the house."
+ }
+}

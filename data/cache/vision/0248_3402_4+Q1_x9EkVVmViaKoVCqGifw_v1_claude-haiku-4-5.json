@@ -1,0 +1,44 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v1",
+ "usd": 0.002912,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of residential street with multiple properties visible",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Manicured shrubs and well-maintained foundation plantings visible on the properties, particularly the right-side brick home",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Quiet residential street with two well-maintained homes; white sedan and red car visible in driveway; mature tree canopy throughout neighborhood."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008726,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "The frame is mostly blocked by a large evergreen tree, a white vinyl privacy fence and a picket fence. The house is only partly visible behind the foliage, so the frontage, roof and entry cannot be assessed.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only sign is a municipal No Parking sign on a pole at the curb. No real estate or contractor sign is visible.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "A field rep would need a different image or an on-site visit, since the house is hidden behind a tree and fencing, with only a bit of light siding visible and a lawn that looks green and healthy."
+ }
+}

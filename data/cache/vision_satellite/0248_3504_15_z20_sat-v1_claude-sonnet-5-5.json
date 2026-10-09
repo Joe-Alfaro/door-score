@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007188,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "Small round turquoise/blue water surface just behind (north of) the central house, next to a patio area, likely a small above-ground pool or hot tub.",
+   "detail": "small round pool or hot tub"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house has a gray shingle roof with a few skylights or vents and a small blue round water feature in the back yard; dense tree canopy covers the west and east sides of the lot and the driveway is not visible."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007238,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small red-roofed structure sits just northwest of the main house, possibly a shed or attached addition.",
+   "detail": "Small red-roofed shed or addition"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "Central house has a brown/reddish two-tone roof with some uneven color and shading, a paved driveway on the west side with one light-colored vehicle, and a dry, patchy lawn to the east and south, with mature trees crowding the north and west sides."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007358,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Roof appears uniform gray asphalt shingle with no regular dark grid of panels.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small separate roofed structure sits just east of the central house, near the neighboring property line, and could be a shed or garage.",
+   "detail": "Small shed or outbuilding"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray shingle roof with a large open lawn behind it and mature trees in front and along the sides; the vehicles visible are parked on the street or on the neighboring driveway, not the central lot's."
+ }
+}

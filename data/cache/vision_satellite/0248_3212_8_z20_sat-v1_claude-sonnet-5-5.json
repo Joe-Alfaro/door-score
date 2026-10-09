@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007098,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small light-colored rectangular structure sits in the backyard just north of the central house, near the back fence. It could be a small shed or a covered utility feature.",
+   "detail": "possible small shed"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a long driveway on its east side with three parked cars. The lot has a dry, patchy back lawn, a large tree on the west side, and a small structure in the rear yard."
+ }
+}

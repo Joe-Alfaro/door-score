@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003496,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime photo of residential property frontage with good visibility of house, grounds, and driveway",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Only vehicle visible is a personal dark sedan in the driveway; no commercial work vehicles present",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No yard signs, real estate signs, or service signs visible on the property",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "No moving trucks, containers, or relocation equipment visible",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No construction materials, equipment, scaffolding, or active work visible",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Well-maintained lawn and foundation plantings appear homeowner-maintained; no crew equipment or professional service indicators visible",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Roof fully visible with no solar panels installed",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained suburban home with mature landscaping; one personal vehicle in driveway; property appears owner-occupied and recently maintained."
+ }
+}

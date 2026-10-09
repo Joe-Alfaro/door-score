@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007128,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The central roof is dark and partly shaded by canopy, and a separate roof at the bottom center could be a neighboring house or part of this lot. It is not clearly a detached structure on the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "not_visible",
+  "tree_cover": "high",
+  "notes": "The central house sits in deep shadow and heavy tree canopy, so its roof and yard are mostly hidden; a field rep should check the roof and yard on site."
+ }
+}

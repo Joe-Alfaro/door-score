@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007018,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "A small light-colored shed sits in the rear yard of the central lot, north of the house, near the back fence line.",
+   "detail": "Small storage shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "Ranch-style home with a single-car driveway on the right side, landscaped front yard with ornamental shrubs, a garden bed in the back, and a small deck or patio at the rear; the roof shows some uneven weathering."
+ }
+}

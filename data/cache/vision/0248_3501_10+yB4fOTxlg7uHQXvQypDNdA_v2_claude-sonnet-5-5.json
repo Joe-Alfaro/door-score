@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008646,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "The frame shows a heavily wooded lot with a gravel driveway, boulders and mature trees. No house or building frontage is clearly visible, only a small possible reddish structure far in the background behind foliage.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": "Landscaped boulders and shrub beds are visible, but there is no crew-level evidence of professional maintenance."
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The house is not visible from the street because of dense tree cover, so a field rep would need to check the property in person; the grass is green and healthy and there is a two-track gravel driveway on the left."
+ }
+}

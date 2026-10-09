@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007408,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A separate dark-roofed building sits south of the main house, partly hidden by trees. It could also be an attached wing or part of a neighboring lot.",
+   "detail": "Possible outbuilding or garage south of the main house"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a dark, multi-section roof in heavy shadow, and large mature trees shade much of the yard on the east and south sides. A blue vehicle is parked near the west side of the house, and a white car is on the neighboring driveway to the north."
+ }
+}

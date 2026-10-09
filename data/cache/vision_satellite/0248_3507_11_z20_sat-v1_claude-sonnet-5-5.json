@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small structure with a flat tan roof and an attached deck sits just west of the main house, and a red canopy or tarp sits southwest of it. It may be an attached addition rather than a separate building.",
+   "detail": "Small outbuilding or addition with a deck; red tarp or canopy nearby"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The house has a brown roof with some uneven weathering and sits on a large lawn with mature trees. A small addition or shed with a deck and a red tarp is on the west side. The driveway is empty, and a paved road runs along the east side of the lot."
+ }
+}

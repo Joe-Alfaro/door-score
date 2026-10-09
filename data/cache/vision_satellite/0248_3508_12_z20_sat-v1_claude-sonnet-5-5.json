@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007318,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small brown-roofed outbuilding sits at right of center in the tree shade, east of the driveway end, and another small structure is attached to the north house.",
+   "detail": "Possible shed or small outbuilding east of the driveway"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The tile center falls between two houses on a shared driveway; dense tree canopy shades the east side, and the debris or clutter near the driveway end, with vehicles or equipment parked there, may deserve a closer look."
+ }
+}

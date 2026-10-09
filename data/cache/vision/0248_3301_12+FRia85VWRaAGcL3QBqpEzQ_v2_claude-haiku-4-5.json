@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003621,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with good lighting and visibility of driveway, landscaping, and home exterior.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Two personal vehicles in driveway; no commercial work vehicle, lettering, equipment racks, or signage visible.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "Clear view of front lawn and mailbox area; no yard signs visible.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving trucks, containers, or relocation-related equipment visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No construction equipment, materials, tarps, or active work visible at property.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Well-maintained lawn and shrub beds with fresh mulch suggest good homeowner care, but no crew-level indicators such as commercial equipment or multiple crew members visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Roof fully visible with clear view of shingles; no solar panels present.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Two personal vehicles parked in driveway; property appears well-maintained overall with healthy lawn and shrub landscaping."
+ }
+}

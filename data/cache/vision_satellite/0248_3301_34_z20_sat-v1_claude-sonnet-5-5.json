@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.012188,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Rectangular bright blue water surface with stone deck at top of tile, bordering the central lawn; it is unclear whether it belongs to the central lot or the neighboring house at top.",
+   "detail": "In-ground rectangular pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "Small gray-roofed building beside the pool deck at upper center, likely a pool house or shed.",
+   "detail": "Pool house or shed"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large lot with an open central lawn ringed by dense mature trees, a hedge along the right edge, and a driveway on the right side of the house; the pool-lot boundary is ambiguous, so confirm the property line."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009256,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level/raised ranch home frontage with driveway; large tree partially obscures the left side of the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A white pickup truck is in the driveway, but it has no visible lettering, ladder rack, trailer, or equipment marking it as a commercial work vehicle.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A person is standing on a small step ladder next to the dark SUV in the driveway, but this appears to be vehicle-related activity (possibly working on the roof rack or vehicle) rather than visible construction on the house.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "A person on a step ladder is working at the rear of a dark SUV in the driveway next to a white pickup; the house is a brick-and-siding raised ranch with a mature front tree and a tidy lawn."
+ }
+}

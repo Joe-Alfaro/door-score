@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008616,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential frontage showing the house, front lawn, and driveway; a large tree partially obscures the left side of the facade.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Foundation shrubs are neatly trimmed and there is a mulched bed, but there is no crew, equipment, or other clear sign of a service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Two-story home with a two-car garage, standing-seam metal accent roof, and a chimney; a gray SUV is parked at the neighboring driveway on the right, and a basketball hoop stands on the street at left."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008696,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story residential house frontage from the street, with a front lawn, porch, and neighboring trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "Lawn is green and mowed with foundation shrubs, but there is no crew-level evidence of professional maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible dark gray roof slopes show no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "Cape-style home with a window AC unit in the dormer, a front porch, and overgrown shrubs along the porch; a few small bare or patchy spots in the right side of the lawn."
+ }
+}

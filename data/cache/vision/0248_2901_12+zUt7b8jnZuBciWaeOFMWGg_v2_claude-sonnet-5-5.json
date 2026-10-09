@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009516,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story red colonial with attached garage; trees partially obscure the upper facade and roof.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The white sedan in the driveway and the blue sedan on the street are both passenger cars with no lettering, ladder racks, or equipment.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "Small yellow stake flags are visible in the lawn and there is paint marking on the pavement, but these are likely utility markings and not clear renovation work.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Tidy lawn with a mulched bed, boulders, and shrubs, but no crew or equipment visible; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof sections show no panels, though the roof is partly hidden by trees.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Utility-style marking flags on the lawn and pavement suggest recent underground utility locating, and the street-parked blue sedan may not belong to this property."
+ }
+}

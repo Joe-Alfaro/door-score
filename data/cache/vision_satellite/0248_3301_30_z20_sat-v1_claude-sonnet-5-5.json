@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007538,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A smaller roofed building with a gray roof sits northwest of the center house at the top of the driveway, possibly a separate house or outbuilding, and small sheds may be near it.",
+   "detail": "Possible outbuilding or neighboring house"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The center house has a multi-gable gray shingle roof with some dark staining and a sunken dark patch. Mature trees lie on the west side, and a paved drive curves along the north edge; the vehicles shown are on the road or drive, not clearly parked at this house."
+ }
+}

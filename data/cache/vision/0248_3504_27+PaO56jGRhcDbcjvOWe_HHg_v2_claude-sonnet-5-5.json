@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008716,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story blue-sided colonial with an attached garage, seen across the lawn. A portable basketball hoop sits in the foreground at the curb.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is green and the mulch ring around the tree is neat, but this looks like normal homeowner upkeep with no crew or equipment visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "The siding and windows look recent and well kept. A dark SUV is parked in the driveway, a flag-decorated object sits at the base of the large front tree, and the portable basketball hoop at the curb suggests a household with children."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003576,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear, well-lit residential property frontage with full view of house, driveway, and landscaping.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "One dark SUV/personal vehicle visible in driveway; no commercial work trucks with lettering, equipment racks, or service markings present.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No visible yard signs, real estate signs, or service provider signs on the property.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving trucks, containers, or moving activity visible at the property.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No visible construction equipment, materials, tarps, or active renovation work on the property.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Well-maintained lawn and shrubs appear homeowner-maintained; no visible landscaping crew, equipment, or crew-level maintenance indicators present.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "Roof is clearly visible and shows traditional shingle roofing with no solar panels installed.",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "excellent",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained two-story colonial home with excellent condition throughout; single personal vehicle in driveway."
+ }
+}

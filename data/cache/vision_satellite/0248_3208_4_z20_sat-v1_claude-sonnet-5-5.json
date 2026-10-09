@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007398,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A rectangular dark-roofed structure with a flat surface at the rear of the central house, southeast of the main roof, looks like a covered patio, an addition or a small outbuilding.",
+   "detail": "Possible rear addition or covered patio structure"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray multi-gable roof with a backyard patio, umbrellas and outdoor furniture; a white car is parked at the driveway to the north, and the property is fenced with mature trees on several sides."
+ }
+}

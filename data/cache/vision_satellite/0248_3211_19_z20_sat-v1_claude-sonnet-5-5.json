@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007328,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small tan/yellow rectangular patch next to the rear patio at upper center could be a sandbox or play surface, but it is small and unclear.",
+   "detail": "possible sandbox or play area"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Single-family home with a gray-shingled roof and a paved driveway running to the street. A rear patio with outdoor furniture sits to the north. The lot is bordered by dense mature trees on the north and west sides, and a white vehicle is parked on the street, not in the driveway."
+ }
+}

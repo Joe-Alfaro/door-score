@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003291,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear, well-lit view of residential property frontage with good visibility of house, lawn, and surroundings.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Lawn is well-maintained and level, but this appears to be typical homeowner maintenance; no visible crew equipment, commercial vehicles, or crew-level evidence such as fresh plantings, mulch work, or professional hardscaping visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Well-maintained white colonial-style home with mature landscaping and excellent lawn condition; a vehicle is partially visible in the driveway on the left."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009036,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story split-level home frontage with a large front lawn; trees partially frame the view but the house is fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles, trailers, or equipment visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No moving trucks, containers, or boxes visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No dumpsters, scaffolding, or construction materials visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn and foundation beds look tidy but no crew, equipment, or clear professional-level features are visible; likely homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Roof appears to be plain gray shingles with no panels visible.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Light gray split-level home with red shutters and a gravel driveway on the left; a small piece of litter sits on the lawn in the foreground and the property looks well kept."
+ }
+}

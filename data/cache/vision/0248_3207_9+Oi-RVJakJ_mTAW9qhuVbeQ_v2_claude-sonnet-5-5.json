@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008306,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side of a house behind a wooden fence, seen from across a lawn. It is not a straight-on frontage view, but the house exterior is partly visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The photo is taken from a corner lot looking at the side of the house, which has light gray vinyl siding, a weathered wooden privacy fence and a sunroom or porch windows; a silver car is parked at the far left on the neighboring street or property."
+ }
+}

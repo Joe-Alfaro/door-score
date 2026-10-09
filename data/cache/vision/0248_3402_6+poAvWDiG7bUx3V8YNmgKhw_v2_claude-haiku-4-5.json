@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003606,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear residential property frontage with good visibility of exterior and grounds",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Only a personal dark blue SUV visible in foreground; no commercial work vehicle, lettering, equipment racks, or tools present at this property",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No yard signs, contractor signs, or service-related signage visible on the property",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "No moving trucks, moving containers, or moving-related activity visible",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No construction materials, equipment, tarps, scaffolding, or active work visible",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "Lawn and landscaping appear well-maintained but consistent with typical homeowner care; no crew-level activity, professional equipment, or commercial landscaping service evidence visible",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Roof is clearly visible and shows no solar panels or installation equipment",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Two-story colonial with well-maintained grounds and no active services indicated; one personal vehicle parked in driveway."
+ }
+}

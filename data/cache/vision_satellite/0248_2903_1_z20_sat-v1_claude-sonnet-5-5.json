@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": "The panel array on the house at the top edge belongs to a neighboring lot. The central house has a light gray flat roof section, not a dark panel grid."
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": "There are faint line markings on the paved area east of the driveway that could be a basketball court or parking layout, but no clear equipment is visible."
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": "A white-roofed section on the east side of the house looks attached, like an addition or carport, rather than a separate outbuilding."
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The lot has a multi-section roof with a flat gray area, a paved parking pad holding two cars, and a sloped lawn to the east bordered by dense woods, so the property is partly shaded and wooded."
+ }
+}

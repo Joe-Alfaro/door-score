@@ -1,0 +1,44 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v1",
+ "usd": 0.002982,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear residential property frontage with good visibility of exterior, lawn, and driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "Manicured lawn, defined landscaping beds with mulch in front, maintained shrubs flanking the entrance, and decorative lamp post in front yard indicate professional-grade property maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Property is well-maintained with excellent lawn care and professional landscaping; one dark vehicle visible on right side of property."
+ }
+}

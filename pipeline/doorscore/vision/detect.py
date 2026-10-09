@@ -2,20 +2,28 @@
 
 Design for honesty over recall: every detection carries a confidence and the visible
 evidence that justifies it, and the prompt instructs the model to report absence when
-something is not clearly visible. Cached per (image, prompt version, model).
+something is not clearly visible.
+
+Cache keys. Results are stored under a metadata key `(door_id, pano_id, prompt version, model)`
+built from the free Street View metadata, so a cached result is reusable without the 230 MB of
+image files; the legacy image-hash key `(sha1(image), prompt version, model)` is kept as a fallback
+and is what the eval harness and the API console use for images outside the territory flow.
+
+Prompt versions. `v2` is production. `v3` is the output-token diet (same fields, shorter
+free text); select it with `VISION_PROMPT_VERSION=v3`. Each version has its own cache namespace.
 """
-import base64, hashlib, json
+import os
 from pathlib import Path
 from typing import Literal
 from pydantic import BaseModel, Field
-import anthropic
 from ..config import CACHE
-from ..costs import record, llm_cost
+from .common import analyze_sync, image_hash, load_cached
 
-PROMPT_VERSION = 'v2'
 DEFAULT_MODEL = 'claude-sonnet-5-5'  # chosen by the eval harness: Haiku hallucinated landscaping on 32% and yard signs on 21% of negatives; Sonnet ~0-2%
 OUT_DIR = CACHE / 'vision'
 OUT_DIR.mkdir(exist_ok=True)
+STAGE = 'vision_llm'
+USER_TEXT = 'Analyze this property frontage.'
 
 Condition = Literal['poor', 'fair', 'good', 'excellent', 'not_visible']
 
@@ -40,7 +48,7 @@ class StreetViewSignals(BaseModel):
     vehicles_visible: int = Field(ge=0, description='Vehicles in the driveway or directly in front')
     notes: str = Field(description='One sentence; anything else a field rep should know')
 
-SYSTEM = """You analyze a single Google Street View photo of a house for a home-services company.
+SYSTEM_V2 = """You analyze a single Google Street View photo of a house for a home-services company.
 Report only what is clearly visible in THIS image. If something is not visible, mark it absent with
 low confidence and an empty evidence string. Never guess at things that could be present off-frame.
 Do not identify people, read license plates, or infer anything about the residents' identity.
@@ -50,28 +58,50 @@ positioned at this property, not merely driving past. Moving containers and movi
 moving_indicators, not provider trucks. Be conservative with professional_landscaping: most
 well-kept lawns in a suburb are homeowner-maintained; mark present only with clear crew-level evidence."""
 
+# v3 = v2 + an output-length contract. Field names and types are unchanged, so every downstream
+# reader works; only the free-text fields get shorter (they are ~45% of what we pay per call).
+SYSTEM_V3 = SYSTEM_V2 + """
+Output length rules, strictly: when present=false, evidence is exactly "" (never explain an absence).
+When present=true, evidence is one clause of at most 12 words naming the visible object.
+detail is at most 6 words or null. usability_note is at most 8 words. notes is one sentence of at
+most 15 words, or "" when there is nothing a field rep needs to know."""
+
+SYSTEMS = {'v2': SYSTEM_V2, 'v3': SYSTEM_V3}
+PROMPT_VERSION = os.getenv('VISION_PROMPT_VERSION', 'v2')
+if PROMPT_VERSION not in SYSTEMS:
+    raise RuntimeError(f'VISION_PROMPT_VERSION={PROMPT_VERSION!r}; known: {sorted(SYSTEMS)}')
+SYSTEM = SYSTEMS[PROMPT_VERSION]
+
+
 def _cache_path(image_path: str, model: str) -> Path:
-    h = hashlib.sha1(open(image_path, 'rb').read()).hexdigest()[:10]
-    return OUT_DIR / f'{h}_{PROMPT_VERSION}_{model}.json'
+    """Legacy key: needs the image bytes. Kept for the eval harness and the API console."""
+    return OUT_DIR / f'{image_hash(image_path)}_{PROMPT_VERSION}_{model}.json'
+
+def meta_cache_path(door_id: str, pano_id: str, model: str, prompt_version: str = PROMPT_VERSION) -> Path:
+    """Metadata key: resolvable from the free Street View metadata alone."""
+    return OUT_DIR / f'{door_id}+{pano_id}_{prompt_version}_{model}.json'
+
+def cache_paths(door_id: str | None, pano_id: str | None, model: str, image_path: str | None) -> list[Path]:
+    """Every key a result for this door may live under, metadata key first."""
+    paths = []
+    if door_id and pano_id:
+        paths.append(meta_cache_path(door_id, pano_id, model))
+    if image_path and Path(image_path).exists():
+        paths.append(_cache_path(image_path, model))
+    return paths
+
+def cached_result(door_id: str | None, pano_id: str | None, model: str, image_path: str | None = None) -> dict | None:
+    """Cached detector output if any key hits; never calls any API."""
+    return load_cached(cache_paths(door_id, pano_id, model, image_path))
 
 def analyze_image(image_path: str, door_id: str | None = None, model: str = DEFAULT_MODEL,
-                  client: anthropic.Anthropic | None = None) -> dict:
-    cache = _cache_path(image_path, model)
-    if cache.exists():
-        return json.loads(cache.read_text())
-    client = client or anthropic.Anthropic()
-    data = base64.standard_b64encode(open(image_path, 'rb').read()).decode()
-    resp = client.messages.parse(
-        model=model, max_tokens=1500, system=SYSTEM,
-        messages=[{'role': 'user', 'content': [
-            {'type': 'image', 'source': {'type': 'base64', 'media_type': 'image/jpeg', 'data': data}},
-            {'type': 'text', 'text': 'Analyze this property frontage.'}]}],
-        output_format=StreetViewSignals,
-    )
-    usage = resp.usage
-    usd = llm_cost(model, usage.input_tokens, usage.output_tokens)
-    record('vision_llm', usd, door_id, model=model, input_tokens=usage.input_tokens, output_tokens=usage.output_tokens)
-    out = {'model': model, 'prompt_version': PROMPT_VERSION, 'usd': round(usd, 6),
-           'signals': resp.parsed_output.model_dump()}
-    cache.write_text(json.dumps(out, indent=1))
-    return out
+                  client=None, pano_id: str | None = None, expected_usd: float = 0.0) -> dict:
+    paths = cache_paths(door_id, pano_id, model, image_path)
+    cached = load_cached(paths)
+    if cached:
+        return cached
+    if not Path(image_path).exists():
+        raise FileNotFoundError(f'{image_path}: no cached vision result and no image to analyze')
+    return analyze_sync(image_path=image_path, model=model, system=SYSTEM, user_text=USER_TEXT,
+                        schema=StreetViewSignals, prompt_version=PROMPT_VERSION, stage=STAGE, door_id=door_id,
+                        cache_paths=paths or [_cache_path(image_path, model)], client=client, expected_usd=expected_usd)

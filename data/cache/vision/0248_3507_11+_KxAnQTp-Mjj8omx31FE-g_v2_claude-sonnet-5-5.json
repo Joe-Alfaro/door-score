@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009056,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a raised ranch home frontage with driveway and lawns; some tree shade but the house is fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A dark pickup truck is parked in the driveway, but it shows no visible lettering, ladder rack, trailer, or equipment marking it as a commercial work vehicle.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Foundation plantings, a few evergreens, and a mulched tree ring are visible, but there is no crew, equipment, or other clear sign of professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Raised ranch with white siding, brick base, and a front-facing garage; the large lawn and mature trees suggest an established suburban lot, and a pickup truck is parked in the driveway."
+ }
+}

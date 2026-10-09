@@ -34,6 +34,11 @@ def _cached(door_id: str):
             return p
     return None
 
+def image_info(door: dict) -> dict:
+    """Expected tile location and zoom without downloading (path may not exist yet)."""
+    cached = _cached(door['door_id'])
+    return {'path': str(cached or IMG_DIR / f'{door["door_id"]}.png'), 'zoom': ZOOM}
+
 def fetch_image(door: dict) -> dict | None:
     """Download one 640x640 satellite tile centered on the parcel. Returns {path, zoom} or None."""
     cached = _cached(door['door_id'])

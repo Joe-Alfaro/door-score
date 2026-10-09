@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007428,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Small light-colored roofed structures southwest and south of the main house, near (190,388) and (293,473), look like sheds or small outbuildings.",
+   "detail": "Small shed-like outbuildings"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a mix of brown and gray roof sections with a dark paved or sealed area to the east holding one vehicle. Heavy tree canopy shades the east and south sides of the lot. The solar panels belong to the neighboring house at the lower right, not to this lot."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007628,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Kidney-shaped bright blue water surface with a stone coping directly behind the central house, next to a patio with lounge chairs.",
+   "detail": "In-ground kidney-shaped pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A brown-roofed building sits to the lower right, but it is likely on the neighboring lot, and a small gray object at the upper left edge is unclear.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large wooded lot with a kidney-shaped pool and patio behind the house; the driveway extends north under tree cover, and a second pool is visible on the neighboring lot at the bottom right."
+ }
+}

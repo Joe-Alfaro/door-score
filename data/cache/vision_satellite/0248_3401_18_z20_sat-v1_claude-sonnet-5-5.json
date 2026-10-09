@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007388,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A wooden pergola or deck-like structure with slatted framing sits on the left (west) side of the central house, and a small outbuilding is partly visible to the south behind trees.",
+   "detail": "Possible pergola/deck; green-roofed structure to the south"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a dark, multi-section roof that is partly shaded and hemmed in by mature trees, which limits what can be seen of the yard and roof; a wooden pergola or deck is on the west side."
+ }
+}

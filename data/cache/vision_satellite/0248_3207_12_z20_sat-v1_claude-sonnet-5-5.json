@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.010778,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.72,
+   "evidence": "Round above-ground pool with a green cover directly behind (north of) the central gray-roofed house, partly shaded by trees.",
+   "detail": "Above-ground round pool with green cover"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Round above-ground pool with a green cover sits in the backyard behind the house, and large tree canopy to the north and south obscures parts of the lot; some debris or stacked material is visible beside the house's east side."
+ }
+}

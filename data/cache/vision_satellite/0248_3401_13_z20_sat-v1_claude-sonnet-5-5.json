@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007458,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Bright turquoise rectangular water surface with a patio/deck surround, located in the back yard just east of the central house.",
+   "detail": "In-ground rectangular pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "No clear separate outbuilding on the central lot; a small shed-like structure at the bottom center appears to belong to the lot to the south.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has a large in-ground pool with a deck in the backyard bordered by dense woodland to the east, and an asphalt driveway with two dark vehicles parked in the front."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007798,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The pools visible at the upper-left and lower-right belong to neighboring lots at the tile edges. No pool is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.45,
+   "evidence": "The rear of the central house has a deck or patio area and a dark attached section. These appear connected to the main house, not separate buildings.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a brown/reddish shingle roof with some uneven color and two small skylights or vents. The lot has dry, patchy lawn in front and a grassy yard behind with mature trees at the sides. The asphalt driveway on the left is empty, and the rear deck or patio is partly shaded."
+ }
+}

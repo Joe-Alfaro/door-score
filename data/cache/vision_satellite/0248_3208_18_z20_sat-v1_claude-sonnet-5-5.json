@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007438,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Bright blue kidney-shaped water surface with a surrounding patio/deck just northeast of the central house.",
+   "detail": "In-ground, kidney-shaped"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small structure near the pool deck at the rear is unclear and could be a deck feature rather than a separate building.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central ranch-style house has an in-ground pool and patio in the back yard; two vehicles sit in the driveway, and a neighboring lot to the southeast has a house under construction with exposed framing."
+ }
+}

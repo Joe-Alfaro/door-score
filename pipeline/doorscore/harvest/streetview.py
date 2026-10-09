@@ -47,15 +47,21 @@ def pano_metadata(door: dict) -> dict:
     p.write_text(json.dumps(meta))
     return meta
 
+def image_info(door: dict, meta: dict) -> dict | None:
+    """What we know about a door's image from metadata alone (no download): None if no panorama."""
+    if meta.get('status') != 'OK':
+        return None
+    return {'path': str(IMG_DIR / f'{door["door_id"]}.jpg'), 'date': meta.get('date'), 'pano_id': meta.get('pano_id'),
+            'pano_lat': meta['location']['lat'], 'pano_lng': meta['location']['lng'],
+            'distance_m': meta.get('distance_m'), 'approximate': (meta.get('distance_m') or 0) > APPROX_M}
+
 def fetch_image(door: dict) -> dict | None:
     """Download one 640x640 Street View image aimed at the parcel. Returns {path, date, pano_id} or None."""
     meta = pano_metadata(door)
-    if meta.get('status') != 'OK':
+    info = image_info(door, meta)
+    if not info:
         return None
     path = IMG_DIR / f'{door["door_id"]}.jpg'
-    info = {'path': str(path), 'date': meta.get('date'), 'pano_id': meta.get('pano_id'),
-            'pano_lat': meta['location']['lat'], 'pano_lng': meta['location']['lng'],
-            'distance_m': meta.get('distance_m'), 'approximate': (meta.get('distance_m') or 0) > APPROX_M}
     if path.exists():
         return info
     # Use the resolved pano and let the API compute the heading toward the parcel point.

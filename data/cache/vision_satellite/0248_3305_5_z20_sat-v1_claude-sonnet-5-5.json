@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008188,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "A small round teal object sits behind the central house, but it looks like a small above-ground pool or hot tub cover, not a full pool. The clearly visible pool at the lower right belongs to a neighboring lot.",
+   "detail": "Possible small round hot tub or kiddie pool behind the house; not counted as a pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "There is a small light-colored object near the rear deck, but it is too small and unclear to call a shed.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house is heavily shaded and surrounded by mature canopy, and a small round teal tub or pool sits on the rear deck. The house has multiple roof planes with dark, shaded shingles that are hard to judge, and the vivid turquoise pool at lower right belongs to a neighbor."
+ }
+}

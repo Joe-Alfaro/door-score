@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007638,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Rectangular dark-covered pool with a light stone/concrete coping and patio at upper right of the central house, consistent with a closed pool cover.",
+   "detail": "Rectangular pool with dark cover"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small brownish roofed structure at upper left of the house near the tree line, possibly a shed, partly hidden by canopy.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Heavily wooded lot with a covered in-ground pool behind the house; the driveway is not visible under canopy, and a skylight or glass panel is present on a roof section next to the pool."
+ }
+}

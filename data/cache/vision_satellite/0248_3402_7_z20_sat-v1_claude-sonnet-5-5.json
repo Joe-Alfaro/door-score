@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007368,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A lattice or pergola-like structure sits at the front and right of the central house, and a small stone-like feature sits behind it. These could be attached porch or patio elements instead of separate buildings.",
+   "detail": "Possible pergola or lattice-covered patio"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Dense mature tree canopy covers much of the yard, especially the rear and right sides. The central house has a clean gray hip roof, and a lattice-covered area with a paved side drive runs to the street."
+ }
+}

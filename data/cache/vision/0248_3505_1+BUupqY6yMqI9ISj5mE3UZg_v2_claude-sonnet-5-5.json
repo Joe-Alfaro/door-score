@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009456,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible with a gray-sided house behind a lawn and mature trees. Part of the upper house and tree canopy is blurred, and the roof is mostly hidden by foliage.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No signs are visible on the lawn or at the property edge.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No moving trucks, containers, or boxes are visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No scaffolding, dumpsters, ladders, or construction materials are visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The lawn and ground cover beds look well kept, but nothing shows crew-level work such as crew vehicles, equipment, or sharply edged formal beds.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No panels are visible, though the roofline is mostly obscured by trees and blur.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "The property is heavily shaded by mature trees and has a dark metal fence on the right edge; the roof cannot be assessed and the upper facade is partly blurred."
+ }
+}

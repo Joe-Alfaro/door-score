@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007278,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Kidney-shaped turquoise water surface on a patio behind the central house, with umbrellas nearby.",
+   "detail": "In-ground kidney-shaped pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The dark-roofed section to the upper right appears attached to the main house, so it is probably not a separate structure.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Large wooded lot with a stone patio, patio umbrellas and a kidney-shaped pool behind the house; dense tree canopy covers the west and south sides of the yard."
+ }
+}

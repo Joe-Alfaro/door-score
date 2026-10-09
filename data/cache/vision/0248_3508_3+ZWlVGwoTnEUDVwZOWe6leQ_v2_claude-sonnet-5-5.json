@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009126,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story colonial home frontage with driveway and front yard.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No real estate or company sign visible; a lamp post near the front walkway is the only post-like object.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.12,
+   "evidence": "A small light-colored object (possibly a bag or debris) sits beside the cars at the end of the driveway, but it is too unclear to indicate renovation work.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "Lawn is mowed and shrubs are present, but there is no crew-level evidence such as equipment, edging, or mulched beds.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Two passenger vehicles (a minivan and a sedan) are parked in the driveway, and the asphalt driveway shows cracking and patching. The right-side lawn has some thin and bare patches."
+ }
+}

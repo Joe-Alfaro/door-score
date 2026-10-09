@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009426,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential frontage with the house centered across a large lawn; a large tree trunk partly obstructs the left foreground.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles, trailers, or equipment visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No yard signs visible on the lawn or near the street.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No moving trucks, containers, or boxes visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No dumpsters, scaffolding, construction materials, or workers visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Trimmed shrubs along the foundation and mulched beds are present, but there is no crew, equipment, or other clear evidence of professional service; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Visible roof surfaces show no solar panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained larger two-story stucco-style home with a stone foundation and an attached garage on the left; there is a mulch patch at the right edge of the lawn and the front is mostly shaded by mature trees."
+ }
+}
