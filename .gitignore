@@ -4,5 +4,9 @@ __pycache__/
 node_modules/
 dist/
 .env
-data/cache/
+# Image caches are large and re-fetchable; JSON caches are committed so nobody re-pays for LLM calls.
+data/cache/streetview/
+data/cache/satellite/
+data/cache/runs/
+data/cache/cost_ledger.jsonl
 data/raw/

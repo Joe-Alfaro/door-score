@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007478,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small raised deck or platform with a brown surface sits at the rear right of the central house. It may be an attached deck rather than a separate building. A small shed-like structure is also visible just behind the house to the upper left.",
+   "detail": "Small deck or shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "low",
+  "notes": "The central lot has a light gray, fairly uniform roof, a dry patchy lawn, and a paved driveway with one dark vehicle. Trees sit mostly on neighboring lots, and the rear yard looks open with a possible deck."
+ }
+}

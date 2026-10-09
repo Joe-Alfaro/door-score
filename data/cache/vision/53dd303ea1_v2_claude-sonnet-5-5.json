@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008996,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a single-story ranch house frontage from the street, partially shaded by large trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only vehicle in the driveway is a dark SUV, and a boat on a trailer sits beside it. Neither is a commercial work vehicle.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The foundation beds have shrubs and small evergreens, and the lawn is tidy. This looks like homeowner upkeep, with no crew or equipment visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "A boat on a trailer is parked in the driveway next to a dark SUV, and a trash bin is at the curb. An American flag hangs on the garage and a basketball hoop stands at the neighboring driveway."
+ }
+}

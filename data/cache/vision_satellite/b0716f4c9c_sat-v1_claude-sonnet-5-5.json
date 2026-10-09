@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007578,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Roof shows uniform gray shingles with no dark rectangular grids.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small shed-like building with a gray roof sits at the left edge of the tile, but it may belong to the neighboring lot. A square deck or gazebo-like structure is attached behind the house.",
+   "detail": "Small shed at lower left; possibly on adjacent lot"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house has a gray shingle roof and a rear deck or hot-tub-like structure, with a dry, patchy lawn and heavy tree cover on the north and east sides; the driveway curves down to the cul-de-sac."
+ }
+}

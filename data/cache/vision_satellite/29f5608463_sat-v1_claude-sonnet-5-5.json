@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008068,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Bright turquoise rectangular pool with a rounded end sits just east of the central house, surrounded by a light patio.",
+   "detail": "In-ground rectangular pool, uncovered"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small structure or pergola-like feature with dark roofing sits at the north end of the pool deck, and a lattice or pergola section is attached to the west side of the house. It is unclear whether either is truly detached.",
+   "detail": "Possible pool house or pergola near the pool"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The house has a multi-gabled gray roof, a curved walkway, and a paved driveway running south to the street. There is a prominent in-ground pool at the rear and a large lawn to the west, with dense mature trees to the north and east."
+ }
+}

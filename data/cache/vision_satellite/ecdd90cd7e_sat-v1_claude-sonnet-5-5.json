@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007778,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "A round turquoise above-ground pool sits directly beside the central house on its right side, with a deck area next to it.",
+   "detail": "Round above-ground pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small brown-roofed structure at the left edge of the central lot's yard, partly shaded by trees, could be a shed. A small gray-roofed structure adjoins the neighboring house to the upper right, but it belongs to that lot.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a gray-shingled roof, a paved driveway to the left, and a round above-ground pool on its right, with heavy tree canopy on the surrounding lot."
+ }
+}

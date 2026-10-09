@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009236,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story house frontage across a lawn from the sidewalk; partly obscured by trees on the right. Cyclists on the sidewalk are incidental.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only sign is a yellow pedestrian school-crossing street sign on the sidewalk, which is municipal and not a yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "The lawn is mowed and green, with small foundation plantings, but there is no crew, equipment, or trailer visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof slope shows no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Two-story light-gray sided house with a red front door and small portico, sitting on a deep, well-mowed front lawn; a brick or paver driveway runs along the right side, and the house appears occupied and maintained."
+ }
+}

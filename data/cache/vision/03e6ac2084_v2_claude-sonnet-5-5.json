@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009396,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a split-level house frontage across a lawn; a large tree trunk partially obstructs the right foreground but the house is fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No signs are visible in the yard.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No moving trucks, containers, or boxes are visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No dumpsters, scaffolding, or construction materials are visible. The house looks freshly painted, but that is not active work.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "There are foundation shrubs and a stone border along the left bed, but no crew, equipment, or clearly commercial-grade features. This looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No solar panels are visible on the visible roof sections.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The house has dark blue-gray siding, white trim, and a dark red front door, and looks recently refreshed; the lawn is large and mostly green with some patchy spots, and mature trees shade the lot."
+ }
+}

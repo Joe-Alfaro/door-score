@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008326,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "A house is partly visible in the background, but it is heavily obscured by trees, shrubs, and a blue hatchback parked in the foreground. The roof and siding are only partly visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "The house sits behind mature trees and shrubs at the back of a green lawn, a gravel driveway runs along the left edge, and a utility pole stands in the foreground, so a closer look from another angle would be needed to assess the home."
+ }
+}

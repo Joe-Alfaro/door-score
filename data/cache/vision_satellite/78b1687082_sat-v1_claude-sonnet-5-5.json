@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007948,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A round dark disc with a lighter rim sits in the lawn northeast of the house, consistent with an in-ground or ground-level trampoline.",
+   "detail": "Trampoline"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A dark rectangular roofed structure with a thin border sits south of the main house, possibly a carport, garage or large shed. Heavy shadow makes the type hard to confirm.",
+   "detail": "Possible garage or outbuilding south of the house"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house has a flat or low-slope gray roof with some debris and patchy areas. The lot is heavily wooded on the east side, with a deck or patio at the rear and a circular fire pit or stump ring in the western lawn."
+ }
+}

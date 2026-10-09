@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007528,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small round blue/turquoise object on a deck at the left rear of the house, likely an above-ground pool or hot tub; a dark blue rectangle at the right of the house may be a pool cover.",
+   "detail": "Small round above-ground pool or hot tub; possible covered pool to the east"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Heavy mature tree canopy surrounds the house and hides much of the yard and driveway; a small round blue feature on the rear deck and a dark blue rectangular surface east of the house may be a pool or cover."
+ }
+}

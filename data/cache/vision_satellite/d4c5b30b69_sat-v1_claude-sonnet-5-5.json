@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007838,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Large rectangular bright turquoise water surface with a concrete deck and lounge chairs, just west of the central house.",
+   "detail": "In-ground rectangular pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small square structure with a lighter roof northwest of the house near the lot's upper edge, possibly a playhouse or shed. A blue tarp-like object sits beside the house.",
+   "detail": "Small shed or playhouse"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has a large in-ground pool in the west yard and a blue cover or tarp at the southwest corner of the house. The dark gray roof looks uniform, and a dark vehicle is parked at the east end of the driveway."
+ }
+}

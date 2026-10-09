@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011028,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Small white shed-like structure on the lawn south-east of the central house, plus a small gray outbuilding and a small greenhouse-like frame to the south-west that may sit on this lot or the neighboring one.",
+   "detail": "small shed / outbuilding"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central ranch-style house has a weathered gray roof and large dark ornamental trees to the north and south; the shared driveway on the west side is unclear, and the parked cars to the west probably belong to the neighboring lot."
+ }
+}

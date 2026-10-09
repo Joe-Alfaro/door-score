@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009156,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House is visible but partially obscured by a large tree trunk and foliage in the foreground; the main facade is small and distant.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small yellow sign is mounted on the tree trunk near the center of the frame, but it looks like a utility or tree notice rather than a real estate or service sign.",
+   "detail": "Small yellow notice on tree, text not legible"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Mulch rings around the tree and shaped beds with shrubs look tidy, but there is no crew or equipment visible and this is common for homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Split-level style home set back behind a large tree with a well-kept lawn and mulched beds; the facade and roof are mostly hidden, so a closer or different-angle view would help."
+ }
+}

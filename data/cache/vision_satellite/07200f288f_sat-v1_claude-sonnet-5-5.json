@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011678,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "Turquoise freeform pool south of the central brown-roofed house, next to a paved patio with furniture.",
+   "detail": "In-ground, kidney/freeform shape"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "Separate brown-roofed building west of the main house at the end of the driveway, possibly a detached garage or outbuilding, though it could belong to the adjacent lot.",
+   "detail": "Possible detached garage or outbuilding"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has an in-ground pool and patio at the rear, a wide paved driveway with no vehicles, and mature trees along the east side and rear boundaries."
+ }
+}

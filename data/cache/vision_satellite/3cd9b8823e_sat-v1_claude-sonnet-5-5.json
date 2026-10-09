@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The only pool visible (turquoise, bottom-left) belongs to a neighboring lot at the edge of the tile, not the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "A small light-colored structure near the top of the central lot, close to the fence line, may be a shed. It is too small and unclear to confirm.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house sits under heavy shade and canopy, with dark, uneven roofing and patchy dry grass in the yard. The driveway and much of the lot are hidden by trees, and the visible pool belongs to the neighboring lot to the southwest."
+ }
+}

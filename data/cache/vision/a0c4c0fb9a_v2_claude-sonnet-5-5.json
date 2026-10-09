@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008536,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story gray-sided home with a large front lawn; a large tree in the foreground partially obscures the upper right of the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "Lawn is mowed and a mulch ring surrounds the tree, but nothing indicates crew-level work such as a crew, equipment, or manicured beds.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No panels are visible on the roof sections that can be seen, though the view is partly blocked by trees.",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "A covered vehicle or car under a cover sits near the driveway at the right, possibly on the neighboring property; the lawn is patchy and dry in sunlit areas."
+ }
+}

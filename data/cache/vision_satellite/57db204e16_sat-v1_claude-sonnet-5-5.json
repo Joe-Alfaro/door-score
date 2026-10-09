@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007488,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No blue or turquoise water surface on the central lot. A blue rectangle at the upper right belongs to a neighboring lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The central house has a lower wing or attached section on its south end, and no separate outbuilding is clearly visible.",
+   "detail": null
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house is a gray-roofed, multi-section building with heavy tree canopy on its east and south sides. Three cars are parked on the paved area to its southwest, and the roof looks weathered, so a rep should verify roof wear in person."
+ }
+}

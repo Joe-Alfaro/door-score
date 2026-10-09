@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007688,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Turquoise rectangular/kidney-shaped water surface with a light coping border, just west of the central house.",
+   "detail": "In-ground pool, appears uncovered"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "Small gray-roofed structure at the left edge of the lot, northwest of the pool, which may be a shed or outbuilding, though it could belong to the neighboring lot.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house has a dark, multi-wing roof and an in-ground pool on the west side. Mature trees surround the lot on most sides, and a paved driveway on the south side holds two vehicles."
+ }
+}

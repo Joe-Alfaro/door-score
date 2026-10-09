@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007858,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No blue or turquoise water surface or pool-shaped cover on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The reddish-brown roof of the central house shows no regular dark rectangular panel grid.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A small teal object sits southeast of the house, but it is too small and unclear to identify as play equipment.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "There is a small teal item and a patio area behind the house, but no clear separate shed or garage on the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a reddish-brown roof that looks fairly uniform, with a large mature tree to the northwest and a lawn to the northeast; a white vehicle is parked at the end of the driveway near the street."
+ }
+}

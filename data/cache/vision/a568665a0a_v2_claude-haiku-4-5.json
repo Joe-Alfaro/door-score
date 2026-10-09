@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003056,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear, well-lit daytime photo showing full residential property frontage with good visibility of exterior, roof, lawn, and driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": true,
+   "confidence": 0.72,
+   "evidence": "Manicured foundation plantings with symmetrical boxwood bushes flanking the entrance, professionally maintained appearance suggesting landscaping service.",
+   "detail": "Formal boxwood foundation plantings"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "excellent",
+  "vehicles_visible": 0,
+  "notes": "Well-maintained two-story colonial with excellent condition throughout; gravel driveway and professional landscaping suggest actively maintained property."
+ }
+}

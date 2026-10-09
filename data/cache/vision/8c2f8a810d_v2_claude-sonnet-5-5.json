@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008566,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story house frontage with lawn, front porch, and driveway; a large tree partially overhangs the frame but the house is fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "A large roll-off dumpster is parked in the driveway on the right, with what looks like tarps or construction material spread on the pavement next to it.",
+   "detail": "Roll-off dumpster in driveway"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "A dumpster in the driveway suggests an active renovation or cleanout project, which makes this a possible lead for remodeling, roofing, or related services."
+ }
+}

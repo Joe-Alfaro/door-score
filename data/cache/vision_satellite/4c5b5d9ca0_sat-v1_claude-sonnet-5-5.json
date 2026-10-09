@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007658,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small greenish-roofed building near the center (around 305,350) sits south of the main house, possibly a garage or an attached wing. The pergola-like wooden structure at upper left (around 185,130) is likely on a neighboring lot.",
+   "detail": "Possible garage or outbuilding with a green roof"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central lot is heavily shaded by mature trees, with the roofs partly obscured and uneven in tone. A silver vehicle is parked beside the structure at center-left, though it may be on the adjacent lot, and the street is to the east."
+ }
+}

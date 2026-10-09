@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009106,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story colonial-style house frontage with lawn and driveway; some tree obstruction on left but house fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A purple portable toilet sits near the end of the driveway beside the house, which is commonly placed for construction crews or work sites, though it could also be for an event.",
+   "detail": "Portable toilet at driveway"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The lawn has crisp mowing stripes and a neat mulch/groundcover ring around the tree, but no crew, trailer, or equipment is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "A portable toilet at the driveway suggests possible construction or event activity, worth confirming; a red vehicle is parked in the driveway and the lawn is very well maintained."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008586,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level residential frontage from the street; the house is partly shaded by large trees but is fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.04,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.04,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "Mulched bed with shrubs and a mowed lawn, but nothing indicating a crew or commercial equipment; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 2,
+  "notes": "Mature trees shade the front yard and the driveway is asphalt with two passenger cars parked (a red SUV near the garage and a white sedan), and the roof is partly obscured so its condition is a rough estimate."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007618,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The blue rectangle at the left edge belongs to a neighboring lot, not the central one. It is a pool or pool cover on that lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "No separate outbuilding is clearly visible on the central lot. The small structures near the top left belong to neighboring lots.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a dark gray shingle roof with some shading and a concrete driveway running east to the street. The yard is dry and brown, with mature trees on the west and southeast sides. The blue pool-like surface at the left edge is on a neighboring lot."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007598,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "A bright blue kidney-shaped water surface with a stone patio and coping sits just southeast of the central house.",
+   "detail": "In-ground, kidney/freeform shaped"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "A small dark rectangular structure sits on the lawn south of the house near the patio, possibly a shed or pool equipment enclosure, but it is partly shaded and small.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a dark gray roof, a paved patio and an in-ground pool at the rear, and a driveway leading north through heavy tree cover and shadow."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007398,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A second building with a dark roof sits at the lower center of the tile, southwest of the upper house and mostly under tree canopy, near the driveway.",
+   "detail": "Possible second house or outbuilding, partly obscured by trees"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The tile is centered on dense tree canopy between two buildings. Two cars are parked along the narrow driveway at lower left, and the upper house has a multi-section roof that looks weathered, so the exact lot boundaries are unclear."
+ }
+}

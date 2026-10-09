@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009106,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House is visible from a distance across a lawn, partly screened by a row of arborvitae and trees; the facade is clear enough to assess, but the roof is seen only at a distance.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The only sign is a yellow and black chevron road sign in the foreground, which is a traffic or road-curve marker and not a real estate or service yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A uniform row of arborvitae and a mulched bed suggest some planned planting, but there is no clear crew-level evidence of professional maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "Large two-and-a-half story older home with a covered front porch and stone details, set far back from the road behind a hedge of arborvitae and a gravel and stone border, so details are limited."
+ }
+}

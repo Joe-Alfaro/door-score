@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008636,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a raised-ranch/split-level house frontage from the street, with a large front lawn. Slightly distant but the house is fully visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "No commercial work vehicles visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.04,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "Lawn is mowed but there is no crew, equipment, or manicured bed edging visible; appears homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Roof surface visible is a plain dark shingle with no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Brick-and-siding raised ranch on a sloped, sunlit lawn with some thin or bare patches, mature trees, and overhead utility lines across the front; no driveway or vehicles visible from this angle."
+ }
+}

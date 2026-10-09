@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009646,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "A single-story brick ranch is visible in the distance across a large front lawn. A stop sign and a large evergreen tree sit in the foreground and partly frame the view, but the house frontage is still reasonably clear.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only sign is a standard red STOP traffic sign at the roadside, not a yard or real estate sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "There are shrubs and rounded bushes near the house foundation, but no crew, equipment, or clearly manicured beds that would show professional service.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "The dark rectangular panel-like array on the front-facing roof plane appears to be a solar installation, though the distance makes it hard to be sure.",
+   "detail": "Roof-mounted array on the main roof slope"
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The front lawn is large with some dry, patchy areas and a bare mulch or dirt patch, and a vehicle is parked on the far right near the neighboring property, not at this house."
+ }
+}

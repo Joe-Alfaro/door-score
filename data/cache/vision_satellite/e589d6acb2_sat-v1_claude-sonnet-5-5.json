@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A bluish rectangular gridded patch on the roof face of the central house near (360,270) could be a solar array, though it may also be a skylight or reflection.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A separate gray-roofed building or attached garage-like wing sits to the left of the main house near (255,240), with a vehicle parked at its upper end.",
+   "detail": "Possible garage or outbuilding with gray shingle roof"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Lot is heavily wooded on the west and south sides with dense canopy, and the house sits near the road with a small lawn; a roof feature that may be solar panels should be confirmed on site."
+ }
+}

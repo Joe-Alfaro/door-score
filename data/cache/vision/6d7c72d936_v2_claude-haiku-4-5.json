@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003341,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with good visibility of exterior, yard, and driveway areas.",
+  "provider_truck": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "White utility truck with blue and red stripe markings visible in right foreground; appears to be a commercial service vehicle with equipment/ladder rack visible.",
+   "detail": "Commercial utility/service truck"
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "Lawn appears maintained but shows typical homeowner-level care; rock bed edging is basic residential styling, not crew-level landscaping work evident.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Service/utility truck parked at property; both visible houses appear well-maintained with mature trees throughout yard."
+ }
+}

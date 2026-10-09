@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009996,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Street-level view of a residential frontage with a lawn and landscaped beds. Dense trees obscure much of the house, which is only partly visible in the background.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "A yellow sign on a stake stands at the right edge of the lawn, with a 'Congratulations' header and a name. It looks like a celebratory or graduation-style sign, not a real estate sign.",
+   "detail": "Yellow 'CONGRATULATIONS' sign, likely a personal celebration or graduation sign and not a for-sale sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "The beds are well kept, with fresh dark mulch, shaped shrubs, a weeping evergreen and a blue spruce. That is consistent with careful upkeep, but nothing shows a crew, equipment or a service sign.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "not_visible",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "The house is mostly hidden behind mature trees and set well back from the street. The lawn and mulched beds are well maintained, and a yellow congratulations yard sign sits at the right edge of the lawn."
+ }
+}

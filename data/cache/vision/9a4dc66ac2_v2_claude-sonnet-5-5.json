@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008756,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side of a gray-sided house and its lawn from the street. The house is partly hidden by a large tree, and the front facade and roof are not visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "No commercial work vehicles or trailers are visible on the street or at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "The lawn is neatly mowed, with trimmed shrubs and a red mulch bed. This is consistent with homeowner upkeep, and there is no crew or equipment evidence.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Well-kept corner-style lot with a white vinyl fence, mature trees, and a trimmed hedge. A central AC condenser appears to sit at the side of the house, and the front door is not visible from this angle."
+ }
+}

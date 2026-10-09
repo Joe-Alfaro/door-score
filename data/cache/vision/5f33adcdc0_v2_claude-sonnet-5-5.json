@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008706,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a two-story house frontage across the street, partially obscured by a tree and overhead utility lines.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Bare dirt/mulch patches in the front lawn near a stone border, but no equipment, dumpsters, or materials visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A stone retaining border and a small planting bed exist, but there is no crew-level evidence of professional maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 3,
+  "notes": "Three cars are parked on the neighboring property to the left (black sedan, red car, white car), not clearly at the target house, and the front lawn has bare patches within a rock-bordered area."
+ }
+}

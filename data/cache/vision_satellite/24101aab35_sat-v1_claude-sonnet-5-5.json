@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007608,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "Rectangular turquoise/blue water surface with a light coping edge just west of the house, partly shaded by trees.",
+   "detail": "In-ground pool, partly covered by tree canopy"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Small octagonal gazebo-like roofed structure at the northwest corner of the house, set slightly apart from the main roof.",
+   "detail": "Gazebo or small pavilion"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Pool is on the west side of the house and partly hidden by mature trees. Driveway is asphalt and empty, leading to a cul-de-sac. Dense canopy covers the west and south sides of the lot."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007628,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Round bright blue water surface with a rim, in a patio area beside the central house; looks like an above-ground pool.",
+   "detail": "Round above-ground pool with surrounding deck/patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small light-colored structure sits near the patio edge to the right of the pool. It could be a shed, but it is small and partly obscured by trees.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house is partly hidden by trees. A round above-ground pool with patio furniture sits in the backyard, and three vehicles are parked in a narrow driveway on the upper left."
+ }
+}

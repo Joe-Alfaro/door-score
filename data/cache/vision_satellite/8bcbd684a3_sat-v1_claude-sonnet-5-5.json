@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007738,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A round dark object with a rim is visible at the bottom near the lot to the south, but it sits on a neighboring lot, not the central one.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small square structure with a dark roof sits just northeast of the central house, near a driveway and patio area. It could be a small shed or an attached porch or utility structure.",
+   "detail": "Small shed or utility structure"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a brown, lightly weathered roof and is heavily shaded by mature trees on the east and west sides, which hide much of the yard; a small structure sits adjacent to the house and the rear patio area is partly visible."
+ }
+}

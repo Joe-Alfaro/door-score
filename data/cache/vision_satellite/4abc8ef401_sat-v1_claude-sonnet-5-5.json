@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007868,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Bright blue rectangular water surface with a stone/paved deck directly behind the central house.",
+   "detail": "In-ground rectangular pool, uncovered"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A faint dark round shape near the bottom center beneath the trees could be a trampoline, but it is too obscured to confirm.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small dark framed object sits next to the pool deck, possibly a small shed or pergola, but it is not clearly identifiable.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Central house has a gray, weathered-looking roof and an in-ground pool in the backyard; dense tree canopy surrounds the rear and east side, and an asphalt driveway curves to the street on the lower left."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007458,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "Roof is uniform brownish-red shingle with a single small skylight; no dark rectangular panel grids.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "No separate outbuilding visible on the central lot; the patio area beside the house is attached hardscape with furniture and a fire pit.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house has a rear/side stone patio with a fire pit and seating, a small open lawn clearing to the east, and dense mature woods surrounding the lot; one dark vehicle is parked in the driveway to the west.}"
+ }
+}

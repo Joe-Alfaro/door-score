@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007568,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "The central house has dark rectangular grids of panels on the south-facing roof face and on the smaller left roof section.",
+   "detail": "Roof-mounted array on the central house"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "There is a small reddish-brown structure, possibly a deck, patio or shed, behind the left side of the house. A small dark object further down-left may be a shed or cover.",
+   "detail": "Possible small shed or deck"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a solar array on its roof and two parked cars in the driveway at the upper left; dense tree canopy covers the rear and south of the lot."
+ }
+}

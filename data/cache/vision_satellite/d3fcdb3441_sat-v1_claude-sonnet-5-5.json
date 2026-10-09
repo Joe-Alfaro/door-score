@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007438,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "The lot at center has two roofed structures: a gray-roofed building at the top of a long paved driveway and a larger gabled house just below it. It is unclear whether the upper one is a garage or a separate building.",
+   "detail": "Possible garage or outbuilding at the head of the long asphalt driveway"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The tile center is ambiguous between a flag-lot-style property with a long paved driveway and the house at lower center; heavy tree canopy shades most of the yard, and the roofs show some moss or staining and uneven tone."
+ }
+}

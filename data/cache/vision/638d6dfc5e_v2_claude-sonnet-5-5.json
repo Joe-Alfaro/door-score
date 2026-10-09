@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008846,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Street-level view down a driveway/road toward a large two-story stone and stucco house in the distance; the house is small in frame but its frontage is visible. Heavy tree canopy partially obscures the view and part of the left edge is blurred.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Lawn is neatly mowed and shrubs are trimmed, but there is no crew, equipment, or clearly commercial-grade detailing visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 2,
+  "notes": "Two SUVs (white and blue) are parked on the paved drive, the house sits well back from the road with mature trees and a mailbox at the left, and roof details are not discernible from this distance."
+ }
+}

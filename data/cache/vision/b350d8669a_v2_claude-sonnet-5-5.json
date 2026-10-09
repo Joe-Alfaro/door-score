@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009296,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side of a light gray sided house, partially visible behind a large tree, with a row of young arborvitae in fresh mulch in the foreground. The front facade and roof are only partly visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles visible.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The siding looks new and the mulch is fresh, but there are no dumpsters, scaffolding, or materials visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "A neat row of evenly spaced young arborvitae in fresh dark mulch with a clean edge suggests a recent planting. No crew or equipment is visible, so this could be homeowner or builder installed.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof section shows no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The house looks newer or recently updated with fresh siding and newly planted arborvitae, and the view is a side angle taken from the street."
+ }
+}

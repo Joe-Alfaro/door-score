@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.017892,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House is visible in the mid-ground behind a row of young arborvitae; the frontage is partially obscured by shrubs and a road sign in the foreground.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": "The only sign is a roadside traffic/object marker (yellow and black chevron), not a real estate or contractor sign."
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "There is a uniformly planted row of arborvitae over a mulched bed with a stone border, but no crew or other crew-level evidence is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "This is a large two-and-a-half-story home with a stone-pillared front porch and a circular driveway, set well back from the road behind a hedge row; the gravel strip in the foreground has some weeds."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007238,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A large dark-roofed building sits to the upper right of the central house, but it may belong to a neighboring lot or share the driveway. A smaller dark roofed section attaches to the lower-left of the main house.",
+   "detail": null
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house sits under heavy mature tree canopy with a small grassy clearing behind it, and three cars are parked on the driveway/paved area to its right; falling leaf and shade cover limit the roof view."
+ }
+}

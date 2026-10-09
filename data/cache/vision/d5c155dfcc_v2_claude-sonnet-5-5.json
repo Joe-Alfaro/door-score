@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009736,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "The image is mostly a street and a large lawn with trees. Only a small part of one house is visible at the right edge, so the frontage is only partly shown.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at any property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "There is an orange traffic cone near the curb and blue and white spray-paint markings on the pavement. These look like utility locate marks, not work at the house. No dumpsters, scaffolding or materials are visible.",
+   "detail": "Possible utility marking or roadwork in the street"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The lawn is mowed and there is a mulched tree ring. No crew, trailer or equipment is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only roof visible is a small part of one dark roof at the right edge, and it shows no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "fair",
+  "vehicles_visible": 0,
+  "notes": "The house at the right edge is mostly hidden by trees and shrubs, so its exterior and roof can't be judged well. The lawn is large and green, and the brick paver walkway is in the foreground."
+ }
+}

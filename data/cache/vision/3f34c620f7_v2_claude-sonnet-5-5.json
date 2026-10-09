@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009056,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a brick-front two-story home with an attached two-car garage, concrete driveway and front lawn.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small white sign sits on the lawn near the curb, and a tiny plaque is by the front shrubs, but neither is legible or clearly a real estate or service sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Trimmed rounded evergreen shrubs and a neat mulch bed with ornamental grass, plus a stone-edged driveway border. This looks like homeowner upkeep, not crew-level work.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "A white minivan is parked in the driveway, and a blue car with its hood open is at the far left on the neighboring property; an American flag hangs by the front entry."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.010226,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is clearly visible across a lawn, though a large evergreen and a small tree partly block the left side of the house.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles, trailers, or equipment vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "The house has a fresh-looking dark gray exterior with a new dormer. Bare dirt, a debris pile and stacked material sit by the foundation. A tarp or material bundle lies on the ground at left, and the front entry has no finished steps or landscaping, which suggests ongoing construction or a recent addition.",
+   "detail": "Apparent addition/remodel with exterior work underway or recently finished"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The lawn is plain grass with bare patches, and the front beds are unfinished. There is no crew-level evidence of maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The visible roof planes show no panels.",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The house looks newly built or heavily renovated, with bare soil and construction debris at the front. The owner may be in a post-renovation phase and open to services like landscaping, fencing, or HVAC. A bike route sign stands in the foreground."
+ }
+}

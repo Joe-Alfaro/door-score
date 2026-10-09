@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003341,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "Image shows primarily a fence and yard area with no clear view of the residential house structure or frontage; house is obscured by trees and fencing.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Small rectangular sign visible on left side of frame attached to post/tree, appears to be a property marker or notice board, text not legible",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "Yard appears to be naturally maintained residential property with standard picket fencing; no crew-level equipment or professional service indicators visible",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "House structure is largely obscured by mature trees and fencing; insufficient frontage visibility for complete property assessment."
+ }
+}

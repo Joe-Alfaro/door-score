@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003651,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential two-story colonial property frontage with good visibility of exterior, lawn, driveway, and vehicles.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Only two private passenger vehicles (white sedans) visible in driveway; no commercial work vehicles, equipment, or service signage present.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No yard signs, real estate signs, or service provider signs visible on the property.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving trucks, rental containers, or relocation equipment visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No active construction materials, ladders, tarps, dumpsters, or renovation work visible on property.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "Lawn is well-maintained and green, but typical for homeowner care; no visible crew equipment, commercial landscape vehicles, or crew-level landscape work indicators.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Roof clearly visible; no solar panels installed.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Well-maintained suburban property with good curb appeal; two vehicles parked in driveway suggest occupied home."
+ }
+}

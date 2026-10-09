@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008636,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime street-level view of a split-level house frontage with driveway and front lawn; large tree trunk partially obstructs the view and foliage shades part of the roofline.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": "Trimmed evergreen shrubs along the foundation are neat but there is no crew or equipment visible; likely homeowner-maintained."
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 2,
+  "notes": "Split-level home with pale yellow siding and attached garage, two sedans parked in the asphalt driveway, mature trees shading the lot, and a neighboring house with another vehicle to the left."
+ }
+}

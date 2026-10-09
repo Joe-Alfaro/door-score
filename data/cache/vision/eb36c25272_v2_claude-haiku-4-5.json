@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003566,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property frontage with driveway, vehicles, and home exterior visible",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "Vehicles visible are personal sedans and a dark SUV/truck; no commercial lettering, ladder racks, or service equipment visible",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No yard signs, real estate signs, or contractor signs visible on the lawn or property",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "No moving trucks, containers, or relocation-related equipment visible",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No visible construction materials, equipment, tarps, or active renovation work on the property",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Lawn appears well-maintained but is consistent with typical homeowner care; no crew-level landscape services or professional equipment visible",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "Roof visible on both structures; no solar panels or mounting equipment apparent",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Property is well-maintained with mature shade trees; two personal vehicles parked in driveway."
+ }
+}

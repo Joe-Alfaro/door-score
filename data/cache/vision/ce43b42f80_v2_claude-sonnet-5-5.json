@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008696,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible, though the house sits at the far left edge and is partly cropped; a large tree and utility boxes occupy most of the frame.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Mulched tree ring, mulched beds, ornamental grass clump and small shrubs are neat, but nothing shows crew-level work such as equipment or workers.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 1,
+  "notes": "Two-story house with an attached garage is only partly visible at the left edge; a gray SUV is parked in the driveway, and the lawn and beds look well kept, with a fire hydrant and green utility boxes at the curb."
+ }
+}

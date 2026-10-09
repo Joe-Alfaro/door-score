@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008536,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible, though the main house is largely hidden behind trees and a landscaped bed; a neighboring house is visible at right.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Mulched island bed with stone edging, boulder and shrubs look tidy, but nothing shows crew-level work such as trucks or equipment.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 3,
+  "notes": "Autumn image (copyright 2019 or earlier) with three cars parked in or near the driveway; the target house is obscured by trees, so exterior and roof cannot be assessed."
+ }
+}

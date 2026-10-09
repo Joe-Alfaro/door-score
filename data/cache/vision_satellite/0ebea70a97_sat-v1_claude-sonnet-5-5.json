@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007378,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small brown rectangular structure sits in the back yard, north of the house, next to a square patio with a fire pit. It could be a small shed or a raised planter.",
+   "detail": "Possible small shed or garden structure"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Ranch-style house with a fresh black asphalt driveway, a large back lawn, and mature trees along the east side. A small patio with a fire pit-like feature is in the back yard, and a white vehicle is parked at the end of the driveway."
+ }
+}

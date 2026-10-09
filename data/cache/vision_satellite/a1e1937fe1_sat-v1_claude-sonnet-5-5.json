@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007878,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "A rectangular bright blue water surface with a stone/concrete deck sits southeast of the central house, near the lower center of the tile.",
+   "detail": "In-ground rectangular pool with a surrounding patio and fence"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small gray-roofed structure sits at the southern end of the pool deck, apparently separate from the main house, likely a pool house or shed.",
+   "detail": "Small pool house or shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Central house sits in a heavily wooded lot with a rectangular pool and a stone patio with a circular seating area; one vehicle is parked on the driveway to the north, and a larger neighboring house with its own pool is at the top right."
+ }
+}

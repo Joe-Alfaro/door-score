@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009136,
+ "signals": {
+  "image_usable": false,
+  "usability_note": "The view is mostly a lawn, a picket fence and a large evergreen tree. The house frontage is heavily obscured by trees, with only partial glimpses of neighboring homes at the left and right edges, so the property itself can't be assessed.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Trimmed shrubs, a mulched ring around the large evergreen and a mowed lawn are visible, but nothing shows crew-level work such as trucks, equipment or workers; this is consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 1,
+  "notes": "A white SUV is parked on the street at the far left, and the weathered wooden picket fence and lawn are in the foreground; a closer or different-angle image is needed to evaluate the house."
+ }
+}

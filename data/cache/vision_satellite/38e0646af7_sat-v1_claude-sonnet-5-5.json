@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011388,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The only pool is an above-ground one at the upper right, on a neighboring lot, so it does not count.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The only visible play equipment is near the upper-right neighboring lot, not the central one.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A gray-roofed building sits just northeast of the main house at the end of the shared driveway. It could be a detached garage or a neighbor's structure.",
+   "detail": "possible garage or outbuilding"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a uniform gray roof and a driveway along its east side with two dark vehicles parked. The rear yard looks overgrown or worn, and the nearby above-ground pool and swing set belong to neighboring lots."
+ }
+}

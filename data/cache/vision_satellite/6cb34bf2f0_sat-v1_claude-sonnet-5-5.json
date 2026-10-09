@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007398,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A dark-roofed rectangular building sits just southeast of the central house, with a paved area between them. It could be a detached garage or a neighboring house, so it is uncertain.",
+   "detail": "Possible detached garage or neighboring dwelling"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central gray-roofed house has a paved side or rear area and hedges along its north side; the dark structure to the southeast may belong to a neighboring lot, and the mature trees to the east and south partly shade the surroundings."
+ }
+}

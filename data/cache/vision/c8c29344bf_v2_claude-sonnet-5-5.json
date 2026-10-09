@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009286,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible across a lawn, but the house is partly hidden behind trees and the roof is mostly obscured.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "A white portable moving container with partial red lettering ending in 'ODS' (likely PODS) sits in the driveway. Furniture and household items (rocking chair, cabinet, boxes) are set out on the lawn by the curb.",
+   "detail": "PODS-style portable storage container; items staged on lawn"
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is mowed and mulch rings surround the trees, but there is no crew or equipment, so it is likely homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "fair",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 2,
+  "notes": "A portable container in the driveway and furniture set out on the lawn suggest an active move or cleanout, which makes this a possible moving or downsizing lead."
+ }
+}

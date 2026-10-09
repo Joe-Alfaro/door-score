@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007738,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "The turquoise pool at the right edge belongs to a neighboring lot, not the central lot. No pool is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small gray-roofed structure sits just east of the house, behind a wooden deck. It could be a shed or a small outbuilding.",
+   "detail": "Small shed or outbuilding with a flat gray roof, plus an adjacent wooden deck"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a gray shingled roof in fairly uniform condition and a rear deck. Large trees shade the west and east sides of the lot, and a neighbor's pool is visible to the east."
+ }
+}

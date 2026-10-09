@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007848,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Bright blue rectangular water surface with a light patio deck beside the rear of the central house, around (255,258).",
+   "detail": "In-ground rectangular pool, uncovered"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small structure with a light roof and patio sits to the right of the central house near (410,265). It could belong to the central lot or to a neighbor.",
+   "detail": "Possible gazebo or pavilion/shed at rear-right of lot"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray multi-gable roof and an in-ground pool behind it. Mature trees shade parts of the yard and a paved area sits to the right. The dark car on the left is on the neighboring driveway."
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009316,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story house frontage from the street, with a large lawn in the foreground and a large tree partially blocking the left side.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.03,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No dumpsters, scaffolding, or construction materials are visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The lawn has crisp mowing stripes and the foundation shrubs are neatly trimmed, but no crew, trailer, or equipment is visible. This is consistent with either homeowner or contractor upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "No solar panels are visible on the visible roof sections.",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Well-kept colonial-style home with a deep, freshly mowed lawn, a stone chimney and a front porch; no vehicles or activity are visible in the driveway, and the garage is off-frame to the left."
+ }
+}

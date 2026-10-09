@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011438,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small light-blue rectangle sits beside the house on the patio. It is too small to be sure of; it could be a hot tub cover or a tarp. The two large pools at the top right and right edge belong to neighboring lots.",
+   "detail": "Possible small hot tub or plunge pool cover, unconfirmed"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small gray structure at the lower right edge of the lot, partly hidden by trees, might be a shed. It is unclear whether it belongs to the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house is heavily surrounded by mature canopy. A small blue object and a patio sit on its east side, and two large pools are visible on neighboring lots to the northeast and east."
+ }
+}

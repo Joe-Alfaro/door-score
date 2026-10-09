@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008736,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime frontal view of a two-story colonial-style house with a full lawn and driveway visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A tiny small object near the front walkway bushes could be a small sign, but it is too small to identify.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "Trimmed foundation shrubs and a neat lawn are visible, but nothing indicates crew-level work such as equipment or workers.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 3,
+  "notes": "Well-maintained vinyl-sided colonial with stone-veneer entry, asphalt driveway with two SUVs parked and another dark vehicle at the right edge; the photo was taken in summer."
+ }
+}

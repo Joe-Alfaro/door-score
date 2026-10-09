@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.018852,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of the house frontage; the left portion of the house is partially obscured by large evergreen and ornamental trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": "Only a municipal 'Bike Route' street sign is visible, not a yard sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "The house appears newly built or renovated: there is fresh gray siding, an exposed foundation with no landscaping beds, a pile of bricks or debris near the front, stacked blocks or materials at the entry, bare dirt patches, a tarp-covered pile on the lawn, and house numbers that appear spray-painted on the facade.",
+   "detail": "Likely new construction or major exterior renovation"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The property appears to be recently built or under active renovation, with construction materials and debris in the front yard, so it may be a good prospect for landscaping, fencing, or other finishing services."
+ }
+}

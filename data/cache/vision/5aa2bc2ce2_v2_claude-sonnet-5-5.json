@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008526,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a Cape Cod style house frontage with a red front door, partly shaded by large trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A white tarp-covered object sits on the lawn to the right of the house, but it could be a covered boat, equipment, or materials. There is no clear construction activity.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "A white tarp-covered item sits on the lawn beside the house and a vehicle is parked at the far right; the lawn is patchy and shaded, and the roof shingles look dark and somewhat weathered."
+ }
+}

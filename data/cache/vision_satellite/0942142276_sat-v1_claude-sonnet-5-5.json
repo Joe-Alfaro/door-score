@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.011418,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "A blue kidney-shaped pool is visible at the lower left, but it sits next to the house at the bottom edge and appears to belong to a neighboring lot, not the central house.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small structure at the left edge near (90,440) could be a shed or gazebo, but it is unclear whether it is on the central lot.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a multi-gabled gray roof that looks fairly uniform. Heavy mature canopy covers the surrounding yard and the south side, and the pool seen at the bottom likely belongs to the neighboring property."
+ }
+}

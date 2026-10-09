@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.024812,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "The front yard is clearly visible, but the house itself is mostly hidden behind mature trees and shrubs; only part of the roof and facade shows.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Yellow sign staked in the right-side mulch bed reading 'Congratulations' with a graduate's name and 'Class of 2025'.",
+   "detail": "Graduation congratulations sign (Class of 2025), not a real estate or contractor sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "not_visible",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The yard has extensive mulched beds, ornamental evergreens and a weeping specimen tree, which suggest a strong investment in landscaping, though there is no clear crew evidence; the house is largely obscured, so exterior and roof assessments are limited."
+ }
+}

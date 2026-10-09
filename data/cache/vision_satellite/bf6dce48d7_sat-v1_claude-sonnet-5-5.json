@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007818,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The only pool is at the top right, on a neighboring lot. The central lot shows no blue water surface.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The central house roof is uniform gray shingle with no regular dark rectangular grid.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "There is a small reddish-brown deck or addition attached to the east side of the house, and it appears attached rather than detached. A fenced garden plot sits to the north, but it is not a structure.",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a driveway on the west side with two white vehicles parked in it. A fenced garden plot lies to the north, and dense mature tree canopy covers the east side of the lot, hiding much of the yard."
+ }
+}

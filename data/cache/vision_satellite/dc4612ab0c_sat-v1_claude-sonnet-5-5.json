@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007738,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small round pale structure with a rim sits in the backyard near the top center, but it is more likely a gazebo, hot tub cover, or tent than a trampoline.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Small red-roofed structures sit north of the main house in the backyard, and a small light-colored dome-like object is further north. They are partly obscured by trees.",
+   "detail": "Small shed or outbuilding with a red roof near the backyard"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a red, multi-gable roof that is heavily shaded and partly covered by mature trees, with a wooded area behind it and a few small structures in the back yard."
+ }
+}

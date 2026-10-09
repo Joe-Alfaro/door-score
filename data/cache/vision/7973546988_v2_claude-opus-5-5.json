@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.018472,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "House frontage clearly visible, though a parked SUV in the foreground and a utility pole partially block the lower front.",
+  "provider_truck": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "A yellow CAT excavator sits on the property beside the house next to large dirt piles, which indicates active contractor equipment on site.",
+   "detail": "CAT excavator"
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Large mounds of excavated dirt run across the front yard and a CAT excavator is parked by the house; the siding and windows also look new.",
+   "detail": "Excavation/earthwork, possibly an addition, foundation, drainage or utility work"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Active excavation is underway with heavy equipment and dirt piles in the front yard; the home appears freshly renovated with new blue siding and stone veneer, and a gray pickup is parked in the driveway."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008098,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No blue or turquoise water surface or pool-shaped cover on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The central house has a gray shingle roof with no regular dark panel grids. Panels are visible only on the neighboring house at top right, which does not count.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small structure with what may be a swing set or play items sits in the back yard near the fence line, but it is small and unclear.",
+   "detail": "Possible small swing set or playhouse"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The small object in the back yard looks more like play equipment or furniture than a shed. The patio area attaches to the house.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Center lot has a gray-shingled house with a rear patio and a lawn that is open in front and back, with mature trees along the east and west edges and a driveway on the east side."
+ }
+}

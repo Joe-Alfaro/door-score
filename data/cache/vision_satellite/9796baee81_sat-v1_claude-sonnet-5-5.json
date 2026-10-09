@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007718,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Bright turquoise-blue kidney/rectangular water surface with steps at one end, surrounded by a tan paver or concrete deck behind the central house.",
+   "detail": "In-ground pool with a light-colored patio deck and visible entry steps"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small dark rectangular feature sits on the rear/side of the house near the pool, but it appears to be an attached patio or addition rather than a separate building.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has a pool with a paved deck in the backyard, partly framed by mature trees and hedges; one dark vehicle is parked in the driveway near the front."
+ }
+}

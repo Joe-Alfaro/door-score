@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.014088,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A small round blue object sits in the rear yard, possibly a kiddie pool or toy, but it is too small to identify. The swing set and above-ground pool are on the neighboring lot to the left.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small dark square structure behind the house, around its left rear corner, may be a shed. There is also a small fenced or decked area farther back.",
+   "detail": "possible small shed"
+  },
+  "driveway_vehicles": 4,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The house has a multi-section gray roof with visible streaking and patchy tones. A long driveway with several vehicles runs to the street, and the rear yard is partly fenced. The above-ground pool at left and the green round tank at bottom right are on neighboring lots."
+ }
+}

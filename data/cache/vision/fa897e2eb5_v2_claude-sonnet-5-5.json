@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009476,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a residential frontage showing the full front of a two-story gray-sided house, lawn, and driveway.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "A very small placard appears near the front walkway/landscape bed, but it is too small to read and is likely a garden or address marker rather than a yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The house looks to have newer siding and a second-story addition, but there are no dumpsters, scaffolding, materials, or workers visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The lawn is neatly mowed with visible stripes and the foundation beds are tidy, but there are no crew, trailer, or equipment indicators.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "excellent",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "The home looks like a recently expanded or renovated colonial with fresh siding and a stone-faced foundation, and two vehicles (a silver SUV and a red SUV) are parked in the asphalt driveway."
+ }
+}

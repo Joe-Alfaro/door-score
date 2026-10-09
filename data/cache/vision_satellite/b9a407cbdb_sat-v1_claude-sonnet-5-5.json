@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007678,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Rectangular bright blue water surface with a paved deck and lounge chairs directly north of the central house.",
+   "detail": "In-ground rectangular pool with a diving board at the east end"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "A round dark disc with a lighter rim sits southeast of the house, which could be a trampoline, but it is partly shaded and could be a hot tub cover or a fire pit.",
+   "detail": "Possible trampoline"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a gray shingle roof with some mottling, and a pool with a deck sits behind it; mature trees surround the lot, and tennis courts lie just north."
+ }
+}

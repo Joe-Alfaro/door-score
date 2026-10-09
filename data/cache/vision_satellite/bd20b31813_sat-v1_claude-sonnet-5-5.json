@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "A small structure south of the house, near the lower center, could be a swing set or playhouse. It is partly hidden by trees and hard to identify.",
+   "detail": "possible swing set or small play structure, unclear"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A green umbrella or gazebo-like round canopy sits on a patio east of the house. A small structure near the bottom center may be a shed or play item.",
+   "detail": "patio umbrella or gazebo"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house is heavily surrounded by mature trees. A curved sandy path leads to a patio with an umbrella, and the driveway is hidden by canopy."
+ }
+}

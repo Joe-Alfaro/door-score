@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007848,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "The blue pool at upper right belongs to the neighboring lot to the right, not the central house. No pool is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small structure with a light slatted roof, possibly a deck, pergola or shed, is attached to or adjoins the rear of the central house at the top right of its roof, under tree shade.",
+   "detail": "Possible attached deck or pergola, or small shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray hip roof with a narrow driveway on its left side holding one white car. Dense trees sit in front and behind, and the neighboring lot to the right has a pool, with tennis courts beyond at the top."
+ }
+}

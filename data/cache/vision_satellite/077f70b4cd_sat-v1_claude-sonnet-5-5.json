@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007478,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A reddish-roofed structure sits directly behind the central house, adjoining the rear edge. It may be an attached addition or deck cover rather than a separate building.",
+   "detail": "Possible rear outbuilding or addition with a red/brown roof"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has a gray composite roof with some staining and debris. It has a dry, unkept back lot and is partly shaded by trees. A vehicle is parked beside the house near the front walkway, and a large red-roofed property sits to the east."
+ }
+}

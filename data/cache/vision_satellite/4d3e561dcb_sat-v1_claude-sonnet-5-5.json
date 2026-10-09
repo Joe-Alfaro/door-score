@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008028,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "No pool on the central lot; the only pool is in the bottom-right corner, on a neighboring lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The central house's roof is a uniform dark gray with no regular grid of panels.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "No trampoline or play set is visible on the central lot. The backyard is mostly hidden by tree canopy.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small structure or dark patch lies to the right of the central house near the trees, but canopy shadow makes it hard to tell what it is.",
+   "detail": "Possible small shed or deck behind the house"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house has a gray gable roof with a narrow side walkway. Mature trees on the east and south sides hide much of the yard, and the lot's backyard is largely obscured."
+ }
+}

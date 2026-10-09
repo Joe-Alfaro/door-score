@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009446,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible across the street, with the house set back behind a lawn. Overhead wires and trees partially obscure the view, and a dark SUV in the foreground blocks part of the right side.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "A small street sign sits on a post at the left curb. It looks like a municipal or traffic sign, not a real estate or service yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "The lawn is green and fairly even, with some taller grass clumps and natural boulders along the edge. There is no crew, equipment, or sharply manicured beds, so it looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "The visible dark roof surfaces show no panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "This is a Cape Cod-style home with dormers, set back from the road behind mature trees and shrubs. The dark SUV in the foreground is driving on the road and is not parked at the property."
+ }
+}

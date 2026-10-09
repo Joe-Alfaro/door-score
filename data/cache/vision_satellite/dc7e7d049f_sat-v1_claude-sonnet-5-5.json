@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008348,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The round above-ground pool at left sits on the neighboring lot, not the central one. A tiny blue object near the right edge of the central house is too small to call a pool and is probably a tarp or toy.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A magenta/red rectangle on the patio below the house could be a cover or furniture, but it is not clearly play equipment. The round teal object at left is on the neighboring lot.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "A fenced rectangular enclosure sits north of the house near the driveway. It looks like a fenced yard or kennel run rather than a clear building.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Heavy mature tree canopy surrounds the house on the south and east sides; there is a stone patio at the rear and a fenced pen area to the north. The visible hipped roof looks fairly uniform, with some tree shadow."
+ }
+}

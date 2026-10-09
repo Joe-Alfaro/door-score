@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008886,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage is visible across a large lawn, but heavy tree canopy partially obscures the house and the house is distant.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "A small sign-like object is at the far left edge near a tree, but it is too small and unclear to identify as a yard sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Lawn is neatly mowed and there are trimmed shrubs along the house, but nothing shows crew-level work such as a crew, trailer or equipment.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 1,
+  "notes": "Large, well-mowed corner lot with a dark SUV parked in the driveway by a garage or outbuilding, a black metal fence on the right, and trees blocking much of the house."
+ }
+}

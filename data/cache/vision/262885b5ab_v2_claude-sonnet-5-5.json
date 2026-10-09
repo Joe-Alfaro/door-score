@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008796,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime frontage view of a split-level brick and siding house with a lawn and driveway; the whole facade is visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "A small address number plate sits on a lamp post at the curb, but there is no real estate or service sign.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "The lawn is neatly mowed and the foundation shrubs are tidy, but nothing shows crew-level work, so it looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The visible roof plane is plain gray shingle with no panels.",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Wooded lot with a long asphalt driveway; a red SUV is parked near the house and a dark sedan sits at the left edge of the driveway, which suggests the home is occupied."
+ }
+}

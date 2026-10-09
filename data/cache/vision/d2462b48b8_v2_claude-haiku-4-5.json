@@ -1,0 +1,50 @@
+{
+ "model": "claude-haiku-4-5",
+ "prompt_version": "v2",
+ "usd": 0.003291,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of residential property with driveway, lawn, and exterior",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.95,
+   "evidence": "The white pickup truck in the driveway has no visible commercial lettering, equipment racks, or work-related markings; it appears to be a personal vehicle",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Well-maintained lawn and mature trees are present, but no visible crew equipment, trucks, or crew-level landscaping work; consistent with homeowner maintenance",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 2,
+  "notes": "Two personal vehicles in driveway; property is well-maintained with mature landscaping and good structural condition."
+ }
+}

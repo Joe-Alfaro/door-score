@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008608,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Rectangular bright turquoise water surface with a brick/tan patio deck and lounge chairs beside it, just behind the central house.",
+   "detail": "In-ground rectangular pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A frame-like swing set or play structure is visible on the lawn at upper left of the pool area, next to a curved retaining wall.",
+   "detail": "Likely swing set"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A large flat white rectangular surface with steps at the left edge, possibly a sport court, covered pool or deck. It may belong to a neighboring lot, so it is not clearly a detached building on the central lot.",
+   "detail": "Ambiguous large white rectangle, possibly sport court or cover"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The central house has a pool with a brick patio and a large open lawn with a play structure; a dark vehicle is parked in the driveway, and a large white rectangular surface sits at the left edge, possibly on an adjacent lot."
+ }
+}

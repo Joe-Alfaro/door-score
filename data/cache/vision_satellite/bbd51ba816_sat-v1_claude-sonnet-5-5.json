@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007338,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small reddish-brown structure sits in the backyard south of the house, near a square patio with a fire pit. It could be a shed or a playhouse.",
+   "detail": "small shed-like structure"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Large mature trees cover the east and north sides of the central lot and hide much of the yard. Two vehicles are parked in the driveway on the north side. A blue tarp or pool-like cover is visible on the neighboring lot to the west, not the central lot."
+ }
+}

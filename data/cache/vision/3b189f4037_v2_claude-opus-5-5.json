@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.021272,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear view of a single-story house with white siding set back behind a front lawn; overcast autumn conditions and the distance limit fine detail.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A blue-and-white sign panel on a post is partially visible at the bottom center edge of the frame in the front lawn near the street.",
+   "detail": "Wording not legible; possibly a real estate or contractor sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The lawn is mostly green but covered in fallen leaves; foundation shrubs are trimmed, a fire hydrant sits at the front right, and a partially visible sign at the curb may warrant a closer look."
+ }
+}

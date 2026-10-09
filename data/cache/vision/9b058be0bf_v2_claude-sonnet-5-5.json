@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009266,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a two-story residential house with its driveway and front yard, partly screened by trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No commercial work vehicles or trailers are visible at the property.",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The only sign-like object is a bare street sign pole at the curb, with no real estate or contractor sign visible.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No moving truck, container, or boxes are visible.",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No dumpsters, scaffolding, or construction materials are visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The landscaped bed with shrubs and rocks and the mature ornamental trees are well kept, but there is no crew or equipment, so this is likely homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "The visible roof sections show no solar panels.",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "The house has a paved driveway, a covered front porch, and mature landscaping with a Japanese maple in the front yard, and it looks well maintained with no signs of sale or work activity."
+ }
+}

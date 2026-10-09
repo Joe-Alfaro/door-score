@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007518,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "The only pool in the tile is at the top, on the neighboring lot to the northeast. The central lot at roughly (340,380) has no visible water surface.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.35,
+   "evidence": "The central house has an attached wing or extension on its upper right. No separate outbuilding is clearly visible.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house is a gray-roofed home with a paved driveway to the south, a circular patio or fire pit area on its west side, and heavy tree canopy around it. The visible pool belongs to the neighboring lot to the northeast."
+ }
+}

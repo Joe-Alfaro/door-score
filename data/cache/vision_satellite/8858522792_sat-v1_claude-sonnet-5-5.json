@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007638,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "The only pool visible, a turquoise rectangle at the top center, belongs to the neighboring lot to the north, not the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "There is a small tan patch at the left edge of the lot, but it is too small to identify as a shed. Nothing else clearly shows a separate building.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The central house has a multi-gabled gray roof with a dark paved driveway leading off to the northeast, and heavy mature tree canopy wraps the west and south sides. The turquoise pool at the top belongs to the neighboring lot to the north."
+ }
+}

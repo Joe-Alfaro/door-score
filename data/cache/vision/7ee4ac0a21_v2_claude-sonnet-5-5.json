@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008686,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential frontage visible with house at right, driveway and wooded lot at left; house partially at edge of frame.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "Open utility trailer and what appear to be stacked stones/materials and small marker flags on the cleared dirt area left of the driveway.",
+   "detail": "Possible landscaping/hardscape materials staged on the side lot"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "good",
+  "roof_condition": "fair",
+  "vehicles_visible": 1,
+  "notes": "Large paved driveway with a portable basketball hoop, a dark SUV parked near the garage, and a heavily wooded side lot with an open trailer and stacked materials; the house is only partly visible at the right edge."
+ }
+}

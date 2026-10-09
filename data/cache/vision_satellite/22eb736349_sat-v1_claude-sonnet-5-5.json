@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007458,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A dark blue rectangular water-like surface sits just behind/beside the central house on a patio area, possibly a small plunge pool or covered pool/hot tub. Larger blue pools appear only on neighboring lots.",
+   "detail": "Small rectangular pool or cover adjacent to rear of house"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "low",
+  "notes": "Central house has a gray hip roof with a patio and small blue rectangular pool or cover at the rear; the lawn is dry and brown, and the paved driveway to the street is empty."
+ }
+}

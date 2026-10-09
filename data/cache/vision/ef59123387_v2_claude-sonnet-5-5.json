@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009516,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear daytime view of a split-level house frontage with driveway and front lawn; some tree shade and partial obstruction by trees.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Small rectangular blue and white sign near the front of the house by the green fencing/netting, at the edge of the lawn.",
+   "detail": "Sign too small to read; could be a contractor or security/service sign."
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Green mesh fencing near the front entry could be a garden/plant guard or a temporary barrier, but no clear construction materials, dumpsters, or workers are visible.",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "Lawn is neatly mowed with brick planters and mature trees, but no crew or equipment visible; consistent with homeowner upkeep.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Split-level home with a two-car garage and wide asphalt driveway, surrounded by mature pines; small sign and green mesh fencing near the front entry may be worth a closer look."
+ }
+}

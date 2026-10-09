@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007658,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Bright blue kidney/rectangular water surface with a paved deck directly behind the central house.",
+   "detail": "In-ground pool, uncovered, with surrounding patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small gray-roofed shed-like structure sits at the rear of the lot, to the upper left of the pool, partly under tree cover.",
+   "detail": "Small shed or outbuilding"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Central house has a pool and patio in the backyard, with a dark paved driveway on the front side. Mature trees shade the rear and east side of the lot, and a dark SUV is parked in the driveway."
+ }
+}

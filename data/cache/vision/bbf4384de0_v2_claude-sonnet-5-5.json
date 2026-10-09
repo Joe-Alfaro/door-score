@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.009586,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear frontal view of a new-construction two-story house with the front yard visible; a utility pole and wires cross the upper part of the frame.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A sign reading 'HARPER' (likely a contractor or builder sign) is propped among the debris at the left of the yard, and a blue and red board or sign lies on the ground at right.",
+   "detail": "HARPER"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "New house with an unfinished wooden porch, exposed dirt and a construction debris pile in the yard, lumber and pallets, a blue tarp, a green dumpster or portable toilet at left, a sawhorse with materials, ladders on the porch, and people on the porch.",
+   "detail": "New construction / active build site"
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "fair",
+  "exterior_condition": "excellent",
+  "roof_condition": "excellent",
+  "vehicles_visible": 0,
+  "notes": "Active new-construction site with no finished landscaping and a likely unoccupied home, so it is probably a poor fit for resident-focused outreach until the build is complete."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007388,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small gabled gray-roofed structure sits just northwest of the center, separate from the larger house to the southeast. It may be a shed or small outbuilding, or possibly a separate dwelling on a neighboring lot.",
+   "detail": "Possible shed or small outbuilding"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The tile is heavily shadowed with dense autumn canopy; the lot boundaries are unclear, and a fenced rear yard and a vehicle in the driveway are visible near the southeast house."
+ }
+}

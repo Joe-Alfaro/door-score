@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.013728,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "Large rectangular white/gray pool-shaped cover with steps and loungers along one side on the big lawn west of the house; a separate blue pool at upper right likely belongs to a neighboring lot.",
+   "detail": "Covered in-ground pool (winter/safety cover)"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Frame-like swing set or play structure near a curved retaining wall at the top of the lawn, though it may sit on an adjacent lot.",
+   "detail": "Possible swing set"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "Small gray-roofed outbuilding with a patio beside the pool cover at the left edge of the lawn.",
+   "detail": "Possible pool house or shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Ownership of the central lawn is ambiguous: it is a large open lawn with a covered pool and outbuilding, likely tied to the gray-roofed house to the east, with dense tree canopy to the south and west."
+ }
+}

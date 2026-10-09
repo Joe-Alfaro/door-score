@@ -1,0 +1,26 @@
+{
+ "34003001002": {
+  "tract_geoid": "34003001002",
+  "median_hh_income": 163512,
+  "median_home_value": 822400,
+  "dual_earner_share": 0.388,
+  "owner_occupied_share": 0.73,
+  "moved_last_year_share": 0.111
+ },
+ "34003044100": {
+  "tract_geoid": "34003044100",
+  "median_hh_income": 186447,
+  "median_home_value": 745400,
+  "dual_earner_share": 0.507,
+  "owner_occupied_share": 0.891,
+  "moved_last_year_share": 0.053
+ },
+ "34003044201": {
+  "tract_geoid": "34003044201",
+  "median_hh_income": 194250,
+  "median_home_value": 650800,
+  "dual_earner_share": 0.951,
+  "owner_occupied_share": 0.924,
+  "moved_last_year_share": 0.044
+ }
+}

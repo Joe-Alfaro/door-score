@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007828,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "No blue or turquoise water surface or pool-shaped cover is visible on the central lot.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "A separate gray-roofed outbuilding or garage sits south of the main house at the end of the driveway. Small structures such as a shed or greenhouse are also visible nearby.",
+   "detail": "detached garage/outbuilding, plus a small greenhouse-like frame"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "The long paved driveway runs from the street to a rear outbuilding, two dark vehicles are parked beside it, and the yard has patchy dry grass, a possible fire pit, and small structures, with dense trees on the west and south sides."
+ }
+}

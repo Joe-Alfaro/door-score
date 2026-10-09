@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.017812,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Clear, unobstructed daytime view of a single-story ranch home frontage with lawn, driveway, and attached garage.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "Lawn shows distinct mowing stripes, crisp mulched beds, and an edged tree ring, which suggest careful maintenance, but no crew, equipment, or service signage is visible.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": "Skylight-like rectangles visible on right roof section; not clearly solar panels"
+  },
+  "lawn_condition": "excellent",
+  "exterior_condition": "good",
+  "roof_condition": "good",
+  "vehicles_visible": 0,
+  "notes": "Very well-maintained ranch home with striped lawn, mulched foundation plantings, window boxes, and a decorative wreath; the driveway is empty and no service vehicles or signs are present."
+ }
+}

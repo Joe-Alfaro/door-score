@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008806,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side of a house with a yellow-sided gable, mostly screened by a row of arborvitae and a white picket fence. The view of the house is partial but sufficient for a rough assessment.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Evenly spaced arborvitae with fresh dark mulch bed along the fence look tidy, but there is no crew, equipment, or other clear sign of professional maintenance.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Corner-lot side view with the house mostly hidden behind a tall arborvitae hedge and white fence; the front entrance and roof surface are not visible, so a rep may want a closer look."
+ }
+}

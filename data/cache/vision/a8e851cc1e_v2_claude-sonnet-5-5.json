@@ -1,0 +1,50 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "usd": 0.008766,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Shows the side of a single-story house with a lawn, mulch beds and fence; the front facade and driveway are not clearly visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small red and white sign is partly visible at the far left edge, but its wording can't be read and it may belong to a neighboring property.",
+   "detail": null
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "The mulch beds are neat and the shrubs are trimmed, but there is no crew, equipment or truck, so this looks homeowner-maintained.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 0,
+  "notes": "Corner-style lot with a wood privacy fence, a central AC unit on the side of the house and a light scatter of fallen leaves; a small red sign at the left edge is worth checking in person."
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007688,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The gray roof faces look uniform with no dark rectangular panel grids.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "There is a small light-colored object in the lawn west of the house, but it is too small and unclear to identify as play equipment.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "A small shed with a dark gray roof sits in the lawn at the upper left of the lot, separate from the house.",
+   "detail": "Small storage shed"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house has a rear deck and patio on its west side, a fenced section of lawn, and a shed. Dense woods border the lot on the west and south, and a dark SUV is parked at the end of the asphalt driveway."
+ }
+}

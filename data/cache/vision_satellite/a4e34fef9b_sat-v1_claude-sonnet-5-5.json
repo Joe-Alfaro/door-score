@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.008278,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The gray roof is uniform with no regular dark panel grid.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "In the upper-left of the lot there is a fenced or mulched area with what looks like a swing set or play structure with a green slide, plus a round dark object nearby that could be a trampoline or similar.",
+   "detail": "Likely a swing set or play structure with slide"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A deck or patio with furniture is attached to the rear right of the house. No clearly separate outbuilding is visible; the small enclosure at upper left looks like a play or garden area.",
+   "detail": null
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Gray-roofed house on a wooded lot with a curved driveway holding three vehicles (white car, two dark SUVs) and a white trailer or box truck, a rear deck with patio furniture, and a play area in the upper-left yard."
+ }
+}

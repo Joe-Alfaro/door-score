@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007518,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "No pool is visible on the central lot. The blue pools at the lower right and bottom center belong to neighboring lots.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.45,
+   "evidence": "The central house is a multi-section brown-roofed building with a small patio to its south. No separate outbuilding is clearly visible.",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central lot has a brown-roofed, multi-section house with dry, patchy lawn and a small paved patio in the rear yard. A dark vehicle is parked at the north side of the house, and a large tree overhangs the yard to the north."
+ }
+}

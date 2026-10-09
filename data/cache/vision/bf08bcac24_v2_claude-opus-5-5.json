@@ -1,0 +1,50 @@
+{
+ "model": "claude-opus-5-5",
+ "prompt_version": "v2",
+ "usd": 0.022132,
+ "signals": {
+  "image_usable": true,
+  "usability_note": "Residential property shown, but a large front-yard tree blocks most of the house facade; only part of the brick wall and white garage are visible.",
+  "provider_truck": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "yard_sign": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": "Only a small decorative flag on the mailbox post, not a commercial or real-estate sign"
+  },
+  "moving_indicators": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "renovation_activity": {
+   "present": false,
+   "confidence": 0.75,
+   "evidence": "",
+   "detail": null
+  },
+  "professional_landscaping": {
+   "present": false,
+   "confidence": 0.6,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "lawn_condition": "good",
+  "exterior_condition": "good",
+  "roof_condition": "not_visible",
+  "vehicles_visible": 2,
+  "notes": "Two passenger cars are in a worn paver driveway leading to an attached white garage, the lawn is green with a mulched tree ring, and the house and roof are mostly hidden by the tree, so a closer view is needed to judge exterior or roof work."
+ }
+}

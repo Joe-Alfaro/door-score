@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007648,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "A round above-ground pool with bright turquoise water and a blue wall sits in the open lawn just south of the central house.",
+   "detail": "Above-ground round pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A small light-roofed shed or gazebo-like structure sits southeast of the house at the edge of the lawn, with another small structure nearby.",
+   "detail": "Small shed or gazebo"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The central house is partly hidden by heavy tree canopy and has a round above-ground pool in a backyard lawn, with a small shed to the southeast; the roof looks dark and weathered where it can be seen."
+ }
+}

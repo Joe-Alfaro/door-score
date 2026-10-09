@@ -1,0 +1,36 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v1",
+ "usd": 0.007588,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "Pools are visible at the top and bottom of the tile, but they belong to neighboring lots. The central lot has no pool of its own.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small gray rectangular paved or roofed area sits just left of the main house. It may be a parking pad, patio, or attached carport rather than a separate building.",
+   "detail": "Possible patio or carport pad"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The central house has dark gray shingle roofing with some shading from adjacent trees. The lots to the north and south both have pools, and the central lot has an open grassy yard with dry patches."
+ }
+}
