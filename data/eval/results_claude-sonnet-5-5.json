@@ -370,23 +370,25 @@
  "usability_false_positive_rate": 0.3,
  "top_signal": "provider_truck",
  "cost": {
-  "total_usd": 9.8331,
+  "total_usd": 13.4958,
   "by_stage": {
    "streetview_image": 3.983,
-   "vision_llm": 4.9941,
-   "discovery_llm": 0.8566
+   "vision_llm": 8.4146,
+   "discovery_llm": 0.8566,
+   "satellite_image": 0.05,
+   "satellite_vision_llm": 0.1913
   },
   "by_model": {
    "claude-haiku-4-5": 1.8685,
-   "claude-sonnet-5-5": 2.2498,
+   "claude-sonnet-5-5": 5.8616,
    "claude-opus-5-5": 1.7324
   },
   "production": {
    "model": "claude-sonnet-5-5",
-   "usd": 5.3764,
+   "usd": 8.7975,
    "doors": 569,
-   "usd_per_door": 0.0094
+   "usd_per_door": 0.0155
   },
-  "eval_and_discovery_usd": 4.4567
+  "eval_and_discovery_usd": 4.6983
  }
 }
