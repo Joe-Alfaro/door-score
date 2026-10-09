@@ -2,7 +2,7 @@
 PY := pipeline/.venv/bin/python
 export PYTHONPATH := pipeline
 
-.PHONY: all setup pipeline vision discover eval sync deploy clean-cache
+.PHONY: all setup pipeline vision discover eval sync deploy clean-cache api api-deploy
 
 all: pipeline sync            ## parcels + permits + census + cached vision → score → sync to web/mcp
 
@@ -32,6 +32,12 @@ sync:                         ## copy pipeline output into web/ and mcp/ deploy 
 deploy: sync                  ## push both services to Railway (requires `railway login` + linked project)
 	railway up web --path-as-root --service web -d
 	railway up mcp --path-as-root --service mcp -d
+
+api:                          ## console API on :8000 with reload (uvicorn)
+	cd pipeline && .venv/bin/uvicorn doorscore.api:app --port 8000 --reload
+
+api-deploy:                   ## push the console API to Railway (context = repo root; see README "Console API")
+	railway up . --service api -d
 
 clean-cache:                  ## drop caches (next run re-pays for imagery/vision)
 	rm -rf data/cache/vision data/cache/streetview data/cache/streetview_meta data/cache/permits data/cache/census_tract data/cache/acs_tracts.json

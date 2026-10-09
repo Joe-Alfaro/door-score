@@ -1,0 +1,22 @@
+# Used when the build context is the repo root: `docker build -f pipeline/Dockerfile .` and
+# `railway up . --service api`. Allow-list only what the console API image copies; the big image
+# caches (data/cache/streetview, data/cache/satellite ~230 MB) and node/web/mcp trees stay out.
+# (mcp/ and web/ are built with their own directory as the context, so this file does not affect them.)
+*
+!pipeline/requirements.txt
+!pipeline/doorscore
+!pipeline/tests
+!data/territory.geojson
+!data/out
+!data/eval
+!data/cache/acs_tracts.json
+!data/cache/parcels_*.geojson
+!data/cache/vision
+!data/cache/vision_satellite
+!data/cache/streetview_meta
+!data/cache/permits
+!data/cache/census_tract
+**/__pycache__
+**/.pytest_cache
+**/.venv
+**/.env

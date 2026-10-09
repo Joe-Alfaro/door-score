@@ -103,6 +103,75 @@ Railway (CLI, from repo root): `railway up mcp --path-as-root --service mcp`, th
 (Railway injects `PORT=8080`; the Dockerfile's `PORT=3333` is only the local default).
 Example question an assistant can now answer: *"I've got 2 hours in Ramsey. Which 20 doors, in what order, and what do I say?"* → `plan_route(hours=2)`.
 
+## Console API
+
+`pipeline/doorscore/api.py` is a small FastAPI service that lets a demo console inspect the pipeline
+(doors, sources, eval, cost ledger) and run stages as subprocesses with live logs. It runs from the
+same checkout as the pipeline and reads `data/` directly.
+
+```bash
+make api                     # http://127.0.0.1:8000, reload on edit  (or: cd pipeline && .venv/bin/uvicorn doorscore.api:app --port 8000)
+curl localhost:8000/api/stages
+curl -X POST localhost:8000/api/run/tests -H 'content-type: application/json' -d '{}'
+curl -N localhost:8000/api/runs/<id>/stream
+```
+
+| Method | Path | What |
+|---|---|---|
+| GET | `/api/health` | `{ok, doors}` (Railway health check) |
+| GET | `/api/status` | run report, cost summary, spend cap, auth mode, key presence, pings of the map + MCP deployments |
+| GET | `/api/doors` | slim door rows. Query: `limit`, `offset`, `sort` (`door_score`, `rank`, `address`, `net_value`, `months_since_deed`), `order` (`asc`/`desc`; sensible default per sort), `tag`, `q` (address substring), `municipality`. `total` is counted before slicing; missing values sort last |
+| GET | `/api/doors/{door_id}` | full door record with every signal |
+| GET | `/api/tags` | tag counts across the territory |
+| GET | `/api/sources` | `data/out/sources.json` from the discovery agent |
+| GET | `/api/eval` | both `results_<model>.json` files plus the label rows |
+| GET | `/api/eval/sample` | label rows joined with each model's **cached** prediction (`predictions.<model>` is `null` if the cache is missing; this endpoint never calls a model) |
+| GET | `/api/eval/images/{name}` | the eval image |
+| GET | `/api/ledger?limit=` | tail of `cost_ledger.jsonl` |
+| GET | `/api/stages` | stage registry: command, cache state, cost estimate, missing keys, `warning`; plus `active_run`, `spent_usd`, `max_spend_usd` |
+| POST | `/api/run/{stage}` | start a stage (`pipeline`, `vision`, `discover`, `eval`, `tests`). Body `{limit?, confirm_paid?}`. One run at a time (409). Paid stages need `confirm_paid` and are refused when `spent + estimate > MAX_SPEND_USD` (400 with the numbers). **Token-protected** |
+| GET | `/api/runs` | run history (persisted in `data/cache/runs/runs.json`; runs left `running` by a restart are marked `interrupted`) |
+| GET | `/api/runs/{id}?tail=` | one run with its log tail |
+| GET | `/api/runs/{id}/stream` | SSE: `{line}` events then `{done, status, exit_code}` |
+| POST | `/api/runs/{id}/cancel` | SIGTERM (then SIGKILL) the subprocess → `cancelled`. **Token-protected** |
+| GET | `/api/mcp/tools` | proxy of the MCP server's `tools/list` |
+| POST | `/api/route` | `{hours, start_point?, min_score?, max_doors?, focus?, include_absentee?}` → proxied `plan_route` call on the MCP server, returned as parsed JSON |
+
+**Auth.** GETs are open. POSTs require `X-Console-Token: <CONSOLE_TOKEN>`. If `CONSOLE_TOKEN` is
+unset, POSTs are accepted only from the loopback interface (the TCP peer address, not a forwardable
+header), so a local demo needs no setup and an unconfigured public deployment is read-only.
+
+| Var | Default | Meaning |
+|---|---|---|
+| `CONSOLE_TOKEN` | unset | shared secret for mutations; unset = localhost-only |
+| `MAX_SPEND_USD` | `45` | paid stages refuse to start if ledger total + estimate would exceed this |
+| `WEB_URL` | live map URL | pinged by `/api/status` |
+| `MCP_URL` | live MCP URL | target of `/api/route` and `/api/mcp/tools` (`${MCP_URL}/mcp`) |
+
+**Deploy (Railway).** The image needs `data/` as well as `pipeline/`, so the build context is the
+repo root: `pipeline/Dockerfile` copies the package, `data/territory.geojson`, `data/out`, `data/eval`
+and the committed JSON caches (vision, satellite vision, Street View metadata, permits, Census tracts,
+parcels) but not the Street View / satellite JPEGs (~230 MB, gitignored). The root `.dockerignore`
+is an allow-list of exactly those paths.
+
+```bash
+docker build -f pipeline/Dockerfile -t door-score-api . && docker run --rm -p 8000:8000 -e CONSOLE_TOKEN=... door-score-api
+
+# Railway, one-time: create a service named `api` in the linked project, then in its settings set
+#   Config-as-code path = pipeline/railway.json   (or set RAILWAY_DOCKERFILE_PATH=pipeline/Dockerfile)
+# and add CONSOLE_TOKEN (and optionally CENSUS_API_KEY so the `pipeline` stage can run there).
+make api-deploy              # = railway up . --service api -d   (uploads the repo root as the build context)
+railway domain --service api
+```
+
+`pipeline/railway.json` points Railway at `pipeline/Dockerfile`, uses `/api/health` as the health
+check and restarts on failure. Caveats of the deployed copy: the cost ledger is gitignored, so
+`spent_usd` starts at 0 there; and because the imagery JPEGs are not in the image, running the
+`pipeline` stage on Railway rescores **without** vision signals (the stage reports this as a
+`warning`) until the next deploy restores the committed `doors.json`. Run `pipeline`/`vision` from a
+checkout with the image caches and redeploy; use the hosted console for inspection, `tests`, `eval`
+and route planning.
+
 ## Cost discipline (in code, not just claimed)
 
 - Free Street View **metadata** call before every paid image; no pano → no spend.
