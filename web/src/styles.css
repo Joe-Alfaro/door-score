@@ -177,6 +177,19 @@ select {
   font-variant-numeric: tabular-nums;
 }
 
+/* Link from the map to the operations console */
+.console-link {
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.console-link:hover {
+  text-decoration: underline;
+}
+
 /* Stats strip */
 .stats-strip {
   display: grid;

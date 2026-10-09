@@ -36,6 +36,28 @@ Because `sync-data` reads from `../data/`, the repository's `data/out/doors.geoj
 `data/territory.geojson` must be present in the deploy context (commit them, or commit the synced
 copies under `web/public/data/`).
 
+## Console (`/console`)
+
+An operations console built with PrimeReact lives at `/console` (Overview, Pipeline, Sources,
+Eval, Doors, Route planner, Ledger). It talks to the pipeline's FastAPI backend; the map at `/`
+is unchanged and does not need the backend.
+
+```sh
+cd ../pipeline && .venv/bin/uvicorn doorscore.api:app --port 8000   # backend
+cd web && npm run dev                                                 # then open /console
+```
+
+Configuration is via Vite env vars (copy `.env.example` to `.env`):
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `VITE_API_URL` | `http://localhost:8000` | Base URL of the console API. |
+| `VITE_CONSOLE_TOKEN` | (unset) | Sent as `X-Console-Token` on `POST /api/run/*` and `POST /api/runs/*/cancel`. Required when the backend has `CONSOLE_TOKEN` set; without it the backend only accepts mutations from localhost. |
+
+Notes: the Pipeline page confirms paid stages with their estimate before sending `confirm_paid`;
+the run terminal is fed by the `/api/runs/{id}/stream` SSE endpoint. Street View thumbnails in
+the Doors drawer come from this site's own `/img/streetview/<door_id>.jpg`.
+
 ## UI
 
 - Top bar: address search (Enter or click a result to fly to it), Top-N select (20/50/100/all)

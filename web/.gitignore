@@ -3,3 +3,8 @@ dist
 *.tsbuildinfo
 
 public/maplibre/
+
+# Local Vite env (copy .env.example instead)
+.env
+.env.local
+.env.*.local

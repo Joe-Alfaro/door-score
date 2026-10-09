@@ -1,0 +1,426 @@
+/*
+ * Console-only styles. Everything is scoped under .console, or uses the console-* prefix for
+ * PrimeReact overlays that portal to <body>, so the map page at / is unaffected.
+ */
+.console {
+  display: grid;
+  grid-template-columns: 224px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  background: var(--surface-ground);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.console .p-component,
+.console-portal .p-component {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.console a {
+  color: var(--primary-color);
+}
+
+/* Header */
+.console-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.console-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.console-header-meta {
+  color: var(--text-color-secondary);
+}
+
+.console-spend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+}
+
+.console-spend .p-progressbar {
+  flex: 1;
+  height: 10px;
+}
+
+.console-health {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  align-items: center;
+}
+
+.console-map-link {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Sidebar nav */
+.console-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 10px;
+  background: var(--surface-card);
+  border-right: 1px solid var(--surface-border);
+  overflow-y: auto;
+}
+
+.console-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.console-nav a:hover {
+  background: var(--surface-hover);
+}
+
+.console-nav a.active {
+  background: var(--highlight-bg);
+  color: var(--highlight-text-color);
+  font-weight: 600;
+}
+
+/* Main */
+.console-main {
+  overflow-y: auto;
+  padding: 20px 24px 48px;
+}
+
+.console-page-title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.console-page-sub {
+  margin: 0 0 18px;
+  color: var(--text-color-secondary);
+}
+
+.console-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.console-grid-stats {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.console-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+.console-section {
+  margin-top: 22px;
+}
+
+.console-section-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Stat cards */
+.console-stat .p-card-body {
+  padding: 14px 16px;
+}
+
+.console-stat .p-card-content {
+  padding: 0;
+}
+
+.console-stat-label {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.console-stat-value {
+  font-size: 26px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.console-stat-hint {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+}
+
+/* Charts */
+.console-chart {
+  position: relative;
+  height: 260px;
+}
+
+.console-chart-legend {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+
+.console-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.console-swatch-dashed {
+  width: 14px;
+  height: 0;
+  border-top: 2px dashed currentColor;
+  border-radius: 0;
+}
+
+/* Generic bits */
+.console-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.console-muted {
+  color: var(--text-color-secondary);
+}
+
+.console-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.console-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.console-empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-color-secondary);
+}
+
+.console-empty .pi {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.console-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.console-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.console-field {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.console-field label {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+  font-weight: 600;
+}
+
+.console-clickable .p-datatable-tbody > tr {
+  cursor: pointer;
+}
+
+.console-expansion {
+  padding: 8px 12px 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.console-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.console-inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Pipeline */
+.console-stage-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.console-terminal {
+  height: 320px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 12px 14px;
+  background: #1a1a19;
+  color: #e6e6e1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.console-terminal-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* Eval gallery */
+.console-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.console-gallery-item {
+  border: 1px solid var(--surface-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface-card);
+}
+
+.console-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--surface-100);
+}
+
+.console-gallery-body {
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+
+/* Door sidebar (portals to <body>, so not under .console) */
+.console-door {
+  display: grid;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.console-door-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.console-door-address {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.console-door-score {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.console-door-photo {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--surface-border);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.console-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+  margin: 0;
+}
+
+.console-facts dt {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+}
+
+.console-facts dd {
+  margin: 0 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.console-h {
+  margin: 6px 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-color-secondary);
+}
+
+@media (max-width: 800px) {
+  .console {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto minmax(0, 1fr);
+  }
+
+  .console-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: 0;
+    border-bottom: 1px solid var(--surface-border);
+  }
+}

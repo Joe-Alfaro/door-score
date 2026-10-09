@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { KeyboardEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { TOP_N_OPTIONS } from '../types'
 import type { DoorFeature, TagCount, TagFilter, TopN } from '../types'
 
@@ -125,6 +126,10 @@ export function TopBar({ doors, tags, topN, onTopNChange, activeTags, onToggleTa
           )
         })}
       </div>
+
+      <Link to="/console" className="console-link">
+        Console
+      </Link>
     </header>
   )
 }
