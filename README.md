@@ -10,6 +10,13 @@ data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.
                  Claude vision · eval harness            web/ (React map)   mcp/ (MCP server)
 ```
 
+## Live demo
+
+| | URL |
+|---|---|
+| Map UI | https://web-production-39b2a.up.railway.app |
+| MCP server (Streamable HTTP) | https://mcp-production-1645.up.railway.app/mcp — health at `/health` |
+
 ## Repo layout
 
 | Path | What |
@@ -81,7 +88,7 @@ keyed to Ramsey except `select_territory.py`, which only exists because no polyg
 cd web && npm run dev        # http://127.0.0.1:5173  (copies data/out → public/data first)
 npm run build && npm start   # production: serve -s dist on $PORT
 ```
-Railway: root directory `web/`, build `npm run build`, start `npm start` (`web/railway.json`).
+Railway (CLI, from repo root): `railway up web --path-as-root --service web`, then `railway domain --service web`.
 
 ## MCP server
 
@@ -89,7 +96,8 @@ Railway: root directory `web/`, build `npm run build`, start `npm start` (`web/r
 cd mcp && npm run build && npm start   # POST /mcp on :3333, GET /health
 npm run smoke                          # health + tools/list + a tools/call
 ```
-Railway: Dockerfile at `mcp/Dockerfile` with repo root as build context (`mcp/railway.json`).
+Railway (CLI, from repo root): `railway up mcp --path-as-root --service mcp`, then `railway domain --service mcp --port 8080`
+(Railway injects `PORT=8080`; the Dockerfile's `PORT=3333` is only the local default).
 Example question an assistant can now answer: *"I've got 2 hours in Ramsey. Which 20 doors, in what order, and what do I say?"* → `plan_route(hours=2)`.
 
 ## Cost discipline (in code, not just claimed)
