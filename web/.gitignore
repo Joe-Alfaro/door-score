@@ -8,3 +8,6 @@ public/maplibre/
 .env
 .env.local
 .env.*.local
+
+# Google imagery is never bundled into the site
+public/img/
