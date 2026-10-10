@@ -246,7 +246,20 @@ def eval_sample(verified_only: bool = True):
         rows.append({**r, 'image_url': f'/api/eval/images/{Path(r["image"]).name}', 'predictions': preds})
     return {'models': list(EVAL_MODELS), 'rows': rows, 'n': len(rows), 'skipped_missing_image': skipped}
 
+_SV_MEM: dict[str, tuple[float, bytes]] = {}
+_SV_TTL = 600  # seconds; memory only, never written to disk
+
 def _streetview_bytes(door_id: str) -> bytes:
+    hit = _SV_MEM.get(door_id)
+    if hit and time.time() - hit[0] < _SV_TTL:
+        return hit[1]
+    data = _streetview_fetch(door_id)
+    if len(_SV_MEM) > 300:
+        _SV_MEM.clear()
+    _SV_MEM[door_id] = (time.time(), data)
+    return data
+
+def _streetview_fetch(door_id: str) -> bytes:
     """Fetch one Street View frame from Google at view time. Nothing is written to disk and the
     response is marked no-store, so Google imagery is never stored or redistributed by this project."""
     from fastapi.responses import Response

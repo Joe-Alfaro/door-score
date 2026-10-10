@@ -79,7 +79,7 @@ Confidence-gate sweep for the production model (precision / recall):
 | ≥0.8 | — / 0.00 | 1.00 / 1.00 | 0.33 / 0.17 | 1.00 / 0.60 | — / 0.00 |
 | ≥0.9 | — / 0.00 | 1.00 / 1.00 | — / 0.00 | 1.00 / 0.40 | — / 0.00 |
 
-Production vision model: `claude-sonnet-5-5`, measured **$0.0251 per door** (imagery + vision over 569 doors). Eval and discovery spend: $4.46. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $9.99, claude-opus-5-5 $1.73.
+Production vision model: `claude-sonnet-5-5`, measured **$0.0272 per door** (imagery + vision over 569 doors). Eval and discovery spend: $4.47. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $11.20, claude-opus-5-5 $1.73.
 <!-- VISION-EVAL:END -->
 
 ## Cost

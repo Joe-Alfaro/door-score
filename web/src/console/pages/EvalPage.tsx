@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Button } from 'primereact/button'
 import { Card } from 'primereact/card'
 import { Chart } from 'primereact/chart'
 import { Chip } from 'primereact/chip'
@@ -128,6 +129,7 @@ function GalleryItem({ label }: { label: EvalLabel }) {
 type GalleryFilter = 'all' | 'positives' | 'unusable'
 
 export function EvalPage() {
+  const [showFrames, setShowFrames] = useState(false)
   const { data, error, loading, reload } = useApi(getEval, [])
   const [galleryFilter, setGalleryFilter] = useState<GalleryFilter>('all')
 
@@ -234,7 +236,14 @@ export function EvalPage() {
         {labels.length === 0 ? (
           <EmptyState icon="pi pi-images" title="No labeled frames match" />
         ) : (
-          <DataView value={labels} layout="grid" paginator rows={12} listTemplate={(items: EvalLabel[]) => <div className="console-gallery">{items.map((label) => <GalleryItem key={label.door_id} label={label} />)}</div>} />
+          showFrames ? (
+            <DataView value={labels} layout="grid" paginator rows={12} listTemplate={(items: EvalLabel[]) => <div className="console-gallery">{items.map((label) => <GalleryItem key={label.door_id} label={label} />)}</div>} />
+          ) : (
+            <div className="console-empty">
+              <Button label="Load frames" icon="pi pi-images" size="small" onClick={() => setShowFrames(true)} />
+              <span className="console-muted" style={{ marginLeft: 12 }}>Frames are fetched from Google at view time and billed per view; nothing is stored.</span>
+            </div>
+          )
         )}
       </section>
     </>
