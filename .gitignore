@@ -13,3 +13,4 @@ data/raw/
 # Street View imagery is Google content: never committed or re-served; displayed via proxy at view time
 web/public/img/
 data/eval/images/
+data/eval/satellite/images/
