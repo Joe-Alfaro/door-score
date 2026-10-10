@@ -7,7 +7,7 @@ API allows up to 24 h. Structured output is preserved by sending the same JSON s
 `messages.parse` would send (`output_config.format`) and validating each result with the same
 Pydantic model.
 """
-import json, time
+import json, re, time
 from pathlib import Path
 from pydantic import BaseModel, ValidationError
 from ..costs import record, llm_cost, ensure_budget, BudgetExceeded
@@ -41,10 +41,15 @@ def output_format(schema: type[BaseModel]) -> dict:
     return {'type': 'json_schema', 'schema': json_schema}
 
 
+def safe_id(custom_id: str) -> str:
+    """Batch custom_ids must match ^[a-zA-Z0-9_-]{1,64}$; door ids can carry lot qualifiers like '25.01'."""
+    return re.sub(r'[^A-Za-z0-9_-]', '-', custom_id)[:64]
+
+
 def build_requests(items: list[dict], model: str, system: str, user_text: str, schema: type[BaseModel]) -> list[dict]:
     """One Batches `Request` per item. items: [{custom_id, image_path, ...}]. Pure: no network."""
     fmt = output_format(schema)
-    return [{'custom_id': it['custom_id'],
+    return [{'custom_id': safe_id(it['custom_id']),
              'params': {**message_params(it['image_path'], model, system, user_text), 'output_config': {'format': fmt}}}
             for it in items]
 
@@ -87,7 +92,7 @@ def run_batch(*, stage: str, items: list[dict], model: str, system: str, user_te
             if b.processing_status != 'ended':
                 still.append(b)
         pending = still
-    by_id = {it['custom_id']: it for it in items}
+    by_id = {safe_id(it['custom_id']): it for it in items}
     out, budget_error = {}, None
     def _all_results():
         for b in batches:
@@ -110,7 +115,7 @@ def run_batch(*, stage: str, items: list[dict], model: str, system: str, user_te
         usd = llm_cost(model, batch=True, **usage)
         rec = result_record(model, prompt_version, usd, signals, batch=True, batch_id=batch.id)
         store(it['cache_paths'], rec)
-        out[result.custom_id] = rec
+        out[it['custom_id']] = rec   # key results by the original door id, not the sanitized batch id
         try:
             record(stage, usd, it.get('door_id'), model=model, batch=True, batch_id=batch.id, **usage)
         except BudgetExceeded as e:
