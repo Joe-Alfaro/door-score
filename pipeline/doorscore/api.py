@@ -198,7 +198,11 @@ def sources():
 def eval_results():
     res = {p.stem.replace('results_', ''): json.loads(p.read_text()) for p in (DATA / 'eval').glob('results_*.json')}
     labels = _labels()
-    return {'results': res, 'labels': labels, 'n_verified': sum(1 for r in labels if r.get('verified_by_human'))}
+    sat_dir = DATA / 'eval' / 'satellite'
+    overhead = {p.stem.replace('results_', ''): json.loads(p.read_text()) for p in sat_dir.glob('results_*.json')} if sat_dir.exists() else {}
+    sat_labels = [json.loads(l) for l in (sat_dir / 'labels.jsonl').read_text().splitlines() if l.strip()] if (sat_dir / 'labels.jsonl').exists() else []
+    return {'results': res, 'labels': labels, 'n_verified': sum(1 for r in labels if r.get('verified_by_human')),
+            'overhead': {'results': overhead, 'n_verified': sum(1 for r in sat_labels if r.get('verified_by_human'))}}
 
 EVAL_MODELS = ('claude-sonnet-5-5', 'claude-haiku-4-5')
 

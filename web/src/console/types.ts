@@ -265,10 +265,16 @@ export interface EvalLabel extends Partial<Record<BinaryLabelKey, boolean | null
   note?: string | null
 }
 
+export interface OverheadEval {
+  results: Record<string, ModelEval>
+  n_verified: number
+}
+
 export interface EvalResponse {
   results: Record<string, ModelEval>
   labels: EvalLabel[]
   n_verified: number
+  overhead?: OverheadEval | null
 }
 
 export interface LedgerRow {

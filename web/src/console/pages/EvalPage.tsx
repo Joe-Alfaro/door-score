@@ -134,6 +134,11 @@ export function EvalPage() {
   const models = useMemo(() => Object.entries(data?.results ?? {}).sort(([a], [b]) => a.localeCompare(b)), [data])
   const productionKey = models.find(([key, result]) => result.cost?.production?.model === key)?.[0] ?? models[models.length - 1]?.[0]
   const production = productionKey ? data?.results[productionKey] : undefined
+  const overheadModels = useMemo(() => Object.entries(data?.overhead?.results ?? {}).sort(([a], [b]) => a.localeCompare(b)), [data])
+  const overheadRows = useMemo<SignalRow[]>(() => {
+    const names = ['swimming_pool', 'solar_panels', 'play_equipment', 'detached_structure']
+    return names.map((signal) => ({ signal, perModel: Object.fromEntries(overheadModels.map(([key, result]) => [key, result.signals[signal]])) }))
+  }, [overheadModels])
   const binaryRows = useMemo(() => collectRows(models, isBinary), [models])
   const ratingRows = useMemo(() => collectRows(models, isRating), [models])
   const sweep = useMemo(() => (production ? buildSweep(production) : null), [production])
@@ -176,6 +181,17 @@ export function EvalPage() {
           ))}
         </DataTable>
       </Card>
+
+      {overheadModels.length > 0 ? (
+        <Card title="Overhead imagery" subTitle={`Satellite tiles judged by a human (${data.overhead?.n_verified ?? 0} verified). Bare tile vs. tile with the parcel outline drawn on it (production).`} className="console-section">
+          <DataTable value={overheadRows} dataKey="signal" size="small" emptyMessage="No overhead signals">
+            <Column header="Signal" body={(row: SignalRow) => humanize(row.signal)} />
+            {overheadModels.map(([key]) => (
+              <Column key={key} header={key.includes('outline') ? `${key} · production` : key} body={(row: SignalRow) => <BinaryCell metrics={row.perModel[key]} />} />
+            ))}
+          </DataTable>
+        </Card>
+      ) : null}
 
       <Card title="Condition ratings" subTitle="Agreement with the human label on ordinal scales" className="console-section">
         <DataTable value={ratingRows} dataKey="signal" size="small" emptyMessage="No rating signals">
