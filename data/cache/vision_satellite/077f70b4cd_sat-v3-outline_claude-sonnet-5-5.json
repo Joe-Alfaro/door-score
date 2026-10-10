@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002257,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A reddish-roofed structure or deck-like addition sits at the rear (north) edge of the main house, inside the outline, but it may be an attached extension rather than a separate building.",
+   "detail": "possible rear addition or deck"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Narrow lot with a bare dry backyard to the north and dense trees along the east and south edges; one light-colored vehicle is parked near the front of the house, and the red-roofed buildings to the east belong to the neighbor."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002247,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Bright turquoise-blue rectangular/kidney-shaped water surface immediately east of the house, inside the yellow outline.",
+   "detail": "In-ground pool, approx. rectangular"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Dark-roofed house is heavily surrounded by mature trees with a pool on the east side and debris or clutter on the patio area next to it; a bare dirt patch lies to the northwest and the driveway is hidden by canopy."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002167,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.08,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "A separate small building with a dark roof sits in the upper-middle of the outlined lot, behind the main house, partly under tree cover.",
+   "detail": "Small outbuilding, shed or garage"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Deep, narrow, heavily wooded lot with the main house near the street and a small outbuilding toward the rear; dense canopy hides much of the yard and the roof has shaded, mottled areas."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

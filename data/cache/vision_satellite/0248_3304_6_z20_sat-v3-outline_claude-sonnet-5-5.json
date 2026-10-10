@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002112,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The long narrow lot is mostly dense mature tree canopy, with the house at the far left edge of the outline; the visible reddish-brown roof looks somewhat weathered and partly shaded, and a pool in the bottom-right corner lies outside the outline so it belongs to a neighbor."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

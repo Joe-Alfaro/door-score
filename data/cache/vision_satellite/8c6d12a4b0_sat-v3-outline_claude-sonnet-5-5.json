@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002332,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "Round blue water surface on a deck attached to the south side of the house, inside the yellow outline.",
+   "detail": "Round pool on a raised deck, possibly above-ground"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house sits on a long, narrow, heavily wooded lot with a long driveway running to a cul-de-sac at the top. A round pool on a deck sits behind the house, and a dark vehicle is parked along the driveway. The roof has a few skylights and some shading from trees."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

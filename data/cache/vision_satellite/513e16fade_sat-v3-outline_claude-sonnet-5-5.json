@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002657,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Kidney-shaped turquoise water surface with stone patio and rock features just east of the house, inside the yellow outline.",
+   "detail": "In-ground freeform pool with waterfall/rock feature and hardscape deck"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small gray-roofed structure at the right edge of the outline, east of the pool, partially overlapping the boundary and obscured by trees.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large home with dark gray multi-gabled roof and a landscaped pool patio at the rear; heavy tree canopy covers much of the lot, and the driveway curves in from the northwest with no vehicles on it (the visible car belongs to the neighbor's lot)."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002512,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Bright blue rectangular water surface with surrounding patio just northwest of the house, inside the yellow outline.",
+   "detail": "In-ground rectangular pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small gazebo or pavilion-like structure with a lighter roof sits northeast of the main house, inside the outline, though it may be an attached patio feature.",
+   "detail": "Possible gazebo or pergola"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house has a multi-gabled gray roof and a pool in the rear yard. Dense mature trees surround the lot and hide much of the yard, and the driveway is mostly hidden by shade and canopy."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

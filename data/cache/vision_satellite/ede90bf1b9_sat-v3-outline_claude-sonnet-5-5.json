@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.003007,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.96,
+   "evidence": "Bright turquoise rectangular pool with a brick/paver deck and lounge chairs, located inside the yellow outline just northwest of the house.",
+   "detail": "In-ground rectangular pool with paver patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A frame-like structure that looks like a swing set or playset sits in the lawn on the left side of the lot, beside a curved retaining wall, inside the outline.",
+   "detail": "Probable swing set or wooden playset"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A gray-roofed section at the top of the house cluster, next to the driveway, looks like an attached or detached garage. It sits close to the main house, so the separation is unclear.",
+   "detail": "Possible garage or outbuilding adjacent to the house"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The lot is long and narrow with a pool and paver patio, an open lawn at the back, and heavy tree cover around the house; the tennis-court-like surface at the left edge is outside the outline and belongs to a neighbor."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002682,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.2,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "A round dark disc with a lighter rim sits on the lawn northeast of the house, inside the outline, consistent with a trampoline.",
+   "detail": "Trampoline"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A dark rectangular area at the south edge of the outline, below the house, may be a carport or outbuilding. It is partly shaded and could also be part of a neighboring lot.",
+   "detail": "Possible carport or shed south of the house"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house has a flat or low-slope gray roof and a deck on its east side. Dense trees cover the east and north portions of the lot, and a trampoline sits in a small clearing. The lawn on the west side looks dry and patchy, with a round fire pit-like feature near the lower left."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

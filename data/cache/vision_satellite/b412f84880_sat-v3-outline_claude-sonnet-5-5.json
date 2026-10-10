@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002637,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "Regular dark rectangular grids on the south-facing roof faces of the central house, including the left gable and the main roof near the yellow dot.",
+   "detail": "Roof-mounted arrays on multiple roof faces"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small dark rectangular structure at the lower-left corner of the outline, possibly a shed, and a brownish roofed area attached to the rear-left of the house that may be a deck or an addition.",
+   "detail": "Possible small shed at the rear-left corner"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Gray-shingled house with solar panels, two cars in the driveway at the upper left, and heavy tree canopy covering the rear of the lot, with an open grassy area in front toward the street."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002382,
+ "signals": {
+  "image_usable": false,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "The pool in the upper right corner lies outside the yellow outline, so it belongs to a neighbor.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "A small structure near the top right edge of the outline is unclear and may be outside it. Nothing is clearly visible inside the outline.",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "not_visible",
+  "tree_cover": "high",
+  "notes": "The outlined parcel is a long strip of dense mature woodland with no visible house or roof. Nearby structures, a pool and vehicles belong to neighboring lots, so this is likely an undeveloped or wooded lot."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

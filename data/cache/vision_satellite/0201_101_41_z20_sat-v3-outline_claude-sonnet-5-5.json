@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.005602,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "Large white rectangular pool-shaped cover with steps along its right edge, in the back yard inside the outline; the blue pool at the top belongs to a neighbor outside the outline.",
+   "detail": "Covered in-ground pool (likely winter or safety cover)"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "Small gray-roofed outbuilding at the upper-left of the lot next to the pool cover and a patio area.",
+   "detail": "Small shed or pool house"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Long narrow lot with a large covered pool and small outbuilding in the open back lawn, and the house at the right end; the house roof has three skylights, not solar panels."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

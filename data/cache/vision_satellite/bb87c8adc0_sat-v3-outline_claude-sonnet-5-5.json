@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002737,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.8,
+   "evidence": "A small blue kidney/oval-shaped water surface with an adjacent deck sits inside the yellow outline near the upper left, behind the house. The larger pool at the left edge is outside the outline.",
+   "detail": "Small in-ground or semi-raised pool, possibly with a deck"
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Regular dark blue grids of panels cover the south-facing roof section at the center of the house, with more panels on the adjacent roof sections to the upper left.",
+   "detail": "Multiple roof-mounted arrays on several roof faces"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Multi-level house with several roof sections and extensive solar arrays, a small pool in the rear yard, and a driveway on the lower right with two dark vehicles; mature trees shade much of the lot."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

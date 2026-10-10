@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002317,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "A dark, regular rectangular grid is on the upper-left roof face of the central house, with a distinct panel pattern against the lighter gray roof.",
+   "detail": "Roof-mounted array on one roof face"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house sits in the middle of the lot with a dry, patchy lawn to the west and dense mature trees to the east and south; the roof looks fairly uniform and has a solar array, and the driveway is not clearly visible under the canopy."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002632,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A small round blue water feature sits on the patio at the rear right of the house, inside the yellow outline. It looks like a small pool or hot tub.",
+   "detail": "Small round pool or spa, about hot-tub size, on a stone patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small square structure, possibly a shed, sits in the bottom-right corner of the outlined lot near the rear fence line.",
+   "detail": "Small shed-like structure"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "low",
+  "notes": "The lot has a gray-roofed house, a paved driveway on the left side, a stone patio with a small round pool or spa at the rear, and a row of evergreen trees along the east boundary. The large pools to the northeast and southeast belong to neighbors."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

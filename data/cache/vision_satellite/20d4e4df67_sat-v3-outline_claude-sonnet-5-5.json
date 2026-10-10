@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002737,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Bright blue kidney/rectangular water surface near the yellow dot, plus a smaller turquoise water feature adjacent to the rear structure, all inside the outline.",
+   "detail": "In-ground pool, possibly with a second smaller pool or spa"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "Two roofed buildings are inside the outline: a gray-shingled house at the north end and a second building with a flat light-gray roof in the middle-left near the pool. The second may be an attached wing or a separate structure.",
+   "detail": "Possible second building or wing near pool"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The lot is long and narrow with a pool in the middle and heavy tree canopy over the southern half. The asphalt driveway in the northeast is empty and the northern roof looks weathered gray."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

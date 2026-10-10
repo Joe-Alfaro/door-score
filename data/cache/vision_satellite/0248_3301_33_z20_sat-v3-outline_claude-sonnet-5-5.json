@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002672,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "The only pool is at the left edge, outside the yellow outline, so it belongs to a neighbour.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Two gray-roofed buildings sit inside the outline: a dark-roofed section near the center-north and a gabled gray-roof house to the south. They may be a main house and an attached or detached wing, and the split is unclear.",
+   "detail": "Possible secondary building or wing near the north-center of the lot"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The lot is large and heavily wooded, with dense canopy on the north and west sides and open lawn to the south and east. Shade and trees hide parts of the roofs, and the driveway curves out to the road on the east. The pool at left belongs to a neighbour."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

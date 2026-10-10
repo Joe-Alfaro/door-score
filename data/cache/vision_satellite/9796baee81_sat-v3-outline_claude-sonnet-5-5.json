@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002552,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Bright blue kidney/rectangular water surface with a paved deck and steps, located behind the house inside the yellow outline.",
+   "detail": "In-ground pool with patio deck"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small dark rectangular structure sits to the right of the house near the yellow dot and may be a small shed, pergola or hot tub enclosure; another faint object is near the pool's right edge under the trees.",
+   "detail": "Possible small shed or pergola"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Single-story house with a landscaped front and an in-ground pool in the backyard, partly surrounded by mature trees; a car is parked at the top of the driveway near the garage."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

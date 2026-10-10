@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002252,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A small brown rectangular structure, likely a shed or storage box, sits on the patio area east of the house, inside the yellow outline.",
+   "detail": "Small shed or storage box"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Gray-roofed house with a driveway on the west side and a gravel or sand patio with a fire pit area on the east side. Large trees along the north and east edges of the lot; the pools visible in the image belong to neighbors."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

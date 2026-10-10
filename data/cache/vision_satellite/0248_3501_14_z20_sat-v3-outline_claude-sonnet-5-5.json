@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002432,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.75,
+   "evidence": "Dark rectangular grid-like panels visible on the sloped roof faces of the main house near the top of the outlined lot.",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A small blue-roofed building (possibly a garage or outbuilding) sits southwest of the main house inside the outline, partly under trees.",
+   "detail": "Small outbuilding or garage with blue/gray roof"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Heavily wooded lot with the house at the north end and dense canopy covering most of the yard; the driveway is narrow and shaded, and rear yard features cannot be assessed."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

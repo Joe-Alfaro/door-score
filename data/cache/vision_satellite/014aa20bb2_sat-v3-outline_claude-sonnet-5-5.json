@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002627,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A small round light blue/gray object on a deck at the west side of the house, inside the outline, could be an above-ground pool or hot tub/pool cover.",
+   "detail": "Small round above-ground pool or hot tub"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A dark blue rectangular surface east of the house within the outline may be a tarp-covered structure, sport court, or cover, though it could also be a pool cover.",
+   "detail": "Dark blue rectangular tarp, cover or court-like area"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The lot is heavily wooded with canopy covering much of the yard; the house has a brown shingle roof, a small round deck feature on the west side, and a dark blue rectangular surface east of the house."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

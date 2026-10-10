@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002582,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Rectangular/kidney-shaped bright blue water surface with a paved patio surround in the backyard, inside the yellow outline.",
+   "detail": "In-ground pool, blue water, with patio deck"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "Two small light-colored umbrella/gazebo-like canopies on the patio beside the pool; they appear to be patio umbrellas or small shade structures rather than true buildings.",
+   "detail": "Patio umbrellas or small gazebos near the pool"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house sits behind heavy tree canopy with a pool and patio in the back; the yard is largely screened by trees, and the driveway at the front-left appears empty."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002107,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "A small boxy, light-colored object sits at the rear of the house near the back yard, but it looks like a skylight, hatch or window well attached to the house rather than a separate structure.",
+   "detail": null
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "The lot has a dry, brown lawn in the back and front, a driveway on the right side of the house with three parked vehicles, and trees along the left side and the rear."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

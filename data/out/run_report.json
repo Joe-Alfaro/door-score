@@ -25,28 +25,29 @@
  "doors_with_permit_history": 273,
  "doors_with_imagery": 569,
  "doors_with_usable_imagery": 526,
- "doors_with_usable_satellite": 543,
+ "doors_with_usable_satellite": 552,
  "cost": {
-  "total_usd": 18.7111,
+  "total_usd": 19.9359,
   "by_stage": {
    "streetview_image": 3.983,
    "vision_llm": 8.4146,
    "discovery_llm": 0.8566,
    "satellite_image": 1.138,
-   "satellite_vision_llm": 4.316
+   "satellite_vision_llm": 5.5263,
+   "streetview_view": 0.014
   },
   "by_model": {
    "claude-haiku-4-5": 1.8685,
-   "claude-sonnet-5-5": 9.9863,
+   "claude-sonnet-5-5": 11.1966,
    "claude-opus-5-5": 1.7324
   },
   "production": {
    "model": "claude-sonnet-5-5",
-   "usd": 14.2544,
+   "usd": 15.4652,
    "doors": 569,
-   "usd_per_door": 0.0251
+   "usd_per_door": 0.0272
   },
-  "eval_and_discovery_usd": 4.4567,
+  "eval_and_discovery_usd": 4.4707,
   "max_spend_usd": 45.0
  }
 }

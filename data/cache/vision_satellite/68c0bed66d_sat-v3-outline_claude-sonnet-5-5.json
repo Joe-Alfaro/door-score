@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002417,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Rectangular dark-blue water surface with a surrounding patio at the rear (south) end of the yellow outline.",
+   "detail": "In-ground rectangular pool"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "Small structure that looks like a swing set or play frame at the right edge of the back lawn, partly shaded by trees.",
+   "detail": "Possible swing set"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.25,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large lot with an in-ground pool and patio at the rear, a gazebo or umbrella near the pool, and a deck behind the house; the above-ground pool to the right belongs to a neighbor."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002212,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.3,
+   "evidence": "A small gray rectangular object near the top-left of the outline, under tree canopy, could be a small shed, but it is not clearly visible.",
+   "detail": "possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "poor",
+  "tree_cover": "high",
+  "notes": "The lot is heavily wooded; the back part of the house roof looks dark, debris-covered or partly open, and the front gray roof section looks uniform, so a field rep should check roof and tree condition on site."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

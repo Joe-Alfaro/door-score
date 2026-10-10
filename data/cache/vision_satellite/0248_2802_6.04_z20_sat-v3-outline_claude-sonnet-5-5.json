@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002707,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.9,
+   "evidence": "Rectangular dark navy pool shape with a stone/concrete coping and patio at the northeast of the house, inside the yellow outline; it looks like a covered or dark-water pool.",
+   "detail": "In-ground rectangular pool, likely with a dark cover"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "A small brownish structure sits at the edge of the outline near the upper left, possibly a shed, but it is partly hidden by trees and may lie on the neighboring lot.",
+   "detail": "Possible small shed"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The lot is heavily wooded with a brown-shingled house and a rectangular in-ground pool on a stone patio behind it; two skylights or roof windows are visible on the roof, and the long driveway is hidden by canopy."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

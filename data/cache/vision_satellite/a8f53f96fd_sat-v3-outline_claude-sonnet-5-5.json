@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002642,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.97,
+   "evidence": "Kidney-shaped blue water surface with stone coping and patio west of the house, inside the yellow outline.",
+   "detail": "In-ground kidney-shaped pool with adjacent hot tub or spa feature and surrounding patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Small gray rectangular roofed building in the northwest corner of the lot, inside the outline, separate from the house.",
+   "detail": "Shed or small outbuilding, roughly 10x25 ft"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "good",
+  "tree_cover": "medium",
+  "notes": "Large lot with a landscaped pool and patio on the west side, a paved driveway on the east with three parked vehicles, and a small outbuilding in the northwest corner; the lot is bordered by dense trees on the west and south."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

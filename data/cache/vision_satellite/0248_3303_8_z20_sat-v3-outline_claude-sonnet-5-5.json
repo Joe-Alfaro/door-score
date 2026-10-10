@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002352,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.93,
+   "evidence": "Turquoise rectangular water surface with a paved edge sits just west of the house, inside the yellow outline.",
+   "detail": "In-ground pool, partly shaded by trees"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "A gazebo with a hexagonal or octagonal roof sits northwest of the house, inside the outline.",
+   "detail": "Gazebo"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Pie-shaped cul-de-sac lot with an in-ground pool and gazebo behind the house; heavy tree cover on the west and south sides, and the asphalt driveway is empty."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

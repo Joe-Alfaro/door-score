@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002457,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A separate gray-roofed building sits at the west end of the driveway, apart from the main house and inside the yellow outline. Small sheds or structures are also visible in the lawn to the west.",
+   "detail": "Detached garage or outbuilding at the end of the driveway"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The long, narrow lot is heavily wooded, and canopy covers much of the yard around the house, which has a gray roof. A paved driveway runs along the lot's north side. The blue pool in the lower-left corner is on a neighboring lot, outside the outline."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

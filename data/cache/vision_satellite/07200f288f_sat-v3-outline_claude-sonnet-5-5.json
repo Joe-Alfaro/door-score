@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002577,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.95,
+   "evidence": "Kidney-shaped turquoise water surface with stone coping at the bottom of the outlined lot, behind the house.",
+   "detail": "In-ground kidney-shaped pool with adjacent patio"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "Separate brown-shingled building with its own gabled roof west of the main house, beside the driveway, likely a detached garage or outbuilding.",
+   "detail": "Detached garage or outbuilding"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Large lot with a wide paved driveway/parking area, patio with furniture and umbrella table beside the in-ground pool, and mature trees along the property edges; the blue pool at the upper left belongs to the neighbor."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

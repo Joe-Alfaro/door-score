@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002247,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.9,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.85,
+   "evidence": "A separate gray-roofed building, likely a detached garage, sits behind and beside the main house inside the yellow outline, connected to the driveway.",
+   "detail": "Detached garage"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "low",
+  "notes": "The lot is narrow with a long driveway on the right side, two vehicles parked near the detached garage, and open lawn with some patchy dry grass. The above-ground pool and shed to the right belong to neighboring properties."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

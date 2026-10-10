@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.004346,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.15,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "In the upper-left of the lot, a mulched/fenced play area contains what looks like a swing set or playset with green slide elements.",
+   "detail": "Wooden playset/swing set with slide"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small dark enclosure or structure sits near the playset at left, and a deck or patio area is attached to the rear right of the house; neither is clearly a separate building.",
+   "detail": "Possible small shed or play enclosure"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large wooded lot with a gray-roofed house, a driveway holding two dark cars, a white car and a white trailer or box truck, a back deck, and a playset in the upper-left lawn."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

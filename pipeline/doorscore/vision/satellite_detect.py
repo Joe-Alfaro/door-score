@@ -57,11 +57,11 @@ The property under review is outlined in yellow with a yellow dot at its center.
 inside the yellow outline. Pools, solar panels, play equipment or structures outside the outline belong
 to neighbours and must be reported as absent for this property."""
 SYSTEMS = {'sat-v1': SYSTEM_V1, 'sat-v2': SYSTEM_V2, 'sat-v3-outline': SYSTEM_V3_OUTLINE}
-OUTLINE_MODE = PROMPT_VERSION_ENV = os.getenv('SATELLITE_PROMPT_VERSION', 'sat-v1').endswith('outline')
-PROMPT_VERSION = os.getenv('SATELLITE_PROMPT_VERSION', 'sat-v1')
+PROMPT_VERSION = os.getenv('SATELLITE_PROMPT_VERSION', 'sat-v3-outline')   # outline mode: the model scores only the lot under review
 if PROMPT_VERSION not in SYSTEMS:
     raise RuntimeError(f'SATELLITE_PROMPT_VERSION={PROMPT_VERSION!r}; known: {sorted(SYSTEMS)}')
 SYSTEM = SYSTEMS[PROMPT_VERSION]
+OUTLINE_MODE = PROMPT_VERSION.endswith('outline')
 
 
 def _cache_path(image_path: str, model: str) -> Path:

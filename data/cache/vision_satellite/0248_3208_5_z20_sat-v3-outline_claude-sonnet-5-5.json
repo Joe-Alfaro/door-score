@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002447,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "The pool-like blue rectangle at left is on the neighboring lot, outside the yellow outline.",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.5,
+   "evidence": "A round dark disc with a rim sits in the backyard below the house, inside the outline, under tree shade. It may be a trampoline.",
+   "detail": "possible trampoline"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.7,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The lot is heavily wooded, with dense canopy on the north and south sides and a gray-roofed house in the middle. Two cars are parked on the driveway at the northwest edge of the lot, and a possible trampoline sits in the shaded back yard."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

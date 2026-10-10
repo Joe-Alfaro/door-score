@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002562,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.3,
+   "evidence": "Small round reddish/brown features in the rear yard near the house could be a gazebo or garden features, but they are not clearly a trampoline or play set.",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.6,
+   "evidence": "A small structure with a grayish-blue roof sits near the rear (north) of the lot, plus small reddish roofed features beside it that look like sheds or gazebos.",
+   "detail": "Small shed or outbuilding at the rear of the lot"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "The house has a reddish-brown roof with multiple gables and is partly hidden by dense mature trees on the east and south sides; the driveway is not visible within the outline and the rear yard has small garden structures."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

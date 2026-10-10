@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002612,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "A round dark disc with a lighter rim sits in the shaded rear yard near the top of the outline, which looks like a trampoline, possibly with a net.",
+   "detail": "Probable trampoline"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A separate gray-roofed building, probably a garage or wing, sits northwest of the main house along the driveway. It may be attached, so this is uncertain. A small shed or gazebo-like object is near the patio.",
+   "detail": "Possible detached garage or outbuilding"
+  },
+  "driveway_vehicles": 2,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "Large lot with a manicured front lawn, a paved driveway along the west side, a patio area behind the house, and a heavily wooded rear yard with a probable trampoline.}"
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002082,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "Small shed with a light gray roof in the west part of the yard, inside the outline, next to a smaller wooden structure.",
+   "detail": "small shed"
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Gray-roofed house with dense tree canopy on the east side, 3 vehicles parked in a driveway at the northeast corner, and an open lawn with a fire pit in the southwest."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

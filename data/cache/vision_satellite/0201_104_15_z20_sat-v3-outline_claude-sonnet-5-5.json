@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002932,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": true,
+   "confidence": 0.55,
+   "evidence": "Kidney-shaped excavation with a gray/white lining southwest of the house, surrounded by construction debris and bare soil. It appears to be a pool under construction and holds no clear blue water.",
+   "detail": "In-ground pool under construction, not yet filled"
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "Small round dark disc with a lighter rim southeast of the house, possibly a trampoline. It is partly shaded by trees, so this is uncertain.",
+   "detail": "Possible trampoline"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.35,
+   "evidence": "Small light-colored structure or debris pile at the lower center of the lot, near the trees. It is unclear whether it is a shed or construction material.",
+   "detail": "Possible small shed or debris"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "fair",
+  "tree_cover": "high",
+  "notes": "Large home with a complex multi-gable roof. A backyard pool appears to be under active construction, with exposed soil, equipment and materials on site. Dense tree cover surrounds the east and south sides of the lot."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002657,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": true,
+   "confidence": 0.4,
+   "evidence": "A small structure near the bottom center of the lot, at about (348,537), could be a swing set or play structure, but it is partly hidden by trees and is not clearly identifiable.",
+   "detail": "possible swing set or play structure"
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small gazebo or umbrella-like round canopy sits next to the house on the patio at about (360,303). A dark shed-like roof shows at the top of the house at about (285,178), but it looks attached.",
+   "detail": "gazebo or patio umbrella"
+  },
+  "driveway_vehicles": 0,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The lot is heavily wooded and the house is mostly surrounded by canopy. A small curved patio with a gazebo or umbrella is east of the house, and a lawn area lies to the southeast. The driveway is not visible."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

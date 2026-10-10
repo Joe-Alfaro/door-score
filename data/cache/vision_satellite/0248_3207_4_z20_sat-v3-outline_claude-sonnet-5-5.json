@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002387,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.85,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": false,
+   "confidence": 0.8,
+   "evidence": "",
+   "detail": null
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.4,
+   "evidence": "A small blue round object in the back yard looks like a toy or small kiddie pool, but it is too small to identify with confidence.",
+   "detail": "possible small kiddie pool or toy"
+  },
+  "detached_structure": {
+   "present": false,
+   "confidence": 0.5,
+   "evidence": "",
+   "detail": null
+  },
+  "driveway_vehicles": 3,
+  "roof_condition": "fair",
+  "tree_cover": "medium",
+  "notes": "Driveway on the left side of the lot holds a red vehicle and a dark vehicle, with a third light-colored vehicle at the edge. The house has a multi-section gray roof with some staining. The back yard is fenced with a small blue object in it, and the pools visible nearby belong to neighbors."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}

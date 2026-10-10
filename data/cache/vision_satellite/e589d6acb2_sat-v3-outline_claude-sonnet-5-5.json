@@ -1,0 +1,38 @@
+{
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "sat-v3-outline",
+ "usd": 0.002457,
+ "signals": {
+  "image_usable": true,
+  "swimming_pool": {
+   "present": false,
+   "confidence": 0.05,
+   "evidence": "",
+   "detail": null
+  },
+  "solar_panels": {
+   "present": true,
+   "confidence": 0.45,
+   "evidence": "A small bluish rectangular grid on the roof face near (360,270) could be a solar panel array, but it could also be a skylight or a tarp.",
+   "detail": "Small single array on upper roof section"
+  },
+  "play_equipment": {
+   "present": false,
+   "confidence": 0.1,
+   "evidence": "",
+   "detail": null
+  },
+  "detached_structure": {
+   "present": true,
+   "confidence": 0.7,
+   "evidence": "A gray-roofed rectangular building or garage sits left of the main house near (250,240), with a paved area connecting it to the house.",
+   "detail": "Detached garage or outbuilding"
+  },
+  "driveway_vehicles": 1,
+  "roof_condition": "good",
+  "tree_cover": "high",
+  "notes": "The house sits in a heavily wooded lot with dense canopy on the west and south sides, a small open lawn around the house, a pickup truck parked at the top of the driveway, and a road along the east edge."
+ },
+ "batch": true,
+ "batch_id": "msgbatch_01GNZa8ZuaGMRrdS992m9dfE"
+}
