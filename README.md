@@ -34,9 +34,9 @@ Source: https://github.com/Joe-Alfaro/door-score
 | `pipeline/doorscore/score.py` | The Door Score. Every signal names the ICP trait it supports |
 | `pipeline/select_territory.py` | Only used because no polygon was supplied: picks a ~540-home cluster |
 | `web/` | React + TypeScript + MapLibre map UI (Railway static site) |
-| `mcp/` | TypeScript MCP server over Streamable HTTP: `get_door_score`, `explain_score`, `plan_route`, `list_top_doors`, `territory_stats` |
+| `mcp/` | TypeScript MCP server over Streamable HTTP: `get_door_score`, `explain_score`, `plan_route`, `list_top_doors`, `territory_stats`, `get_signal_summary` |
 | `docs/door-score-rationale.md` | One-page ICP + score rationale |
-| `data/eval/` | Labeled eval sample, images, results (committed) |
+| `data/eval/` | Labeled eval sample and results (committed; the sample's Street View frames are not stored, see Data ethics) |
 
 ## Setup
 
@@ -80,8 +80,8 @@ python -m doorscore.eval.report               # write results into docs/test-res
 # or simply:  make eval
 ```
 
-Every stage is idempotent and cached under `data/cache/` (gitignored), keyed by polygon hash,
-image hash, prompt version and model. Re-running costs nothing unless inputs changed.
+Every stage is idempotent and cached under `data/cache/` (JSON caches committed, image files
+gitignored), keyed by polygon hash, door + pano id / zoom, prompt version and model. Re-running costs nothing unless inputs changed.
 `data/cache/cost_ledger.jsonl` records every paid call; `run_report.json` summarizes coverage and spend.
 
 ### Different territory
@@ -130,7 +130,8 @@ curl -N localhost:8000/api/runs/<id>/stream
 | GET | `/api/sources` | `data/out/sources.json` from the discovery agent |
 | GET | `/api/eval` | both `results_<model>.json` files plus the label rows |
 | GET | `/api/eval/sample` | label rows joined with each model's **cached** prediction (`predictions.<model>` is `null` if the cache is missing; this endpoint never calls a model) |
-| GET | `/api/eval/images/{name}` | the eval image |
+| GET | `/api/eval/images/{name}` | the eval frame, fetched live from Street View like any other (never stored) |
+| GET | `/api/streetview/{door_id}.jpg` | one Street View frame fetched from Google at view time and streamed back; nothing is written to disk. Used by the map's evidence card, the console and the MCP `street_view.image_url` |
 | GET | `/api/ledger?limit=` | tail of `cost_ledger.jsonl` |
 | GET | `/api/stages` | stage registry: command, cache state, cost estimate, missing keys, `warning`; plus `active_run`, `spent_usd`, `max_spend_usd` |
 | POST | `/api/run/{stage}` | start a stage (`pipeline`, `vision`, `discover`, `eval`, `tests`). Body `{limit?, confirm_paid?}`. One run at a time (409). Paid stages need `confirm_paid` and are refused when `spent + estimate > MAX_SPEND_USD` (400 with the numbers). **Token-protected** |
@@ -169,18 +170,18 @@ railway domain --service api
 ```
 
 `pipeline/railway.json` points Railway at `pipeline/Dockerfile`, uses `/api/health` as the health
-check and restarts on failure. Caveats of the deployed copy: the cost ledger is gitignored, so
-`spent_usd` starts at 0 there; and because the imagery JPEGs are not in the image, running the
-`pipeline` stage on Railway rescores **without** vision signals (the stage reports this as a
-`warning`) until the next deploy restores the committed `doors.json`. Run `pipeline`/`vision` from a
-checkout with the image caches and redeploy; use the hosted console for inspection, `tests`, `eval`
-and route planning.
+check and restarts on failure. Caveats of the deployed copy: the cost ledger is committed and copied
+into the image, so `spent_usd` starts at the committed total ($18.71) and grows only if a paid stage
+runs there. The imagery JPEGs are not in the image, but the vision JSON caches are, so the `pipeline`
+stage rescores **with** vision signals (`--vision` is added whenever vision caches are present; the
+stage reports a `warning` only when they are absent). Run `vision` from a checkout with keys and
+redeploy; use the hosted console for inspection, `tests`, `eval` and route planning.
 
 ## Cost discipline (in code, not just claimed)
 
 - Free Street View **metadata** call before every paid image; no pano → no spend.
 - One 640×640 image per door, cached forever on disk.
-- Vision started on the cheapest tier (`claude-haiku-4-5`). The eval harness showed it hallucinating two signals on 21–32% of negatives, so production moved to `claude-sonnet-5-5` at roughly 2× vision cost. Still about a cent per door all-in.
+- Vision started on the cheapest tier (`claude-haiku-4-5`). The eval harness showed it hallucinating two signals on 21–32% of negatives, so production moved to `claude-sonnet-5-5` at roughly 2× vision cost. Measured: $0.0251 per door all-in (imagery + both vision calls), of which the two Sonnet vision calls are about $0.016.
 - Structured output + a confidence gate (0.5, set by the eval's threshold sweep) means low-confidence detections never reach the score.
 - Model comparisons reuse cached predictions, so re-running the eval against a new model tier costs only that tier's calls on the ~100 labeled images.
 - Ledger-based `usd_per_door` in every run report.
@@ -191,3 +192,5 @@ and route planning.
 - The owner **mailing address** is consumed only to derive an `owner_occupied` flag and is then discarded.
 - Census signals are tract-level aggregates. Tax-exempt status (e.g. disabled-veteran exemption) is never used as a signal.
 - The vision prompt forbids identifying people or reading plates. Sources whose value is identity data are documented but not harvested (`sources.json`).
+- Street View frames are Google content and are never committed, stored or re-served. The map, console and MCP fetch each frame at view time through the console API proxy `/api/streetview/{door_id}.jpg`; only the vision JSON derived from them is cached.
+- The published `doors.json` / `doors.geojson` carry no local file paths and no tax-exemption field.

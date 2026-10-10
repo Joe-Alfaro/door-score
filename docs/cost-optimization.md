@@ -24,6 +24,8 @@ Ledger: 2,970 paid calls, **$18.71** of the $50 budget (cap for the pipeline: `M
 
 Production (imagery + Sonnet vision on both views) is $14.25 = **$0.0251/door**; eval + discovery is $4.46.
 
+Street View frames are no longer stored or served from the project: each photo shown in the map, console or via the MCP `street_view.image_url` is fetched live through `/api/streetview/{door_id}.jpg` and billed as a `streetview_view` ledger row ($0.007). The ledger total above predates that stage (0 such rows).
+
 ### Per-call token profile
 
 | Stage | Model | Calls | Mean in | Mean out | p90 out | Input $ | Output $ | Output share | $/call |

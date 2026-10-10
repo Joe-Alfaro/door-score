@@ -13,10 +13,24 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 | Homes with deed date | 82.8% |
 | Owner-occupancy resolved | 100% (24 absentee) |
 | Building code parsed | 96.7% |
-| Homes joined to permit records (block/lot) | 274 (48%) |
+| Homes joined to permit records (block/lot) | 273 (48%) |
 | Homes with Census tract profile (ACS 5-yr, aggregate) | 568 (99.8%) across 3 tracts |
 | Homes with Street View imagery | 569 (100%); 526 usable (92.4%) |
 | Homes with overhead (satellite) tile | 569 (100%); 543 usable (95.4%) |
+
+### Entity resolution
+
+From `run_report.json → entity_resolution`. Every cross-source join is deterministic (normalized
+address string, municipality + block/lot, tract GEOID, pano id); no paid geocoder is used.
+
+| Metric | Value |
+|---|---|
+| Raw street-suffix spellings collapsed to canonical suffixes | 21 → 10 |
+| Addresses normalized with a parsed house number | 569 of 569 |
+| Owner mailing address resolved against the property address | 545 owner-occupied / 24 absentee / 0 unresolved |
+| Permit records joined by municipality + block/lot | 48% of homes (273) |
+| Census tract join (ACS 5-yr) | 99.8% |
+| Street View panorama resolved (free metadata call) | 100% |
 
 ## Vision eval
 
@@ -24,7 +38,7 @@ Filled in from the eval harness and the deployed services. Numbers below are reg
 flagged something, half at random, plus every image where the cheap model flagged a rare signal
 (truck, moving, renovation, yard sign) so precision on rare events has support. A stronger model
 (`claude-opus-5-5`) drafted labels; a human then reviewed every image and confirmed or changed each
-field (14 fields changed across 98 rows). Predictions for both candidate production models were
+field (61 fields changed across 41 of the 98 rows: 4 image-usability flags, 10 binary signal flags, 47 condition ratings). Predictions for both candidate production models were
 cached, so the comparison and the threshold sweep below cost nothing extra.
 
 **Decisions taken from this eval.** (1) Production model moved from Haiku to Sonnet. (2) The
@@ -53,6 +67,8 @@ the holders of the hidden test set will see the honest out-of-sample number.
 | exterior_condition | 67% / 98% (n=88) | 77% / 98% (n=86) |
 | roof_condition | 73% / 100% (n=73) | 85% / 100% (n=71) |
 
+Image-usability false-positive rate (model called a frame usable, human did not): claude-haiku-4-5 50%, claude-sonnet-5-5 30%
+
 Confidence-gate sweep for the production model (precision / recall):
 
 | gate | provider_truck | moving_indicators | yard_sign | renovation_activity | professional_landscaping |
@@ -66,20 +82,22 @@ Confidence-gate sweep for the production model (precision / recall):
 Production vision model: `claude-sonnet-5-5`, measured **$0.0251 per door** (imagery + vision over 569 doors). Eval and discovery spend: $4.46. By model: claude-haiku-4-5 $1.87, claude-sonnet-5-5 $9.99, claude-opus-5-5 $1.73.
 <!-- VISION-EVAL:END -->
 
-_To be filled from `data/eval/results_claude-haiku-4-5.json` and `results_claude-sonnet-5-5.json`
-after human verification of the 80-image sample._
-
 ## Cost
 
 | Item | USD |
 |---|---|
 | Street View images (569) | 3.98 |
 | Satellite tiles (569) | 1.14 |
-| Vision, production model `claude-sonnet-5-5`: street-level + overhead (569 each) | 9.89 |
+| Vision, production model `claude-sonnet-5-5`: street-level + overhead (569 each) | 9.13 |
+| **Production subtotal (imagery + vision, 569 doors)** | **14.25** |
 | **Measured production cost per door** | **0.0251** |
-| Eval: Haiku full-territory pass (superseded) + draft/compare labels on 98 images | 4.57 |
+| Eval: Haiku full-territory pass (superseded) + Opus draft labels on 98 images | 3.60 |
 | Source discovery (2 runs) | 0.86 |
 | **Total spend** | **18.71** of the $50 budget |
+
+Rows are taken from `run_report.json → cost`: production = `streetview_image` + `satellite_image` +
+the production model's share of `vision_llm` + `satellite_vision_llm` (14.25); eval = the Haiku and
+Opus spend (1.87 + 1.73); discovery = `discovery_llm`. 3.98 + 1.14 + 9.13 + 3.60 + 0.86 = 18.71.
 
 ## Overhead imagery (no human eval yet)
 

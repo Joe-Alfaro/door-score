@@ -2968,3 +2968,5 @@
 {"ts": 1791508113.28775, "stage": "satellite_vision_llm", "door_id": "0248_3306_5", "usd": 0.011088, "model": "claude-sonnet-5-5", "input_tokens": 2064, "output_tokens": 696}
 {"ts": 1791508113.9357991, "stage": "satellite_vision_llm", "door_id": "0248_3510_9", "usd": 0.006618, "model": "claude-sonnet-5-5", "input_tokens": 2064, "output_tokens": 249}
 {"ts": 1791508114.7903192, "stage": "satellite_vision_llm", "door_id": "0248_3510_14", "usd": 0.007358, "model": "claude-sonnet-5-5", "input_tokens": 2064, "output_tokens": 323}
+{"ts": 1791664554.359, "stage": "streetview_view", "door_id": "0248_3501_35", "usd": 0.007, "pano_id": "Elio79kO4uML6LdZGgk7xg"}
+{"ts": 1791664554.782403, "stage": "streetview_view", "door_id": "0201_104_9", "usd": 0.007, "pano_id": "OBhvpwtYT-c-ZvOaYLijfg"}

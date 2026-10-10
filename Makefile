@@ -14,7 +14,7 @@ setup:                        ## create venv, install python + node deps
 pipeline:                     ## full scoring run; uses vision from the committed JSON caches (no images or API calls needed)
 	$(PY) -m doorscore.run $(if $(wildcard data/cache/vision/*.json),--vision,)
 
-vision:                       ## fetch imagery + run vision for every door (paid; ~$0.011/door)
+vision:                       ## fetch imagery + run vision for every door (paid; ~$0.025/door)
 	$(PY) -m doorscore.run --vision
 
 discover:                     ## source-discovery agent → data/out/sources.json

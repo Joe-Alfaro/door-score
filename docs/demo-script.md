@@ -3,8 +3,8 @@
 # Door Score — 4-minute demo script
 
 Spoken lines are short on purpose. Read them; do not improvise numbers. Everything quoted below
-comes from `data/out/doors.json`, `docs/test-results.md` and a live `plan_route` call made on
-2026-10-08.
+comes from `data/out/doors.json`, `docs/test-results.md` and a `plan_route` call against the current
+`doors.json` on 2026-10-10.
 
 ## Have open before recording (in this tab order)
 
@@ -50,7 +50,7 @@ Point at the fast re-run:
 
 > Every stage is cached under `data/cache`, keyed by the polygon hash, the image hash, the prompt version and the model.
 > Re-running costs nothing unless an input changed.
-> Measured spend: under a cent per door, all in.
+> Measured spend: two and a half cents per door, all in; the two vision calls are about 1.6 cents of that.
 
 Optional if the terminal is quiet: `cat data/out/run_report.json | head -40` shows coverage and USD per door.
 
@@ -61,17 +61,17 @@ Show: https://web-production-39b2a.up.railway.app
 > Every dot is a home. Darker means a higher score.
 > The stats strip across the top is computed live from the data: 569 doors, new movers, absentee owners, doors with usable imagery.
 
-Click the **#1 door: 3 Larkwood Dr, Allendale, score 83** (search "3 Larkwood" in the top bar, press Enter).
+Click the **#1 door: 3 Larkwood Dr, Allendale, score 72** (search "3 Larkwood" in the top bar, press Enter).
 Read the evidence card top to bottom:
 
-> Number one. Score 83.
+> Number one. Score 72.
 > Deed dated July 2024, 27 months ago, purchased for about a million dollars. That is a real sale, not a one-dollar transfer.
 > Assessed value 973 thousand: top quartile for this territory. Quartiles are relative to the neighbors, not the state.
-> Three permits in five years, latest an alteration in June 2025, 55 thousand dollars declared: building, electrical, fire, plumbing. This household already hires out.
+> Three permits in five years, 55 thousand dollars declared in total, the latest an alteration in June 2025: building, electrical, fire, plumbing. This household already hires out.
 > Owner-occupied: the tax bill mails to the house.
 > Street View: no clear frontage. The card says so. A missing photo never lowers a score; the door is scored on the signals it has.
 
-Then click **#2: 117 Quillfeather Ave, Ramsey, score 71** (search "117 Quillfeather").
+Then click **#4: 117 Quillfeather Ave, Ramsey, score 61** (search "117 Quillfeather").
 
 > Here the photo does the work. Capture date July 2025.
 > The model saw a compact excavator on site and fresh stone work at the foundation. Permits confirm it: five in five years.
@@ -80,7 +80,7 @@ Then click **#2: 117 Quillfeather Ave, Ramsey, score 71** (search "117 Quillfeat
 Toggle the tag filters in the top bar:
 
 > Toggle **new mover**: only doors with a recent arm's-length deed.
-> Toggle **absentee owner**: 26 doors where the tax bill goes somewhere else. Those score zero on the homeowner signal and are excluded from routes by default.
+> Toggle **absentee owner**: 24 doors where the tax bill goes somewhere else. Those score zero on the homeowner signal and are excluded from routes by default.
 
 Turn both toggles back off.
 
@@ -100,17 +100,17 @@ curl -s -X POST https://mcp-production-1645.up.railway.app/mcp \
 
 > The same data is an MCP server, so an assistant can answer: "I have two hours. Which doors, in what order, and what do I say?"
 > Two hours, start at 3 Larkwood Drive, minimum score 55.
-> It returns 15 stops, 114 minutes, 24 of them walking, and a Google Maps link.
+> Only nine doors clear 55, so it returns 9 stops, 82 minutes, 28 of them walking, and a Google Maps link.
 
 Read the first three stops:
 
-> Stop one, 3 Larkwood Drive, score 83. Talking point: welcome to the neighborhood; ask which home services they are still setting up. Moved in about 27 months ago.
-> Stop two, 333 Tessaly Drive, score 58, one minute's walk. Same new-mover opener; moved in about 32 months ago.
-> Stop three, 4 Larkwood Drive, score 66. Higher-value home: position a premium or bundled plan, not a one-off job.
+> Stop one, 3 Larkwood Drive, score 72. Talking point: welcome to the neighborhood; ask which home services they are still setting up. Moved in about 27 months ago.
+> Stop two, 4 Larkwood Drive, score 63, one minute's walk. Higher-value home: position a premium or bundled plan, not a one-off job.
+> Stop three, 565 Brindlemoor Avenue, score 63. Same new-mover opener; moved in about 24 months ago.
 
 > Talking points are generated from the signals. They never describe who lives there.
 
-If you have ten spare seconds: `explain_score` on any address returns every signal with its points, evidence and source, plus a deep link into the map.
+If you have ten spare seconds: `explain_score` on any address returns every signal with its points, evidence and source, plus the Street View context and talking points; each `plan_route` stop carries the deep link into the map.
 
 ## 3:00 (console → Eval page: the two-model table, the threshold-sweep chart, and the labeled gallery. Sources page shows the 20 discovered sources with their ToS and PII columns.)
 
@@ -123,7 +123,7 @@ Show: `docs/test-results.md`, Vision eval tables.
 
 Point at the `yard_sign` and `professional_landscaping` rows:
 
-> The cheap model asserted a yard sign on 21 percent of images that had none, and professional landscaping on 32 percent. The stronger model brought those to 2 percent and zero. So production moved up a tier, at about twice the vision cost, still under a cent a door.
+> The cheap model asserted a yard sign on 21 percent of images that had none, and professional landscaping on 32 percent. The stronger model brought those to 2 percent and zero. So production moved up a tier, at about twice the vision cost, still about two and a half cents a door all in.
 > One signal was dropped entirely: professional landscaping. The cheap model hallucinated it and the stronger model found none of the three real cases. A signal we cannot measure does not belong in a score a rep acts on.
 
 Point at the gate sweep:
@@ -156,11 +156,10 @@ End on the map.
 |---|---|---|
 | MCP cold start | The curl hangs 10–30 s or returns a Railway "Application failed to respond" page | Hit `/health` once before recording. If it still stalls, run the curl twice; the second call is fast. |
 | Map worker fails to load | Page renders the top bar but the map area is blank or grey; console shows a 404 for `maplibre/maplibre-gl-worker.mjs` | Hard refresh (Cmd-Shift-R). The worker URL is set from `BASE_URL` in `web/src/main.tsx`; a stale cache after a deploy is the usual cause. Have a local `cd web && npm run dev` (http://127.0.0.1:5173) as a fallback. |
-| Basemap tiles slow | Dots appear over a blank background | Keep talking; CARTO tiles catch up. Do not zoom while waiting. |
-| Street View photo missing on a card | Photo area simply hidden (the card hides itself on a 404) | Expected for a few doors. #1 shows a "No clear frontage" overlay by design; #2 (117 Quillfeather Ave) has a usable photo. |
-| Stale `professional_landscaping` row on evidence cards | The deployed `doors.json` predates the signal's removal, so cards still list "Professional landscaping 0 / 6" | Either redeploy after `make all` before recording, or skip past the row and say "that signal is being removed; see the eval section." Do not read it out as a scoring signal. |
+| Basemap tiles slow | Dots appear over a blank background | Keep talking; OpenFreeMap tiles catch up. Do not zoom while waiting. |
+| Street View photo missing on a card | Photo area simply hidden (the card hides itself when the proxy errors) | Photos are not stored; the card fetches each one at view time through the console API (`/api/streetview/<door_id>.jpg`), so the API service must be awake. #1 shows a "No clear frontage" overlay by design; #4 (117 Quillfeather Ave) has a usable photo. |
 | Search does not find the door | Empty result list | House number must match. Type "3 Larkwood" not "3 Larkwood Drive, Allendale". |
 | `jq` not installed | `command not found` | Drop the two `jq` stages and read the `data:` line raw; the stops are still readable. |
 | SSE response looks like garbage | Output begins with `event: message` | Normal: the JSON-RPC result is on the `data:` line, which the `sed` in the command extracts. |
-| `make all` tries to spend money | Any `Street View` or `anthropic` line scrolling in the log | It should not: `make all` only uses imagery already cached. If `data/cache/streetview/` is missing, it runs without vision. `make vision` is the paid target; do not run it live. |
+| `make all` tries to spend money | Any `Street View` or `anthropic` line scrolling in the log | It should not: `make all` scores from the committed vision JSON caches under `data/cache/vision*/`; no image files or API calls are needed. `make vision` is the paid target; do not run it live. |
 | Wrong terminal directory | `No rule to make target` | `make` must run from the repo root, not `pipeline/`. |

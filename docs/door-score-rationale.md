@@ -26,7 +26,7 @@ Four traits, each with a public-data detector:
 
 Points per signal, summed and rescaled to 0–100 over the signals *available for that door*, so a home
 without usable imagery is never penalized relative to one that has it. The raw score is an honest
-fraction of achievable evidence and stays comparable across runs and territories; because 93% of doors
+fraction of achievable evidence and stays comparable across runs and territories; because 94% of doors
 land between 20 and 50, the map colours and sorts by **territory percentile** while the evidence card
 shows the raw score with its signal list.
 

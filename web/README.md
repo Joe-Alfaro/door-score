@@ -1,7 +1,7 @@
 # Door Score — web UI
 
 Map UI for the Door Score pipeline output (Ramsey, NJ). Vite + React 18 + TypeScript + MapLibre GL JS
-on a free CARTO Positron raster basemap (no API key).
+on the keyless OpenFreeMap Positron vector style (no API key).
 
 ## Run locally
 
@@ -12,11 +12,11 @@ npm run dev        # syncs data, serves on http://127.0.0.1:5173
 ```
 
 `npm run sync-data` copies `../data/out/doors.geojson` and `../data/territory.geojson` into
-`public/data/`, which the app fetches at runtime from `/data/*.geojson`, and mirrors the cached
-Street View photos from `../data/cache/streetview/*.jpg` into `public/img/streetview/` (served at
-`/img/streetview/<door_id>.jpg`). Both `dev` and `build` run it first. If a pipeline source is
-missing but a previously synced copy exists under `public/`, the script keeps the existing copy
-and warns. The synced photos are intentionally not gitignored so they deploy with the site.
+`public/data/`, which the app fetches at runtime from `/data/*.geojson`. Both `dev` and `build` run
+it first. If a pipeline source is missing but a previously synced copy exists under `public/`, the
+script keeps the existing copy and warns. Street View frames are not copied and not served from this
+site: they are Google content, so the evidence card loads each one at view time from the console API
+(`VITE_API_URL` + `/api/streetview/<door_id>.jpg`), which proxies the frame without storing it.
 
 ## Build and serve
 
@@ -56,7 +56,7 @@ Configuration is via Vite env vars (copy `.env.example` to `.env`):
 
 Notes: the Pipeline page confirms paid stages with their estimate before sending `confirm_paid`;
 the run terminal is fed by the `/api/runs/{id}/stream` SSE endpoint. Street View thumbnails in
-the Doors drawer come from this site's own `/img/streetview/<door_id>.jpg`.
+the Doors drawer come from the same console API proxy, `/api/streetview/<door_id>.jpg`.
 
 ## UI
 
@@ -69,6 +69,6 @@ the Doors drawer come from this site's own `/img/streetview/<door_id>.jpg`.
   hover tooltip, click opens the evidence card.
 - Evidence card: address, municipality, score, rank, Street View photo (capture date, camera
   distance when approximate, "No clear frontage" overlay when the model found the frame unusable,
-  model notes; hidden if the image 404s), tags, "Why this door" (top two signals), generic signals
+  model notes; hidden if the proxy returns an error), tags, "Why this door" (top two signals), generic signals
   list (points/max bar, humanized name, evidence, source, optional `image_url`), and property facts
   including 5-year permit count, latest permit and trades.

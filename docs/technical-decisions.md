@@ -16,17 +16,18 @@ One line per decision: what we chose, what we didn't, and why. Dates are 2026-10
 
 - **One Street View frame per door, 640 px, radius widened in steps (60→120→200 m).** Alternative: multiple headings. Tradeoff: $0.007/door; big lots need the wider radius, and we flag frames whose camera is >90 m from the lot center.
 - **Satellite tile at zoom 20 as a second stage.** Pools, solar and play equipment are unambiguous from above. Alternative: skip. Tradeoff: doubled vision spend (~$4.30) for 58 pools; labels are still model-only (pilot spot-checked by eye).
+- **Street View frames are never stored or re-served.** Only the vision JSON is cached and committed; the map, console and MCP fetch a frame at view time through the console API proxy (`/api/streetview/{door_id}.jpg`), which streams Google's response without writing it to disk. Alternative: mirror JPEGs into the site (the original build). Tradeoff: a $0.007 Static API call per view, in exchange for staying inside Google's terms. Published `doors.json` likewise carries no local file paths and no tax-exemption field.
 - **No time-series imagery.** The Static API serves only the latest pano. Alternative: the JavaScript API, a different ToS question. Tradeoff: condition trajectory is out of scope; permit history covers "activity over time".
 - **Structured output with a confidence and an evidence string per detection.** Alternative: free-text prompts. Tradeoff: schema-validated JSON, a confidence gate the eval can sweep, and evidence a rep can read.
 - **Cheapest model first, then let the eval decide.** Haiku 4.5 ran the territory ($1.87); on 98 human-verified images it hallucinated landscaping on 32% and yard signs on 21% of negatives, so production moved to Sonnet 5.5 (≤2%). A Haiku-screen/Sonnet-confirm cascade was measured and rejected (worse recall, saves ~$1.50). Tradeoff: ~2× vision cost for precision a rep can act on.
 - **Confidence gate 0.5, set by the sweep.** At 0.6 the only true truck and most renovations were missed. Caveat recorded: tuned on the same labeled set it is reported on.
 - **Professional-landscaping signal removed; yard signs count only when the typed detail names a trade.** Both failed or hedged in the eval. Tradeoff: fewer signals, none we can't defend.
-- **Model-drafted labels, human-verified every row.** Opus drafted, a human changed 14 fields across 98 rows. Alternative: label from scratch (slower) or trust the drafts (circular). Sample was stratified to include every rare positive so precision has support.
+- **Model-drafted labels, human-verified every row.** Opus drafted, a human changed 61 fields across 41 of the 98 rows. Alternative: label from scratch (slower) or trust the drafts (circular). Sample was stratified to include every rare positive so precision has support.
 
 ## Score
 
 - **Additive points per signal, each with a max, rescaled over the signals available to that door.** A door without usable imagery is never penalized relative to one with it. Alternative: a learned model. Tradeoff: no outcomes to train on; every point traces to an evidence line and an ICP trait.
-- **Raw score in the card, territory percentile for map colour and sort.** 93% of raw scores sit between 20 and 50. Tradeoff: raw stays comparable across runs; percentile answers "which doors first".
+- **Raw score in the card, territory percentile for map colour and sort.** 94% of raw scores sit between 20 and 50. Tradeoff: raw stays comparable across runs; percentile answers "which doors first".
 - **Neighborhood effects as a derived signal** (movers, permits, renovations, trucks within 150 m). Alternative: none. Tradeoff: cheap, pure computation; small-denominator sensitivity on short streets.
 
 ## Cost

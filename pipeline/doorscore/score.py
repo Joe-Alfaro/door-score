@@ -126,7 +126,7 @@ def score_doors(doors: list[dict]) -> list[dict]:
     for i, d in enumerate(out, 1):
         d['rank'] = i
         # Territory percentile: raw score is an honest fraction of achievable evidence and stays
-        # comparable across runs, but 93% of doors land between 20 and 50, so the map colours
+        # comparable across runs, but 94% of doors land between 20 and 50, so the map colours
         # and sorts by percentile while the evidence card shows the raw score.
         d['door_score_pct'] = round(100 * sum(1 for o in out if o['door_score'] < d['door_score']) / max(n - 1, 1))
     return out

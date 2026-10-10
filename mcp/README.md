@@ -34,12 +34,13 @@ Each door in `doors.json` may carry these optional blocks, all surfaced by `expl
 
 | Field     | Shape | In `explain_score` as |
 | --------- | ----- | --------------------- |
-| `vision`  | `null` or `{ model, signals: { image_usable, usability_note, provider_truck, moving_indicators, yard_sign, renovation_activity, professional_landscaping, solar_panels, lawn_condition, exterior_condition, roof_condition, vehicles_visible, notes }, image: { date, distance_m, approximate } }`. Each detection is `{ present, confidence, evidence, detail }`. | `street_view: { image_url, date, approximate, distance_m, image_usable, notes }` where `image_url` is `${PHOTO_BASE_URL}/img/streetview/<door_id>.jpg` |
+| `vision`  | `null` or `{ model, signals: { image_usable, usability_note, provider_truck, moving_indicators, yard_sign, renovation_activity, professional_landscaping, solar_panels, lawn_condition, exterior_condition, roof_condition, vehicles_visible, notes }, image: { date, distance_m, approximate } }`. Each detection is `{ present, confidence, evidence, detail }`. | `street_view: { image_url, date, approximate, distance_m, image_usable, notes }` where `image_url` is `${API_BASE_URL}/api/streetview/<door_id>.jpg` (the console API fetches the frame from Google at view time; nothing is stored) |
 | `permits` | `null` or `{ permits_10yr, permits_5yr, cost_5yr, trades_5yr, latest_date, latest_type, latest_cost, months_since_latest, major_project_5yr }` | `permits: { permits_5yr, permits_10yr, cost_5yr, trades_5yr, latest: { date, type, cost, months_ago }, major_project_5yr }` |
 | `census`  | `null` or `{ tract_geoid, median_hh_income, dual_earner_share, owner_occupied_share, moved_last_year_share }` (tract-level, never per household) | `census` passed through |
 
-Future `satellite` and `neighborhood` blocks are tolerated (the `Door` type keeps unknown
-extra fields) but not yet surfaced.
+The `satellite` and `neighborhood` blocks are not echoed as objects, but their signals
+(`swimming_pool`, `solar_panels`, `play_equipment`, `roof_overhead`, `block_activity`) appear in
+`signals[]` of every `explain_score` response alongside the street-level ones (17 signals per door).
 
 Signals now include `provider_truck`, `moving_indicators`, `yard_sign`, `visible_service_need`
 (imagery), `permit_history` (permit record) and `dual_income_area` (census tract). Tags may
@@ -67,7 +68,8 @@ Environment:
 - `PORT` (default `3333`)
 - `DOORS_PATH` (default `./data/doors.json`)
 - `DOORS_SOURCE` (sync-data only; default `../data/out/doors.json`)
-- `PHOTO_BASE_URL` (default `https://web-production-39b2a.up.railway.app`): base of the companion web app that serves `/img/streetview/<door_id>.jpg` and the door map; used to build `street_view.image_url` and `explain_url`
+- `PHOTO_BASE_URL` (default `https://web-production-39b2a.up.railway.app`): base of the companion door map; used to build `explain_url`
+- `API_BASE_URL` (default `https://api-production-37c4.up.railway.app`): console API that proxies Street View frames at view time; used to build `street_view.image_url`
 
 ## Example calls
 
@@ -147,7 +149,7 @@ mcp/
   src/
     server.ts          Express app, /mcp transport, /health, /
     tools.ts           registers the 6 MCP tools (zod schemas)
-    config.ts          PHOTO_BASE_URL and the image / explain URL builders
+    config.ts          PHOTO_BASE_URL / API_BASE_URL and the image / explain URL builders
     address.ts         address normalization + fuzzy index (shared by all tools)
     talking-points.ts  talking points + narrative templates (shared by all tools)
     route.ts           greedy selection + 2-opt route planner
