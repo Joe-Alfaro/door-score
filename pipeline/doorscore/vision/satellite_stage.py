@@ -6,7 +6,8 @@ tile on disk; only uncached doors fetch a tile (paid) and call the model (paid, 
 import concurrent.futures as cf, threading
 from ..costs import BudgetExceeded, per_call_rate
 from ..harvest.satellite import fetch_image, image_info, SatelliteAccessError, ZOOM
-from .satellite_detect import analyze_image, cached_result, cache_paths, DEFAULT_MODEL, STAGE, SYSTEM, USER_TEXT, SatelliteSignals, PROMPT_VERSION
+from .satellite_detect import analyze_image, cached_result, cache_paths, DEFAULT_MODEL, STAGE, SYSTEM, USER_TEXT, SatelliteSignals, PROMPT_VERSION, OUTLINE_MODE
+from .outline import outlined_tile
 from .stage import batch_enabled
 
 
@@ -36,7 +37,8 @@ def run_satellite(doors: list[dict], model: str = DEFAULT_MODEL, limit: int | No
                 return d['door_id'], None
             if batch:
                 return d['door_id'], {'image': info, 'pending': True}
-            res = analyze_image(info['path'], d['door_id'], model=model, zoom=ZOOM, expected_usd=rate)
+            path = outlined_tile(info['path'], d) if OUTLINE_MODE else info['path']
+            res = analyze_image(path, d['door_id'], model=model, zoom=ZOOM, expected_usd=rate)
         except SatelliteAccessError as e:
             # A disabled API is a configuration problem, not a per-door one: report once, score without satellite.
             stop.set()
@@ -57,7 +59,8 @@ def run_satellite(doors: list[dict], model: str = DEFAULT_MODEL, limit: int | No
         fetched = dict(ex.map(work, pending))
     if batch and not stop.is_set():
         from .batch import run_batch
-        items = [{'custom_id': did, 'image_path': r['image']['path'], 'door_id': did,
+        by_id = {d['door_id']: d for d in subset}
+        items = [{'custom_id': did, 'image_path': (outlined_tile(r['image']['path'], by_id[did]) if OUTLINE_MODE else r['image']['path']), 'door_id': did,
                   'cache_paths': cache_paths(did, ZOOM, model, r['image']['path'])}
                  for did, r in fetched.items() if r]
         try:

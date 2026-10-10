@@ -52,7 +52,12 @@ When present=true, evidence is one clause of at most 12 words naming the visible
 detail is at most 6 words or null. notes is one sentence of at most 15 words, or "" when there is
 nothing a field rep needs to know."""
 
-SYSTEMS = {'sat-v1': SYSTEM_V1, 'sat-v2': SYSTEM_V2}
+SYSTEM_V3_OUTLINE = SYSTEM_V1 + """
+The property under review is outlined in yellow with a yellow dot at its center. Report ONLY what lies
+inside the yellow outline. Pools, solar panels, play equipment or structures outside the outline belong
+to neighbours and must be reported as absent for this property."""
+SYSTEMS = {'sat-v1': SYSTEM_V1, 'sat-v2': SYSTEM_V2, 'sat-v3-outline': SYSTEM_V3_OUTLINE}
+OUTLINE_MODE = PROMPT_VERSION_ENV = os.getenv('SATELLITE_PROMPT_VERSION', 'sat-v1').endswith('outline')
 PROMPT_VERSION = os.getenv('SATELLITE_PROMPT_VERSION', 'sat-v1')
 if PROMPT_VERSION not in SYSTEMS:
     raise RuntimeError(f'SATELLITE_PROMPT_VERSION={PROMPT_VERSION!r}; known: {sorted(SYSTEMS)}')
