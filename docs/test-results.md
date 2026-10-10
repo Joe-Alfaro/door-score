@@ -99,13 +99,31 @@ Rows are taken from `run_report.json → cost`: production = `streetview_image` 
 the production model's share of `vision_llm` + `satellite_vision_llm` (14.25); eval = the Haiku and
 Opus spend (1.87 + 1.73); discovery = `discovery_llm`. 3.98 + 1.14 + 9.13 + 3.60 + 0.86 = 18.71.
 
-## Overhead imagery (no human eval yet)
+## Overhead imagery eval
 
-The satellite stage was added late and has model-only labels: on the full territory the production
-model reports 58 pools, 7 solar arrays and 6 play sets across 543 usable tiles. A 25-tile pilot was
-spot-checked by eye (pool and vehicle claims correct; roof grade soft, so only "poor" scores).
-These signals should get the same labeled-sample treatment as the street-level ones before their
-weights are trusted.
+**Method.** 100 satellite tiles (zoom 20, 640 px) sampled to include every door the production model
+flagged for solar (7) or play equipment (6), 30 of the 58 pool flags, and 57 random tiles. Rows were
+pre-filled with the production model's own call (no stronger-model drafts, to keep spend at zero) and a
+human confirmed or corrected every row, changing 62 fields. The human asked for the parcel boundary to be
+drawn on each tile to know which lot to judge; the same overlay was then given to the model
+(`sat-v3-outline`), re-run for all 569 doors through the Message Batches API ($1.21, 7 minutes).
+
+| Signal | Pos. labels | Bare tile P / R / F1 / halluc. | Outlined tile P / R / F1 / halluc. (production) |
+|---|---|---|---|
+| swimming_pool | 32 | 0.91 / 0.94 / 0.92 / 4% | 0.97 / 0.97 / 0.97 / 1% |
+| solar_panels | 7 | 1.00 / 1.00 / 1.00 / 0% | 1.00 / 1.00 / 1.00 / 0% |
+| play_equipment | 4 | 0.67 / 1.00 / 0.80 / 2% | 0.67 / 1.00 / 0.80 / 2% |
+| detached_structure | 17 | 0.81 / 0.76 / 0.79 / 4% | 0.77 / 0.59 / 0.67 / 4% |
+
+Roof condition exact agreement: bare 54%, outlined 48% (n=93); only a *poor* roof scores, and this is why.
+Tree cover is not scored. Detached structure is not scored and is the noisiest field; the outline makes the
+model stricter about what counts as "on this lot", which lowers its recall.
+
+**Decisions.** Outline mode is the production default for overhead vision: pools, the highest-weighted
+overhead signal, gained precision and lost most of their neighbor-lot false positives. Solar is exact in
+both modes. Play equipment keeps a small weight (precision 0.67 on 4 positives).
+**Caveat.** Pre-filling from the model under test risks anchoring the human toward it; that bias would
+favor the bare-tile run, yet the outlined run scored higher, so the conclusion is robust to it.
 
 ## Shipped
 

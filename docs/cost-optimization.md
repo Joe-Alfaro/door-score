@@ -182,3 +182,8 @@ objects. Required eval before any switch:
 - `pipeline/doorscore/harvest/streetview.py`, `satellite.py`: `image_info()` helpers (no download).
 - `pipeline/tests/test_costs.py`, `test_vision_batch.py`, `test_vision_stage.py` (new).
 - `data/cache/vision/*+*.json`, `data/cache/vision_satellite/*_z20_*.json`: migrated cache entries (1,830 files).
+
+
+## Batch path verified live (2026-10-10)
+
+The outlined overhead re-run went through Message Batches: 569 requests in one batch, ended in 7 minutes, 0 errors, $1.21 recorded at the batch rate (estimate was $2.16). Two pre-flight rejections cost nothing: the 256 MB per-batch limit (fixed by JPEG tiles and chunking) and the custom-id character set (fixed by sanitizing door ids).

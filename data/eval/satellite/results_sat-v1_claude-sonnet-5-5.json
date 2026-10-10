@@ -1,0 +1,59 @@
+{
+ "model": "claude-sonnet-5-5",
+ "conf_threshold": 0.5,
+ "n_labeled": 100,
+ "signals": {
+  "swimming_pool": {
+   "tp": 30,
+   "fp": 3,
+   "fn": 2,
+   "precision": 0.9090909090909091,
+   "recall": 0.9375,
+   "f1": 0.923076923076923,
+   "tn": 65,
+   "hallucination_rate": 0.04411764705882353,
+   "support_pos": 32
+  },
+  "solar_panels": {
+   "tp": 7,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "tn": 93,
+   "hallucination_rate": 0.0,
+   "support_pos": 7
+  },
+  "play_equipment": {
+   "tp": 4,
+   "fp": 2,
+   "fn": 0,
+   "precision": 0.6666666666666666,
+   "recall": 1.0,
+   "f1": 0.8,
+   "tn": 94,
+   "hallucination_rate": 0.020833333333333332,
+   "support_pos": 4
+  },
+  "detached_structure": {
+   "tp": 13,
+   "fp": 3,
+   "fn": 4,
+   "precision": 0.8125,
+   "recall": 0.7647058823529411,
+   "f1": 0.787878787878788,
+   "tn": 80,
+   "hallucination_rate": 0.03614457831325301,
+   "support_pos": 17
+  },
+  "roof_condition": {
+   "n": 93,
+   "exact_agreement": 0.5376344086021505
+  },
+  "tree_cover": {
+   "n": 100,
+   "exact_agreement": 0.99
+  }
+ }
+}

@@ -44,10 +44,10 @@ shows the raw score with its signal list.
 | Yard sign | 3 | Behavioral "hires out" signal; small because eval precision was 0.50 |
 | Visible service need / renovation | 6 | Near-term demand |
 | Dual-income area (tract) | 6 | Aggregate prior; modest weight because it is not door-specific |
-| Swimming pool (overhead) | 6 | Pool service is recurring, almost always hired out |
+| Swimming pool (overhead) | 6 | Pool service is recurring, almost always hired out; eval P/R 0.97 with the parcel outline drawn on the tile |
 | Play equipment (overhead) | 4 | Trampoline / playset: family household proxy, no identity inferred |
 | Solar panels (overhead) | 3 | Investment in the home; mixed signal, kept small |
-| Roof condition (overhead) | 4 | Only a clearly poor roof scores; the overhead roof grade has no eval yet |
+| Roof condition (overhead) | 4 | Only a clearly poor roof scores; overhead roof grading agrees with a human only ~50% of the time |
 | Block activity (neighborhood effect) | 6 | Movers, permits, renovations and provider trucks within 150 m; crews and word-of-mouth already exist on active streets |
 
 Vision signals only count when the model's confidence ≥ 0.5 (set by a threshold sweep in the eval); the eval harness reports precision,
