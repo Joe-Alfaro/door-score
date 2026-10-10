@@ -5,9 +5,30 @@ Writes data/eval/satellite/sample.jsonl (pre-filled with the production model's 
 to be confirmed or corrected by a human), copies tiles to data/eval/satellite/images/ (gitignored:
 Google imagery), and drops a labeler page next to them.
 """
-import argparse, json, random, shutil
+import argparse, json, math, random, shutil
 from pathlib import Path
 from ..config import DATA, CACHE
+
+TILE, ZOOM = 640, 20
+
+def _px(lat, lng):
+    n = 256 * 2 ** ZOOM
+    x = (lng + 180) / 360 * n
+    y = (1 - math.log(math.tan(math.radians(lat)) + 1 / math.cos(math.radians(lat))) / math.pi) / 2 * n
+    return x, y
+
+def parcel_outlines(door_ids: set[str]) -> dict:
+    """Parcel polygon vertices in tile pixel space (tile centered on the door point at zoom 20)."""
+    doors = {d['door_id']: d for d in json.loads((DATA / 'out' / 'doors.json').read_text())}
+    out = {}
+    for pf in CACHE.glob('parcels_*.geojson'):
+        for f in json.loads(pf.read_text())['features']:
+            pin = f['properties'].get('PAMS_PIN')
+            if pin not in door_ids or pin in out or not f.get('geometry'): continue
+            cx, cy = _px(doors[pin]['lat'], doors[pin]['lng'])
+            g = f['geometry']; rings = g['coordinates'] if g['type'] == 'Polygon' else [r for poly in g['coordinates'] for r in poly]
+            out[pin] = [[[round(_px(lat, lng)[0] - cx + TILE / 2, 1), round(_px(lat, lng)[1] - cy + TILE / 2, 1)] for lng, lat in ring] for ring in rings]
+    return out
 
 EVAL = DATA / 'eval' / 'satellite'
 BINARY = ['swimming_pool', 'solar_panels', 'play_equipment', 'detached_structure']
@@ -48,7 +69,11 @@ def main():
         if not dst.exists(): shutil.copy(src, dst)
         rows.append(label_row(d))
     (EVAL / 'sample.jsonl').write_text('\n'.join(json.dumps(r) for r in rows) + '\n')
+    outlines = parcel_outlines({r['door_id'] for r in rows})
     html = (Path(__file__).with_name('labeler.html').read_text()
+            .replace('<img id="img"/>', '<div style="position:relative;width:640px;height:640px;margin:10px"><img id="img" style="margin:0"/>'
+                     '<svg id="ov" width="640" height="640" viewBox="0 0 640 640" style="position:absolute;left:0;top:0;pointer-events:none"></svg></div>')
+            .replace("function render(){", "const PARCELS=" + json.dumps(outlines) + ";\nfunction drawParcel(id){const ov=document.getElementById('ov');const rings=PARCELS[id]||[];ov.innerHTML=rings.map(r=>`<polygon points=\"${r.map(p=>p.join(',')).join(' ')}\" fill=\"rgba(255,230,0,0.12)\" stroke=\"#ffe600\" stroke-width=\"3\"/>`).join('')+'<circle cx=\"320\" cy=\"320\" r=\"4\" fill=\"#ffe600\"/>'}\nfunction render(){ drawParcel(rows[i].door_id);")
             .replace("const BIN=['provider_truck','moving_indicators','yard_sign','renovation_activity','professional_landscaping','solar_panels']", f"const BIN={json.dumps(BINARY)}")
             .replace("const COND=['lawn_condition','exterior_condition','roof_condition']", f"const COND={json.dumps(CONDITIONS)}")
             .replace("const LEVELS=['poor','fair','good','excellent','not_visible']", "const LEVELS=['poor','fair','good','excellent','not_visible','low','medium','high']")
