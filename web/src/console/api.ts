@@ -190,7 +190,7 @@ export function getMcpTools(): Promise<McpToolsResponse> {
   return request<McpToolsResponse>('/api/mcp/tools')
 }
 
-/** Street View photos are served by this same site (synced into public/img/streetview). */
+/** Street View frames are fetched at view time through the API proxy; nothing is stored by this project. */
 export function streetViewUrl(doorId: string): string {
-  return `${window.location.origin}/img/streetview/${encodeURIComponent(doorId)}.jpg`
+  return `${API_BASE}/api/streetview/${encodeURIComponent(doorId)}.jpg`
 }

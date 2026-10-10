@@ -11,8 +11,8 @@ setup:                        ## create venv, install python + node deps
 	cd web && npm install --silent
 	cd mcp && npm install --silent
 
-pipeline:                     ## full scoring run; uses imagery/vision only if already cached
-	$(PY) -m doorscore.run $(if $(wildcard data/cache/streetview/*.jpg),--vision,)
+pipeline:                     ## full scoring run; uses vision from the committed JSON caches (no images or API calls needed)
+	$(PY) -m doorscore.run $(if $(wildcard data/cache/vision/*.json),--vision,)
 
 vision:                       ## fetch imagery + run vision for every door (paid; ~$0.011/door)
 	$(PY) -m doorscore.run --vision

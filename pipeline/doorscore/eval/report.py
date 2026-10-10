@@ -37,6 +37,7 @@ def render(results: list[dict]) -> str:
         cells = [f'{fmt(r["signals"][k]["exact_agreement"], True)} / {fmt(r["signals"][k]["within_one_step"], True)} (n={r["signals"][k]["n"]})' for r in results]
         out.append(f'| {k} | ' + ' | '.join(cells) + ' |')
     out.append('')
+    out.append('Image-usability false-positive rate (model called a frame usable, human did not): ' + ', '.join(f'{r["model"]} {fmt(r.get("usability_false_positive_rate"), True)}' for r in results) + '\n')
     out.append('Confidence-gate sweep for the production model (precision / recall):\n')
     prod = results[-1] if len(results) == 1 else next((r for r in results if r['model'] == r['cost']['production']['model']), results[0])
     sw = prod.get('threshold_sweep', {})

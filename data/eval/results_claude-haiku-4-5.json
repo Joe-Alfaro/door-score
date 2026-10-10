@@ -389,6 +389,7 @@
    "doors": 569,
    "usd_per_door": 0.0251
   },
-  "eval_and_discovery_usd": 4.4567
+  "eval_and_discovery_usd": 4.4567,
+  "max_spend_usd": 45.0
  }
 }

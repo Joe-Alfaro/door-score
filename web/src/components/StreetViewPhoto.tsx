@@ -8,9 +8,10 @@ interface StreetViewPhotoProps {
   vision: Vision
 }
 
-/** Photos are synced by scripts/sync-data.mjs as public/img/streetview/<door_id>.jpg. */
+/** Street View frames are Google content: fetched at view time through the console API proxy, never stored here. */
+const API_BASE = (import.meta.env.VITE_API_URL ?? 'http://localhost:8000').replace(/\/$/, '')
 export function streetViewUrl(doorId: string): string {
-  return `/img/streetview/${encodeURIComponent(doorId)}.jpg`
+  return `${API_BASE}/api/streetview/${encodeURIComponent(doorId)}.jpg`
 }
 
 const UNUSABLE_NOTE = 'No clear frontage in imagery'

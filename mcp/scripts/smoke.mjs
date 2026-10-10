@@ -72,7 +72,7 @@ console.log(`tools/call ok: ${payload.address} score ${payload.door_score} rank 
 const explain = await rpc('tools/call', { name: 'explain_score', arguments: { address: '3 Larkwood Drive' } }, 3)
 const explained = JSON.parse(explain.result?.content?.[0]?.text ?? '{}')
 if (explain.result?.isError || explained.found !== true || explained.address !== '3 LARKWOOD DR') fail(`explain_score returned ${JSON.stringify(explain)}`)
-if (typeof explained.street_view?.image_url !== 'string' || !explained.street_view.image_url.includes(`/img/streetview/${explained.door_id}.jpg`)) {
+if (typeof explained.street_view?.image_url !== 'string' || !explained.street_view.image_url.includes(`/api/streetview/${explained.door_id}.jpg`)) {
   fail(`explain_score missing street_view.image_url: ${JSON.stringify(explained.street_view)}`)
 }
 if (!Array.isArray(explained.talking_points) || explained.talking_points.length === 0) fail('explain_score returned no talking points')

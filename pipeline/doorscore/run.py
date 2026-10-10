@@ -26,6 +26,24 @@ def coverage_report(parcels, doors):
         'new_movers_36mo': sum(1 for d in doors if (d['months_since_deed'] or 999) <= 36 and d['arms_length_sale']),
     }
 
+def entity_resolution_report(parcels, doors):
+    """How messy the source addresses were and how well the normalizer and the block/lot join resolved them."""
+    from collections import Counter
+    from .normalize import normalize_address
+    raw_suffixes = Counter((f['properties'].get('PROP_LOC') or '').split()[-1] for f in parcels if f['properties'].get('PROP_LOC'))
+    canon_suffixes = Counter(normalize_address(f['properties'].get('PROP_LOC')).split()[-1] for f in parcels if f['properties'].get('PROP_LOC'))
+    return {
+        'raw_street_suffix_spellings': len(raw_suffixes),
+        'canonical_street_suffixes': len(canon_suffixes),
+        'addresses_normalized_with_house_number': sum(1 for d in doors if d['address'][:1].isdigit()),
+        'owner_mailing_resolved': {'owner_occupied': sum(1 for d in doors if d['owner_occupied'] is True),
+                                   'absentee': sum(1 for d in doors if d['owner_occupied'] is False),
+                                   'unknown': sum(1 for d in doors if d['owner_occupied'] is None)},
+        'permit_block_lot_join_rate': round(sum(1 for d in doors if (d.get('permits') or {}).get('permits_10yr')) / max(len(doors), 1), 3),
+        'census_tract_join_rate': round(sum(1 for d in doors if d.get('census')) / max(len(doors), 1), 3),
+        'street_view_pano_resolved': round(sum(1 for d in doors if d.get('vision')) / max(len(doors), 1), 3),
+    }
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--territory', default=str(TERRITORY))
@@ -59,7 +77,15 @@ def main():
             from .vision.satellite_stage import run_satellite
             doors = run_satellite(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit)
     scored = score_doors(doors)
+    for d in scored:
+        # Published output carries no local filesystem paths and no tax-exemption category.
+        for key in ('vision', 'satellite'):
+            img = (d.get(key) or {}).get('image')
+            if img and 'path' in img:
+                img.pop('path', None)
+        d.pop('tax_exempt_residence', None)
     report = coverage_report(parcels, scored)
+    report['entity_resolution'] = entity_resolution_report(parcels, scored)
     report['doors_with_permit_history'] = sum(1 for d in scored if (d.get('permits') or {}).get('permits_10yr'))
     report['doors_with_imagery'] = sum(1 for d in scored if d.get('vision'))
     report['doors_with_usable_imagery'] = sum(1 for d in scored if (d.get('vision') or {}).get('signals', {}).get('image_usable'))

@@ -86,6 +86,7 @@ def main():
         m = results['signals'][k]
         print(f'{k:28} exact={fmt(m["exact_agreement"])} within1={fmt(m["within_one_step"])} n={m["n"]}')
     print('threshold sweep (P/R):', ' | '.join(f'{c}: ' + ', '.join(f'{k[:6]} {fmt(m["precision"])}/{fmt(m["recall"])}' for k, m in sw.items() if m['tp'] + m['fn']) for c, sw in sweep.items()))
+    print(f'usability false-positive rate (model says usable, human says not): {fmt(results["usability_false_positive_rate"])}')
     c = results['cost']
     pr = c['production']
     print(f'cost: production ({pr["model"]}) ${pr["usd"]} over {pr["doors"]} doors = ${pr["usd_per_door"]}/door; '

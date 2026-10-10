@@ -242,11 +242,36 @@ def eval_sample(verified_only: bool = True):
         rows.append({**r, 'image_url': f'/api/eval/images/{Path(r["image"]).name}', 'predictions': preds})
     return {'models': list(EVAL_MODELS), 'rows': rows, 'n': len(rows), 'skipped_missing_image': skipped}
 
+def _streetview_bytes(door_id: str) -> bytes:
+    """Fetch one Street View frame from Google at view time. Nothing is written to disk and the
+    response is marked no-store, so Google imagery is never stored or redistributed by this project."""
+    from fastapi.responses import Response
+    from .harvest.streetview import META_DIR, IMG_URL, SIZE, _key
+    from .costs import record, STREETVIEW_IMAGE_USD
+    meta_p = META_DIR / f'{door_id}.json'
+    door = next((d for d in _doors() if d['door_id'] == door_id), None)
+    if not door or not meta_p.exists(): raise HTTPException(404, 'unknown door')
+    meta = json.loads(meta_p.read_text())
+    if meta.get('status') != 'OK': raise HTTPException(404, 'no Street View panorama for this door')
+    r = requests.get(IMG_URL, params={'pano': meta['pano_id'], 'location': f'{door["lat"]},{door["lng"]}', 'size': SIZE,
+                                      'fov': 80, 'pitch': 5, 'return_error_code': 'true', 'key': _key()}, timeout=30)
+    if r.status_code != 200 or not r.headers.get('content-type', '').startswith('image'):
+        raise HTTPException(502, 'imagery unavailable')
+    record('streetview_view', STREETVIEW_IMAGE_USD, door_id, pano_id=meta['pano_id'])
+    return r.content
+
+@app.get('/api/streetview/{door_id}.jpg')
+def streetview(door_id: str):
+    from fastapi.responses import Response
+    return Response(_streetview_bytes(door_id), media_type='image/jpeg',
+                    headers={'Cache-Control': 'private, max-age=600'})
+
 @app.get('/api/eval/images/{name}')
 def eval_image(name: str):
-    p = (DATA / 'eval' / 'images' / Path(name).name)
-    if not p.exists(): raise HTTPException(404)
-    return FileResponse(p)
+    # Eval frames are named <door_id>.jpg; they are fetched live like any other frame.
+    door_id = Path(name).stem
+    from fastapi.responses import Response
+    return Response(_streetview_bytes(door_id), media_type='image/jpeg', headers={'Cache-Control': 'private, max-age=600'})
 
 @app.get('/api/ledger')
 def ledger(limit: int = 200):

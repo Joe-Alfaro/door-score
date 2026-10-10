@@ -7,8 +7,12 @@ export function photoBaseUrl(): string {
   return base.replace(/\/+$/, '')
 }
 
+export function apiBaseUrl(): string {
+  return (process.env.API_BASE_URL ?? 'https://api-production-37c4.up.railway.app').replace(/\/$/, '')
+}
+
 export function streetViewImageUrl(doorId: string): string {
-  return `${photoBaseUrl()}/img/streetview/${encodeURIComponent(doorId)}.jpg`
+  return `${apiBaseUrl()}/api/streetview/${encodeURIComponent(doorId)}.jpg`
 }
 
 export function explainUrl(doorId: string): string {

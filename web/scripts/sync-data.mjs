@@ -1,6 +1,6 @@
 // Copies the pipeline's GeoJSON outputs into public/data so Vite serves them
 // at /data/*.geojson in both dev and the production build, and mirrors the
-// cached Street View photos into public/img/streetview for the evidence card.
+// Street View frames are not copied: they are fetched at view time via the console API proxy.
 import { copyFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -46,22 +46,5 @@ files
     console.log(`sync-data: ${file.from} -> ${file.to}`)
   })
 
-// Street View photos are named <door_id>.jpg and served at /img/streetview/<door_id>.jpg.
-// Like the GeoJSON, a missing cache dir keeps whatever was synced previously.
-const streetviewSrc = resolve(repoRoot, 'data', 'cache', 'streetview')
-const streetviewOut = resolve(webRoot, 'public', 'img', 'streetview')
-mkdirSync(streetviewOut, { recursive: true })
-
-function listJpgs(dir) {
-  return readdirSync(dir).filter((name) => /\.jpg$/i.test(name))
-}
-
-if (existsSync(streetviewSrc)) {
-  const photos = listJpgs(streetviewSrc)
-  photos.forEach((name) => copyFileSync(resolve(streetviewSrc, name), resolve(streetviewOut, name)))
-  console.log(`sync-data: copied ${photos.length} Street View photos -> ${streetviewOut}`)
-} else {
-  console.warn(
-    `sync-data: ${streetviewSrc} missing, keeping ${listJpgs(streetviewOut).length} existing Street View photos`,
-  )
-}
+// Street View frames are no longer copied into the site: they are Google content and are
+// fetched at view time through the console API proxy (/api/streetview/<door_id>.jpg).
