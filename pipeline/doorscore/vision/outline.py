@@ -33,7 +33,7 @@ def outlined_tile(tile_path: str, door: dict) -> str:
     rings = _parcels().get(door['door_id'])
     if not rings:
         return tile_path
-    out = OUT_DIR / f'{door["door_id"]}.png'
+    out = OUT_DIR / f'{door["door_id"]}.jpg'   # JPEG: a third of the PNG size, which matters for batch payloads
     if out.exists():
         return str(out)
     cx, cy = _px(door['lat'], door['lng'])
@@ -42,5 +42,5 @@ def outlined_tile(tile_path: str, door: dict) -> str:
         pts = [(_px(lat, lng)[0] - cx + TILE / 2, _px(lat, lng)[1] - cy + TILE / 2) for lng, lat in ring]
         d.polygon(pts, outline=(255, 230, 0), width=4)
     d.ellipse([TILE / 2 - 4, TILE / 2 - 4, TILE / 2 + 4, TILE / 2 + 4], fill=(255, 230, 0))
-    im.save(out)
+    im.save(out, quality=85)
     return str(out)

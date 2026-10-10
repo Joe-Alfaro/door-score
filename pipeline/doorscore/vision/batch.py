@@ -15,6 +15,20 @@ from .common import message_params, result_record, store, usage_dict
 
 POLL_SECONDS = 30
 MAX_WAIT_SECONDS = 24 * 3600
+MAX_BATCH_BYTES = 150 * 1024 * 1024   # API limit is 256 MB per batch; base64 images add ~33%
+
+
+def chunk_items(items: list[dict]) -> list[list[dict]]:
+    """Split items so each batch's base64 payload stays well under the API's size limit."""
+    chunks, cur, size = [], [], 0
+    for it in items:
+        b = int(Path(it['image_path']).stat().st_size * 1.37) + 4096
+        if cur and size + b > MAX_BATCH_BYTES:
+            chunks.append(cur); cur, size = [], 0
+        cur.append(it); size += b
+    if cur:
+        chunks.append(cur)
+    return chunks
 
 
 def output_format(schema: type[BaseModel]) -> dict:
@@ -52,20 +66,33 @@ def run_batch(*, stage: str, items: list[dict], model: str, system: str, user_te
     ensure_budget(len(items) * expected_usd_per_call)
     import anthropic
     client = client or anthropic.Anthropic()
-    requests = build_requests(items, model, system, user_text, schema)
-    batch = client.messages.batches.create(requests=requests)
-    log(f'[{stage}] batch {batch.id}: {len(requests)} requests submitted (est. ${len(items) * expected_usd_per_call:.2f} at batch rate)')
+    batches = []
+    for chunk in chunk_items(items):
+        requests = build_requests(chunk, model, system, user_text, schema)
+        batch = client.messages.batches.create(requests=requests)
+        batches.append(batch)
+        log(f'[{stage}] batch {batch.id}: {len(requests)} requests submitted')
+    log(f'[{stage}] {len(batches)} batch(es), {len(items)} requests, est. ${len(items) * expected_usd_per_call:.2f} at batch rate')
     t0 = time.time()
-    while batch.processing_status != 'ended':
+    pending = list(batches)
+    while pending:
         if time.time() - t0 > MAX_WAIT_SECONDS:
-            raise TimeoutError(f'batch {batch.id} still {batch.processing_status} after 24h; results stay retrievable for 29 days')
+            raise TimeoutError(f'{len(pending)} batch(es) still processing after 24h; results stay retrievable for 29 days')
         time.sleep(poll_seconds)
-        batch = client.messages.batches.retrieve(batch.id)
-        c = batch.request_counts
-        log(f'[{stage}] batch {batch.id}: {batch.processing_status}, processing {c.processing}, done {c.succeeded}, errored {c.errored}')
+        still = []
+        for b in pending:
+            b = client.messages.batches.retrieve(b.id)
+            c = b.request_counts
+            log(f'[{stage}] batch {b.id}: {b.processing_status}, processing {c.processing}, done {c.succeeded}, errored {c.errored}')
+            if b.processing_status != 'ended':
+                still.append(b)
+        pending = still
     by_id = {it['custom_id']: it for it in items}
     out, budget_error = {}, None
-    for result in client.messages.batches.results(batch.id):
+    def _all_results():
+        for b in batches:
+            yield from client.messages.batches.results(b.id)
+    for result in _all_results():
         it = by_id.get(result.custom_id)
         if not it:
             continue
