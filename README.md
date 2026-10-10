@@ -12,6 +12,8 @@ data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.
 
 ## Live demo
 
+Source: https://github.com/Joe-Alfaro/door-score
+
 | | URL |
 |---|---|
 | Map UI | https://web-production-39b2a.up.railway.app |
