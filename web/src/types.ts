@@ -127,3 +127,41 @@ export type TopN = (typeof TOP_N_OPTIONS)[number]
 
 /** Visibility state of a door after Top-N and tag filters are applied. */
 export type DoorVisibility = 'active' | 'dim'
+
+/* Custom territories (scored on demand through the console API) */
+
+/** Where the map loads its doors + territory outline from; swapped when a custom territory is active. */
+export interface DataUrls {
+  doors: string
+  territory: string
+}
+
+export type TerritoryStatus = 'running' | 'succeeded' | 'failed' | 'interrupted'
+
+/** Polygon input accepted by `POST /api/territory`. */
+export type TerritoryInput = Feature<Polygon | MultiPolygon> | FeatureCollection<Polygon | MultiPolygon> | Polygon | MultiPolygon
+
+export interface TerritoryStartResponse {
+  territory_id: string
+  run_id: string
+  status: TerritoryStatus
+}
+
+/** Headline counts from the scoring run; the backend may add more keys over time. */
+export interface TerritoryReport {
+  single_family_homes?: number | null
+  parcels_in_polygon?: number | null
+  doors_with_usable_imagery?: number | null
+  doors_with_usable_satellite?: number | null
+  absentee_owners?: number | null
+  new_movers_36mo?: number | null
+  [key: string]: unknown
+}
+
+export interface TerritoryRecord {
+  territory_id: string
+  name?: string | null
+  status: TerritoryStatus
+  log_tail: string[]
+  report?: TerritoryReport | null
+}

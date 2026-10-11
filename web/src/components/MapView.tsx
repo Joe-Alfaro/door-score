@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
-import type { RefObject } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import type { ReactNode, RefObject } from 'react'
+import type { FeatureCollection, LineString, Point, Polygon } from 'geojson'
 import { Layer, Map, NavigationControl, Popup, Source } from 'react-map-gl/maplibre'
 import type { MapLayerMouseEvent, MapRef } from 'react-map-gl/maplibre'
 import type { LayerProps } from 'react-map-gl/maplibre'
@@ -15,6 +16,12 @@ interface MapViewProps {
   visibility: ReadonlyMap<string, DoorVisibility>
   selectedId: string | null
   onSelect: (id: string | null) => void
+  /** Custom-territory drawing: while true, clicks add vertices instead of selecting doors. */
+  drawing?: boolean
+  draft?: FeatureCollection<Point | LineString | Polygon> | null
+  onDrawClick?: (point: readonly [number, number]) => void
+  /** Overlays (custom-territory banner and panel) positioned over the map, not the evidence card. */
+  children?: ReactNode
 }
 
 const DOOR_LAYER_ID = 'doors-circle'
@@ -35,6 +42,29 @@ const territoryLine: LayerProps = {
   paint: { 'line-color': '#256abf', 'line-width': 2, 'line-dasharray': [2, 2] },
 }
 
+const draftFill: LayerProps = {
+  id: 'draft-fill',
+  type: 'fill',
+  filter: ['==', ['geometry-type'], 'Polygon'],
+  paint: { 'fill-color': '#d9772b', 'fill-opacity': 0.12 },
+}
+
+const draftLine: LayerProps = {
+  id: 'draft-line',
+  type: 'line',
+  filter: ['==', ['geometry-type'], 'LineString'],
+  paint: { 'line-color': '#d9772b', 'line-width': 2 },
+}
+
+const draftVertices: LayerProps = {
+  id: 'draft-vertices',
+  type: 'circle',
+  filter: ['==', ['geometry-type'], 'Point'],
+  paint: { 'circle-color': '#ffffff', 'circle-radius': 5, 'circle-stroke-color': '#d9772b', 'circle-stroke-width': 2 },
+}
+
+const EMPTY_DRAFT: FeatureCollection<Point | LineString | Polygon> = { type: 'FeatureCollection', features: [] }
+
 const doorCircles: LayerProps = {
   id: DOOR_LAYER_ID,
   type: 'circle',
@@ -54,7 +84,18 @@ interface HoverState {
   lat: number
 }
 
-export function MapView({ mapRef, doors, territory, visibility, selectedId, onSelect }: MapViewProps) {
+export function MapView({
+  mapRef,
+  doors,
+  territory,
+  visibility,
+  selectedId,
+  onSelect,
+  drawing = false,
+  draft = null,
+  onDrawClick,
+  children,
+}: MapViewProps) {
   const [hover, setHover] = useState<HoverState | null>(null)
 
   const byId = useMemo(
@@ -86,6 +127,17 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
 
   const bounds = useMemo(() => territoryBounds(territory), [territory])
 
+  // The initial view comes from `initialViewState`; refit only when the territory is swapped later.
+  const firstBounds = useRef(true)
+  useEffect(() => {
+    if (firstBounds.current) {
+      firstBounds.current = false
+      return
+    }
+    if (!bounds) return
+    mapRef.current?.fitBounds(bounds, { padding: 48, duration: 800 })
+  }, [bounds, mapRef])
+
   const selectedLayer = useMemo<LayerProps>(
     () => ({
       id: 'doors-selected',
@@ -109,7 +161,7 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
   }
 
   function handleMouseMove(event: MapLayerMouseEvent) {
-    const door = doorFromEvent(event)
+    const door = drawing ? null : doorFromEvent(event)
     if (!door) {
       setHover(null)
       return
@@ -119,9 +171,15 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
   }
 
   function handleClick(event: MapLayerMouseEvent) {
+    if (drawing) {
+      onDrawClick?.([event.lngLat.lng, event.lngLat.lat])
+      return
+    }
     const door = doorFromEvent(event)
     onSelect(door ? door.properties.door_id : null)
   }
+
+  const cursor = drawing ? 'crosshair' : hover ? 'pointer' : 'grab'
 
   return (
     <div className="map-wrap">
@@ -130,7 +188,8 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
         mapStyle={BASEMAP}
         initialViewState={bounds ? { bounds, fitBoundsOptions: { padding: 48 } } : { longitude: -74.14, latitude: 41.06, zoom: 13 }}
         interactiveLayerIds={[DOOR_LAYER_ID]}
-        cursor={hover ? 'pointer' : 'grab'}
+        cursor={cursor}
+        doubleClickZoom={!drawing}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setHover(null)}
         onClick={handleClick}
@@ -147,6 +206,12 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
         <Source id="doors" type="geojson" data={renderedDoors}>
           <Layer {...doorCircles} />
           <Layer {...selectedLayer} />
+        </Source>
+
+        <Source id="draft" type="geojson" data={draft ?? EMPTY_DRAFT}>
+          <Layer {...draftFill} />
+          <Layer {...draftLine} />
+          <Layer {...draftVertices} />
         </Source>
 
         {hover ? (
@@ -167,6 +232,7 @@ export function MapView({ mapRef, doors, territory, visibility, selectedId, onSe
         ) : null}
       </Map>
       <Legend />
+      {children}
     </div>
   )
 }

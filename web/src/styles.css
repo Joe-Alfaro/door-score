@@ -190,6 +190,22 @@ select {
   text-decoration: underline;
 }
 
+.territory-button {
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--accent);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.territory-button:hover,
+.territory-button-active {
+  background: var(--accent-soft);
+}
+
 /* Stats strip */
 .stats-strip {
   display: grid;
@@ -274,6 +290,200 @@ select {
 
 .popup-address {
   font-weight: 600;
+}
+
+/* Custom territory overlays (banner + panel) sit over the top of the map */
+.map-overlays {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.map-overlays > * {
+  pointer-events: auto;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.territory-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.share-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.share-link {
+  width: 260px;
+  max-width: 40vw;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-alt);
+  font-size: 12px;
+}
+
+.territory-panel {
+  width: 340px;
+  max-width: calc(100vw - 24px);
+  padding: 12px 14px 14px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.panel-header {
+  position: relative;
+  padding-right: 28px;
+  margin-bottom: 8px;
+}
+
+.panel-close {
+  top: -6px;
+  right: -6px;
+}
+
+.panel-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-tab {
+  padding: 6px 8px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.panel-tab-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panel-help {
+  margin: 0;
+  font-size: 12px;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.panel-textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-alt);
+  font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  resize: vertical;
+}
+
+.panel-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.panel-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 12px 0;
+}
+
+.panel-name input {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-alt);
+}
+
+.panel-submit {
+  width: 100%;
+}
+
+.panel-log {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  max-height: 90px;
+  overflow: auto;
+  border-radius: var(--radius);
+  background: var(--surface-alt);
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.panel-error {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  background: #fdecea;
+  color: #8a1f11;
+  font-size: 12px;
+}
+
+.app-message-actions {
+  margin-top: 12px;
 }
 
 /* Evidence card */

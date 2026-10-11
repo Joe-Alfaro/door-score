@@ -13,6 +13,8 @@ interface TopBarProps {
   activeTags: ReadonlySet<TagFilter>
   onToggleTag: (tag: TagFilter) => void
   onPickDoor: (door: DoorFeature) => void
+  territoryOpen: boolean
+  onToggleTerritory: () => void
 }
 
 const MAX_RESULTS = 8
@@ -22,7 +24,17 @@ function parseTopN(value: string): TopN {
   return match ?? 'all'
 }
 
-export function TopBar({ doors, tags, topN, onTopNChange, activeTags, onToggleTag, onPickDoor }: TopBarProps) {
+export function TopBar({
+  doors,
+  tags,
+  topN,
+  onTopNChange,
+  activeTags,
+  onToggleTag,
+  onPickDoor,
+  territoryOpen,
+  onToggleTerritory,
+}: TopBarProps) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -126,6 +138,15 @@ export function TopBar({ doors, tags, topN, onTopNChange, activeTags, onToggleTa
           )
         })}
       </div>
+
+      <button
+        type="button"
+        className={territoryOpen ? 'territory-button territory-button-active' : 'territory-button'}
+        aria-pressed={territoryOpen}
+        onClick={onToggleTerritory}
+      >
+        Score your own polygon
+      </button>
 
       <Link to="/console" className="console-link">
         Console

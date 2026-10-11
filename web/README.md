@@ -58,6 +58,20 @@ Notes: the Pipeline page confirms paid stages with their estimate before sending
 the run terminal is fed by the `/api/runs/{id}/stream` SSE endpoint. Street View thumbnails in
 the Doors drawer come from the same console API proxy, `/api/streetview/<door_id>.jpg`.
 
+## Custom territories
+
+The top bar's **Score your own polygon** button opens a Territory panel with two inputs: draw on
+the map (click once per corner, **Finish** closes the ring, needs at least three points) or paste /
+upload GeoJSON (a Feature, FeatureCollection or bare Polygon/MultiPolygon). **Score this territory**
+posts the polygon to the console API and polls until the run finishes, showing the last three log
+lines meanwhile. On success the whole page (dots, stats strip, tag filters, search, evidence cards)
+switches to that territory's data, the map fits its bounds, and a banner shows the home count, how
+many homes already had cached imagery signals, a copyable share link and **Back to default**.
+
+`/?territory=<territory_id>` deep-links a scored territory. Endpoints used (all under
+`VITE_API_URL`): `POST /api/territory`, `GET /api/territory/{id}`,
+`GET /api/territory/{id}/doors.geojson`, `GET /api/territory/{id}/territory.geojson`.
+
 ## UI
 
 - Top bar: address search (Enter or click a result to fly to it), Top-N select (20/50/100/all)
