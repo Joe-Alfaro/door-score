@@ -3,6 +3,7 @@
 Stages are idempotent and cached, so re-running is cheap and safe.
 """
 import argparse, json, time
+from pathlib import Path
 from .config import TERRITORY, OUT
 from .territory import load_polygon
 from .harvest.parcels import fetch_parcels
@@ -52,7 +53,11 @@ def main():
     ap.add_argument('--vision-model', default=None, help='override vision model id')
     ap.add_argument('--no-satellite', action='store_true', help='skip the overhead imagery stage (runs with --vision by default)')
     ap.add_argument('--limit', type=int, default=None, help='only run imagery/vision for the first N doors (by harvest order)')
+    ap.add_argument('--vision-cache-only', action='store_true', help='use cached vision results only; never fetch imagery or call a model (free)')
+    ap.add_argument('--out', default=None, help='output directory (default data/out)')
     args = ap.parse_args()
+    out_dir = Path(args.out) if args.out else OUT
+    out_dir.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     poly = load_polygon(args.territory)
     parcels = fetch_parcels(poly, force=args.force)
@@ -72,10 +77,10 @@ def main():
     if args.vision:
         from .vision.stage import run_vision
         from .vision.detect import DEFAULT_MODEL
-        doors = run_vision(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit)
+        doors = run_vision(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit, cache_only=args.vision_cache_only)
         if not args.no_satellite:
             from .vision.satellite_stage import run_satellite
-            doors = run_satellite(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit)
+            doors = run_satellite(doors, model=args.vision_model or DEFAULT_MODEL, limit=args.limit, cache_only=args.vision_cache_only)
     scored = score_doors(doors)
     for d in scored:
         # Published output carries no local filesystem paths and no tax-exemption category.
@@ -91,14 +96,14 @@ def main():
     report['doors_with_usable_imagery'] = sum(1 for d in scored if (d.get('vision') or {}).get('signals', {}).get('image_usable'))
     report['doors_with_usable_satellite'] = sum(1 for d in scored if (d.get('satellite') or {}).get('signals', {}).get('image_usable'))
     report['cost'] = cost_summary()
-    (OUT / 'doors.json').write_text(json.dumps(scored, indent=1))
+    (out_dir / 'doors.json').write_text(json.dumps(scored, indent=1))
     geo = {'type': 'FeatureCollection', 'features': [
         {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [d['lng'], d['lat']]},
          'properties': {k: v for k, v in d.items() if k not in ('lat', 'lng')}} for d in scored]}
-    (OUT / 'doors.geojson').write_text(json.dumps(geo))
-    (OUT / 'run_report.json').write_text(json.dumps(report, indent=1))
+    (out_dir / 'doors.geojson').write_text(json.dumps(geo))
+    (out_dir / 'run_report.json').write_text(json.dumps(report, indent=1))
     print('[report]', json.dumps(report, indent=1))
-    print(f'[done] wrote {OUT}/doors.json, doors.geojson, run_report.json in {time.time()-t0:.1f}s')
+    print(f'[done] wrote {out_dir}/doors.json, doors.geojson, run_report.json in {time.time()-t0:.1f}s')
 
 if __name__ == '__main__':
     main()

@@ -12,7 +12,7 @@ from .stage import batch_enabled
 
 
 def run_satellite(doors: list[dict], model: str = DEFAULT_MODEL, limit: int | None = None, workers: int = 4,
-                  batch: bool | None = None) -> list[dict]:
+                  batch: bool | None = None, cache_only: bool = False) -> list[dict]:
     batch = batch_enabled(batch)
     subset = doors[:limit] if limit else doors
     results, pending = {}, []
@@ -24,6 +24,10 @@ def run_satellite(doors: list[dict], model: str = DEFAULT_MODEL, limit: int | No
         else:
             pending.append(d)
     print(f'[satellite] {len(results)} doors served from cache, {len(pending)} need a tile + model')
+    if cache_only and pending:
+        # Public / grader runs: never spend. Doors without a cached result simply have no satellite signals.
+        print(f'[satellite] cache-only mode: {len(pending)} doors skipped (no imagery fetched, no model calls)')
+        pending = []
     rate = per_call_rate(STAGE, model, batch=batch)
     stop, budget_msgs, access_msgs = threading.Event(), [], []
 

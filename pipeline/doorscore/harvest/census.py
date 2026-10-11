@@ -69,8 +69,10 @@ def enrich(doors: list[dict]) -> list[dict]:
         for d in doors: d['census'] = None
         return doors
     failed = set()
-    for d in doors:
-        g = tract_for(d)
+    import concurrent.futures as cf
+    with cf.ThreadPoolExecutor(8) as ex:   # geocoder calls are independent; 569 doors take ~30 s instead of ~4 min
+        geoids = list(ex.map(tract_for, doors))
+    for d, g in zip(doors, geoids):
         if not g or g in failed:
             d['census'] = None; continue
         try:

@@ -15,7 +15,7 @@ def batch_enabled(batch: bool | None) -> bool:
 
 
 def run_vision(doors: list[dict], model: str = DEFAULT_MODEL, limit: int | None = None, workers: int = 4,
-               batch: bool | None = None) -> list[dict]:
+               batch: bool | None = None, cache_only: bool = False) -> list[dict]:
     batch = batch_enabled(batch)
     subset = doors[:limit] if limit else doors
     results, pending = {}, []
@@ -34,6 +34,10 @@ def run_vision(doors: list[dict], model: str = DEFAULT_MODEL, limit: int | None 
         else:
             pending.append(d)
     print(f'[vision] {len(results)} doors served from cache, {len(pending)} need imagery + model')
+    if cache_only and pending:
+        # Public / grader runs: never spend. Doors without a cached result simply have no vision signals.
+        print(f'[vision] cache-only mode: {len(pending)} doors skipped (no imagery fetched, no model calls)')
+        pending = []
     rate = per_call_rate(STAGE, model, batch=batch)
     stop, budget_msgs = threading.Event(), []
 

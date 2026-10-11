@@ -332,6 +332,81 @@ def run_stage(stage_id: str, body: RunRequest):
     _save_runs()
     return _public(RUNS[run_id])
 
+# ---------------------------------------------------------------- custom territories (public, free)
+
+TERR_DIR = DATA / 'territories'; TERR_DIR.mkdir(parents=True, exist_ok=True)
+NJ_BBOX = (-75.6, 38.8, -73.85, 41.4)
+MAX_AREA_KM2 = 12.0
+
+class TerritoryRequest(BaseModel):
+    geojson: dict
+    name: str | None = None
+
+@app.post('/api/territory', status_code=201)
+def create_territory(body: TerritoryRequest):
+    """Score any New Jersey polygon from public records plus cached imagery. Never spends: vision runs cache-only."""
+    from shapely.geometry import shape, mapping
+    from shapely.ops import unary_union
+    import hashlib
+    g = body.geojson
+    try:
+        if g.get('type') == 'FeatureCollection':
+            geoms = [shape(f['geometry']) for f in g['features']]
+        elif g.get('type') == 'Feature':
+            geoms = [shape(g['geometry'])]
+        else:
+            geoms = [shape(g)]
+        poly = unary_union(geoms)
+    except Exception as e:
+        raise HTTPException(400, f'could not read polygon: {e}')
+    if poly.is_empty or poly.geom_type not in ('Polygon', 'MultiPolygon'):
+        raise HTTPException(400, 'expected a Polygon or MultiPolygon')
+    minx, miny, maxx, maxy = poly.bounds
+    if not (NJ_BBOX[0] <= minx and maxx <= NJ_BBOX[2] and NJ_BBOX[1] <= miny and maxy <= NJ_BBOX[3]):
+        raise HTTPException(400, 'polygon must lie within New Jersey (the parcel source is statewide NJ)')
+    import math
+    area_km2 = poly.area * 111.32 * 110.57 * math.cos(math.radians((miny + maxy) / 2))
+    if area_km2 > MAX_AREA_KM2:
+        raise HTTPException(400, f'polygon is {area_km2:.1f} km²; the limit is {MAX_AREA_KM2:.0f} km² (about 5,000 parcels)')
+    active = _active_run()
+    if active: raise HTTPException(409, f'a run is already in progress ({active["stage"]}); try again in a minute')
+    tid = hashlib.sha1(poly.wkb).hexdigest()[:10]
+    tdir = TERR_DIR / tid; tdir.mkdir(exist_ok=True)
+    name = (body.name or f'Custom territory {tid}')[:80]
+    (tdir / 'territory.geojson').write_text(json.dumps({'type': 'FeatureCollection', 'features': [
+        {'type': 'Feature', 'properties': {'name': name, 'area_km2': round(area_km2, 2)}, 'geometry': mapping(poly)}]}))
+    cmd = [PY, '-m', 'doorscore.run', '--territory', str(tdir / 'territory.geojson'), '--out', str(tdir), '--vision', '--vision-cache-only']
+    run_id = uuid.uuid4().hex[:8]
+    log = RUNS_DIR / f'{run_id}.log'
+    with open(log, 'w') as fh:
+        proc = subprocess.Popen(cmd, cwd=str(PIPELINE_DIR), stdout=fh, stderr=subprocess.STDOUT, env={**os.environ, 'PYTHONUNBUFFERED': '1'})
+    PROCS[run_id] = proc
+    RUNS[run_id] = {'id': run_id, 'stage': 'territory', 'cmd': ' '.join(cmd).replace(PY, 'python'), 'started': time.time(), 'ended': None,
+                    'status': 'running', 'exit_code': None, 'log': str(log), 'estimate_usd': 0.0, 'pid': proc.pid, 'territory_id': tid}
+    _save_runs()
+    (tdir / 'meta.json').write_text(json.dumps({'territory_id': tid, 'name': name, 'run_id': run_id, 'created': time.time(), 'area_km2': round(area_km2, 2)}))
+    return {'territory_id': tid, 'run_id': run_id, 'status': 'running', 'name': name}
+
+@app.get('/api/territory/{tid}')
+def get_territory(tid: str):
+    tdir = TERR_DIR / Path(tid).name
+    if not (tdir / 'meta.json').exists(): raise HTTPException(404, 'unknown territory')
+    meta = json.loads((tdir / 'meta.json').read_text())
+    r = RUNS.get(meta['run_id'])
+    status, tail = 'succeeded' if (tdir / 'doors.geojson').exists() else 'unknown', []
+    if r:
+        _refresh(r); status = r['status']
+        tail = Path(r['log']).read_text().splitlines()[-5:] if Path(r['log']).exists() else []
+    report = json.loads((tdir / 'run_report.json').read_text()) if (tdir / 'run_report.json').exists() else None
+    return {**meta, 'status': status, 'log_tail': tail, 'report': report}
+
+@app.get('/api/territory/{tid}/{fname}')
+def get_territory_file(tid: str, fname: str):
+    if fname not in ('doors.geojson', 'territory.geojson', 'doors.json', 'run_report.json'): raise HTTPException(404)
+    p = TERR_DIR / Path(tid).name / fname
+    if not p.exists(): raise HTTPException(404, 'not ready')
+    return FileResponse(p, media_type='application/geo+json' if fname.endswith('.geojson') else 'application/json')
+
 @app.post('/api/runs/{run_id}/cancel', dependencies=[Depends(require_token)])
 def cancel_run(run_id: str):
     r = RUNS.get(run_id)
