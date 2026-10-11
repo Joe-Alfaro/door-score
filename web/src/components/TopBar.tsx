@@ -148,7 +148,7 @@ export function TopBar({
         Score your own polygon
       </button>
 
-      <Link to="/console" className="console-link">
+      <Link to={{ pathname: '/console', search: window.location.search }} className="console-link">
         Console
       </Link>
     </header>

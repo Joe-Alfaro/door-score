@@ -90,8 +90,16 @@ def _active_run() -> dict | None:
 
 # ---------------------------------------------------------------- data helpers
 
-def _doors() -> list[dict]:
-    p = OUT / 'doors.json'
+def _out_dir(territory: str | None = None) -> Path:
+    """Dataset directory: the default territory, or a custom one scored via POST /api/territory."""
+    if territory:
+        d = DATA / 'territories' / Path(territory).name
+        if not (d / 'doors.json').exists(): raise HTTPException(404, 'unknown territory or not scored yet')
+        return d
+    return OUT
+
+def _doors(territory: str | None = None) -> list[dict]:
+    p = _out_dir(territory) / 'doors.json'
     return json.loads(p.read_text()) if p.exists() else []
 
 def _labels() -> list[dict]:
@@ -143,14 +151,20 @@ def _ping(url: str) -> dict:
 # ---------------------------------------------------------------- read endpoints
 
 @app.get('/api/status')
-def status():
-    rep = json.loads((OUT / 'run_report.json').read_text()) if (OUT / 'run_report.json').exists() else {}
-    terr = json.loads(TERRITORY.read_text()) if TERRITORY.exists() else None
+def status(territory: str | None = None):
+    out = _out_dir(territory)
+    rep = json.loads((out / 'run_report.json').read_text()) if (out / 'run_report.json').exists() else {}
+    tfile = (out / 'territory.geojson') if territory else TERRITORY
+    terr = json.loads(tfile.read_text()) if tfile.exists() else None
+    tprops = dict(terr['features'][0]['properties']) if terr else None
+    if tprops is not None:
+        tprops['custom'] = bool(territory); tprops['territory_id'] = territory
+        if territory: tprops['sfh_count'] = rep.get('single_family_homes')
     return {'report': rep, 'cost': cost_summary(), 'max_spend_usd': MAX_SPEND_USD, 'auth': 'token' if CONSOLE_TOKEN else 'localhost-only',
-            'territory': terr and terr['features'][0]['properties'],
+            'territory': tprops,
             'keys': {'anthropic': bool(ANTHROPIC_API_KEY), 'google': bool(GOOGLE_MAPS_API_KEY), 'census': bool(CENSUS_API_KEY)},
             'deployments': {'map': {'url': WEB_URL, **_ping(WEB_URL + '/')}, 'mcp': {'url': MCP_URL + '/mcp', **_ping(MCP_URL + '/health')}},
-            'doors_file_mtime': (OUT / 'doors.json').stat().st_mtime if (OUT / 'doors.json').exists() else None}
+            'doors_file_mtime': (out / 'doors.json').stat().st_mtime if (out / 'doors.json').exists() else None}
 
 SLIM = ['door_id', 'address', 'municipality', 'door_score', 'door_score_pct', 'rank', 'tags', 'year_built', 'lot_acres', 'net_value',
         'deed_date', 'months_since_deed', 'owner_occupied', 'lat', 'lng']
@@ -158,12 +172,12 @@ SORTS = {'door_score': 'desc', 'rank': 'asc', 'address': 'asc', 'net_value': 'de
 
 @app.get('/api/doors')
 def doors(limit: int = 100, offset: int = 0, sort: str = 'rank', order: str | None = None,
-          tag: str | None = None, q: str | None = None, municipality: str | None = None):
+          tag: str | None = None, q: str | None = None, municipality: str | None = None, territory: str | None = None):
     if sort not in SORTS: raise HTTPException(400, f'sort must be one of {", ".join(SORTS)}')
     order = order or SORTS[sort]
     if order not in ('asc', 'desc'): raise HTTPException(400, 'order must be asc or desc')
     if limit < 0 or offset < 0: raise HTTPException(400, 'limit and offset must be >= 0')
-    rows = _doors()
+    rows = _doors(territory)
     if tag: rows = [d for d in rows if tag in d['tags']]
     if q: rows = [d for d in rows if q.upper() in d['address']]
     if municipality: rows = [d for d in rows if d['municipality'].lower() == municipality.lower()]
@@ -175,16 +189,16 @@ def doors(limit: int = 100, offset: int = 0, sort: str = 'rank', order: str | No
             'doors': [{k: d.get(k) for k in SLIM} for d in rows[offset:offset + limit]]}
 
 @app.get('/api/doors/{door_id}')
-def door(door_id: str):
-    for d in _doors():
+def door(door_id: str, territory: str | None = None):
+    for d in _doors(territory):
         if d['door_id'] == door_id:
             return d
     raise HTTPException(404)
 
 @app.get('/api/tags')
-def tags():
+def tags(territory: str | None = None):
     counts: dict[str, int] = {}
-    for d in _doors():
+    for d in _doors(territory):
         for t in d.get('tags') or []:
             counts[t] = counts.get(t, 0) + 1
     return {'tags': [{'tag': t, 'count': c} for t, c in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))]}

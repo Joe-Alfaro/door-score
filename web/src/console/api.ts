@@ -53,8 +53,21 @@ async function toApiError(response: Response): Promise<ApiError> {
   return new ApiError(response.status, text || `${response.status} ${response.statusText}`)
 }
 
+/** Dataset-scoped endpoints read the custom territory named in the page URL (?territory=<id>), if any. */
+export function activeTerritoryId(): string | null {
+  return new URLSearchParams(window.location.search).get('territory')
+}
+
+const TERRITORY_SCOPED = ['/api/status', '/api/doors', '/api/tags']
+
+function withTerritory(path: string): string {
+  const tid = activeTerritoryId()
+  if (!tid || !TERRITORY_SCOPED.some((prefix) => path === prefix || path.startsWith(`${prefix}/`) || path.startsWith(`${prefix}?`))) return path
+  return `${path}${path.includes('?') ? '&' : '?'}territory=${encodeURIComponent(tid)}`
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`, init)
+  const response = await fetch(`${API_BASE}${withTerritory(path)}`, init)
   if (!response.ok) throw await toApiError(response)
   return (await response.json()) as T
 }

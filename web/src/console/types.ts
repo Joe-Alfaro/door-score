@@ -42,6 +42,9 @@ export interface Territory {
   name?: string | null
   target_homes?: number | null
   sfh_count?: number | null
+  custom?: boolean
+  territory_id?: string | null
+  area_km2?: number | null
 }
 
 export interface KeyStatus {

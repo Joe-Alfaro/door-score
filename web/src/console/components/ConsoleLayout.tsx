@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { ConfirmDialog } from 'primereact/confirmdialog'
 import { ProgressBar } from 'primereact/progressbar'
 import { Skeleton } from 'primereact/skeleton'
@@ -27,7 +27,9 @@ const NAV_ITEMS: NavItem[] = [
 const DEFAULT_SPEND_CAP_USD = 50
 
 function ConsoleHeader() {
+  const { search } = useLocation()
   const { status, health, loading } = useConsoleStatus()
+  const territory = status?.territory
   const spent = status?.cost.total_usd ?? 0
   const cap = status?.max_spend_usd ?? DEFAULT_SPEND_CAP_USD
   const spendPct = cap > 0 ? Math.min(100, (spent / cap) * 100) : 0
@@ -35,6 +37,9 @@ function ConsoleHeader() {
 
   return (
     <header className="console-header">
+      {territory?.custom ? (
+        <Tag severity="warning" icon="pi pi-map" value={`Custom territory: ${territory.name ?? territory.territory_id ?? ''}`} title="Overview, Doors and tag counts reflect this territory. Eval, sources and ledger are project-wide." style={{ marginRight: 10 }} />
+      ) : null}
       <div className="console-header-title">
         <i className="pi pi-compass" aria-hidden="true" />
         {loading && !status ? <Skeleton width="160px" height="18px" /> : <span>{status?.territory?.name ?? 'Door Score console'}</span>}
@@ -66,7 +71,7 @@ function ConsoleHeader() {
           />
         ))}
         <TokenButton />
-        <Link to="/" className="console-map-link">
+        <Link to={{ pathname: '/', search }} className="console-map-link">
           <i className="pi pi-map" aria-hidden="true" /> Map
         </Link>
       </div>
@@ -75,12 +80,13 @@ function ConsoleHeader() {
 }
 
 export function ConsoleLayout() {
+  const { search } = useLocation()
   return (
     <div className="console">
       <ConsoleHeader />
       <nav className="console-nav" aria-label="Console sections">
         {NAV_ITEMS.map((item) => (
-          <NavLink key={item.to} to={item.to} end={item.end}>
+          <NavLink key={item.to} to={{ pathname: item.to, search }} end={item.end}>
             <i className={item.icon} aria-hidden="true" />
             {item.label}
           </NavLink>
