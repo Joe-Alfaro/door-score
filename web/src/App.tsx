@@ -3,7 +3,7 @@ import type { MapRef } from 'react-map-gl/maplibre'
 import { useSearchParams } from 'react-router-dom'
 import { EvidenceCard, MapView, StatsStrip, TerritoryBanner, TerritoryPanel, TopBar, useDrawPolygon } from './components'
 import { DEFAULT_DATA_URLS, useDoorData } from './hooks'
-import { computeStats, getTerritory, tagCounts, territoryDataUrls } from './lib'
+import { computeStats, getTerritory, readStoredTerritory, storeTerritory, tagCounts, territoryDataUrls } from './lib'
 import type { DoorFeature, DoorVisibility, TagFilter, TerritoryRecord, TopN } from './types'
 
 export function App() {
@@ -87,16 +87,35 @@ export function App() {
     setActiveTags(new Set())
   }, [territoryId])
 
+  // A custom territory sticks until "Back to default": fill the URL from storage when a link
+  // arrives without it, and remember whatever the URL says.
+  useEffect(() => {
+    if (territoryId) {
+      storeTerritory(territoryId)
+      return
+    }
+    const stored = readStoredTerritory()
+    if (stored) {
+      setSearchParams((previous) => {
+        const next = new URLSearchParams(previous)
+        next.set('territory', stored)
+        return next
+      })
+    }
+  }, [territoryId, setSearchParams])
+
   const activateTerritory = useCallback(
     (record: TerritoryRecord) => {
       setTerritoryRecord(record)
       setPanelOpen(false)
+      storeTerritory(record.territory_id)
       setSearchParams({ territory: record.territory_id })
     },
     [setSearchParams],
   )
 
   const backToDefault = useCallback(() => {
+    storeTerritory(null)
     setTerritoryRecord(null)
     setSearchParams({})
   }, [setSearchParams])

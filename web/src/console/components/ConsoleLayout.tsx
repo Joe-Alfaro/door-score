@@ -1,4 +1,5 @@
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { ConfirmDialog } from 'primereact/confirmdialog'
 import { ProgressBar } from 'primereact/progressbar'
 import { Skeleton } from 'primereact/skeleton'
@@ -80,7 +81,16 @@ function ConsoleHeader() {
 }
 
 export function ConsoleLayout() {
-  const { search } = useLocation()
+  const { search, pathname } = useLocation()
+  const navigate = useNavigate()
+  useEffect(() => {
+    const params = new URLSearchParams(search)
+    const stored = window.localStorage.getItem('door-score-active-territory')
+    if (!params.get('territory') && stored) {
+      params.set('territory', stored)
+      navigate({ pathname, search: `?${params.toString()}` }, { replace: true })
+    }
+  }, [search, pathname, navigate])
   return (
     <div className="console">
       <ConsoleHeader />

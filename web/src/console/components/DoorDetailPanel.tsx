@@ -3,7 +3,7 @@ import { Column } from 'primereact/column'
 import { DataTable } from 'primereact/datatable'
 import { ProgressBar } from 'primereact/progressbar'
 import { Tag } from 'primereact/tag'
-import { getDoor } from '../api'
+import { getDoor, activeTerritoryId } from '../api'
 import { DASH, humanize, num, pct, text, usd, yesNo } from '../format'
 import { useApi } from '../hooks'
 import type { DoorDetail, Signal, VisionBlock, VisionFlag, VisionSignalValue } from '../types'
@@ -126,7 +126,7 @@ function DoorBody({ door }: { door: DoorDetail }) {
 
       <StreetViewImage doorId={door.door_id} className="console-door-photo" />
 
-      <a className="p-button p-component p-button-outlined p-button-sm" href={`/?door=${encodeURIComponent(door.door_id)}`} style={{ justifySelf: 'start', textDecoration: 'none' }}>
+      <a className="p-button p-component p-button-outlined p-button-sm" href={`/?door=${encodeURIComponent(door.door_id)}${activeTerritoryId() ? `&territory=${encodeURIComponent(activeTerritoryId() ?? '')}` : ''}`} style={{ justifySelf: 'start', textDecoration: 'none' }}>
         <i className="pi pi-map-marker p-button-icon p-button-icon-left" aria-hidden="true" />
         <span className="p-button-label">Open on map</span>
       </a>

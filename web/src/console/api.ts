@@ -55,7 +55,7 @@ async function toApiError(response: Response): Promise<ApiError> {
 
 /** Dataset-scoped endpoints read the custom territory named in the page URL (?territory=<id>), if any. */
 export function activeTerritoryId(): string | null {
-  return new URLSearchParams(window.location.search).get('territory')
+  return new URLSearchParams(window.location.search).get('territory') ?? window.localStorage.getItem('door-score-active-territory')
 }
 
 const TERRITORY_SCOPED = ['/api/status', '/api/doors', '/api/tags']
