@@ -21,6 +21,17 @@ Source: https://github.com/Joe-Alfaro/door-score
 | Console (run stages, eval, sources, doors, route planner) | https://web-production-39b2a.up.railway.app/console |
 | Console API | https://api-production-37c4.up.railway.app — `/api/health`, interactive docs at `/docs` |
 
+## Score your own polygon
+
+On the map, **Score your own polygon** lets anyone draw or paste a GeoJSON polygon (anywhere in New
+Jersey, up to ~12 km²) and get every single-family home inside it scored in well under a minute. The run
+uses the same pipeline: statewide parcels by geometry, permits by block/lot, Census tract profile,
+neighborhood effects, and the Door Score. Imagery signals are included only where a cached vision result
+already exists for that home, so a public run never spends money; a reviewer comparing against their own
+polygon over the same neighborhood gets the full signal set. API: `POST /api/territory` with
+`{"geojson": ...}` then `GET /api/territory/{id}` and `/api/territory/{id}/doors.geojson`. Share with
+`/?territory=<id>`.
+
 ## Repo layout
 
 | Path | What |

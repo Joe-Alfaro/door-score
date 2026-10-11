@@ -1,3 +1,5 @@
+> **New at 3:50 (optional):** on the map click **Score your own polygon**, draw a quick triangle over a few streets, click *Score this territory*, and watch it rescore in ~30 s with no spend. Say: "any polygon in New Jersey; imagery signals come from cache, everything else is live public data."
+
 > **Console-first version.** Every step below that used to run a script or a curl now happens in the console at https://web-production-39b2a.up.railway.app/console. Paste the run token (top right, "Set run token"; value is `CONSOLE_TOKEN` in `.env`) before recording. The original terminal commands are kept further down as fallbacks.
 
 # Door Score — 4-minute demo script
