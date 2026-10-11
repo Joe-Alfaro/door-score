@@ -273,16 +273,29 @@ def _streetview_bytes(door_id: str) -> bytes:
     _SV_MEM[door_id] = (time.time(), data)
     return data
 
+def _find_door(door_id: str) -> dict | None:
+    """Look in the default dataset first, then in every scored custom territory."""
+    for d in _doors():
+        if d['door_id'] == door_id:
+            return d
+    for tdir in sorted((DATA / 'territories').glob('*/doors.json'), key=lambda p: -p.stat().st_mtime):
+        for d in json.loads(tdir.read_text()):
+            if d['door_id'] == door_id:
+                return d
+    return None
+
 def _streetview_fetch(door_id: str) -> bytes:
-    """Fetch one Street View frame from Google at view time. Nothing is written to disk and the
-    response is marked no-store, so Google imagery is never stored or redistributed by this project."""
-    from fastapi.responses import Response
-    from .harvest.streetview import META_DIR, IMG_URL, SIZE, _key
+    """Fetch one Street View frame from Google at view time. The camera position comes from the
+    free metadata endpoint (cached per door); nothing is written to disk and the response is marked
+    private, so Google imagery is never stored or redistributed by this project."""
+    from .harvest.streetview import pano_metadata, IMG_URL, SIZE, _key
     from .costs import record, STREETVIEW_IMAGE_USD
-    meta_p = META_DIR / f'{door_id}.json'
-    door = next((d for d in _doors() if d['door_id'] == door_id), None)
-    if not door or not meta_p.exists(): raise HTTPException(404, 'unknown door')
-    meta = json.loads(meta_p.read_text())
+    door = _find_door(door_id)
+    if not door: raise HTTPException(404, 'unknown door')
+    try:
+        meta = pano_metadata(door)
+    except Exception as e:
+        raise HTTPException(502, f'imagery metadata unavailable: {e}')
     if meta.get('status') != 'OK': raise HTTPException(404, 'no Street View panorama for this door')
     r = requests.get(IMG_URL, params={'pano': meta['pano_id'], 'location': f'{door["lat"]},{door["lng"]}', 'size': SIZE,
                                       'fov': 80, 'pitch': 5, 'return_error_code': 'true', 'key': _key()}, timeout=30)
