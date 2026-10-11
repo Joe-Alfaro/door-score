@@ -30,7 +30,7 @@ neighborhood effects, and the Door Score. Imagery signals are included only wher
 already exists for that home, so a public run never spends money; a reviewer comparing against their own
 polygon over the same neighborhood gets the full signal set. API: `POST /api/territory` with
 `{"geojson": ...}` then `GET /api/territory/{id}` and `/api/territory/{id}/doors.geojson`. Share with
-`/?territory=<id>`.
+`/?territory=<id>`. Scored territories live on a Railway volume mounted at `/app/data/territories` on the API service (`railway volume add --mount-path /app/data/territories`), so they survive redeploys.
 
 ## Repo layout
 
