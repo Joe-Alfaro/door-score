@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { MapRef } from 'react-map-gl/maplibre'
 import { useSearchParams } from 'react-router-dom'
 import { EvidenceCard, MapView, StatsStrip, TerritoryBanner, TerritoryPanel, TopBar, useDrawPolygon } from './components'
-import { DEFAULT_DATA_URLS, useDoorData } from './hooks'
+import { useDoorData } from './hooks'
 import { computeStats, getTerritory, readStoredTerritory, storeTerritory, tagCounts, territoryDataUrls } from './lib'
 import type { DoorFeature, DoorVisibility, TagFilter, TerritoryRecord, TopN } from './types'
 
@@ -12,9 +12,10 @@ export function App() {
   const [searchParams, setSearchParams] = useSearchParams()
   const territoryId = searchParams.get('territory')
   const [territoryRecord, setTerritoryRecord] = useState<TerritoryRecord | null>(null)
-  const [panelOpen, setPanelOpen] = useState(false)
+  // No default area: with nothing selected the draw panel opens so the user outlines their own area.
+  const [panelOpen, setPanelOpen] = useState(() => !territoryId && !readStoredTerritory())
   const draw = useDrawPolygon()
-  const dataUrls = useMemo(() => (territoryId ? territoryDataUrls(territoryId) : DEFAULT_DATA_URLS), [territoryId])
+  const dataUrls = useMemo(() => (territoryId ? territoryDataUrls(territoryId) : null), [territoryId])
   const { data, error, loading } = useDoorData(dataUrls)
   const mapRef = useRef<MapRef>(null)
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -87,7 +88,7 @@ export function App() {
     setActiveTags(new Set())
   }, [territoryId])
 
-  // A custom territory sticks until "Back to default": fill the URL from storage when a link
+  // A drawn area sticks until "Clear area": fill the URL from storage when a link
   // arrives without it, and remember whatever the URL says.
   useEffect(() => {
     if (territoryId) {
@@ -114,10 +115,11 @@ export function App() {
     [setSearchParams],
   )
 
-  const backToDefault = useCallback(() => {
+  const clearArea = useCallback(() => {
     storeTerritory(null)
     setTerritoryRecord(null)
     setSearchParams({})
+    setPanelOpen(true)
   }, [setSearchParams])
 
   const imageryCount = useMemo(() => doors.filter((door) => door.properties.vision != null).length, [doors])
@@ -140,8 +142,8 @@ export function App() {
           <strong>Could not load data.</strong> {error}
           {territoryId ? (
             <div className="app-message-actions">
-              <button type="button" className="btn" onClick={backToDefault}>
-                Back to default
+              <button type="button" className="btn" onClick={clearArea}>
+                Draw a new area
               </button>
             </div>
           ) : null}
@@ -188,9 +190,21 @@ export function App() {
                 total={stats.count}
                 withImagery={imageryCount}
                 loading={loading}
-                onBack={backToDefault}
+                onBack={clearArea}
               />
-            ) : null}
+            ) : panelOpen ? null : (
+              <div className="territory-banner" role="status">
+                <div className="banner-text">
+                  <strong>No area selected.</strong> Draw an area on the map (or paste GeoJSON) to score the
+                  single-family homes inside it.
+                </div>
+                <div className="share-row">
+                  <button type="button" className="btn" onClick={() => setPanelOpen(true)}>
+                    Draw an area
+                  </button>
+                </div>
+              </div>
+            )}
             {panelOpen ? (
               <TerritoryPanel
                 draw={draw}

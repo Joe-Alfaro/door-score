@@ -16,3 +16,14 @@ data/eval/images/
 data/eval/satellite/images/
 data/cache/satellite_outlined/
 data/territories/
+
+# No default area or per-home output is committed: users draw their own area (POST /api/territory).
+data/territory.geojson
+data/territory_preview.html
+data/out/doors.json
+data/out/doors.geojson
+data/out/run_report.json
+data/cache/parcels_*.geojson
+data/cache/streetview_meta/
+mcp/data/
+web/public/data/

@@ -1,4 +1,7 @@
-"""Pipeline entrypoint: python -m doorscore.run [--territory path] [--force]
+"""Pipeline entrypoint: python -m doorscore.run --territory path/to/area.geojson [--force]
+
+There is no default area: pass the polygon to score (the web map's "Draw an area" does this via
+POST /api/territory), or place one at data/territory.geojson (gitignored).
 
 Stages are idempotent and cached, so re-running is cheap and safe.
 """
@@ -47,7 +50,7 @@ def entity_resolution_report(parcels, doors):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--territory', default=str(TERRITORY))
+    ap.add_argument('--territory', default=None, help='GeoJSON polygon to score (default: data/territory.geojson if present)')
     ap.add_argument('--force', action='store_true', help='ignore caches')
     ap.add_argument('--vision', action='store_true', help='fetch Street View imagery and run the vision model')
     ap.add_argument('--vision-model', default=None, help='override vision model id')
@@ -59,7 +62,10 @@ def main():
     out_dir = Path(args.out) if args.out else OUT
     out_dir.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
-    poly = load_polygon(args.territory)
+    territory = Path(args.territory) if args.territory else TERRITORY
+    if not territory.exists():
+        raise SystemExit(f'no area to score: {territory} not found. Draw an area in the map or pass --territory path/to/area.geojson')
+    poly = load_polygon(territory)
     parcels = fetch_parcels(poly, force=args.force)
     print(f'[harvest] {len(parcels)} parcels intersect territory ({time.time()-t0:.1f}s)')
     doors = [door_dict(d) for d in (build_door(f) for f in parcels) if d]

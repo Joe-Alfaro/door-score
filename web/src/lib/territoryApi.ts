@@ -6,7 +6,7 @@ import type { DataUrls, TerritoryInput, TerritoryRecord, TerritoryStartResponse 
  * Client for the console API's custom-territory endpoints:
  *   POST /api/territory                               -> 201 { territory_id, run_id, status }
  *   GET  /api/territory/{id}                          -> { status, log_tail, report?, ... }
- *   GET  /api/territory/{id}/doors.geojson            -> same shape as /data/doors.geojson
+ *   GET  /api/territory/{id}/doors.geojson            -> FeatureCollection of scored doors
  *   GET  /api/territory/{id}/territory.geojson        -> FeatureCollection with the polygon
  */
 const API_BASE = (import.meta.env.VITE_API_URL ?? 'http://localhost:8000').replace(/\/$/, '')
@@ -99,7 +99,7 @@ export function territoryDataUrls(territoryId: string): DataUrls {
   return { doors: `${base}/doors.geojson`, territory: `${base}/territory.geojson` }
 }
 
-/** Absolute deep link that reloads this territory instead of the default data. */
+/** Absolute deep link that reloads this territory. */
 export function territoryShareLink(territoryId: string): string {
   const url = new URL(window.location.origin)
   url.searchParams.set('territory', territoryId)

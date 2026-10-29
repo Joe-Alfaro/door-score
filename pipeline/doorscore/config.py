@@ -8,6 +8,8 @@ load_dotenv(ROOT / '.env')
 DATA = ROOT / 'data'
 CACHE = DATA / 'cache'
 OUT = DATA / 'out'
+# Optional local polygon for CLI runs. None ships with the repo: draw an area in the map
+# (POST /api/territory) or pass --territory path/to/area.geojson.
 TERRITORY = DATA / 'territory.geojson'
 for d in (CACHE, OUT):
     d.mkdir(parents=True, exist_ok=True)

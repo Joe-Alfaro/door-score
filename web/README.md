@@ -1,6 +1,6 @@
 # Door Score — web UI
 
-Map UI for the Door Score pipeline output (Ramsey, NJ). Vite + React 18 + TypeScript + MapLibre GL JS
+Map UI for Door Score. The map starts empty: the user draws the area to score. Vite + React 18 + TypeScript + MapLibre GL JS
 on the keyless OpenFreeMap Positron vector style (no API key).
 
 ## Run locally
@@ -8,13 +8,11 @@ on the keyless OpenFreeMap Positron vector style (no API key).
 ```sh
 cd web
 npm install
-npm run dev        # syncs data, serves on http://127.0.0.1:5173
+npm run dev        # serves on http://127.0.0.1:5173
 ```
 
-`npm run sync-data` copies `../data/out/doors.geojson` and `../data/territory.geojson` into
-`public/data/`, which the app fetches at runtime from `/data/*.geojson`. Both `dev` and `build` run
-it first. If a pipeline source is missing but a previously synced copy exists under `public/`, the
-script keeps the existing copy and warns. Street View frames are not copied and not served from this
+No door data is bundled. `npm run sync-data` only copies the MapLibre worker into `public/maplibre/`;
+doors for a drawn area come from the console API (`VITE_API_URL`). Street View frames are not copied and not served from this
 site: they are Google content, so the evidence card loads each one at view time from the console API
 (`VITE_API_URL` + `/api/streetview/<door_id>.jpg`), which proxies the frame without storing it.
 
@@ -32,9 +30,7 @@ npm start          # serve -s dist -l $PORT (defaults to 3000)
 - Build command: `npm run build`
 - Start command: `npm start` (Railway injects `PORT`)
 
-Because `sync-data` reads from `../data/`, the repository's `data/out/doors.geojson` and
-`data/territory.geojson` must be present in the deploy context (commit them, or commit the synced
-copies under `web/public/data/`).
+Set `VITE_API_URL` to the console API so drawn areas can be scored. Nothing from `../data/` is needed.
 
 ## Console (`/console`)
 
@@ -60,13 +56,13 @@ the Doors drawer come from the same console API proxy, `/api/streetview/<door_id
 
 ## Custom territories
 
-The top bar's **Score your own polygon** button opens a Territory panel with two inputs: draw on
+With no area selected, the page opens with the map empty and the **Draw an area** panel (also in the top bar) open. It has a Territory panel with two inputs: draw on
 the map (click once per corner, **Finish** closes the ring, needs at least three points) or paste /
 upload GeoJSON (a Feature, FeatureCollection or bare Polygon/MultiPolygon). **Score this territory**
 posts the polygon to the console API and polls until the run finishes, showing the last three log
 lines meanwhile. On success the whole page (dots, stats strip, tag filters, search, evidence cards)
 switches to that territory's data, the map fits its bounds, and a banner shows the home count, how
-many homes already had cached imagery signals, a copyable share link and **Back to default**.
+many homes already had cached imagery signals, a copyable share link and **Clear area** (back to the empty map).
 
 `/?territory=<territory_id>` deep-links a scored territory. Endpoints used (all under
 `VITE_API_URL`): `POST /api/territory`, `GET /api/territory/{id}`,

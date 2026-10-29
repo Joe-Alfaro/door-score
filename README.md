@@ -1,10 +1,14 @@
-# Door Score — Ramsey, NJ
+# Door Score
 
 Given only a polygon, produce a **Door Score** for every single-family home inside it, with evidence
 a field rep can act on, plus a map UI and an MCP server so an AI assistant can plan a knock route.
 
+There is no built-in area and no precomputed per-home data in this repo: the map starts empty and you
+draw (or paste) the area to score, like drawing a search area on a real-estate or maps site. Homes are
+scored on demand from public records for the area you draw.
+
 ```
-data/territory.geojson  ──▶  pipeline (Python)  ──▶  data/out/doors.{json,geojson}
+your drawn polygon      ──▶  pipeline (Python)  ──▶  data/out/doors.{json,geojson}
                                   │                         │            │
           NJ parcels · permits · Census ACS · Street View   ▼            ▼
                  Claude vision · eval harness            web/ (React map)   mcp/ (MCP server)
@@ -21,9 +25,9 @@ Source: https://github.com/Joe-Alfaro/door-score
 | Console (run stages, eval, sources, doors, route planner) | https://web-production-39b2a.up.railway.app/console |
 | Console API | https://api-production-37c4.up.railway.app — `/api/health`, interactive docs at `/docs` |
 
-## Score your own polygon
+## Draw an area
 
-On the map, **Score your own polygon** lets anyone draw or paste a GeoJSON polygon (anywhere in New
+The map opens with no area selected and the **Draw an area** panel open. Anyone can draw or paste a GeoJSON polygon (anywhere in New
 Jersey, up to ~12 km²) and get every single-family home inside it scored in well under a minute. The run
 uses the same pipeline: statewide parcels by geometry, permits by block/lot, Census tract profile,
 neighborhood effects, and the Door Score. Imagery signals are included only where a cached vision result
@@ -43,7 +47,6 @@ polygon over the same neighborhood gets the full signal set. API: `POST /api/ter
 | `pipeline/doorscore/eval/` | Eval harness: stratified sampler, model-assisted draft labels, human labeler page, P/R/hallucination/cost runner |
 | `pipeline/doorscore/discover.py` | Source-discovery agent (Claude + web search) → `data/out/sources.json` |
 | `pipeline/doorscore/score.py` | The Door Score. Every signal names the ICP trait it supports |
-| `pipeline/select_territory.py` | Only used because no polygon was supplied: picks a ~540-home cluster |
 | `web/` | React + TypeScript + MapLibre map UI (Railway static site) |
 | `mcp/` | TypeScript MCP server over Streamable HTTP: `get_door_score`, `explain_score`, `plan_route`, `list_top_doors`, `territory_stats`, `get_signal_summary` |
 | `docs/door-score-rationale.md` | One-page ICP + score rationale |
@@ -76,9 +79,9 @@ The parcel stage, scoring, map and MCP server all run with **no keys**.
 ```bash
 cd pipeline && source .venv/bin/activate
 
-python -m doorscore.run                       # parcels + census + score (seconds, free)
-python -m doorscore.run --vision --limit 25   # add Street View + vision for 25 doors (proof of cost)
-python -m doorscore.run --vision              # full territory (street-level + overhead imagery; --no-satellite to skip)
+python -m doorscore.run --territory area.geojson                       # parcels + census + score (seconds, free)
+python -m doorscore.run --territory area.geojson --vision --limit 25   # add Street View + vision for 25 doors (proof of cost)
+python -m doorscore.run --territory area.geojson --vision              # full area (street-level + overhead imagery; --no-satellite to skip)
 python -m doorscore.discover                  # source discovery agent → data/out/sources.json
 
 # Eval harness
@@ -95,15 +98,16 @@ Every stage is idempotent and cached under `data/cache/` (JSON caches committed,
 gitignored), keyed by polygon hash, door + pano id / zoom, prompt version and model. Re-running costs nothing unless inputs changed.
 `data/cache/cost_ledger.jsonl` records every paid call; `run_report.json` summarizes coverage and spend.
 
-### Different territory
+### Your own area from the command line
 
-Replace `data/territory.geojson` with any GeoJSON polygon in New Jersey and re-run. Nothing is
-keyed to Ramsey except `select_territory.py`, which only exists because no polygon was provided.
+Pass any GeoJSON polygon in New Jersey with `--territory` (or save it as `data/territory.geojson`,
+which is gitignored, and run `make pipeline`). Output goes to `data/out/` (gitignored): per-home
+output is never committed.
 
 ## Web map
 
 ```bash
-cd web && npm run dev        # http://127.0.0.1:5173  (copies data/out → public/data first)
+cd web && npm run dev        # http://127.0.0.1:5173  (starts empty; set VITE_API_URL to the console API to score drawn areas)
 npm run build && npm start   # production: serve -s dist on $PORT
 ```
 Railway (CLI, from repo root): `railway up web --path-as-root --service web`, then `railway domain --service web`.
@@ -112,11 +116,12 @@ Railway (CLI, from repo root): `railway up web --path-as-root --service web`, th
 
 ```bash
 cd mcp && npm run build && npm start   # POST /mcp on :3333, GET /health
-npm run smoke                          # health + tools/list + a tools/call
+npm run smoke                          # health + tools/list + tool calls against a synthetic fixture
 ```
 Railway (CLI, from repo root): `railway up mcp --path-as-root --service mcp`, then `railway domain --service mcp --port 8080`
 (Railway injects `PORT=8080`; the Dockerfile's `PORT=3333` is only the local default).
-Example question an assistant can now answer: *"I've got 2 hours in Ramsey. Which 20 doors, in what order, and what do I say?"* → `plan_route(hours=2)`.
+No data is baked in: draw an area in the map, then point the MCP client at `/mcp?territory=<id>` (the id from the share link); the server fetches that area's doors from the console API on demand.
+Example question an assistant can now answer: *"I've got 2 hours in this area. Which 20 doors, in what order, and what do I say?"* → `plan_route(hours=2)`.
 
 ## Console API
 
@@ -165,9 +170,8 @@ header), so a local demo needs no setup and an unconfigured public deployment is
 | `MCP_URL` | live MCP URL | target of `/api/route` and `/api/mcp/tools` (`${MCP_URL}/mcp`) |
 
 **Deploy (Railway).** The image needs `data/` as well as `pipeline/`, so the build context is the
-repo root: `pipeline/Dockerfile` copies the package, `data/territory.geojson`, `data/out`, `data/eval`
-and the committed JSON caches (vision, satellite vision, Street View metadata, permits, Census tracts,
-parcels) but not the Street View / satellite JPEGs (~230 MB, gitignored). The root `.dockerignore`
+repo root: `pipeline/Dockerfile` copies the package, `data/out` (sources only), `data/eval`
+and the committed JSON caches (vision, satellite vision, permits, Census tracts) but not the Street View / satellite JPEGs (~230 MB, gitignored). The root `.dockerignore`
 is an allow-list of exactly those paths.
 
 ```bash
@@ -204,4 +208,4 @@ redeploy; use the hosted console for inspection, `tests`, `eval` and route plann
 - Census signals are tract-level aggregates. Tax-exempt status (e.g. disabled-veteran exemption) is never used as a signal.
 - The vision prompt forbids identifying people or reading plates. Sources whose value is identity data are documented but not harvested (`sources.json`).
 - Street View frames are Google content and are never committed, stored or re-served. The map, console and MCP fetch each frame at view time through the console API proxy `/api/streetview/{door_id}.jpg`; only the vision JSON derived from them is cached.
-- The published `doors.json` / `doors.geojson` carry no local file paths and no tax-exemption field.
+- No per-home output (addresses, sale data) is committed; it is produced only for the area a user draws. Generated `doors.json` / `doors.geojson` carry no local file paths and no tax-exemption field.

@@ -15,6 +15,7 @@ export function streetViewImageUrl(doorId: string): string {
   return `${apiBaseUrl()}/api/streetview/${encodeURIComponent(doorId)}.jpg`
 }
 
-export function explainUrl(doorId: string): string {
-  return `${photoBaseUrl()}/?door=${encodeURIComponent(doorId)}`
+export function explainUrl(doorId: string, territoryId?: string): string {
+  const territory = territoryId ? `territory=${encodeURIComponent(territoryId)}&` : ''
+  return `${photoBaseUrl()}/?${territory}door=${encodeURIComponent(doorId)}`
 }

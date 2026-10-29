@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { DataUrls, DoorCollection, TerritoryCollection } from './types'
 
-interface LoadedData {
+export interface LoadedData {
   doors: DoorCollection
   territory: TerritoryCollection
 }
@@ -12,8 +12,11 @@ interface DataState {
   loading: boolean
 }
 
-/** The pipeline's default output, synced into public/data by scripts/sync-data.mjs. */
-export const DEFAULT_DATA_URLS: DataUrls = { doors: '/data/doors.geojson', territory: '/data/territory.geojson' }
+/** Nothing is preloaded: the map starts empty until the user draws (or opens a shared) area. */
+export const EMPTY_DATA: LoadedData = {
+  doors: { type: 'FeatureCollection', features: [] },
+  territory: { type: 'FeatureCollection', features: [] },
+}
 
 function isFeatureCollection(value: unknown): value is { type: 'FeatureCollection'; features: unknown[] } {
   if (typeof value !== 'object' || value === null) return false
@@ -31,14 +34,19 @@ async function fetchCollection<T>(url: string): Promise<T> {
 }
 
 /**
- * Loads doors + territory from `urls` (default data unless a custom territory is active).
+ * Loads doors + territory for the active user-drawn area. With no area (`urls` null) the map is empty.
  * Previously loaded data stays in place while a new source loads so the map does not unmount.
  */
-export function useDoorData(urls: DataUrls = DEFAULT_DATA_URLS): DataState {
-  const [state, setState] = useState<DataState>({ data: null, error: null, loading: true })
-  const { doors: doorsUrl, territory: territoryUrl } = urls
+export function useDoorData(urls: DataUrls | null): DataState {
+  const [state, setState] = useState<DataState>({ data: urls ? null : EMPTY_DATA, error: null, loading: urls !== null })
+  const doorsUrl = urls?.doors ?? null
+  const territoryUrl = urls?.territory ?? null
 
   useEffect(() => {
+    if (!doorsUrl || !territoryUrl) {
+      setState({ data: EMPTY_DATA, error: null, loading: false })
+      return
+    }
     let cancelled = false
     setState((previous) => ({ ...previous, error: null, loading: true }))
     Promise.all([fetchCollection<DoorCollection>(doorsUrl), fetchCollection<TerritoryCollection>(territoryUrl)])

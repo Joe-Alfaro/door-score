@@ -1,0 +1,327 @@
+[
+ {
+  "door_id": "SAMPLE_1",
+  "address": "107 E ASHGROVE ST",
+  "address_raw": "107 E. Ashgrove Street",
+  "municipality": "EXAMPLEVILLE",
+  "zip5": "00000",
+  "lat": 40.5,
+  "lng": -74.5,
+  "door_score": 82,
+  "rank": 1,
+  "tags": [
+   "new mover",
+   "older home"
+  ],
+  "signals": [
+   {
+    "name": "new_mover",
+    "icp_trait": "recent purchase",
+    "points": 20,
+    "max_points": 20,
+    "evidence": "Synthetic deed 14 months ago",
+    "source": "Synthetic deed record"
+   },
+   {
+    "name": "maintenance_demand",
+    "icp_trait": "older home",
+    "points": 12,
+    "max_points": 15,
+    "evidence": "Synthetic year built 1962",
+    "source": "Synthetic assessor record"
+   },
+   {
+    "name": "lawn_condition",
+    "icp_trait": "lawn care need",
+    "points": 8,
+    "max_points": 10,
+    "evidence": "Synthetic: lawn looks fair",
+    "source": "Street View (vision model)"
+   }
+  ],
+  "year_built": 1962,
+  "home_age": 64,
+  "lot_acres": 0.4,
+  "net_value": 500000,
+  "deed_date": "2025-08-01",
+  "months_since_deed": 14,
+  "sale_price": null,
+  "arms_length_sale": true,
+  "owner_occupied": true,
+  "owner_mailing_out_of_town": false,
+  "stories": 2,
+  "garage_bays": 1,
+  "permits": null,
+  "census": null,
+  "vision": {
+   "model": "synthetic",
+   "image": {
+    "date": "2025-07",
+    "distance_m": 10,
+    "approximate": false
+   },
+   "signals": {
+    "image_usable": true,
+    "usability_note": null,
+    "provider_truck": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "moving_indicators": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "yard_sign": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "renovation_activity": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "professional_landscaping": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "solar_panels": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "lawn_condition": "fair",
+    "exterior_condition": "good",
+    "roof_condition": "good",
+    "vehicles_visible": 1,
+    "notes": "Synthetic sample"
+   }
+  }
+ },
+ {
+  "door_id": "SAMPLE_2",
+  "address": "3 LARKWOOD DR",
+  "address_raw": "3 Larkwood Drive",
+  "municipality": "EXAMPLEVILLE",
+  "zip5": "00000",
+  "lat": 40.5008,
+  "lng": -74.501,
+  "door_score": 74,
+  "rank": 2,
+  "tags": [
+   "new mover"
+  ],
+  "signals": [
+   {
+    "name": "new_mover",
+    "icp_trait": "recent purchase",
+    "points": 20,
+    "max_points": 20,
+    "evidence": "Synthetic deed 14 months ago",
+    "source": "Synthetic deed record"
+   },
+   {
+    "name": "maintenance_demand",
+    "icp_trait": "older home",
+    "points": 12,
+    "max_points": 15,
+    "evidence": "Synthetic year built 1962",
+    "source": "Synthetic assessor record"
+   },
+   {
+    "name": "lawn_condition",
+    "icp_trait": "lawn care need",
+    "points": 8,
+    "max_points": 10,
+    "evidence": "Synthetic: lawn looks fair",
+    "source": "Street View (vision model)"
+   }
+  ],
+  "year_built": 1962,
+  "home_age": 64,
+  "lot_acres": 0.4,
+  "net_value": 500000,
+  "deed_date": "2025-08-01",
+  "months_since_deed": 14,
+  "sale_price": null,
+  "arms_length_sale": true,
+  "owner_occupied": true,
+  "owner_mailing_out_of_town": false,
+  "stories": 2,
+  "garage_bays": 1,
+  "permits": null,
+  "census": null,
+  "vision": {
+   "model": "synthetic",
+   "image": {
+    "date": "2025-07",
+    "distance_m": 10,
+    "approximate": false
+   },
+   "signals": {
+    "image_usable": true,
+    "usability_note": null,
+    "provider_truck": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "moving_indicators": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "yard_sign": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "renovation_activity": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "professional_landscaping": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "solar_panels": {
+     "present": false,
+     "confidence": 0.9,
+     "evidence": "",
+     "detail": null
+    },
+    "lawn_condition": "fair",
+    "exterior_condition": "good",
+    "roof_condition": "good",
+    "vehicles_visible": 1,
+    "notes": "Synthetic sample"
+   }
+  }
+ },
+ {
+  "door_id": "SAMPLE_3",
+  "address": "12 SAMPLE AVE",
+  "address_raw": "12 Sample Avenue",
+  "municipality": "EXAMPLEVILLE",
+  "zip5": "00000",
+  "lat": 40.5015,
+  "lng": -74.5004,
+  "door_score": 61,
+  "rank": 3,
+  "tags": [
+   "older home"
+  ],
+  "signals": [
+   {
+    "name": "new_mover",
+    "icp_trait": "recent purchase",
+    "points": 0,
+    "max_points": 20,
+    "evidence": "Synthetic deed 14 months ago",
+    "source": "Synthetic deed record"
+   },
+   {
+    "name": "maintenance_demand",
+    "icp_trait": "older home",
+    "points": 12,
+    "max_points": 15,
+    "evidence": "Synthetic year built 1962",
+    "source": "Synthetic assessor record"
+   },
+   {
+    "name": "lawn_condition",
+    "icp_trait": "lawn care need",
+    "points": 0,
+    "max_points": 10,
+    "evidence": "Synthetic: lawn looks fair",
+    "source": "Street View (vision model)"
+   }
+  ],
+  "year_built": 1962,
+  "home_age": 64,
+  "lot_acres": 0.4,
+  "net_value": 500000,
+  "deed_date": "2025-08-01",
+  "months_since_deed": 14,
+  "sale_price": null,
+  "arms_length_sale": true,
+  "owner_occupied": true,
+  "owner_mailing_out_of_town": false,
+  "stories": 2,
+  "garage_bays": 1,
+  "permits": null,
+  "census": null,
+  "vision": null
+ },
+ {
+  "door_id": "SAMPLE_4",
+  "address": "45 EXAMPLE LN",
+  "address_raw": "45 Example Lane",
+  "municipality": "EXAMPLEVILLE",
+  "zip5": "00000",
+  "lat": 40.4994,
+  "lng": -74.499,
+  "door_score": 38,
+  "rank": 4,
+  "tags": [
+   "absentee owner"
+  ],
+  "signals": [
+   {
+    "name": "new_mover",
+    "icp_trait": "recent purchase",
+    "points": 0,
+    "max_points": 20,
+    "evidence": "Synthetic deed 14 months ago",
+    "source": "Synthetic deed record"
+   },
+   {
+    "name": "maintenance_demand",
+    "icp_trait": "older home",
+    "points": 12,
+    "max_points": 15,
+    "evidence": "Synthetic year built 1962",
+    "source": "Synthetic assessor record"
+   },
+   {
+    "name": "lawn_condition",
+    "icp_trait": "lawn care need",
+    "points": 0,
+    "max_points": 10,
+    "evidence": "Synthetic: lawn looks fair",
+    "source": "Street View (vision model)"
+   }
+  ],
+  "year_built": 1962,
+  "home_age": 64,
+  "lot_acres": 0.4,
+  "net_value": 500000,
+  "deed_date": "2025-08-01",
+  "months_since_deed": 14,
+  "sale_price": null,
+  "arms_length_sale": true,
+  "owner_occupied": false,
+  "owner_mailing_out_of_town": false,
+  "stories": 2,
+  "garage_bays": 1,
+  "permits": null,
+  "census": null,
+  "vision": null
+ }
+]

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "sync-data": "node scripts/sync-data.mjs",
-    "build": "npm run sync-data && tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "dev": "tsx src/server.ts",
     "smoke": "node scripts/smoke.mjs"

@@ -1,6 +1,6 @@
-// Copies the pipeline output into mcp/data so the build (and Docker image) has the data baked in.
-// Source can be overridden with DOORS_SOURCE; skipped gracefully if the source is absent but a
-// local copy already exists (e.g. inside a Docker build where ../data is not in the context).
+// Optional: copy a local pipeline run (e.g. on your own polygon) into mcp/data so DOORS_PATH can serve it.
+// No data ships with the server; by default it loads user-drawn areas on demand (POST /mcp?territory=<id>).
+// Source can be overridden with DOORS_SOURCE. A missing source is not an error.
 import { copyFileSync, existsSync, mkdirSync, statSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -10,15 +10,10 @@ const root = resolve(here, '..')
 const source = resolve(root, process.env.DOORS_SOURCE ?? '../data/out/doors.json')
 const target = resolve(root, 'data/doors.json')
 
-mkdirSync(dirname(target), { recursive: true })
-
 if (existsSync(source)) {
+  mkdirSync(dirname(target), { recursive: true })
   copyFileSync(source, target)
-  const bytes = statSync(target).size
-  console.log(`sync-data: copied ${source} -> ${target} (${bytes} bytes)`)
-} else if (existsSync(target)) {
-  console.log(`sync-data: source ${source} not found; keeping existing ${target}`)
+  console.log(`sync-data: copied ${source} -> ${target} (${statSync(target).size} bytes)`)
 } else {
-  console.error(`sync-data: neither ${source} nor ${target} exists`)
-  process.exit(1)
+  console.log(`sync-data: no local pipeline output at ${source}; the server will load drawn areas on demand`)
 }

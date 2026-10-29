@@ -3,7 +3,8 @@
 #   docker run --rm -p 8000:8000 door-score-api
 # Layout mirrors the repo (/app/pipeline/doorscore + /app/data) so config.py's ROOT = parents[2] resolves.
 # Image caches (data/cache/streetview, data/cache/satellite) are not shipped; JSON caches are, so the
-# `pipeline` and `eval` stages run inside the container without paying for any LLM call.
+# `eval` stage and user-drawn areas (POST /api/territory) reuse cached vision without paying for any LLM call.
+# No default area or precomputed per-home output ships: users draw the area to score.
 FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
 WORKDIR /app
@@ -13,13 +14,11 @@ RUN pip install -r pipeline/requirements.txt
 
 COPY pipeline/doorscore pipeline/doorscore
 COPY pipeline/tests pipeline/tests
-COPY data/territory.geojson data/territory.geojson
 COPY data/out data/out
 COPY data/eval data/eval
-COPY data/cache/acs_tracts.json data/cache/parcels_*.geojson data/cache/cost_ledger.jsonl data/cache/
+COPY data/cache/acs_tracts.json data/cache/cost_ledger.jsonl data/cache/
 COPY data/cache/vision data/cache/vision
 COPY data/cache/vision_satellite data/cache/vision_satellite
-COPY data/cache/streetview_meta data/cache/streetview_meta
 COPY data/cache/permits data/cache/permits
 COPY data/cache/census_tract data/cache/census_tract
 

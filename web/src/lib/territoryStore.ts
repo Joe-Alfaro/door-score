@@ -1,5 +1,4 @@
-// The active custom territory sticks across the map and the console until the user goes back to
-// default. The URL (?territory=<id>) stays the shareable source of truth; localStorage fills it in
+// The active drawn area sticks across the map and the console until the user clears it. The URL (?territory=<id>) stays the shareable source of truth; localStorage fills it in
 // whenever a link or a fresh visit arrives without it.
 const KEY = 'door-score-active-territory'
 

@@ -32,7 +32,7 @@ export function TerritoryBanner({ territoryId, name, total, withImagery, loading
   return (
     <div className="territory-banner" role="status">
       <div className="banner-text">
-        <strong>Custom territory{name ? ` · ${name}` : ''}</strong>
+        <strong>Your area{name ? ` · ${name}` : ''}</strong>
         {loading ? (
           <span className="muted"> · loading…</span>
         ) : (
@@ -49,7 +49,7 @@ export function TerritoryBanner({ territoryId, name, total, withImagery, loading
           {copied ? 'Copied' : 'Copy link'}
         </button>
         <button type="button" className="btn" onClick={onBack}>
-          Back to default
+          Clear area
         </button>
       </div>
     </div>

@@ -91,7 +91,7 @@ def _active_run() -> dict | None:
 # ---------------------------------------------------------------- data helpers
 
 def _out_dir(territory: str | None = None) -> Path:
-    """Dataset directory: the default territory, or a custom one scored via POST /api/territory."""
+    """Dataset directory: a local pipeline run (data/out, empty unless you ran one), or a user-drawn area scored via POST /api/territory."""
     if territory:
         d = DATA / 'territories' / Path(territory).name
         if not (d / 'doors.json').exists(): raise HTTPException(404, 'unknown territory or not scored yet')
@@ -123,14 +123,16 @@ def stages() -> list[dict]:
     except Exception:
         est_vision = max(n - vis_cached, 0) * EST_STREET + max(n - satvis_cached, 0) * EST_SAT
     vision_ready = vis_cached > 0 or sv_cached > 0
+    # No default area ships with the repo; the full-territory stages need a local data/territory.geojson.
+    area_needs = [] if TERRITORY.exists() else ['territory']
     return [
         {'id': 'pipeline', 'title': 'Harvest + score', 'description': 'Parcels by polygon, permits by block/lot, Census tract profile, neighborhood effects, Door Score. Uses imagery/vision only if already cached.',
-         'cmd': [PY, '-m', 'doorscore.run'] + (['--vision'] if vision_ready else []), 'paid': False, 'estimate_usd': 0.0, 'needs': ['census'] if not keys['census'] else [],
+         'cmd': [PY, '-m', 'doorscore.run'] + (['--vision'] if vision_ready else []), 'paid': False, 'estimate_usd': 0.0, 'needs': area_needs + (['census'] if not keys['census'] else []),
          'cache': {'parcels': _count('parcels_*.geojson', '.'), 'permits_munis': _count('*.json', 'permits'), 'census_tracts': _count('*.json', 'census_tract')},
          # The deployed image ships vision JSON but not the JPEGs it is keyed by, so a rescore there cannot reuse it.
          'warning': None if vision_ready else 'No vision caches on this disk: rescoring here runs on parcel/permit/census signals only.'},
         {'id': 'vision', 'title': 'Imagery + vision (full territory)', 'description': 'Street View + satellite tile per door, Claude vision on both, then rescore. Cached per image; only uncached doors are billed.',
-         'cmd': [PY, '-m', 'doorscore.run', '--vision'], 'paid': True, 'estimate_usd': round(est_vision, 2), 'needs': [k for k, ok in (('anthropic', keys['anthropic']), ('google', keys['google'])) if not ok],
+         'cmd': [PY, '-m', 'doorscore.run', '--vision'], 'paid': True, 'estimate_usd': round(est_vision, 2), 'needs': area_needs + [k for k, ok in (('anthropic', keys['anthropic']), ('google', keys['google'])) if not ok],
          'cache': {'street_view_images': sv_cached, 'street_vision': vis_cached, 'satellite_tiles': sat_cached, 'satellite_vision': satvis_cached}, 'accepts_limit': True},
         {'id': 'discover', 'title': 'Source discovery agent', 'description': 'Claude + web search finds public data sources for the territory and records access method, ToS and PII posture. Accumulates across runs.',
          'cmd': [PY, '-m', 'doorscore.discover'], 'paid': True, 'estimate_usd': 0.6, 'needs': [] if keys['anthropic'] else ['anthropic'], 'cache': {}},
@@ -274,7 +276,7 @@ def _streetview_bytes(door_id: str) -> bytes:
     return data
 
 def _find_door(door_id: str) -> dict | None:
-    """Look in the default dataset first, then in every scored custom territory."""
+    """Look in a local pipeline run (if any), then in every scored user-drawn territory."""
     for d in _doors():
         if d['door_id'] == door_id:
             return d
@@ -340,6 +342,7 @@ def run_stage(stage_id: str, body: RunRequest):
     if not st: raise HTTPException(404, 'unknown stage')
     active = _active_run()
     if active: raise HTTPException(409, f'a run is already in progress ({active["id"]}: {active["stage"]})')
+    if 'territory' in st['needs']: raise HTTPException(400, 'no area on this server: draw an area in the map (POST /api/territory) or add data/territory.geojson')
     if st['needs']: raise HTTPException(400, f'missing keys: {", ".join(st["needs"])}')
     cmd = list(st['cmd'])
     if body.limit and st.get('accepts_limit'): cmd += ['--limit', str(body.limit)]

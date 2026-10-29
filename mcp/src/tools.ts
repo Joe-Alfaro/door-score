@@ -9,6 +9,8 @@ import { narrative, primaryTalkingPoint, talkingPoints } from './talking-points.
 import { hasCoords, type Door, type LatLng, type Signal } from './types.js'
 
 const ABSENTEE_TAG = 'absentee owner'
+const NO_AREA =
+  'No area loaded. Draw an area in the Door Score map, then connect to /mcp?territory=<id> using the id from its share link.'
 
 function jsonResult(payload: unknown, isError = false): CallToolResult {
   return { content: [{ type: 'text', text: JSON.stringify(payload, null, 2) }], isError }
@@ -19,7 +21,7 @@ function notFound(lookup: AddressLookup, totalDoors: number): CallToolResult {
   return jsonResult(
     {
       found: false,
-      message: `No door matched "${lookup.normalizedQuery}" among ${totalDoors} doors. ${closest.length > 0 ? 'Closest candidates are listed; retry with one of them if it is the intended address.' : 'Try a street address like "107 E Ashgrove St".'}`,
+      message: totalDoors === 0 ? NO_AREA : `No door matched "${lookup.normalizedQuery}" among ${totalDoors} doors. ${closest.length > 0 ? 'Closest candidates are listed; retry with one of them if it is the intended address.' : 'Try a street address like "107 E Ashgrove St".'}`,
       closest_candidates: closest,
     },
     true,
@@ -89,7 +91,7 @@ function countBy<T>(items: T[], key: (item: T) => string): Record<string, number
   }, {})
 }
 
-export function registerDoorTools(server: McpServer, doors: Door[]): void {
+export function registerDoorTools(server: McpServer, doors: Door[], territoryId?: string): void {
   const index = buildAddressIndex(doors)
   const totalDoors = doors.length
   const knownTags = [...new Set(doors.flatMap((door) => door.tags))].sort()
@@ -100,7 +102,7 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
     {
       title: 'Get door score',
       description:
-        'Look up the Door Score (0-100) for a single-family home in Ramsey/Allendale, NJ by street address. ' +
+        'Look up the Door Score (0-100) for a single-family home in the loaded area by street address. ' +
         'Input is matched fuzzily: case, punctuation, suffix spelling (Street/St, Avenue/Ave), directions (East/E) and a trailing city/state/zip are all tolerated, but the house number must match. ' +
         'Returns the score, territory rank, tags and the top 3 contributing signals. If nothing matches, returns up to 3 closest candidate addresses.',
       inputSchema: { address: z.string().min(1).describe('Street address, e.g. "107 E Ashgrove Street" or "107 E. Ashgrove St, Ramsey, NJ 07446"') },
@@ -237,7 +239,7 @@ export function registerDoorTools(server: McpServer, doors: Door[]): void {
         start_point: { ...plan.start, label: resolved.label },
         budget_minutes: hours * 60,
         parameters: { min_score: minScore, max_doors: maxDoors, include_absentee: include_absentee === true, focus: focusTags, eligible_doors: candidates.length },
-        stops: plan.stops.map((stop) => ({ ...stop, explain_url: explainUrl(stop.door_id) })),
+        stops: plan.stops.map((stop) => ({ ...stop, explain_url: explainUrl(stop.door_id, territoryId) })),
         totals: plan.totals,
         google_maps_url: plan.google_maps_url,
       })

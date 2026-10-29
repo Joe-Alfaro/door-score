@@ -74,7 +74,7 @@ export function TopBar({
 
   return (
     <header className="top-bar">
-      <h1 className="title">Door Score — Ramsey, NJ</h1>
+      <h1 className="title">Door Score</h1>
 
       <div className="search" ref={wrapperRef}>
         <input
@@ -145,7 +145,7 @@ export function TopBar({
         aria-pressed={territoryOpen}
         onClick={onToggleTerritory}
       >
-        Score your own polygon
+        Draw an area
       </button>
 
       <Link to={{ pathname: '/console', search: window.location.search }} className="console-link">
